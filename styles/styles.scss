@@ -164,6 +164,7 @@ section {
             width: 68%;
             margin-left: 4rem;
             background-color: var(--color-black);
+            overflow:hidden;
             transition: all .4s ease-in-out;
             img {
                 width: 100%;
