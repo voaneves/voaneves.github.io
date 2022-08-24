@@ -254,7 +254,7 @@
             <div class="portfolios">
                 <div class="portfolio-item">
                     <div class="image">
-                        <img src="img/port1.webp" alt="">
+                        <img src="img/port1.webp" alt="" loading="lazy">
                     </div>
                     <div class="hover-items">
                         <h3>Project Source</h3>
@@ -273,7 +273,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="image">
-                        <img src="img/port2.webp" alt="">
+                        <img src="img/port2.webp" alt="" loading="lazy">
                     </div>
                     <div class="hover-items">
                         <h3>Project Source</h3>
@@ -292,7 +292,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="image">
-                        <img src="img/port3.webp" alt="">
+                        <img src="img/port3.webp" alt="" loading="lazy">
                     </div>
                     <div class="hover-items">
                         <h3>Project Source</h3>
@@ -311,7 +311,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="image">
-                        <img src="img/port4.webp" alt="">
+                        <img src="img/port4.webp" alt="" loading="lazy">
                     </div>
                     <div class="hover-items">
                         <h3>Project Source</h3>
@@ -330,7 +330,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="image">
-                        <img src="img/port5.webp" alt="">
+                        <img src="img/port5.webp" alt="" loading="lazy">
                     </div>
                     <div class="hover-items">
                         <h3>Project Source</h3>
@@ -349,7 +349,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="image">
-                        <img src="img/port2.webp" alt="">
+                        <img src="img/port2.webp" alt="" loading="lazy">
                     </div>
                     <div class="hover-items">
                         <h3>Project Source</h3>
@@ -368,7 +368,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="image">
-                        <img src="img/port7.webp" alt="">
+                        <img src="img/port7.webp" alt="" loading="lazy">
                     </div>
                     <div class="hover-items">
                         <h3>Project Source</h3>
@@ -394,7 +394,7 @@
                 </div>
                 <div class="blogs">
                     <div class="blog">
-                        <img src="img/port6.webp" alt="">
+                        <img src="img/port6.webp" alt="" loading="lazy">
                         <div class="blog-text">
                             <h4>
                                 How to Create Your Own Website
@@ -406,7 +406,7 @@
                         </div>
                     </div>
                     <div class="blog">
-                        <img src="img/blog1.webp" alt="">
+                        <img src="img/blog1.webp" alt="" loading="lazy">
                         <div class="blog-text">
                             <h4>
                                 How to Become an Expert in Web Design
@@ -418,7 +418,7 @@
                         </div>
                     </div>
                     <div class="blog">
-                        <img src="img/blog2.webp" alt="">
+                        <img src="img/blog2.webp" alt="" loading="lazy">
                         <div class="blog-text">
                             <h4>
                                 Become a Web Designer in 10 Days
@@ -430,7 +430,7 @@
                         </div>
                     </div>
                     <div class="blog">
-                        <img src="img/blog3.webp" alt="">
+                        <img src="img/blog3.webp" alt="" loading="lazy">
                         <div class="blog-text">
                             <h4>
                                 Debbuging made easy with Web Inspector
@@ -442,7 +442,7 @@
                         </div>
                     </div>
                     <div class="blog">
-                        <img src="img/port1.webp" alt="">
+                        <img src="img/port1.webp" alt="" loading="lazy">
                         <div class="blog-text">
                             <h4>
                                 Get started with Web Design and UI Design
@@ -454,7 +454,7 @@
                         </div>
                     </div>
                     <div class="blog">
-                        <img src="img/port3.webp" alt="">
+                        <img src="img/port3.webp" alt="" loading="lazy">
                         <div class="blog-text">
                             <h4>
                                 This is what you need to know about Web Design
@@ -593,20 +593,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-    (function () {
-        [...document.querySelectorAll(".control")].forEach(button => {
-            button.addEventListener("click", function() {
-                document.querySelector(".active-btn").classList.remove("active-btn");
-                this.classList.add("active-btn");
-                document.querySelector(".active").classList.remove("active");
-                document.getElementById(button.dataset.id).classList.add("active");
-            })
-        });
-        document.querySelector(".theme-btn").addEventListener("click", () => {
-            document.body.classList.toggle("light-mode");
-        })
-    })();
-    </script>
+    <script defer src="app.js"></script>
 </body>
 </html>
