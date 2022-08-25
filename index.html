@@ -589,6 +589,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        // to defer the loading of stylesheets
+        // just add it right before the </body> tag
+        // and before any javaScript file inclusion (for performance)  
+        function loadStyleSheet(src){
+            if (document.createStyleSheet) document.createStyleSheet(src);
+            else {
+                var stylesheet = document.createElement('link');
+                stylesheet.href = src;
+                stylesheet.rel = 'stylesheet';
+                stylesheet.type = 'text/css';
+                document.getElementsByTagName('head')[0].appendChild(stylesheet);
+            }
+        }
+    </script>
     <script defer src="app.js"></script>
 </body>
 </html>
