@@ -557,21 +557,21 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="" class="contact-form">
+                        <form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbyhDrtzflDehdplT7QeqJCzYj5jr09fBhqA3h-fZS30txuJRyajwVJ3dhdZfNkuvQ9IVg/exec" class="contact-form">
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="NOME">
-                                <input type="email" required placeholder="EMAIL">
+                                <input type="text" name="name" required placeholder="Seu nome completo">
+                                <input type="email" name="email" required placeholder="Seu melhor email">
                             </div>
                             <div class="input-control">
-                                <input type="text" required placeholder="ASSUNTO">
+                                <input type="text" name="subject" required placeholder="Vamos falar sobre o quê?">
                             </div>
                             <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Mensagem aqui..."></textarea>
+                                <textarea name="message" id="" cols="15" rows="8" placeholder="Mensagem aqui..."></textarea>
                             </div>
                             <div class="submit-btn">
-                                <a href="/assets/cv-pt.pdf" class="main-btn">
-                                    <span class="btn-text">Baixar CV</span>
-                                    <span class="btn-icon"><i class="fas fa-download"></i></span>
+                                <a href="javascript:;" onclick="document.getElementById('gform').submit();" class="main-btn">
+                                    <span class="btn-text">Enviar</span>
+                                    <span class="btn-icon"><i class="fa fa-paper-plane"></i></span>
                                 </a>
                             </div>
                         </form>
