@@ -686,6 +686,11 @@ section {
   font-size: 6.3rem;
 }
 
+span.highlight {
+  color: #27AE60;
+  font-weight: bold;
+}
+
 .about-container .left-about p {
   padding-left: 0;
 }
