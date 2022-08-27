@@ -302,23 +302,41 @@ section {
   transition: all 0.4s ease-in-out;
   width: 60%;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .html {
-  width: 80%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .css {
+.about-stats .progress-bars .progress-bar .progress-con .progress .transdig {
   width: 95%;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .js {
+.about-stats .progress-bars .progress-bar .progress-con .progress .engmec {
+  width: 95%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .dash {
+  width: 90%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .webdev {
+  width: 80%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .datasci {
+  width: 80%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .iden {
+  width: 65%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .lean {
+  width: 80%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .info {
+  width: 100%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .pt {
+  width: 100%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .en {
+  width: 100%;
+}
+.about-stats .progress-bars .progress-bar .progress-con .progress .es {
   width: 75%;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .react {
-  width: 60%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .node {
-  width: 87%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .python {
-  width: 70%;
+.about-stats .progress-bars .progress-bar .progress-con .progress .fr {
+  width: 40%;
 }
 
 .stat-title {
@@ -686,9 +704,25 @@ section {
   font-size: 6.3rem;
 }
 
+/* highlight for text */
 span.highlight {
   color: #27AE60;
   font-weight: bold;
+}
+
+/* link color */
+a.different:link {
+  color: #27AE60;
+}
+
+/* visited link */
+a.different:visited {
+  color: #27AE60;
+}
+
+/* mouse over link */
+a.different:hover {
+  color: hotpink;
 }
 
 .about-container .left-about p {

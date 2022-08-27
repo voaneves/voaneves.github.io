@@ -294,12 +294,18 @@ section {
                         transition: all .4s ease-in-out;
                         width: 60%;
                     }
-                    .html { width: 80%; }
-                    .css { width: 95%; }
-                    .js { width: 75%; }
-                    .react{ width: 60%; }
-                    .node{ width: 87%; }
-                    .python{ width: 70%; }
+                    .transdig { width: 95%; }
+                    .engmec { width: 95%; }
+                    .dash { width: 90%; }
+                    .webdev { width: 80%; }
+                    .datasci { width: 80%; }
+                    .iden { width: 65%; }
+                    .lean { width: 80%; }
+                    .info { width: 100%; }
+                    .pt { width: 100%; }
+                    .en { width: 100%; }
+                    .es { width: 75%; }
+                    .fr { width: 40%; }
                 }
             }
         }
@@ -664,10 +670,25 @@ section {
     }
 }
 
+/* highlight for text */
 span.highlight {
     color: #27AE60;
     font-weight: bold;
 }
 
+/* link color */
+a.different:link{
+    color:#27AE60;
+}
+
+/* visited link */
+a.different:visited {
+    color: #27AE60;
+}
+  
+/* mouse over link */
+a.different:hover {
+    color: hotpink;
+}
 
 @import './media';
