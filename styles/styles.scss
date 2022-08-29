@@ -109,10 +109,14 @@ section {
             color: var(--color-grey-2);
             pointer-events: none;
         }
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--color-opposite);
+        }
     }
     .active-btn {
-        background-color: var(--color-secondary);
         transition: all .4s ease-in-out;
+        background-color: var(--color-secondary);
         i { color: var(--color-white); }
     }
 }
@@ -609,6 +613,7 @@ section {
     display: flex;
     align-self: flex-start;
 }
+
 .main-btn {
     border-radius: 30px;
     color: inherit;
@@ -647,7 +652,6 @@ section {
             transition: all .4s ease-out;
         }
     }
-
 }
 
 .main-title {

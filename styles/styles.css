@@ -109,9 +109,13 @@ section {
   color: var(--color-grey-2);
   pointer-events: none;
 }
+.controls .control:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px var(--color-opposite);
+}
 .controls .active-btn {
-  background-color: var(--color-secondary);
   transition: all 0.4s ease-in-out;
+  background-color: var(--color-secondary);
 }
 .controls .active-btn i {
   color: var(--color-white);
