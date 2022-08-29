@@ -7,7 +7,7 @@
 
 :root {
   --color-primary: #191d2b;
-  --color-secondary: #27AE60;
+  --color-secondary: #0080ff;
   --color-white: #FFFFFF;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -17,6 +17,7 @@
   --color-grey-4: #454e56;
   --color-grey-5: #2a2e35;
   --color-grey-6: #12181b;
+  --color-opposite: #F56692;
   --br-sm-2: 14px;
   --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
 }
@@ -33,6 +34,7 @@
   --color-grey-4: #454e56;
   --color-grey-5: #f8f8f8;
   --color-grey-6: #12181b;
+  --color-opposite: #0080ff;
 }
 
 body {
@@ -706,23 +708,23 @@ section {
 
 /* highlight for text */
 span.highlight {
-  color: #27AE60;
+  color: var(--color-secondary);
   font-weight: bold;
 }
 
 /* link color */
 a.different:link {
-  color: #27AE60;
+  color: var(--color-secondary);
 }
 
 /* visited link */
 a.different:visited {
-  color: #27AE60;
+  color: var(--color-secondary);
 }
 
 /* mouse over link */
 a.different:hover {
-  color: hotpink;
+  color: var(--color-opposite);
 }
 
 .about-container .left-about p {
