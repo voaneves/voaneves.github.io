@@ -31,7 +31,7 @@
   --color-grey-1: #6c7983;
   --color-grey-2: #6c7983;
   --color-grey-3: #6c7983;
-  --color-grey-4: #454e56;
+  --color-grey-4: #b2becd;
   --color-grey-5: #f8f8f8;
   --color-grey-6: #12181b;
   --color-opposite: #0080ff;
@@ -83,8 +83,8 @@ section {
 .controls {
   position: fixed;
   z-index: 10;
-  top: 50%;
-  right: 3%;
+  top: 50vh;
+  right: 3vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,20 +92,20 @@ section {
   transform: translateY(-50%);
 }
 .controls .control {
-  padding: 1rem;
+  padding: 1vw;
   cursor: pointer;
   background-color: var(--color-grey-4);
-  width: 55px;
-  height: 55px;
+  width: 4.5vw;
+  height: 4.5vw;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.7rem 0;
+  margin: 1vw 0;
   box-shadow: var(--box-shadow-1);
 }
 .controls .control i {
-  font-size: 1.2rem;
+  font-size: 1.5vw;
   color: var(--color-grey-2);
   pointer-events: none;
 }
@@ -122,10 +122,10 @@ section {
 }
 
 .theme-btn {
-  top: 5%;
-  right: 3%;
-  width: 70px;
-  height: 70px;
+  top: 3vw;
+  right: 3vw;
+  width: 5.5vw;
+  height: 5.5vw;
   border-radius: 50%;
   background-color: var(--color-grey-4);
   cursor: pointer;
@@ -133,14 +133,39 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow-1);
   transition: all 0.1s ease-in-out;
 }
 .theme-btn:active {
   transform: translateY(-3px);
 }
 .theme-btn i {
-  font-size: 1.4rem;
+  font-size: 2vw;
+  color: var(--color-grey-2);
+  pointer-events: none;
+}
+
+.translate-btn {
+  top: 3vw;
+  right: 10vw;
+  width: 5.5vw;
+  height: 5.5vw;
+  border-radius: 50%;
+  background-color: var(--color-grey-4);
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow-1);
+  transition: all 0.1s ease-in-out;
+}
+.translate-btn:active {
+  transform: translateY(-3px);
+}
+.translate-btn span {
+  font-size: 2vw;
+  font-weight: bold;
   color: var(--color-grey-2);
   pointer-events: none;
 }
@@ -611,8 +636,20 @@ a.different:hover {
     padding: 0 !important;
   }
   .theme-btn {
-    width: 50px;
-    height: 50px;
+    width: 12vw;
+    height: 12vw;
+  }
+  .theme-btn i {
+    font-size: 5vw;
+  }
+  .translate-btn {
+    top: 20vw;
+    right: 3vw;
+    width: 12vw;
+    height: 12vw;
+  }
+  .translate-btn span {
+    font-size: 5vw;
   }
   .header-content {
     grid-template-columns: repeat(1, 1fr);
@@ -647,7 +684,12 @@ a.different:hover {
     background-color: var(--color-grey-5);
   }
   .controls .control {
-    margin: 1rem 0.3rem;
+    width: 9vw;
+    height: 9vw;
+    margin: 2vw 1vw;
+  }
+  .controls .control i {
+    font-size: 4vw;
   }
   .about-container {
     grid-template-columns: repeat(1, 1fr);

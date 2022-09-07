@@ -31,7 +31,7 @@
     --color-grey-1: #6c7983;
     --color-grey-2: #6c7983;
     --color-grey-3: #6c7983;
-    --color-grey-4: #454e56;
+    --color-grey-4: #b2becd;
     --color-grey-5: #f8f8f8;
     --color-grey-6: #12181b;
     --color-opposite: #0080ff;
@@ -85,8 +85,8 @@ section {
 .controls {
     position: fixed;
     z-index: 10;
-    top: 50%;
-    right: 3%;
+    top: 50vh;
+    right: 3vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,20 +94,20 @@ section {
     transform: translateY(-50%);
 
     .control {
-        padding: 1rem;
+        padding: 1vw;
         cursor: pointer;
         background-color: var(--color-grey-4);
-        width: 55px;
-        height: 55px;
+        width: 4.5vw;
+        height: 4.5vw;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: .7rem 0;
+        margin: 1vw 0;
         box-shadow: var(--box-shadow-1);
 
         i {
-            font-size: 1.2rem;
+            font-size: 1.5vw;
             color: var(--color-grey-2);
             pointer-events: none;
         }
@@ -117,7 +117,6 @@ section {
             box-shadow: 0 10px 20px var(--color-opposite);
         }
     }
-
     .active-btn {
         transition: all .4s ease-in-out;
         background-color: var(--color-secondary);
@@ -129,10 +128,10 @@ section {
 }
 
 .theme-btn {
-    top: 5%;
-    right: 3%;
-    width: 70px;
-    height: 70px;
+    top: 3vw;
+    right: 3vw;
+    width: 5.5vw;
+    height: 5.5vw;
     border-radius: 50%;
     background-color: var(--color-grey-4);
     cursor: pointer;
@@ -140,7 +139,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, .3);
+    box-shadow: var(--box-shadow-1);
     transition: all .1s ease-in-out;
 
     &:active {
@@ -148,7 +147,34 @@ section {
     }
 
     i {
-        font-size: 1.4rem;
+        font-size: 2vw;
+        color: var(--color-grey-2);
+        pointer-events: none;
+    }
+}
+
+.translate-btn {
+    top: 3vw;
+    right: 10vw;
+    width: 5.5vw;
+    height: 5.5vw;
+    border-radius: 50%;
+    background-color: var(--color-grey-4);
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow-1);
+    transition: all .1s ease-in-out;
+
+    &:active {
+        transform: translateY(-3px);
+    }
+
+    span {
+        font-size: 2vw;
+        font-weight: bold;
         color: var(--color-grey-2);
         pointer-events: none;
     }
