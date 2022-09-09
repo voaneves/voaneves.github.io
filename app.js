@@ -9,6 +9,12 @@
     });
     document.querySelector(".theme-btn").addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
+        const meta = document.querySelector('meta[name="color-scheme"]');
+        if(meta.content === "light"){
+            meta.content = "dark";
+        } else{
+            meta.content = "light";
+        }
     })
 })
 ();
