@@ -684,8 +684,8 @@ a.different:hover {
     background-color: var(--color-grey-5);
   }
   .controls .control {
-    width: 9vw;
-    height: 9vw;
+    width: 20vh;
+    height: 20vh;
     margin: 2vw 1vw;
   }
   .controls .control i {
