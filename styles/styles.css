@@ -689,7 +689,7 @@ a.different:hover {
     margin: 4vw 1vw;
   }
   .controls .control i {
-    font-size: 5vw;
+    font-size: 6vw;
   }
   .about-container {
     grid-template-columns: repeat(1, 1fr);
