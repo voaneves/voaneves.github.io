@@ -3,9 +3,10 @@
     "name": "Victor Neves, especialista em Transformação Digital",
     "icons": [
       {
-        "src": "/img/android-chrome-512x512.png",
+        "src": "/img/maskable_icon.png",
         "type": "image/png",
-        "sizes": "512x512"
+        "sizes": "512x512",
+        "purpose": "maskable"
       },
       {
         "src": "/img/android-chrome-192x192.png",
