@@ -523,12 +523,6 @@ section {
   color: var(--color-white);
   resize: none;
 }
-.contact-content-con .right-contact .i-c-2 {
-  display: flex;
-}
-.contact-content-con .right-contact .i-c-2 :last-child {
-  margin-left: 1.5rem;
-}
 .contact-content-con .right-contact .submit-btn {
   display: flex;
   justify-content: flex-start;
