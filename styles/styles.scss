@@ -204,12 +204,9 @@ section {
     pointer-events: none;
   }
 
-  .image {
-    opacity: 0;
-  }
-
-  &:active {
-    transform: translateY(-3px);
+  .img {
+    align-self: center;
+    display: none;
   }
 
   &:hover {
@@ -221,11 +218,11 @@ section {
     box-shadow: 0 10px 20px var(--color-opposite);
 
     span {
-      opacity: 0;
+      display: none;
     }
 
-    image {
-      opacity: 1;
+    .img {
+      display: inline;
     }
   }
 }

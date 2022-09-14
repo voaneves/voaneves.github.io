@@ -176,21 +176,19 @@ section {
   color: var(--color-grey-2);
   pointer-events: none;
 }
-.translate-btn .image {
-  opacity: 0;
-}
-.translate-btn:active {
-  transform: translateY(-3px);
+.translate-btn .img {
+  align-self: center;
+  display: none;
 }
 .translate-btn:hover {
   transition: all 0.3s ease-in;
   box-shadow: 0 10px 20px var(--color-opposite);
 }
 .translate-btn:hover span {
-  opacity: 0;
+  display: none;
 }
-.translate-btn:hover image {
-  opacity: 1;
+.translate-btn:hover .img {
+  display: inline;
 }
 
 /*Header-content*/
