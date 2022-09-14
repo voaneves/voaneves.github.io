@@ -95,31 +95,36 @@ section {
   transform: translateY(-50%);
 
   .control {
-    padding: 1vw;
+    padding: 1vh;
     cursor: pointer;
     background-color: var(--color-grey-4);
-    width: 4.5vw;
-    height: 4.5vw;
+    width: 8vh;
+    height: 8vh;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1vw 0;
+    margin: 1vh 0;
     box-shadow: var(--box-shadow-1);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 
     i {
-      font-size: 1.5vw;
+      font-size: 3vh;
       color: var(--color-grey-2);
       pointer-events: none;
     }
 
     &:hover {
+      transition: all 0.3s ease-in-out;
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px var(--color-opposite);
+      box-shadow: 0 10px 20px var(--color-white);
     }
   }
   .active-btn {
-    transition: all 0.4s ease-in-out;
     background-color: var(--color-secondary);
 
     i {
@@ -129,10 +134,10 @@ section {
 }
 
 .theme-btn {
-  top: 3vw;
+  top: 3vh;
   right: 3vw;
-  width: 5.5vw;
-  height: 5.5vw;
+  width: 8vh;
+  height: 8vh;
   border-radius: 50%;
   background-color: var(--color-grey-4);
   cursor: pointer;
@@ -141,24 +146,43 @@ section {
   justify-content: center;
   align-items: center;
   box-shadow: var(--box-shadow-1);
-  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 
   &:active {
     transform: translateY(-3px);
   }
 
   i {
-    font-size: 2vw;
+    font-size: 3vh;
     color: var(--color-grey-2);
     pointer-events: none;
+  }
+
+  &:hover {
+    background-color: var(--color-white);
+    transform: translateY(-3px);
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    box-shadow: 0 10px 20px var(--color-opposite);
+
+    i {
+      color: var(--color-opposite);
+    }
   }
 }
 
 .translate-btn {
-  top: 3vw;
-  right: 10vw;
-  width: 5.5vw;
-  height: 5.5vw;
+  top: 3vh;
+  right: 20vh;
+  width: 8vh;
+  height: 8vh;
   border-radius: 50%;
   background-color: var(--color-grey-4);
   cursor: pointer;
@@ -167,17 +191,42 @@ section {
   justify-content: center;
   align-items: center;
   box-shadow: var(--box-shadow-1);
-  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+
+  span {
+    font-size: 4vh;
+    font-weight: bold;
+    color: var(--color-grey-2);
+    pointer-events: none;
+  }
+
+  .image {
+    opacity: 0;
+  }
 
   &:active {
     transform: translateY(-3px);
   }
 
-  span {
-    font-size: 2vw;
-    font-weight: bold;
-    color: var(--color-grey-2);
-    pointer-events: none;
+  &:hover {
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    box-shadow: 0 10px 20px var(--color-opposite);
+
+    span {
+      opacity: 0;
+    }
+
+    image {
+      opacity: 1;
+    }
   }
 }
 
@@ -238,6 +287,25 @@ section {
 
       span {
         color: var(--color-secondary);
+        animation: color-animation 4s linear infinite;
+      }
+
+      @keyframes color-animation {
+        0% {
+          color: var(--color-secondary);
+        }
+        49% {
+          color: var(--color-secondary);
+        }
+        50% {
+          color: var(--color-opposite);
+        }
+        99% {
+          color: var(--color-opposite);
+        }
+        100% {
+          color: var(--color-secondary);
+        }
       }
     }
 
@@ -594,7 +662,7 @@ section {
         resize: none;
       }
     }
-    
+
     .submit-btn {
       display: flex;
       justify-content: flex-start;
