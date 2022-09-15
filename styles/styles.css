@@ -335,7 +335,7 @@ section {
 }
 .header-content .right-header .changing-text::after {
   content: "";
-  width: 1rem;
+  width: 0.25rem;
   height: 3rem;
   background: var(--color-grey-4);
   display: inline-block;
