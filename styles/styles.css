@@ -769,7 +769,7 @@ a.different:hover {
     display: none;
   }
   .left-header img {
-    background-image: url("img/main-small.webp");
+    background-image: url("https://voaneves.com/img/main-small.webp");
   }
   .right-header {
     grid-row: 1;
