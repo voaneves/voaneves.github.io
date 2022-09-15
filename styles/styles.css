@@ -768,11 +768,8 @@ a.different:hover {
   .left-header .h-shape {
     display: none;
   }
-  .left-header .image {
-    background-image: url("img/main-small.webp");
-  }
   .left-header img {
-    display: none;
+    background-image: url("img/main-small.webp");
   }
   .right-header {
     grid-row: 1;

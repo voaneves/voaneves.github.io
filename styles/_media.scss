@@ -28,16 +28,12 @@
     grid-template-columns: repeat(1, 1fr);
     padding-bottom: 6rem;
   }
-
   .left-header {
     .h-shape {
       display: none;
     }
-    .image {
-      background-image: url("img/main-small.webp");
-    }
     img {
-      display: none;
+      background-image: url("img/main-small.webp");
     }
   }
   .right-header {
