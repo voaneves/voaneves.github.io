@@ -265,6 +265,7 @@ section {
         object-fit: cover;
         transition: all 0.4s ease-in-out;
         filter: grayscale(100%);
+        background-image: url("https://voaneves.com/img/main.webp");
 
         &:hover {
           filter: grayscale(0);
