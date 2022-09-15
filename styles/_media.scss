@@ -33,6 +33,12 @@
     .h-shape {
       display: none;
     }
+    .image {
+      background-image: url("img/main-small.webp");
+    }
+    .big-screen {
+      display: none;
+    }
   }
   .right-header {
     grid-row: 1;
