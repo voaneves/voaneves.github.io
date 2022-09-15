@@ -93,16 +93,10 @@
             <div class="left-header">
                 <div class="h-shape"></div>
                 <div class="image">
-                    <img alt="Cover photo, with me in a blue jacket. Pure digital transformation" src="img/small.jpg"
-                        srcset=" 
-                            img/main-small.webp 300w, 
-                            img/main-medium.webp 600w, 
-                            img/main.webp 900w 
-                        " sizes=" 
-                            (min-width: 1366px) 600px, 
-                            (min-width: 1536px) 900px, 
-                            100vw
-                        ">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="img/main-small.webp">
+                        <img src="img/main.webp" alt="Foto de capa, Transformação Digital">
+                    </picture>  
                 </div>
             </div>
             <div class="right-header">
