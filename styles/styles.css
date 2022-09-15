@@ -223,9 +223,6 @@ section {
   overflow: hidden;
   transition: all 0.4s ease-in-out;
 }
-.header-content .left-header .image .big-screen {
-  display: inline;
-}
 .header-content .left-header .image img {
   width: 100%;
   height: 100%;
@@ -774,7 +771,7 @@ a.different:hover {
   .left-header .image {
     background-image: url("img/main-small.webp");
   }
-  .left-header .big-screen {
+  .left-header img {
     display: none;
   }
   .right-header {
