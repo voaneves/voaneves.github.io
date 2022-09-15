@@ -334,6 +334,21 @@ section {
       }
     }
 
+    @keyframes cursor-blink {
+      0% {
+        opacity: 0;
+      }
+    }
+
+    .changing-text::after {
+      content: "";
+      width: 1rem;
+      height: 3rem;
+      background: var(--color-grey-4);
+      display: inline-block;
+      animation: cursor-blink 1s steps(2) infinite;
+    }
+
     p {
       margin: 1.5rem 0;
       line-height: 2rem;

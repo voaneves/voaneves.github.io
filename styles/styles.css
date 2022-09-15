@@ -323,6 +323,25 @@ section {
     content: "a Deus";
   }
 }
+@-webkit-keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+.header-content .right-header .changing-text::after {
+  content: "";
+  width: 1rem;
+  height: 3rem;
+  background: var(--color-grey-4);
+  display: inline-block;
+  -webkit-animation: cursor-blink 1s steps(2) infinite;
+          animation: cursor-blink 1s steps(2) infinite;
+}
 .header-content .right-header p {
   margin: 1.5rem 0;
   line-height: 2rem;
