@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -280,6 +281,46 @@ section {
   }
   100% {
     color: var(--color-secondary);
+  }
+}
+.header-content .right-header .name .changing-text::before {
+  content: "programar";
+  -webkit-animation: animate-text infinite 10s;
+          animation: animate-text infinite 10s;
+  padding-left: 10px;
+}
+@-webkit-keyframes animate-text {
+  0% {
+    content: "programar";
+  }
+  20% {
+    content: "Transformação Digital";
+  }
+  40% {
+    content: "Produtividade";
+  }
+  60% {
+    content: "tecnologia";
+  }
+  80% {
+    content: "a Deus";
+  }
+}
+@keyframes animate-text {
+  0% {
+    content: "programar";
+  }
+  20% {
+    content: "Transformação Digital";
+  }
+  40% {
+    content: "Produtividade";
+  }
+  60% {
+    content: "tecnologia";
+  }
+  80% {
+    content: "a Deus";
   }
 }
 .header-content .right-header p {

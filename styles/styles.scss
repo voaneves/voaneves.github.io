@@ -304,6 +304,34 @@ section {
           color: var(--color-secondary);
         }
       }
+
+      .changing-text::before {
+        content: "programar";
+        animation: animate-text infinite 10s;
+        padding-left: 10px;
+      }
+
+      @keyframes animate-text {
+        0% {
+          content: "programar";
+        }
+
+        20% {
+          content: "Transformação Digital";
+        }
+
+        40% {
+          content: "Produtividade";
+        }
+
+        60% {
+          content: "tecnologia";
+        }
+
+        80% {
+          content: "a Deus";
+        }
+      }
     }
 
     p {
