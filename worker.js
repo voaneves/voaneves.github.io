@@ -22,7 +22,7 @@ const PRECACHE_URLS = [
   'index.html',
   'en.html',
   './', // Alias for index.html
-  'syles/styles-min.css',
+  'styles/styles-min.css',
   'app-min.js'
 ];
 
