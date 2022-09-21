@@ -23,7 +23,7 @@
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
     <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="black">
     <meta property="og:url" content="https://voaneves.com/en">
-    <meta property="og:image" content="https://voaneves.com/img/og-img.webp">
+    <meta property="og:image" content="https://voaneves.com/assets/img/og-img.webp">
     <meta property="og:type" content="website">
     <meta property="og:description"
         content="Victor Neves, digital transformation specialist, UX/UI web developer and I love doing new projects. Send me a message!">
@@ -33,7 +33,7 @@
     <meta name=”twitter:site” content="https://voaneves.com" />
     <meta name=”twitter:title” content="Victor Neves, digital transformation specialist" />
     <meta name=”twitter:description” content="Victor Neves, digital transformation specialist, UX/UI web developer" />
-    <meta name=”twitter:image” content=”https://voaneves.com/img/main.webp />
+    <meta name=”twitter:image” content=”https://voaneves.com/assets/img/main.webp />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Pragma" content="no-cache">
@@ -41,12 +41,12 @@
     <meta http-equiv="Content-Language" content="en" />
     <title>Victor Neves, digital transformation specialist, UX/UI web developer</title>
     <meta name="msapplication-TileColor" content="#000000">
-    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="img/android-chrome-512x512.png" sizes="512x512">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="assets/img/android-chrome-512x512.png" sizes="512x512">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
     <link rel="canonical" href="https://voaneves.com/en" />
     <!-- Schema Markup for the website -->
     <script defer type="application/ld+json">
@@ -55,7 +55,7 @@
         "@type": "Organization",
         "name": "Victor Neves, Especialista em Transformação Digital",
         "url": "https://voaneves.com",
-        "logo": "https://voaneves.com/img/logo.webp",
+        "logo": "https://voaneves.com/assets/img/logo.webp",
         "sameAs" : [
             "https://github.com/voaneves",
             "https://youtube.com/c/voaneves",
@@ -79,7 +79,7 @@
         gtag('config', 'G-PVPPTEKXN1');
     </script>
 -->
-    <link rel="stylesheet" href="styles/styles-min.css">
+    <link rel="stylesheet" href="assets/styles/styles-min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;800&display=swap"
@@ -94,8 +94,8 @@
                 <div class="h-shape"></div>
                 <div class="image">
                     <picture>
-                        <source media="(max-width: 600px)" srcset="img/main-small.webp">
-                        <img src="img/main.webp" alt="Foto de capa, Transformação Digital">
+                        <source media="(max-width: 600px)" srcset="assets/img/main-small.webp">
+                        <img src="assets/img/main.webp" alt="Foto de capa, Transformação Digital">
                     </picture>  
                 </div>
             </div>
@@ -435,6 +435,14 @@
                 </div>
             </div>
         </section>
+        <section class="container labs" id="labs">
+            <div class="main-title">
+                <h2><span>Lab</span><span class="bg-text">TESTING</span></h2>
+                <p>
+                    Under construction!
+                </p>
+            </div>
+        </section>
         <section class="container contact" id="contact">
             <div class="contact-container">
                 <div class="main-title">
@@ -532,13 +540,16 @@
         </section>
     </main>
     <div class="controls">
-        <div class="control active-btn" data-id="home">
+        <div class="control active-btn" data-id="home" title="Home">
             <i class="fas fa-home"></i>
         </div>
-        <div class="control" data-id="about">
+        <div class="control" data-id="about" title="About">
             <i class="fas fa-user"></i>
         </div>
-        <div class="control" data-id="contact">
+        <div class="control" data-id="labs" title="Labs">
+            <i class="fa-solid fa-flask"></i>
+        </div>
+        <div class="control" data-id="contact" title="Contact">
             <i class="fas fa-envelope-open"></i>
         </div>
     </div>
@@ -546,7 +557,7 @@
         <i class="fas fa-adjust"></i>
     </div>
     <div class="translate-btn" onclick="location.href='https://voaneves.com/';">
-        <img class="translate-btn img" src="img/br.webp" />
+        <img class="translate-btn img" src="/assets/img/br.webp" />
         <span>PT</span>
     </div>
 
@@ -566,8 +577,8 @@
         }
     </script>
     <script async src="https://kit.fontawesome.com/bb4c9d3c00.js" crossorigin="anonymous"></script>
-    <script async src="app-min.js"></script>
-    <script async src="sw-min.js"></script>
+    <script async src="assets/js/app-min.js"></script>
+    <script async src="assets/js/sw-min.js"></script>
 </body>
 
 </html>
