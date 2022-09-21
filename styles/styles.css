@@ -588,13 +588,18 @@ section {
   padding: 0 !important;
 }
 .contact-content-con .left-contact .contact-info .contact-item .icon {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 5px;
   display: grid;
   grid-template-columns: 40px 1fr;
 }
 .contact-content-con .left-contact .contact-info .contact-item .icon span {
+  color: var(--color-primary);
   font-weight: 300;
 }
 .contact-content-con .left-contact .contact-info .contact-item .icon i {
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   font-size: 1.3rem;
@@ -676,11 +681,16 @@ section {
 }
 .main-btn .btn-icon {
   background-color: var(--color-secondary);
+  width: 5vh;
+  height: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   padding: 1rem;
+}
+.main-btn .btn-icon i {
+  font-size: 2vh;
 }
 .main-btn::before {
   content: "";

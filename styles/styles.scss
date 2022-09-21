@@ -640,14 +640,19 @@ section {
         }
 
         .icon {
+          background-color: var(--color-white);
+          border-radius: 10px;
+          padding: 5px;
           display: grid;
           grid-template-columns: 40px 1fr;
 
           span {
+            color: var(--color-primary);
             font-weight: 300;
           }
 
           i {
+            color: var(--color-primary);
             display: flex;
             align-items: center;
             font-size: 1.3rem;
@@ -744,11 +749,17 @@ section {
 
   .btn-icon {
     background-color: var(--color-secondary);
+    width: 5vh;
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     padding: 1rem;
+
+    i {
+      font-size: 2vh;
+    }
   }
 
   &::before {
