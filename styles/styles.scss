@@ -41,7 +41,7 @@
 
 body {
   background-color: var(--color-primary);
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.1rem;
   color: var(--color-white);
   transition: all 0.4s ease-in-out;
@@ -199,7 +199,7 @@ section {
 
   span {
     font-size: 4vh;
-    font-weight: bold;
+    font-weight: 800;
     color: var(--color-grey-2);
     pointer-events: none;
   }
@@ -352,6 +352,7 @@ section {
     p {
       margin: 1.5rem 0;
       line-height: 2rem;
+      font-weight: 300;
     }
   }
 }
@@ -388,7 +389,7 @@ section {
 
         .large-text {
           font-size: 3rem;
-          font-weight: 700;
+          font-weight: 800;
           color: var(--color-secondary);
         }
 
@@ -421,10 +422,12 @@ section {
       line-height: 2rem;
       padding: 1rem;
       color: var(--color-grey-1);
+      font-weight: 300;
     }
 
     h4 {
       font-size: 2rem;
+      font-weight: 500;
       text-transform: uppercase;
     }
   }
@@ -587,7 +590,7 @@ section {
       padding: 1rem 0;
       text-transform: uppercase;
       font-size: 1.3rem;
-      font-weight: 600;
+      font-weight: 800;
 
       span {
         color: var(--color-grey-2);
@@ -617,6 +620,8 @@ section {
     }
 
     p {
+      font-weight: 300;
+      color: var(--color-grey-1);
       margin: 1rem 0;
       line-height: 2rem;
     }
@@ -628,6 +633,8 @@ section {
         justify-content: space-between;
 
         p {
+          color: var(--color-grey-1);
+          font-weight: 300;
           margin: 0.3rem 0 !important;
           padding: 0 !important;
         }
@@ -635,6 +642,10 @@ section {
         .icon {
           display: grid;
           grid-template-columns: 40px 1fr;
+
+          span {
+            font-weight: 300;
+          }
 
           i {
             display: flex;
@@ -719,7 +730,7 @@ section {
 .main-btn {
   border-radius: 30px;
   color: inherit;
-  font-weight: 600;
+  font-weight: 500;
   position: relative;
   border: 1px solid var(--color-secondary);
   display: flex;
@@ -770,7 +781,7 @@ section {
     position: relative;
     text-transform: uppercase;
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 800;
 
     span {
       color: var(--color-secondary);
@@ -793,7 +804,7 @@ section {
 /* highlight for text */
 span.highlight {
   color: var(--color-secondary);
-  font-weight: bold;
+  font-weight: 800;
 }
 
 /* link color */

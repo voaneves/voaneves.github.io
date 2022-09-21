@@ -39,7 +39,7 @@
 }
 body {
   background-color: var(--color-primary);
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.1rem;
   color: var(--color-white);
   transition: all 0.4s ease-in-out;
@@ -172,7 +172,7 @@ section {
 }
 .translate-btn span {
   font-size: 4vh;
-  font-weight: bold;
+  font-weight: 800;
   color: var(--color-grey-2);
   pointer-events: none;
 }
@@ -344,6 +344,7 @@ section {
 .header-content .right-header p {
   margin: 1.5rem 0;
   line-height: 2rem;
+  font-weight: 300;
 }
 
 /*About*/
@@ -377,7 +378,7 @@ section {
 }
 .about-container .right-about .about-item .abt-text .large-text {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-secondary);
 }
 .about-container .right-about .about-item .abt-text .small-text {
@@ -404,9 +405,11 @@ section {
   line-height: 2rem;
   padding: 1rem;
   color: var(--color-grey-1);
+  font-weight: 300;
 }
 .about-container .left-about h4 {
   font-size: 2rem;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -544,7 +547,7 @@ section {
   padding: 1rem 0;
   text-transform: uppercase;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 800;
 }
 .timeline .timeline-item h5 span {
   color: var(--color-grey-2);
@@ -568,6 +571,8 @@ section {
   text-transform: uppercase;
 }
 .contact-content-con .left-contact p {
+  font-weight: 300;
+  color: var(--color-grey-1);
   margin: 1rem 0;
   line-height: 2rem;
 }
@@ -577,12 +582,17 @@ section {
   justify-content: space-between;
 }
 .contact-content-con .left-contact .contact-info .contact-item p {
+  color: var(--color-grey-1);
+  font-weight: 300;
   margin: 0.3rem 0 !important;
   padding: 0 !important;
 }
 .contact-content-con .left-contact .contact-info .contact-item .icon {
   display: grid;
   grid-template-columns: 40px 1fr;
+}
+.contact-content-con .left-contact .contact-info .contact-item .icon span {
+  font-weight: 300;
 }
 .contact-content-con .left-contact .contact-info .contact-item .icon i {
   display: flex;
@@ -653,7 +663,7 @@ section {
 .main-btn {
   border-radius: 30px;
   color: inherit;
-  font-weight: 600;
+  font-weight: 500;
   position: relative;
   border: 1px solid var(--color-secondary);
   display: flex;
@@ -699,7 +709,7 @@ section {
   position: relative;
   text-transform: uppercase;
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 .main-title h2 span {
   color: var(--color-secondary);
@@ -719,7 +729,7 @@ section {
 /* highlight for text */
 span.highlight {
   color: var(--color-secondary);
-  font-weight: bold;
+  font-weight: 800;
 }
 
 /* link color */
