@@ -1,12 +1,21 @@
-const statusDisplay = document.querySelector(".game--status");
+const currentTranslation = window.location.href;
+const statusDisplay = document.querySelector(".status");
 
 let gameActive = true;
 let currentPlayer = "X";
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
-const winningMessage = () => `Player ${currentPlayer} has won!`;
-const drawMessage = () => `Game ended in a draw!`;
-const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+console.log("this is %o", currentTranslation);
+
+const winningMessage = () => `O jogador ${currentPlayer} venceu.`;
+const drawMessage = () => `Deu empate!`;
+const currentPlayerTurn = () => `É a vez do ${currentPlayer}`;
+
+if (currentTranslation === "https://voaneves.com/en.html") {
+  const winningMessage = () => `Player ${currentPlayer} has won!`;
+  const drawMessage = () => `It was a draw!`;
+  const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+}
 
 statusDisplay.innerHTML = currentPlayerTurn();
 
@@ -88,6 +97,4 @@ function handleRestartGame() {
 document
   .querySelectorAll(".cell")
   .forEach((cell) => cell.addEventListener("click", handleCellClick));
-document
-  .querySelector(".game--restart")
-  .addEventListener("click", handleRestartGame);
+document.querySelector(".restart").addEventListener("click", handleRestartGame);

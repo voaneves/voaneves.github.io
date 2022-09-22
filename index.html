@@ -438,12 +438,29 @@
                 </div>
             </div>
         </section>
-        <section class="container labs" id="labs">
+        <section class="container games" id="games">
             <div class="main-title">
-                <h2>ÁREA DE <span>TESTES</span><span class="bg-text">OFICINA</span></h2>
-                <p>
-                    Em construção!
-                </p>
+                <h2>ÁREA DE <span>JOGOS</span><span class="bg-text">OFICINA</span></h2>
+            </div>
+            <div class="game-section">
+                <div class="game">
+                    <h1>Jogo da velha</h1>
+                    <div class="game-grid">
+                        <div data-cell-index="0" class="cell"></div>
+                        <div data-cell-index="1" class="cell"></div>
+                        <div data-cell-index="2" class="cell"></div>
+                        <div data-cell-index="3" class="cell"></div>
+                        <div data-cell-index="4" class="cell"></div>
+                        <div data-cell-index="5" class="cell"></div>
+                        <div data-cell-index="6" class="cell"></div>
+                        <div data-cell-index="7" class="cell"></div>
+                        <div data-cell-index="8" class="cell"></div>
+                    </div>
+                    <h2 class="status"></h2>
+                    <div class="restart">
+                        <i class="fa fa-refresh"></i>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="container contact" id="contact">
@@ -553,8 +570,8 @@
         <div class="control" data-id="about" title="Sobre">
             <i class="fas fa-user"></i>
         </div>
-        <div class="control" data-id="labs" title="Testes">
-            <i class="fa-solid fa-flask"></i>
+        <div class="control" data-id="games" title="Jogos">
+            <i class="fa fa-gamepad"></i>
         </div>
         <div class="control" data-id="contact" title="Contato">
             <i class="fas fa-envelope-open"></i>
@@ -586,6 +603,7 @@
     <script async src="https://kit.fontawesome.com/bb4c9d3c00.js" crossorigin="anonymous"></script>
     <script async src="assets/js/app-min.js"></script>
     <script async src="assets/js/sw-min.js"></script>
+    <script defer src="assets/js/tic-tac-toe.js"></script>
 </body>
 
 </html>

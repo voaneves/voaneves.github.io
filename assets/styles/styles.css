@@ -558,6 +558,56 @@ section {
   color: var(--color-grey-2);
 }
 
+.game-section {
+  text-align: center;
+  margin: 50px;
+}
+.game-section .game {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 25px;
+  background-color: var(--color-white);
+}
+.game-section .game h1 {
+  position: relative;
+  font-size: 3em;
+  font-weight: 500;
+  color: var(--color-opposite);
+}
+.game-section .game .game-grid {
+  display: inline-grid;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px;
+  margin: 10px auto;
+  color: var(--color-opposite);
+}
+.game-section .game .game-grid .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-grey-2);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 3em;
+}
+.game-section .game .status {
+  font-size: 2em;
+  font-weight: 300;
+  color: var(--color-secondary);
+}
+.game-section .game .restart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+  font-size: 2em;
+  color: var(--color-opposite);
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+}
+
 .contact-content-con {
   display: flex;
   padding-top: 3.5rem;
