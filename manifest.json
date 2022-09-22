@@ -3,18 +3,18 @@
     "name": "Victor Neves, especialista em Transformação Digital",
     "icons": [
       {
-        "src": "/img/maskable_icon.png",
+        "src": "assets/img/maskable_icon.png",
         "type": "image/png",
         "sizes": "512x512",
         "purpose": "maskable"
       },
       {
-        "src": "/img/android-chrome-192x192.png",
+        "src": "assets/img/android-chrome-192x192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/img/favicon-32x32.png",
+        "src": "assets/img/favicon-32x32.png",
         "type": "image/png",
         "sizes": "32x32"
       }
@@ -28,7 +28,7 @@
     "description": "Portfolio do Victor Neves, com informações de contato e carreira",
     "screenshots": [
       {
-        "src": "/img/main.webp",
+        "src": "assets/img/main.webp",
         "type": "image/webp",
         "sizes": "900x1200"
       }
