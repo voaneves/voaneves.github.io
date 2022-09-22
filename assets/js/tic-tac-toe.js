@@ -5,13 +5,13 @@ let gameActive = true;
 let currentPlayer = "X";
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
-console.log("this is %o", currentTranslation);
+console.log(currentTranslation);
 
 const winningMessage = () => `O jogador ${currentPlayer} venceu.`;
 const drawMessage = () => `Deu empate!`;
 const currentPlayerTurn = () => `É a vez do ${currentPlayer}`;
 
-if (currentTranslation === "https://voaneves.com/en") {
+if (currentTranslation === "/en") {
   const winningMessage = () => `Player ${currentPlayer} has won!`;
   const drawMessage = () => `It was a draw!`;
   const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
