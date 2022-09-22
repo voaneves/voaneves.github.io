@@ -1,4 +1,4 @@
-const currentTranslation = window.location.href;
+const currentTranslation = window.location.pathname;
 const statusDisplay = document.querySelector(".status");
 
 let gameActive = true;
