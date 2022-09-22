@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -284,22 +285,33 @@ section {
 }
 .header-content .right-header .name .changing-text::before {
   content: "programar";
-  -webkit-animation: animate-text infinite 10s;
-          animation: animate-text infinite 10s;
-  padding-left: 10px;
+  -webkit-animation: animate-text infinite 20s;
+          animation: animate-text infinite 20s;
 }
 @-webkit-keyframes animate-text {
   0% {
     content: "programar";
   }
-  20% {
-    content: "produtividade";
+  10% {
+    content: "eficiência";
   }
-  40% {
+  20% {
+    content: "analytics";
+  }
+  30% {
     content: "o piano";
   }
+  40% {
+    content: "digital";
+  }
+  50% {
+    content: "branding";
+  }
   60% {
-    content: "tecnologia";
+    content: "correr";
+  }
+  70% {
+    content: "prototipagem";
   }
   80% {
     content: "a Deus";
@@ -309,14 +321,26 @@ section {
   0% {
     content: "programar";
   }
-  20% {
-    content: "produtividade";
+  10% {
+    content: "eficiência";
   }
-  40% {
+  20% {
+    content: "analytics";
+  }
+  30% {
     content: "o piano";
   }
+  40% {
+    content: "digital";
+  }
+  50% {
+    content: "branding";
+  }
   60% {
-    content: "tecnologia";
+    content: "correr";
+  }
+  70% {
+    content: "prototipagem";
   }
   80% {
     content: "a Deus";

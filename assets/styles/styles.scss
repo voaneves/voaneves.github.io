@@ -307,8 +307,7 @@ section {
 
       .changing-text::before {
         content: "programar";
-        animation: animate-text infinite 10s;
-        padding-left: 10px;
+        animation: animate-text infinite 20s;
       }
 
       @keyframes animate-text {
@@ -316,16 +315,32 @@ section {
           content: "programar";
         }
 
-        20% {
-          content: "produtividade";
+        10% {
+          content: "eficiência";
         }
 
-        40% {
+        20% {
+          content: "analytics";
+        }
+
+        30% {
           content: "o piano";
         }
 
+        40% {
+          content: "digital";
+        }
+
+        50% {
+          content: "branding";
+        }
+
         60% {
-          content: "tecnologia";
+          content: "correr";
+        }
+
+        70% {
+          content: "prototipagem";
         }
 
         80% {
