@@ -1,17 +1,34 @@
 const statusDisplay = document.querySelector(".status");
+const englishOrNot = document.location.href.search("en");
 
 let gameActive = true;
 let currentPlayer = "X";
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
-const winningMessage = () => `O jogador ${currentPlayer} venceu.`;
-const drawMessage = () => `Deu empate!`;
-const currentPlayerTurn = () => `É a vez do ${currentPlayer}`;
+let winningMessage;
+let drawMessage;
+let currentPlayerTurn;
 
-if (document.location.href.search("en")) {
-  const winningMessage = () => `Player ${currentPlayer} has won!`;
-  const drawMessage = () => `It was a draw!`;
-  const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+if (englishOrNot != "-1") {
+  winningMessage = function () {
+    return `Player ${currentPlayer} won`;
+  };
+  drawMessage = function () {
+    return `It was a draw!`;
+  };
+  currentPlayerTurn = function () {
+    return `It's ${currentPlayer} turn`;
+  };
+} else {
+  winningMessage = function () {
+    return `O jogador ${currentPlayer} venceu`;
+  };
+  drawMessage = function () {
+    return `Deu empate!`;
+  };
+  currentPlayerTurn = function () {
+    return `É a vez do ${currentPlayer}`;
+  };
 }
 
 statusDisplay.innerHTML = currentPlayerTurn();
