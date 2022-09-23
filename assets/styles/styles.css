@@ -586,26 +586,30 @@ section {
   text-align: center;
   margin: 50px;
 }
-.game-section .game {
+.game-section .games {
+  display: inline-grid;
+  grid-template-rows: 100px 100px 100px;
+}
+.game-section .games .tic-tac-toe {
   display: inline-block;
   border-radius: 10px;
   padding: 25px;
   background-color: var(--color-white);
 }
-.game-section .game h1 {
+.game-section .games .tic-tac-toe h1 {
   position: relative;
   font-size: 3em;
   font-weight: 500;
   color: var(--color-opposite);
 }
-.game-section .game .game-grid {
+.game-section .games .tic-tac-toe .game-grid {
   display: inline-grid;
   grid-template-rows: 100px 100px 100px;
   grid-template-columns: 100px 100px 100px;
   margin: 10px auto;
   color: var(--color-opposite);
 }
-.game-section .game .game-grid .cell {
+.game-section .games .tic-tac-toe .game-grid .cell {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -614,12 +618,12 @@ section {
   font-weight: 800;
   font-size: 3em;
 }
-.game-section .game .status {
+.game-section .games .tic-tac-toe .status {
   font-size: 2em;
   font-weight: 300;
   color: var(--color-secondary);
 }
-.game-section .game .restart {
+.game-section .games .tic-tac-toe .restart {
   display: flex;
   justify-content: center;
   align-items: center;
