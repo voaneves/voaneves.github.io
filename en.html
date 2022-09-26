@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10.0">
@@ -85,8 +84,11 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;800&display=swap"
         as="font" type="font/woff2" crossorigin>
     <link rel="manifest" href="/manifest.json">
+    <script defer src="https://kit.fontawesome.com/bb4c9d3c00.js" crossorigin="anonymous"></script>
+    <script defer src="assets/js/app-min.js"></script>
+    <script defer src="assets/js/sw-min.js"></script>
+    <script defer src="assets/js/tic-tac-toe.js"></script>
 </head>
-
 <body class="main-content">
     <header class="container header active" id="home">
         <div class="header-content">
@@ -440,26 +442,33 @@
                 <h2>Gaming <span>area</span><span class="bg-text">PLAY</span></h2>
             </div>
             <div class="game-section">
-                <div class="games">
-                    <div class="tic-tac-toe">
-                        <h1>Tic-Tac-Toe</h1>
-                        <div class="game-grid">
-                            <div data-cell-index="0" class="cell"></div>
-                            <div data-cell-index="1" class="cell"></div>
-                            <div data-cell-index="2" class="cell"></div>
-                            <div data-cell-index="3" class="cell"></div>
-                            <div data-cell-index="4" class="cell"></div>
-                            <div data-cell-index="5" class="cell"></div>
-                            <div data-cell-index="6" class="cell"></div>
-                            <div data-cell-index="7" class="cell"></div>
-                            <div data-cell-index="8" class="cell"></div>
-                        </div>
-                        <h2 class="status"></h2>
-                        <div class="restart">
-                            <i class="fa fa-refresh"></i>
-                        </div>
-                    </div>
-                </div>
+                <ul>
+                    <li><input type="checkbox" id="cb1"/><label for="cb1">TIC-TAC-TOE <span>(click to play)</span></label>
+                        <ul>
+    						<li>
+                                <div class="games">
+                                    <div class="tic-tac-toe">
+                                        <div class="game-grid">
+                                            <div data-cell-index="0" class="cell"></div>
+                                            <div data-cell-index="1" class="cell"></div>
+                                            <div data-cell-index="2" class="cell"></div>
+                                            <div data-cell-index="3" class="cell"></div>
+                                            <div data-cell-index="4" class="cell"></div>
+                                            <div data-cell-index="5" class="cell"></div>
+                                            <div data-cell-index="6" class="cell"></div>
+                                            <div data-cell-index="7" class="cell"></div>
+                                            <div data-cell-index="8" class="cell"></div>
+                                        </div>
+                                        <h2 class="status"></h2>
+                                        <div class="restart">
+                                            <i class="fa fa-refresh"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>    
+                </ul>
             </div>
         </section>
         <section class="container contact" id="contact">
@@ -595,10 +604,5 @@
             }
         }
     </script>
-    <script async src="https://kit.fontawesome.com/bb4c9d3c00.js" crossorigin="anonymous"></script>
-    <script async src="assets/js/app-min.js"></script>
-    <script async src="assets/js/sw-min.js"></script>
-    <script defer src="assets/js/tic-tac-toe.js"></script>
 </body>
-
 </html>

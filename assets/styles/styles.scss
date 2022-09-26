@@ -625,23 +625,60 @@ section {
   text-align: center;
   margin: 50px;
 
+  ul {
+    list-style-type: none;
+  }
+
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+    border-radius: 5px;
+    padding: 3px;
+    padding-left: 25px;
+    color: var(--color-primary);
+    font-size: 2em;
+    font-weight: 800;
+
+    span {
+      color: var(--color-grey-2);
+      font-size: 0.5em;
+      font-weight: 500;
+    }
+  }
+
+  li {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--color-white);
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"] ~ ul {
+    max-height: 0;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  input[type="checkbox"]:checked ~ ul {
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 1;
+  }
+
   .games {
-    display: inline-grid;
-    grid-template-rows: 100px 100px 100px;
-
     .tic-tac-toe {
-      display: inline-block;
-      border-radius: 10px;
-      padding: 25px;
-      background-color: var(--color-white);
-
-      h1 {
-        position: relative;
-        font-size: 3em;
-        font-weight: 500;
-        color: var(--color-opposite);
-      }
-
       .game-grid {
         display: inline-grid;
         grid-template-rows: 100px 100px 100px;
@@ -663,7 +700,7 @@ section {
       .status {
         font-size: 2em;
         font-weight: 300;
-        color: var(--color-secondary);
+        color: var(--color-primary);
       }
 
       .restart {
@@ -677,6 +714,109 @@ section {
         padding: 10px;
         border-radius: 10px;
         background-color: var(--color-primary);
+      }
+    }
+    .pedra-papel-tesoura {
+      background-color: var(--color-primary);
+
+      code {
+        font-family: "Source Code Pro", monospace;
+        font-size: 12px;
+      }
+      a {
+        font-family: "Source Code Pro", monospace;
+        color: #ffcc99;
+      }
+      a:hover {
+        color: #ffba76;
+      }
+      header {
+        background: #fff;
+        padding: 20px;
+      }
+      header h1 {
+        color: #444;
+        text-align: center;
+        font-weight: 100;
+      }
+      .score-board {
+        border: 3px solid #fff;
+        width: 300px;
+        margin: 40px auto;
+        font-size: 40px;
+        border-radius: 4px;
+        text-align: center;
+        padding: 15px 20px;
+        position: relative;
+      }
+      .badge {
+        background: #e2584d;
+        text-transform: uppercase;
+        font-size: 14px;
+        padding: 10px 6px;
+      }
+      #user-label {
+        position: absolute;
+        top: 50%;
+        left: -5%;
+        transform: translate(-10%, -50%);
+      }
+      #computer-label {
+        position: absolute;
+        top: 50%;
+        right: -5%;
+        transform: translate(10%, -50%);
+      }
+      .result {
+        font-weight: 300;
+        text-align: center;
+        font-size: 32px;
+        line-height: 40px;
+      }
+      .result {
+        line-height: 50px;
+      }
+      .choices {
+        margin: 0 auto;
+        text-align: center;
+        padding: 40px 0;
+      }
+      .choice {
+        display: inline-block;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        padding: 10px;
+        margin: auto 10px;
+        transition: all 0.3s ease;
+      }
+      .choice img {
+        filter: invert(100%);
+      }
+      #action-message {
+        text-align: center;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 40px 0;
+      }
+      .winningStyles {
+        border: 3px solid #4dcc7d;
+        background-color: #043507;
+        box-shadow: 0 0 20px #043507;
+      }
+      .losingStyles {
+        border: 3px solid #c52e2e;
+        background-color: #2e0303;
+        box-shadow: 0 0 20px #2e0303;
+      }
+      .drawStyles {
+        border: 3px solid #444;
+        background-color: #222;
+        box-shadow: 0 0 20px #222;
+      }
+      sup {
+        margin: 0;
+        padding: 0;
       }
     }
   }
