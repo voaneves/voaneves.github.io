@@ -20,10 +20,10 @@
       }
     ],
     "start_url": "/",
-    "background_color": "#000000",
+    "background_color": "#191d2b",
     "display": "standalone",
     "scope": "/",
-    "theme_color": "#000000",
+    "theme_color": "#191d2b",
     "shortcuts": [],
     "description": "Portfolio do Victor Neves, com informações de contato e carreira",
     "screenshots": [
