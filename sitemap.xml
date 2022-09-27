@@ -6,16 +6,21 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://voaneves.com/</loc>
-  <lastmod>2022-09-21T02:58:19+00:00</lastmod>
+  <lastmod>2022-09-26T02:58:19+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://voaneves.com/en</loc>
-  <lastmod>2022-09-21T02:58:19+00:00</lastmod>
-  <priority>1.00</priority>
+  <lastmod>2022-09-26T02:58:19+00:00</lastmod>
+  <priority>0.95</priority>
 </url>
 <url>
   <loc>https://voaneves.com/assets/cv-pt.pdf</loc>
+  <lastmod>2022-08-25T02:58:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://voaneves.com/assets/img/main.webp</loc>
   <lastmod>2022-08-25T02:58:19+00:00</lastmod>
   <priority>0.80</priority>
 </url>
