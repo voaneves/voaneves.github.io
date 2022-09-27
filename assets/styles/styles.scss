@@ -717,101 +717,62 @@ section {
       }
     }
     .pedra-papel-tesoura {
-      background-color: var(--color-primary);
-
-      code {
-        font-family: "Source Code Pro", monospace;
-        font-size: 12px;
-      }
-
-      a {
-        font-family: "Source Code Pro", monospace;
-        color: #ffcc99;
-      }
-
-      a:hover {
-        color: #ffba76;
-      }
-
-      header {
-        background: #fff;
-        padding: 20px;
-      }
-
-      header h1 {
-        color: #444;
-        text-align: center;
-        font-weight: 100;
-      }
-
       .score-board {
-        border: 3px solid #fff;
+        border: 3px solid var(--color-primary);
         width: 300px;
         margin: 40px auto;
         font-size: 40px;
         border-radius: 4px;
-        text-align: center;
         padding: 15px 20px;
         position: relative;
-      }
+        color: var(--color-primary);
 
-      .badge {
-        background: #e2584d;
-        text-transform: uppercase;
-        font-size: 14px;
-        padding: 10px 6px;
-      }
+        .badge {
+          .user-label {
+            background: var(--color-secondary);
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            font-size: 0.5em;
+            padding: 0.5em;
+            transform: translate(-10%, -50%);
+            border-radius: 0.5em;
+          }
 
-      #user-label {
-        position: absolute;
-        top: 50%;
-        left: -5%;
-        transform: translate(-10%, -50%);
-      }
-
-      #computer-label {
-        position: absolute;
-        top: 50%;
-        right: -5%;
-        transform: translate(10%, -50%);
-      }
-
-      .result {
-        font-weight: 300;
-        text-align: center;
-        font-size: 32px;
-        line-height: 40px;
+          .computer-label {
+            background: var(--color-opposite);
+            position: absolute;
+            top: 50%;
+            right: -5%;
+            font-size: 0.5em;
+            padding: 0.5em;
+            transform: translate(10%, -50%);
+            border-radius: 0.5em;
+          }
+        }
       }
 
       .result {
-        line-height: 50px;
+        font-size: 2em;
+        color: var(--color-grey-2);
       }
 
       .choices {
-        margin: 0 auto;
-        text-align: center;
         padding: 40px 0;
       }
 
       .choice {
         display: inline-block;
-        border: 3px solid #fff;
+        border: 3px solid var(--color-grey-2);
+        background-color: var(--color-grey-2);
         border-radius: 50%;
         padding: 10px;
         margin: auto 10px;
         transition: all 0.3s ease;
-      }
 
-      .choice img {
-        filter: invert(100%);
-      }
-
-      #action-message {
-        text-align: center;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin: 40px 0;
+        img {
+          filter: invert(100%);
+        }
       }
 
       .winningStyles {

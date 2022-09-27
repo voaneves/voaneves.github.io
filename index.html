@@ -83,6 +83,11 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;800&display=swap"
         as="font" type="font/woff2" crossorigin>
     <link rel="manifest" href="/manifest.json">
+    <script defer src="https://kit.fontawesome.com/bb4c9d3c00.js" crossorigin="anonymous"></script>
+    <script defer src="assets/js/app-min.js"></script>
+    <script defer src="assets/js/sw-min.js"></script>
+    <script defer src="assets/js/tic-tac-toe-min.js"></script>
+    <script defer src="assets/js/rock-paper-scissors-min.js"></script>    
 </head>
 <body class="main-content">
     <header class="container header active" id="home">
@@ -474,12 +479,14 @@
     						<li>
                                 <div class ="games">
                                     <div class="pedra-papel-tesoura">
-                                        <div class="score-board">  
-                                            <div id="user-label" class="badge">user</div>  
-                                            <div id="computer-label" class="badge">comp</div>  
+                                        <div class="score-board">
+                                            <div class="badge">  
+                                                <div class="user-label">VOCÊ</div>  
+                                                <div class="computer-label">COMP</div>
+                                            </div> 
                                             <span id="user-score">0</span> : <span id="computer-score">0</span>  
                                         </div>  
-                                        <div class="result"><p>Paper covers rock. You win!</p></div>  
+                                        <div class="result"><p>Escolha pedra, papel ou tesoura para começar!</p></div>  
                                         <div class="choices">  
                                             <div id="rock" class="choice">  
                                                 <img width="48" height="48" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKfSURBVGhD7ZjJy81RGIA/GaPMItPOglhJFqzIEDZIypBhoZQkfYXwB1BCFhZ2UqSQsqCUJHMyZWnKkFhQyDw8z/nu6XeTm+m+9/Pdfk89fb/3/W7nnPeec+8957SUlJSUlDQj/bB722PHoBt2antMLMG7+A0/42kci5n/rrjpeBU/4Rs8jJvRAvRj1fML9H8W+AU/4BEcgu3KfPyKDvId+s7nQesG7IpD8WIll61+/R3sgtILq2e2IeSlsxUdyEA8Vck9weoBzULzFj4PO6Ovv4Hm9+ODyvN7PIa+AeEMQDt9maKCyWj+VooKauVXo/nsa3TZ+WyReabCGIl29jBFBePQfK1CzqWoYA6a11UmYBjeQ3Mu31BqFTIKzV9LUcEkNP9jIbnAx1i9FDeh+Z0pCqRWIQ5mPU5NUYG/J5fRAVaTCzmfooKFaP5QigKpVcifMhiv4NoUFcxG2z+RokDqVUgtGlbIcGyKQvpgUxQyCDt8IVPwPtqRfyMIL2QivkU7eYpLMYLQQnqjg7eDA+gGL4rQQlrRxs+im75IQgu5hDY+LUWxhBbiIcltuGeMaMIK8fNhw69SFE9YIZ4LnA1txHk7dGk9Qhsfk6JYQgvxYsHG16UoltBCFqGN38ToC4LQQnriM7SDuSYCCS1E1qAdXMfIWcln+eMpCsBvrHxtEzkrK9A+9qUoiOUYPSs70D68mQzDfZa3g1Gz4m9WnvUJJiKxADvyYOVpsZ54EWHbtzH62zFxBu3wKPYwUQe8HvJy23ZnmmgEI/A52ukF/JdffDeizoT3vra3HRvKaMzr2X3YSdyCi3HBb7gSd6NL1DZ0G0afd35KX9yD+d38W90xzMB2pz8uw114EN2b/cq9uBHHY0M+2CUlJSUldaSl5Tv4zOmPUWh7YwAAAABJRU5ErkJggg==" />  
@@ -489,8 +496,7 @@
                                             </div>  
                                             <div id="scissors" class="choice">  
                                                 <img width="48" height="48" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATySURBVGhD7ZlprF9DGIevLWIJaoul9ogiog0iYg9iadQHS4JaW1uINqpI7QlfJITYI4hUIpEoidpCQkiIFkWJtWlQGjsVey3Pc+6dmnvunHvmnP8/+uX8kif3P3PmvGdmzjvvvHPuQKdOnTp16tSp0/+m1WEfuBRuHfo7FvqiVWEXOBk0fBGcCJtBr7Lje4N2n4Kf4J8S1h0ErbQhnAQPwldQNi5/w3NgR3K1GuwFM+EJWAZlm2/DLXAOPATWvwFZWgUmwBXwMiyH+AEfgIO6EW6AOfADeM22Z0NKdnwPmAGPw48Q27Xj74BudCxsDLG838H6jLWsqNLBcB8shfgBP4MzdgHsAClp+Br4C+zQEaAb7g7T4DH4HmK78i7cDsfDplCnL8H7yoMstB74oPgBH4MzcxSsDbmaDt7/LXwz9DvGt3k3uK42hyY6D7Rh30bI1/U82MCHz4Jx0Fa+hcUQOv4R3AMGhy2gqfSAi+E1CDZPgBG6ELz4HexoRR/k2tHmVUWpmVyfe8J1sBBC5+VzOA6S+gxspI/2S8EF7ihK9VoDDoXb4FOIO/813A9Hg+0qZWMHo4v1S0eCdp8sSmmtC86u0U9viDuva94M7hfZ/fJGR9xUG8A6gz9HaCfQ7ntF6T8ZlaaCofdXiDu/AIx646GVNHLt4M8sOYDr4Reo2pjWBEPwb6DPHwIvgaE5dNy9wCBjlNsOepZGLxv8WatTQZ8NnZFtIKWw9raER4Z+x/wOLuaHwYVtOHazrHrLtdJo7kDCRvksGFb9fQak5Bvw+n6gS00Bs4C54D5QzhYCvslP4BlwnZwLrpXaXM6bcwfijB0AkyE8eDakZL3XbZuS7ueub7Q0TJtH6aq6bLBdxqDwChjddNdhskHuQNRhoFsE48b2lFx3Xr+yKOXLDXVbMMUxszYLeBFSyarZyIqcy4qcgZhia/gP8J6rIayDnaGs08FrbSJilTYCXfVyCDnXTVCobiDmWafBm2DbP8EkUD0A1p1flIZLF/TaF+CCrsJ9RHvuK01k6uJ68nziW6wciGnCCxC7kYNxRoKMYtYblcraGsJ9OZhMNs3FHISDKdxLI6mBBB938ZnCuyjdE2J57LSNyWYxK5Ese83oZPpRhWHXBWxbN1AzbteVrmmGsBuk0vuQPbxflJCF1ECMKvtCXQrvTGrDIBDL/cV6Q3adxkDqWBujZ5iHedB7FXRx683rClnIWexVCtmzR1IXo1ofzLOsN4XPkXuL7T1G6A33gnuO7uxk6EJeDzgwN9IVuZiVvQzEN/chaMdj6DwIR1hDszt7nSaBHU0emIZk5qstvwnoKU7WMPU6ELUVPA3aitHtzAJGYz6EHOwUaC0NNN20qnQXxAPJxWBxFvQkDd05+LMn7Q/a8kPFJZCKUIFjwLdh+7egL2chjY3mm7ky/9GWZ4ocmeX6Jryn6UeIpMw0NTaxKLWX0Uk7bpK5ct/wnu2LUo/SNzW2CDaxoqX8SqIdY/yIiJKQx9y6SNVIJoOmInbC0Nnmk40yPLqXaMfw+zr4CSeF0SzsC05A3+Sb8Iufhv2o5mJtMyDtPArlzSuFzzkT+i7dwWw0PMjOLAEPO6lZTeEbcReOz+baMUIdDh7MxO9n5dys7zoQPK2Fj9Jt8AuJOZERbFdYqTLT9ZzscTTMZB3+38QEsFOnTp06jaKBgX8BYNbZ+2P3L60AAAAASUVORK5CYII=" />  
-                                            </div>  
-                                            <p id="action-message">Make your move.</p>  
+                                            </div> 
                                         </div> 
                                     </div>
                                 </div>
@@ -617,7 +623,7 @@
     <div class="theme-btn">
         <i class="fas fa-adjust"></i>
     </div>
-    <div class="translate-btn" onclick="location.href='https://voaneves.com/en';">
+    <div class="translate-btn" onclick="location.href='en.html';" title="Translate">
         <img class="translate-btn img" src="assets/img/us.webp" />
         <span>EN</span>
     </div>
@@ -637,9 +643,5 @@
             }
         }
     </script>
-    <script defer src="https://kit.fontawesome.com/bb4c9d3c00.js" crossorigin="anonymous"></script>
-    <script defer src="assets/js/app-min.js"></script>
-    <script defer src="assets/js/sw-min.js"></script>
-    <script defer src="assets/js/tic-tac-toe.js"></script>
 </body>
 </html>
