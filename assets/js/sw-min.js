@@ -1,1 +1,1 @@
-"serviceWorker"in navigator&&window.addEventListener("load",(function(){navigator.serviceWorker.register("/worker-min.js").then((function(n){}),(function(n){}))}));
+"serviceWorker"in navigator&&window.addEventListener("load",(function(){navigator.serviceWorker.register("assets/js/worker-min.js").then((function(e){}),(function(e){}))}));
