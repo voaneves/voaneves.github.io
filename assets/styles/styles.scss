@@ -704,16 +704,16 @@ section {
       }
 
       .restart {
-        display: flex;
+        display: inline-block;
         justify-content: center;
         align-items: center;
         margin: 25px;
         font-size: 2em;
         color: var(--color-opposite);
-        display: inline-block;
         padding: 10px;
         border-radius: 10px;
         background-color: var(--color-primary);
+        cursor: pointer;
       }
     }
     .pedra-papel-tesoura {
@@ -728,6 +728,8 @@ section {
         color: var(--color-primary);
 
         .badge {
+          font-weight: 800;
+
           .user-label {
             background: var(--color-secondary);
             position: absolute;
@@ -769,6 +771,7 @@ section {
         padding: 10px;
         margin: auto 10px;
         transition: all 0.3s ease;
+        cursor: pointer;
 
         img {
           filter: invert(100%);
@@ -796,6 +799,19 @@ section {
       sup {
         margin: 0;
         padding: 0;
+      }
+
+      .reset {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        margin: 25px;
+        font-size: 2em;
+        padding: 10px;
+        border-radius: 10px;
+        color: var(--color-opposite);
+        background-color: var(--color-primary);
+        cursor: pointer;
       }
     }
   }

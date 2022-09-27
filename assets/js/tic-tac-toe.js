@@ -1,5 +1,6 @@
-const statusDisplay = document.querySelector(".status");
 const englishOrNot = document.location.href.search("en");
+const statusElement = document.querySelector(".status");
+const restartElement = document.querySelector(".restart");
 
 let gameActive = true;
 let currentPlayer = "X";
@@ -31,7 +32,7 @@ if (englishOrNot != "-1") {
   };
 }
 
-statusDisplay.innerHTML = currentPlayerTurn();
+statusElement.innerHTML = currentPlayerTurn();
 
 const winningConditions = [
   [0, 1, 2],
@@ -51,7 +52,7 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
 
 function handlePlayerChange() {
   currentPlayer = currentPlayer === "X" ? "O" : "X";
-  statusDisplay.innerHTML = currentPlayerTurn();
+  statusElement.innerHTML = currentPlayerTurn();
 }
 
 function handleResultValidation() {
@@ -71,14 +72,14 @@ function handleResultValidation() {
   }
 
   if (roundWon) {
-    statusDisplay.innerHTML = winningMessage();
+    statusElement.innerHTML = winningMessage();
     gameActive = false;
     return;
   }
 
   let roundDraw = !gameState.includes("");
   if (roundDraw) {
-    statusDisplay.innerHTML = drawMessage();
+    statusElement.innerHTML = drawMessage();
     gameActive = false;
     return;
   }
@@ -104,11 +105,15 @@ function handleRestartGame() {
   gameActive = true;
   currentPlayer = "X";
   gameState = ["", "", "", "", "", "", "", "", ""];
-  statusDisplay.innerHTML = currentPlayerTurn();
+  statusElement.innerHTML = currentPlayerTurn();
   document.querySelectorAll(".cell").forEach((cell) => (cell.innerHTML = ""));
 }
 
-document
-  .querySelectorAll(".cell")
-  .forEach((cell) => cell.addEventListener("click", handleCellClick));
-document.querySelector(".restart").addEventListener("click", handleRestartGame);
+function main() {
+  document
+    .querySelectorAll(".cell")
+    .forEach((cell) => cell.addEventListener("click", handleCellClick));
+  restartElement.addEventListener("click", handleRestartGame);
+}
+
+main();

@@ -650,16 +650,16 @@ section {
   color: var(--color-primary);
 }
 .game-section .games .tic-tac-toe .restart {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   margin: 25px;
   font-size: 2em;
   color: var(--color-opposite);
-  display: inline-block;
   padding: 10px;
   border-radius: 10px;
   background-color: var(--color-primary);
+  cursor: pointer;
 }
 .game-section .games .pedra-papel-tesoura .score-board {
   border: 3px solid var(--color-primary);
@@ -670,6 +670,9 @@ section {
   padding: 15px 20px;
   position: relative;
   color: var(--color-primary);
+}
+.game-section .games .pedra-papel-tesoura .score-board .badge {
+  font-weight: 800;
 }
 .game-section .games .pedra-papel-tesoura .score-board .badge .user-label {
   background: var(--color-secondary);
@@ -706,6 +709,7 @@ section {
   padding: 10px;
   margin: auto 10px;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .game-section .games .pedra-papel-tesoura .choice img {
   filter: invert(100%);
@@ -728,6 +732,18 @@ section {
 .game-section .games .pedra-papel-tesoura sup {
   margin: 0;
   padding: 0;
+}
+.game-section .games .pedra-papel-tesoura .reset {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+  font-size: 2em;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--color-opposite);
+  background-color: var(--color-primary);
+  cursor: pointer;
 }
 
 .contact-content-con {
