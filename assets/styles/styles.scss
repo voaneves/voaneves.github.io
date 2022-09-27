@@ -681,8 +681,14 @@ section {
     .tic-tac-toe {
       .game-grid {
         display: inline-grid;
-        grid-template-rows: 100px 100px 100px;
-        grid-template-columns: 100px 100px 100px;
+        grid-template-rows:
+          clamp(2em, 10vw, 5em)
+          clamp(2em, 10vw, 5em)
+          clamp(2em, 10vw, 5em);
+        grid-template-columns:
+          clamp(2em, 10vw, 5em)
+          clamp(2em, 10vw, 5em)
+          clamp(2em, 10vw, 5em);
         margin: 10px auto;
         color: var(--color-opposite);
 
@@ -693,7 +699,7 @@ section {
           border: 2px solid var(--color-grey-2);
           cursor: pointer;
           font-weight: 800;
-          font-size: 3em;
+          font-size: clamp(0.5em, 10vw, 3em);
         }
       }
 
@@ -716,6 +722,7 @@ section {
         cursor: pointer;
       }
     }
+
     .pedra-papel-tesoura {
       .score-board {
         border: 3px solid var(--color-primary);
@@ -802,6 +809,42 @@ section {
       }
 
       .reset {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        margin: 25px;
+        font-size: 2em;
+        padding: 10px;
+        border-radius: 10px;
+        color: var(--color-opposite);
+        background-color: var(--color-primary);
+        cursor: pointer;
+      }
+    }
+
+    .mine-sweeper {
+      #mine-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        tr td {
+          border: 1px solid var(--color-white);
+          background: var(--color-grey-2);
+          width: clamp(2em, 10vw, 4em);
+          height: clamp(2em, 10vw, 4em);
+        }
+
+        tr td.clicked {
+          background: var(--color-primary);
+        }
+
+        tr td.mine {
+          background: var(--color-opposite);
+        }
+      }
+
+      .refresh {
         display: inline-block;
         justify-content: center;
         align-items: center;

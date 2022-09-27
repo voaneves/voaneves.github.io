@@ -77,7 +77,8 @@
     <script defer src="assets/js/app-min.js"></script>
     <script defer src="sw-min.js"></script>
     <script defer src="assets/js/tic-tac-toe-min.js"></script>
-    <script defer src="assets/js/rock-paper-scissors-min.js"></script>      
+    <script defer src="assets/js/rock-paper-scissors-min.js"></script>
+    <script defer src="assets/js/mine-min.js"></script>          
 </head>
 <body class="main-content">
     <header class="container header active" id="home">
@@ -493,6 +494,22 @@
                         </ul>
                     </li>    
                 </ul>
+                <ul>
+                    <li><input type="checkbox" id="cb3"/><label for="cb3">MINE SWEEPER <span>(click to play)</span></label>
+                        <ul>
+    						<li>
+                                <div class="games">
+                                    <div class="mine-sweeper">
+                                        <table id="mine-grid"></table>
+                                        <div class="refresh">
+                                            <i class="fa fa-refresh"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>    
+                </ul>                
             </div>
         </section>
         <section class="container contact" id="contact">

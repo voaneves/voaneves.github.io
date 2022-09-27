@@ -76,7 +76,8 @@
     <script defer src="https://kit.fontawesome.com/bb4c9d3c00.js" crossorigin="anonymous"></script>
     <script defer src="assets/js/app-min.js"></script>
     <script defer src="assets/js/tic-tac-toe-min.js"></script>
-    <script defer src="assets/js/rock-paper-scissors-min.js"></script>    
+    <script defer src="assets/js/rock-paper-scissors-min.js"></script>
+    <script defer src="assets/js/mine-min.js"></script>
 </head>
 <body class="main-content">
     <header class="container header active" id="home">
@@ -488,6 +489,23 @@
                                             </div> 
                                         </div>
                                         <div class="reset">
+                                            <i class="fa fa-refresh"></i>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>    
+                </ul>
+                <ul>
+                    <li><input type="checkbox" id="cb3"/><label for="cb3">CAMPO MINADO <span>(clique aqui para jogar)</span></label>
+                        <ul>
+    						<li>
+                                <div class="games">
+                                    <div class="mine-sweeper">
+                                        <table id="mine-grid">
+                                        </table>
+                                        <div class="refresh">
                                             <i class="fa fa-refresh"></i>
                                         </div> 
                                     </div>
