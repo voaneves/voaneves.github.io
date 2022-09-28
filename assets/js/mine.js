@@ -1,10 +1,11 @@
 var grid = document.getElementById("mine-grid");
-var testMode = false; //Turn this variable to true to see where the mines are
+var game_active = true;
+// var testMode = false; //Turn this variable to true to see where the mines are
 
 const refresh = document.querySelector(".refresh");
 
 function generateGrid() {
-  //generate 10 by 10 grid
+  // generate 10 by 10 grid
   grid.innerHTML = "";
   for (var i = 0; i < 10; i++) {
     row = grid.insertRow(i);
@@ -19,16 +20,17 @@ function generateGrid() {
     }
   }
   addMines();
+  game_active = true;
 }
 
 function addMines() {
-  //Add mines randomly
+  // Add mines randomly
   for (var i = 0; i < 20; i++) {
     var row = Math.floor(Math.random() * 10);
     var col = Math.floor(Math.random() * 10);
     var cell = grid.rows[row].cells[col];
     cell.setAttribute("data-mine", "true");
-    if (testMode) cell.innerHTML = "X";
+    // if (testMode) cell.innerHTML = "X";
   }
 }
 
@@ -40,6 +42,8 @@ function revealMines() {
       if (cell.getAttribute("data-mine") == "true") cell.className = "mine";
     }
   }
+
+  game_active = false;
 }
 
 function checkLevelCompletion() {
@@ -54,19 +58,17 @@ function checkLevelCompletion() {
     }
   }
   if (levelComplete) {
-    alert("You Win!");
     revealMines();
   }
 }
 
 function clickCell(cell) {
-  //Check if the end-user clicked on a mine
+  // Check if the end-user clicked on a mine
   if (cell.getAttribute("data-mine") == "true") {
     revealMines();
-    alert("Game Over");
-  } else {
+  } else if (game_active != false) {
     cell.className = "clicked";
-    //Count and display the number of adjacent mines
+    // Count and display the number of adjacent mines
     var mineCount = 0;
     var cellRow = cell.parentNode.rowIndex;
     var cellCol = cell.cellIndex;
@@ -81,9 +83,10 @@ function clickCell(cell) {
           mineCount++;
       }
     }
-    cell.innerHTML = mineCount;
-    if (mineCount == 0) {
-      //Reveal all adjacent cells as they do not have a mine
+    if (mineCount != "0") {
+      cell.innerHTML = mineCount;
+    } else {
+      // Reveal all adjacent cells as they do not have a mine
       for (
         var i = Math.max(cellRow - 1, 0);
         i <= Math.min(cellRow + 1, 9);
