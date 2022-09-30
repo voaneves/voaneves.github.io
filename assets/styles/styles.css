@@ -20,6 +20,7 @@
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
     --color-opposite: #f56692;
+    --color-yellow: #fff36d;
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
   }
@@ -93,16 +94,15 @@ section {
   transform: translateY(-50%);
 }
 .controls .control {
-  padding: 1vh;
-  cursor: pointer;
-  background-color: var(--color-grey-4);
-  width: 8vh;
-  height: 8vh;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1vh 0;
+  cursor: pointer;
+  background-color: var(--color-grey-4);
+  margin: 7% 0;
+  width: 7vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
   box-shadow: var(--box-shadow-1);
   transition: all 0.5s ease-out;
 }
@@ -123,72 +123,76 @@ section {
   color: var(--color-white);
 }
 
-.theme-btn {
-  top: 3vh;
-  right: 3vw;
-  width: 8vh;
-  height: 8vh;
-  border-radius: 50%;
-  background-color: var(--color-grey-4);
-  cursor: pointer;
+.page-settings {
   position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  top: 3vh;
+  right: 2vh;
+}
+.page-settings .theme-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  width: 10vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin: 0 7%;
+  background-color: var(--color-grey-4);
   box-shadow: var(--box-shadow-1);
   transition: all 0.5s ease-out;
 }
-.theme-btn:active {
+.page-settings .theme-btn:active {
   transform: translateY(-3px);
 }
-.theme-btn i {
+.page-settings .theme-btn i {
   font-size: 3vh;
   color: var(--color-grey-2);
   pointer-events: none;
 }
-.theme-btn:hover {
+.page-settings .theme-btn:hover {
   background-color: var(--color-white);
   transform: translateY(-3px);
   transition: all 0.3s ease-in;
   box-shadow: 0 10px 20px var(--color-opposite);
 }
-.theme-btn:hover i {
+.page-settings .theme-btn:hover i {
   color: var(--color-opposite);
 }
-
-.translate-btn {
-  top: 3vh;
-  right: 20vh;
-  width: 8vh;
-  height: 8vh;
-  border-radius: 50%;
-  background-color: var(--color-grey-4);
-  cursor: pointer;
-  position: fixed;
+.page-settings .translate-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  width: 10vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--color-grey-4);
   box-shadow: var(--box-shadow-1);
   transition: all 0.5s ease-out;
 }
-.translate-btn span {
+.page-settings .translate-btn span {
   font-size: 4vh;
   font-weight: 800;
   color: var(--color-grey-2);
   pointer-events: none;
 }
-.translate-btn .img {
-  align-self: center;
+.page-settings .translate-btn .img {
   display: none;
 }
-.translate-btn:hover {
+.page-settings .translate-btn:hover {
   transition: all 0.3s ease-in;
   box-shadow: 0 10px 20px var(--color-opposite);
 }
-.translate-btn:hover span {
+.page-settings .translate-btn:hover span {
   display: none;
 }
-.translate-btn:hover .img {
+.page-settings .translate-btn:hover .img {
+  max-width: 100%;
   display: inline;
 }
 
@@ -702,32 +706,39 @@ section {
   color: var(--color-grey-2);
 }
 .game-section .games .pedra-papel-tesoura .choices {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   padding: 40px 0;
 }
-.game-section .games .pedra-papel-tesoura .choice {
-  display: inline-block;
+.game-section .games .pedra-papel-tesoura .choices .choice {
+  display: table;
   border: 3px solid var(--color-grey-2);
   background-color: var(--color-grey-2);
-  border-radius: 50%;
+  aspect-ratio: 1/1;
+  height: 12vh;
   padding: 10px;
   margin: auto 10px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
-.game-section .games .pedra-papel-tesoura .choice img {
-  filter: invert(100%);
+.game-section .games .pedra-papel-tesoura .choices .choice span {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 3rem;
 }
-.game-section .games .pedra-papel-tesoura .winningStyles {
+.game-section .games .pedra-papel-tesoura .choices .winningStyles {
   border: 3px solid #4dcc7d;
   background-color: #043507;
   box-shadow: 0 0 20px #043507;
 }
-.game-section .games .pedra-papel-tesoura .losingStyles {
+.game-section .games .pedra-papel-tesoura .choices .losingStyles {
   border: 3px solid #c52e2e;
   background-color: #2e0303;
   box-shadow: 0 0 20px #2e0303;
 }
-.game-section .games .pedra-papel-tesoura .drawStyles {
+.game-section .games .pedra-papel-tesoura .choices .drawStyles {
   border: 3px solid #444;
   background-color: #222;
   box-shadow: 0 0 20px #222;
@@ -761,6 +772,9 @@ section {
 }
 .game-section .games .mine-sweeper #mine-grid tr td.clicked {
   background: var(--color-primary);
+}
+.game-section .games .mine-sweeper #mine-grid tr td.right-clicked {
+  background: var(--color-yellow);
 }
 .game-section .games .mine-sweeper #mine-grid tr td.mine {
   background: var(--color-opposite);
@@ -985,22 +999,6 @@ a.different:hover {
   header {
     padding: 0 !important;
   }
-  .theme-btn {
-    width: 12vw;
-    height: 12vw;
-  }
-  .theme-btn i {
-    font-size: 5vw;
-  }
-  .translate-btn {
-    top: 20vw;
-    right: 3vw;
-    width: 12vw;
-    height: 12vw;
-  }
-  .translate-btn span {
-    font-size: 5vw;
-  }
   .header-content {
     grid-template-columns: repeat(1, 1fr);
     padding-bottom: 6rem;
@@ -1027,19 +1025,13 @@ a.different:hover {
     top: auto;
     bottom: 0;
     flex-direction: row;
-    justify-content: center;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     background-color: var(--color-grey-5);
   }
   .controls .control {
-    width: 12vh;
-    height: 12vh;
-    margin: 4vw 1vw;
-  }
-  .controls .control i {
-    font-size: 6vw;
+    margin: 7% 2%;
   }
   .about-container {
     grid-template-columns: repeat(1, 1fr);
@@ -1053,6 +1045,23 @@ a.different:hover {
   }
   .about-container .left-about p {
     padding-left: 0;
+  }
+  .page-settings {
+    flex-direction: column;
+  }
+  .page-settings .theme-btn {
+    width: 5vh;
+    margin: 7% 2%;
+  }
+  .page-settings .translate-btn {
+    width: 5vh;
+    margin: 7% 2%;
+  }
+  .page-settings .translate-btn span {
+    font-size: 2.5vh;
+  }
+  .game-section .games .pedra-papel-tesoura .choices {
+    flex-direction: column;
   }
   .timeline {
     grid-template-columns: repeat(1, 1fr);
