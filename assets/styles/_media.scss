@@ -89,14 +89,19 @@
           height: 300px;
 
           .score {
-            writing-mode: vertical-rl;
-            -webkit-text-orientation: upright;
-            -moz-text-orientation: upright;
-            text-orientation: upright;
-            display: -webkit-flex;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            &::before {
+              content: "";
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            span {
+              display: block;
+              text-align: center;
+              background-color: var(--color-grey-2);
+              padding: 10px;
+              border-radius: 10px;
+            }
           }
 
           .badge {

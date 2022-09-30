@@ -1065,14 +1065,17 @@ a.different:hover {
     width: 80px;
     height: 300px;
   }
-  .game-section .games .pedra-papel-tesoura .score-board .score {
-    -ms-writing-mode: tb-rl;
-        writing-mode: vertical-rl;
-    -moz-text-orientation: upright;
-    text-orientation: upright;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .game-section .games .pedra-papel-tesoura .score-board .score::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .game-section .games .pedra-papel-tesoura .score-board .score span {
+    display: block;
+    text-align: center;
+    background-color: var(--color-grey-2);
+    padding: 10px;
+    border-radius: 10px;
   }
   .game-section .games .pedra-papel-tesoura .score-board .badge .user-label {
     top: 0%;
