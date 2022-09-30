@@ -789,6 +789,7 @@ section {
           aspect-ratio: 1 / 1;
           height: clamp(2vh, 12vh, 20vh);
           padding: 10px;
+          border-radius: 50%;
           margin: auto 10px;
           transition: all 0.3s ease;
           cursor: pointer;

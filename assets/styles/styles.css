@@ -719,6 +719,7 @@ section {
   aspect-ratio: 1/1;
   height: 12vh;
   padding: 10px;
+  border-radius: 50%;
   margin: auto 10px;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -1060,8 +1061,35 @@ a.different:hover {
   .page-settings .translate-btn span {
     font-size: 2.5vh;
   }
+  .game-section .games .pedra-papel-tesoura .score-board {
+    width: 80px;
+    height: 300px;
+  }
+  .game-section .games .pedra-papel-tesoura .score-board .score {
+    -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+    -moz-text-orientation: upright;
+    text-orientation: upright;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .game-section .games .pedra-papel-tesoura .score-board .badge .user-label {
+    top: 0%;
+    left: 0%;
+    transform: translate(-0.23rem, -1.5rem);
+  }
+  .game-section .games .pedra-papel-tesoura .score-board .badge .computer-label {
+    top: 100%;
+    right: 0%;
+    transform: translate(0.4rem, -1rem);
+  }
   .game-section .games .pedra-papel-tesoura .choices {
     flex-direction: column;
+    margin: 0;
+  }
+  .game-section .games .pedra-papel-tesoura .choices .choice {
+    margin: 10px auto;
   }
   .timeline {
     grid-template-columns: repeat(1, 1fr);

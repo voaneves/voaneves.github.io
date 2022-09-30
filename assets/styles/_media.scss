@@ -84,8 +84,43 @@
   .game-section {
     .games {
       .pedra-papel-tesoura {
+        .score-board {
+          width: 80px;
+          height: 300px;
+
+          .score {
+            writing-mode: vertical-rl;
+            -webkit-text-orientation: upright;
+            -moz-text-orientation: upright;
+            text-orientation: upright;
+            display: -webkit-flex;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .badge {
+            .user-label {
+              top: 0%;
+              left: 0%;
+              transform: translate(-0.23rem, -1.5rem);
+            }
+
+            .computer-label {
+              top: 100%;
+              right: 0%;
+              transform: translate(0.4rem, -1rem);
+            }
+          }
+        }
+
         .choices {
           flex-direction: column;
+          margin: 0;
+
+          .choice {
+            margin: 10px auto;
+          }
         }
       }
     }
