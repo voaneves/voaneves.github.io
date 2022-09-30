@@ -82,6 +82,8 @@
   }
 
   .game-section {
+    padding-bottom: 6rem;
+
     .games {
       .pedra-papel-tesoura {
         .score-board {
@@ -97,7 +99,6 @@
 
             span {
               display: block;
-              text-align: center;
               background-color: var(--color-grey-2);
               padding: 10px;
               border-radius: 10px;

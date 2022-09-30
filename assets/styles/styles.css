@@ -1061,6 +1061,9 @@ a.different:hover {
   .page-settings .translate-btn span {
     font-size: 2.5vh;
   }
+  .game-section {
+    padding-bottom: 6rem;
+  }
   .game-section .games .pedra-papel-tesoura .score-board {
     width: 80px;
     height: 300px;
@@ -1072,7 +1075,6 @@ a.different:hover {
   }
   .game-section .games .pedra-papel-tesoura .score-board .score span {
     display: block;
-    text-align: center;
     background-color: var(--color-grey-2);
     padding: 10px;
     border-radius: 10px;
