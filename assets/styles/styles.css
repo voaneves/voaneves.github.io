@@ -792,6 +792,16 @@ section {
   background-color: var(--color-primary);
   cursor: pointer;
 }
+.game-section .games .snake #snakeboard {
+  position: relative;
+  display: inline-block;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-grey-2);
+}
+.game-section .games .snake button {
+  opacity: 0.5;
+  padding: 0 5px;
+}
 
 .contact-content-con {
   display: flex;

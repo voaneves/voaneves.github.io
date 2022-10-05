@@ -878,6 +878,18 @@ section {
         cursor: pointer;
       }
     }
+    .snake {
+      #snakeboard {
+        position: relative;
+        display: inline-block;
+        border: 1px solid var(--color-primary);
+        background-color: var(--color-grey-2);
+      }
+      button {
+        opacity: 0.5;
+        padding: 0 5px;
+      }
+    }
   }
 }
 
