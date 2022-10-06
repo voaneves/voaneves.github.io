@@ -1100,6 +1100,9 @@ a.different:hover {
     right: 0%;
     transform: translate(0.4rem, -1rem);
   }
+  .game-section .games .pedra-papel-tesoura .result {
+    display: none;
+  }
   .game-section .games .pedra-papel-tesoura .choices {
     flex-direction: column;
     margin: 0;

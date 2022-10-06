@@ -120,6 +120,10 @@
           }
         }
 
+        .result {
+          display: none;
+        }
+
         .choices {
           flex-direction: column;
           margin: 0;
