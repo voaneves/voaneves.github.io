@@ -1280,4 +1280,100 @@ a.different:hover {
   .main-title h2 .bg-text {
     font-size: 4rem;
   }
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cloud-download:before {
+  content: "\e90f";
+}
+
+.icon-comments:before {
+  content: "\e900";
+}
+
+.icon-briefcase:before {
+  content: "\e901";
+}
+
+.icon-calendar-check:before {
+  content: "\e902";
+}
+
+.icon-map-marker:before {
+  content: "\e903";
+}
+
+.icon-graduation-cap:before {
+  content: "\e904";
+}
+
+.icon-mortar-board:before {
+  content: "\e904";
+}
+
+.icon-globe:before {
+  content: "\e905";
+}
+
+.icon-user:before {
+  content: "\e906";
+}
+
+.icon-home:before {
+  content: "\e907";
+}
+
+.icon-paper-plane:before {
+  content: "\e908";
+}
+
+.icon-send:before {
+  content: "\e908";
+}
+
+.icon-github:before {
+  content: "\e909";
+}
+
+.icon-youtube-play:before {
+  content: "\e90a";
+}
+
+.icon-refresh:before {
+  content: "\e90b";
+}
+
+.icon-gamepad:before {
+  content: "\e90c";
+}
+
+.icon-envelope-open:before {
+  content: "\e90d";
+}
+
+.icon-adjust:before {
+  content: "\e90e";
+}
+
+.icon-linkedin:before {
+  content: "\eac9";
 }/*# sourceMappingURL=styles.css.map */
