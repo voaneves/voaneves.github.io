@@ -8,8 +8,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #191d2b;
-    --color-secondary: #0080ff;
+    --color-primary: #0a0a0a;
+    --color-secondary: #339eff;
     --color-white: #ffffff;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -19,7 +19,7 @@
     --color-grey-4: #454e56;
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
-    --color-opposite: #ff5e00;
+    --color-opposite: #ff7e33;
     --color-yellow: #fff36d;
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
@@ -27,7 +27,7 @@
 
   .light-mode {
     --color-primary: #ffffff;
-    --color-secondary: #ff5e00;
+    --color-secondary: #ff7e33;
     --color-white: #454e56;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -37,7 +37,7 @@
     --color-grey-4: #b2becd;
     --color-grey-5: #f8f8f8;
     --color-grey-6: #12181b;
-    --color-opposite: #0080ff;
+    --color-opposite: #339eff;
   }
 }
 
@@ -1020,6 +1020,7 @@ section {
 .btn-con {
   display: flex;
   align-self: flex-start;
+  color: var(--color-white);
 }
 
 .main-btn {

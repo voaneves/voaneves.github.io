@@ -19,10 +19,10 @@
   let snakeInitial;
 
   if (englishOrNot != "-1") {
-    startText = `CLICK HERE TO START!`;
+    startText = `CLICK HERE TO START`;
     endText = `GAME OVER! CLICK TO TRY AGAIN`;
   } else {
-    startText = `CLIQUE AQUI PARA COMEÇAR!`;
+    startText = `CLIQUE AQUI PARA COMEÇAR`;
     endText = `ACABOU! CLIQUE PARA TENTAR DENOVO`;
   }
 
@@ -49,15 +49,15 @@
       { x: 60, y: 200 },
     ];
   } else {
-    snakeboard.setAttribute("width", "150");
+    snakeboard.setAttribute("width", "135");
     snakeboard.setAttribute("height", "400");
 
     snakeInitial = [
-      { x: 100, y: 200 },
-      { x: 90, y: 200 },
-      { x: 80, y: 200 },
-      { x: 70, y: 200 },
-      { x: 60, y: 200 },
+      { x: 50, y: 200 },
+      { x: 40, y: 200 },
+      { x: 30, y: 200 },
+      { x: 20, y: 200 },
+      { x: 10, y: 200 },
     ];
   }
 
