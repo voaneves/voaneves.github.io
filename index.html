@@ -70,13 +70,14 @@
     <script defer src="assets/js/rock-paper-scissors-min.js"></script>
     <script defer src="assets/js/mine-min.js"></script>
     <script defer src="assets/js/snake-min.js"></script>
+    <script defer src="assets/js/cursor-min.js"></script>
   </head>
   <body class="main-content">
     <header class="container header active" id="home">
       <div class="header-content">
         <div class="left-header">
           <div class="h-shape"></div>
-          <div class="image">
+          <div class="image" data-cursor="pointer2">
             <picture>
               <source media="(max-width: 600px)" srcset="assets/img/main-small.webp">
               <img src="assets/img/main.webp" alt="Foto de capa, Transformação Digital">
@@ -88,7 +89,7 @@
             <span class="changing-text"></span>
           </h1>
           <p> Sou apaixonado por tecnologia, especialista em <span class="highlight">Transformação Digital</span>, faço soluções customizadas de AI em Python, web dev, jogos, crio identidades visuais, tudo isso baseado em prototipagem rápida e colaboração interdisciplinar. Meu <span class="highlight">próximo projeto é com você</span>. Bora? </p>
-          <div class="btn-con">
+          <div class="btn-con" data-cursor="pointer2">
             <a href="https://koalendar.com/e/reuniao-com-victor-neves" class="main-btn" target="_blank">
               <span class="btn-text">Marque uma reunião</span>
               <span class="btn-icon">
@@ -97,7 +98,7 @@
             </a>
           </div>
           <br>
-          <div class="btn-con">
+          <div class="btn-con" data-cursor="pointer2">
             <a href="https://wa.me/5563999999337" class="main-btn" target="_blank">
               <span class="btn-text">Fale comigo</span>
               <span class="btn-icon">
@@ -106,7 +107,7 @@
             </a>
           </div>
           <br>
-          <div class="btn-con">
+          <div class="btn-con" data-cursor="pointer2">
             <a href="assets/cv-pt.pdf" class="main-btn" target="_blank">
               <span class="btn-text">Baixar CV</span>
               <span class="btn-icon">
@@ -129,7 +130,7 @@
           <div class="left-about">
             <h4>Informações sobre mim</h4>
             <p> Acredito que cada etapa da minha carreira sempre fui um <span class="highlight">aprendiz</span> e isso me marca até hoje. Desde um simples projeto de Engenharia Mecânica ou até mesmo um website, sempre me comprometo para <span class="highlight">entregar o melhor</span> que posso, dia após dia. Me adapto a qualquer desafio que é lançado em meu caminho e estou pronto para <span class="highlight">novos desafios</span>. </p>
-            <div class="btn-con">
+            <div class="btn-con" data-cursor="pointer2">
               <a href="assets/cv-pt.pdf" class="main-btn" target="_blank">
                 <span class="btn-text">Baixar CV</span>
                 <span class="btn-icon">
@@ -552,7 +553,7 @@
                   </p>
                 </div>
               </div>
-              <div class="contact-icons">
+              <div class="contact-icons" data-cursor="pointer">
                 <div class="contact-icon">
                   <a href="mailto:victorneves478@gmail.com" target="_blank">
                     <i class="icon-envelope-open"></i>
@@ -574,19 +575,19 @@
             </div>
             <div class="right-contact">
               <form id="formspree" method="POST" action="https://formspree.io/f/xbjbdrqv" class="contact-form">
-                <div class="input-control">
+                <div class="input-control" data-cursor="pointer">
                   <input type="text" name="name" required placeholder="Seu nome completo">
                 </div>
-                <div class="input-control">
+                <div class="input-control" data-cursor="pointer">
                   <input type="email" name="email" required placeholder="Seu melhor email">
                 </div>
-                <div class="input-control">
+                <div class="input-control" data-cursor="pointer">
                   <input type="text" name="subject" required placeholder="Vamos falar sobre o quê?">
                 </div>
-                <div class="input-control">
+                <div class="input-control" data-cursor="pointer">
                   <textarea name="message" id="" cols="15" rows="8" placeholder="Mensagem aqui..."></textarea>
                 </div>
-                <div class="submit-btn">
+                <div class="submit-btn" data-cursor="pointer2">
                   <a href="javascript:;" onclick="document.getElementById('formspree').submit();" class="main-btn">
                     <span class="btn-text">Enviar</span>
                     <span class="btn-icon">
@@ -601,28 +602,30 @@
       </section>
     </main>
     <div class="controls">
-      <div class="control active-btn" data-id="home" title="Home">
+      <div class="control active-btn" data-id="home" title="Home" data-cursor="pointer">
         <i class="icon-home"></i>
       </div>
-      <div class="control" data-id="about" title="Sobre">
+      <div class="control" data-id="about" title="Sobre" data-cursor="pointer">
         <i class="icon-user"></i>
       </div>
-      <div class="control" data-id="games" title="Jogos">
+      <div class="control" data-id="games" title="Jogos" data-cursor="pointer">
         <i class="icon-gamepad"></i>
       </div>
-      <div class="control" data-id="contact" title="Contato">
+      <div class="control" data-id="contact" title="Contato" data-cursor="pointer">
         <i class="icon-envelope-open"></i>
       </div>
     </div>
     <div class="page-settings">
-      <div class="theme-btn">
+      <div class="theme-btn" data-cursor="pointer">
         <i class="icon-adjust"></i>
       </div>
-      <div class="translate-btn" onclick="location.href='en.html';" title="Translate">
+      <div class="translate-btn" onclick="location.href='en.html';" title="Translate" data-cursor="pointer">
         <img class="translate-btn img" src="assets/img/us.webp" />
         <span>EN</span>
       </div>
     </div>
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
     <script>
       // to defer the loading of stylesheets
       // just add it right before the </body> tag
