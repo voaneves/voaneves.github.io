@@ -108,7 +108,7 @@ section {
 }
 .controls .control i {
   font-size: 3vh;
-  color: var(--color-grey-2);
+  color: var(--color-grey-1);
   pointer-events: none;
 }
 .controls .control:hover {
@@ -150,7 +150,7 @@ section {
 }
 .page-settings .theme-btn i {
   font-size: 3vh;
-  color: var(--color-grey-2);
+  color: var(--color-grey-1);
   pointer-events: none;
 }
 .page-settings .theme-btn:hover {
@@ -176,7 +176,7 @@ section {
 .page-settings .translate-btn span {
   font-size: 4vh;
   font-weight: 800;
-  color: var(--color-grey-2);
+  color: var(--color-grey-1);
   pointer-events: none;
 }
 .page-settings .translate-btn .img {
