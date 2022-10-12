@@ -21,60 +21,82 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-translate:before {
+  content: "\e910";
+}
+
 .icon-cloud-download:before {
   content: "\e90f";
 }
+
 .icon-comments:before {
   content: "\e900";
 }
+
 .icon-briefcase:before {
   content: "\e901";
 }
+
 .icon-calendar-check:before {
   content: "\e902";
 }
+
 .icon-map-marker:before {
   content: "\e903";
 }
+
 .icon-graduation-cap:before {
   content: "\e904";
 }
-.icon-mortar-board:before {
-  content: "\e904";
-}
+
 .icon-globe:before {
   content: "\e905";
 }
+
 .icon-user:before {
   content: "\e906";
 }
+
 .icon-home:before {
   content: "\e907";
 }
+
 .icon-paper-plane:before {
   content: "\e908";
 }
+
 .icon-send:before {
   content: "\e908";
 }
+
 .icon-github:before {
   content: "\e909";
 }
+
 .icon-youtube-play:before {
   content: "\e90a";
 }
+
 .icon-refresh:before {
   content: "\e90b";
 }
+
 .icon-gamepad:before {
   content: "\e90c";
 }
+
 .icon-envelope-open:before {
   content: "\e90d";
 }
+
 .icon-adjust:before {
   content: "\e90e";
 }
+
+.icon-whatsapp:before {
+  content: "\ea93";
+}
+
 .icon-linkedin:before {
   content: "\eac9";
 }

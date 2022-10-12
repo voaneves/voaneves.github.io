@@ -13,35 +13,6 @@
     padding: 0 !important;
   }
 
-  .header-content {
-    grid-template-columns: repeat(1, 1fr);
-    padding-bottom: 6rem;
-  }
-
-  .left-header {
-    .h-shape {
-      display: none;
-    }
-  }
-
-  .right-header {
-    grid-row: 1;
-    padding-right: 0rem !important;
-    width: 90%;
-    margin: 0 auto;
-
-    .name {
-      font-size: 2.5rem !important;
-      text-align: center;
-      padding-top: 3rem;
-    }
-  }
-
-  .header-content .left-header .image {
-    margin: 0 auto;
-    width: 90%;
-  }
-
   .controls {
     top: auto;
     bottom: 0;
@@ -177,7 +148,6 @@
   }
 
   .timeline {
-    /*     grid-template-columns: repeat(1, 1fr); */
     padding-bottom: 6rem;
   }
 
@@ -209,29 +179,7 @@
 
   .contact-item {
     flex-direction: column;
-    margin: 1rem 0;
-
-    p {
-      font-size: 15px;
-      color: var(--color-grey-2);
-    }
-
-    span {
-      font-size: 15px;
-    }
-
-    .icon {
-      grid-template-columns: 25px 1fr;
-    }
   }
-
-  /*   #cursor-border {
-    display: none;
-  }
-
-  #cursor {
-    display: none;
-  } */
 }
 
 @media screen and (max-width: 1432px) {
@@ -268,13 +216,33 @@
   }
 }
 
-@media screen and (max-width: 1250px) {
-  .header-content .right-header {
-    padding-right: 9rem;
-  }
-}
-
 @media screen and (max-width: 1070px) {
+  .header-content {
+    .left-header {
+      .h-shape {
+        display: none;
+      }
+
+      .image {
+        margin: 0 auto;
+        width: 90%;
+      }
+    }
+
+    .right-header {
+      grid-row: 1;
+      padding-right: 0rem !important;
+      width: 90%;
+      margin: 0 auto;
+
+      .name {
+        font-size: 2.5rem !important;
+        text-align: center;
+        padding-top: 3rem;
+      }
+    }
+  }
+
   .about-container {
     .right-about {
       padding-top: 2.5rem;
@@ -292,32 +260,7 @@
   }
 
   .header-content {
-    grid-template-columns: repeat(1, 1fr);
     padding-bottom: 6rem;
-  }
-
-  .left-header {
-    .h-shape {
-      display: none;
-    }
-
-    .image {
-      width: 90% !important;
-      margin: 0 auto !important;
-    }
-  }
-
-  .right-header {
-    grid-row: 1;
-    padding-right: 0rem !important;
-    width: 90%;
-    margin: 0 auto;
-
-    .name {
-      font-size: 2.5rem !important;
-      text-align: center;
-      padding-top: 3rem;
-    }
   }
 
   .portfolio-content {
@@ -325,14 +268,4 @@
       grid-template-columns: repeat(1, 1fr);
     }
   }
-}
-
-@media screen and (max-width: 700px) {
-  .container {
-    padding: 7rem 3rem;
-  }
-
-  /*   .timeline {
-    grid-template-columns: repeat(1, 1fr);
-  } */
 }

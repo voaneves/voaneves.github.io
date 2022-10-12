@@ -64,13 +64,13 @@
         }
       }
     </script>
-    <script defer src="sw-min.js"></script>    
+    <script defer src="sw-min.js"></script>
     <script defer src="assets/js/app-min.js"></script>
     <script defer src="assets/js/tic-tac-toe-min.js"></script>
     <script defer src="assets/js/rock-paper-scissors-min.js"></script>
     <script defer src="assets/js/mine-min.js"></script>
     <script defer src="assets/js/snake-min.js"></script>
-    <script defer src="assets/js/cursor-min.js"></script>    
+    <script defer src="assets/js/cursor-min.js"></script>
   </head>
   <body class="main-content">
     <header class="container header active" id="home">
@@ -376,7 +376,7 @@
               <i class="icon-graduation-cap"></i>
             </div>
             <p class="tl-duration">2012 - 2017</p>
-            <h5>Engenharia Mecânica <span> - Unicamp</span>
+            <h5>Mechanical Engineering <span> - Unicamp</span>
             </h5>
             <p> It was a very rich opportunity, because the university ecosystem allowed me to participate in innovative activities, entrepreneurial and the freedom do choose gave me one of the best experiences I've ever had. 3600 hours. </p>
           </div>
@@ -480,7 +480,7 @@
           <ul>
             <li>
               <input type="checkbox" id="cb4" />
-              <label for="cb4">SNAKE <span>(clique aqui para jogar)</span>
+              <label for="cb4">SNAKE <span>(click to play)</span>
               </label>
               <ul>
                 <li>
@@ -502,6 +502,50 @@
           </ul>
         </div>
       </section>
+      <section class="container portfolio" id="portfolio">
+        <div class="main-title">
+          <h2>Meu <span>Trabalho</span>
+            <span class="bg-text">Portfolio</span>
+          </h2>
+        </div>
+        <div class="portfolio-content">
+          <div class="portfolio-grid">
+            <div class="card">
+              <div class="circle">
+                <img src="assets/img/port/oab-logo.webp" class="logo">
+              </div>
+              <div class="content">
+                <h2>CAATO Tocantins</h2>
+                <p> Site baseado no Wordpress. Atualizei tema, core, fiz mudanças de layout, estabeleci redirecionamentos e encurtei URLs, além de fazer o SEO. </p>
+                <a href="https://caato.com.br/" data-cursor="pointer2">Explore</a>
+                <img src="assets/img/port/caato.webp">
+              </div>
+            </div>
+            <div class="card">
+              <div class="circle">
+                <img src="assets/img/port/mota-logo.webp" class="logo">
+              </div>
+              <div class="content">
+                <h2>Mota & Godinho</h2>
+                <p> Site baseado no Wordpress. Foquei no SEO do website, além de atualizar core, plugins e etc. Mudanças de layout, além de mudanças de conteúdo. Otimização mobile-friendly. </p>
+                <a href="https://motagodinho.com.br/" data-cursor="pointer2">Explore</a>
+                <img src="assets/img/port/mota.webp">
+              </div>
+            </div>
+            <div class="card">
+              <div class="circle">
+                <img src="assets/img/port/mte-logo.webp" class="logo">
+              </div>
+              <div class="content">
+                <h2>MTE Unicamp</h2>
+                <p> Fiz alterações de layout quando ainda era Drupal, otimizei SEO, fiz virar mobile-friendly, atualizei, acompanhei durante desenvolvimento posteriores. </p>
+                <a href="https://mte.org.br/" data-cursor="pointer2">Explore</a>
+                <img src="assets/img/port/mte.webp">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>      
       <section class="container contact" id="contact">
         <div class="contact-container">
           <div class="main-title">
@@ -517,14 +561,14 @@
                 <div class="contact-item">
                   <div class="icon">
                     <i class="icon-map-marker"></i>
-                    <span>I live on</span>
+                    <span>Country</span>
                   </div>
-                  <p> Brazil </p>
+                  <p> Brasil </p>
                 </div>
                 <div class="contact-item">
                   <div class="icon">
-                    <i class="icon-mortar-board"></i>
-                    <span>I studied at</span>
+                    <i class="icon-graduation-cap"></i>
+                    <span>University</span>
                   </div>
                   <p>
                     <span>UNICAMP</span>
@@ -532,20 +576,11 @@
                 </div>
                 <div class="contact-item">
                   <div class="icon">
-                    <i class="icon-comments"></i>
-                    <span>Contact me at</span>
-                  </div>
-                  <p>
-                    <span>+55 (63) 9 9999-9337</span>
-                  </p>
-                </div>
-                <div class="contact-item">
-                  <div class="icon">
                     <i class="icon-globe"></i>
-                    <span>I can speak</span>
+                    <span>Languages</span>
                   </div>
                   <p>
-                    <span>Portuguese, English and Spanish</span>
+                    <span>🇧🇷 🇺🇸 🇪🇸</span>
                   </p>
                 </div>
               </div>
@@ -561,11 +596,14 @@
                     <i class="icon-youtube-play"></i>
                   </a>
                   <a href="https://linkedin.com/in/voaneves" target="_blank" data-cursor="pointer">
-                    <i class="icon-linkedin"></i>                    
+                    <i class="icon-linkedin"></i>
                   </a>
                   <a href="https://koalendar.com/e/reuniao-com-victor-neves" target="_blank" data-cursor="pointer">
                     <i class="icon-calendar-check"></i>
-                  </a>                  
+                  </a>
+                  <a href="https://wa.me/5563999999337" target="_blank" data-cursor="pointer">
+                    <i class="icon-whatsapp"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -607,6 +645,9 @@
       <div class="control" data-id="games" title="Games" data-cursor="pointer">
         <i class="icon-gamepad"></i>
       </div>
+      <div class="control" data-id="portfolio" title="Portfolio" data-cursor="pointer">
+        <i class="icon-briefcase"></i>
+      </div>      
       <div class="control" data-id="contact" title="Contact" data-cursor="pointer">
         <i class="icon-envelope-open"></i>
       </div>
@@ -616,16 +657,15 @@
         <i class="icon-adjust"></i>
       </div>
       <div class="translate-btn" onclick="location.href='./';" title="Translate" data-cursor="pointer">
-        <img class="translate-btn img" src="assets/img/br.webp" />
-        <span>PT</span>
+        <i class="icon-translate"></i>
       </div>
     </div>
     <div id="cursor"></div>
-    <div id="cursor-border"></div>    
+    <div id="cursor-border"></div>
+    <!-- To defer the loading of stylesheets
+    just add it right before the </body> tag
+    and before any javaScript file inclusion (for performance) -->
     <script>
-      // to defer the loading of stylesheets
-      // just add it right before the </body> tag
-      // and before any javaScript file inclusion (for performance)  
       function loadStyleSheet(src) {
         if (document.createStyleSheet) document.createStyleSheet(src);
         else {
