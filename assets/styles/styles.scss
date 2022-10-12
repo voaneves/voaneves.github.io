@@ -100,7 +100,6 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    // cursor: pointer;
     background-color: var(--color-grey-4);
     margin: 7% 0;
     width: clamp(1vh, 10vw, 8vh);
@@ -149,7 +148,6 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    // cursor: pointer;
     width: clamp(3em, 10vw, 5em);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
@@ -192,7 +190,6 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    // cursor: pointer;
     width: clamp(3em, 10vw, 5em);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
@@ -387,13 +384,13 @@ section {
 /*About*/
 .about-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding-top: 3.5rem;
   padding-bottom: 5rem;
 
   .right-about {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 2rem;
 
     .about-item {
@@ -403,7 +400,6 @@ section {
       box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
 
       &:hover {
-        // cursor: default;
         transform: translateY(-5px);
         border: 1px solid var(--color-secondary);
         box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
@@ -465,7 +461,7 @@ section {
 
   .progress-bars {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 2rem;
 
     .progress-bar {
@@ -577,7 +573,7 @@ section {
 /*Timeline*/
 .timeline {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250, 1fr));
   grid-gap: 2rem;
   padding-bottom: 3rem;
 
@@ -692,10 +688,8 @@ section {
     .tic-tac-toe {
       .game-grid {
         display: inline-grid;
-        grid-template-rows:
-          clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em);
-        grid-template-columns:
-          clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em);
+        grid-template-rows: clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em);
+        grid-template-columns: clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em);
         margin: 10px auto;
         color: var(--color-opposite);
 
@@ -704,7 +698,6 @@ section {
           justify-content: center;
           align-items: center;
           border: 2px solid var(--color-grey-2);
-          // cursor: pointer;
           font-weight: 800;
           font-size: clamp(0.5em, 10vw, 3em);
         }
@@ -730,7 +723,6 @@ section {
         padding: 10px;
         border-radius: 10px;
         background-color: var(--color-primary);
-        // cursor: pointer;
       }
     }
 
@@ -794,7 +786,6 @@ section {
           border-radius: 50%;
           margin: auto 10px;
           transition: all 0.3s ease;
-          // cursor: pointer;
 
           span {
             display: table-cell;
@@ -837,7 +828,6 @@ section {
         border-radius: 10px;
         color: var(--color-opposite);
         background-color: var(--color-primary);
-        // cursor: pointer;
       }
     }
 
@@ -877,7 +867,6 @@ section {
         border-radius: 10px;
         color: var(--color-opposite);
         background-color: var(--color-primary);
-        // cursor: pointer;
       }
     }
 
@@ -1004,7 +993,7 @@ section {
 
         p {
           color: var(--color-grey-4);
-          font-size: clamp(0.8rem, 2.5vw, 1.2em);
+          font-size: clamp(0.8rem, 1vw, 1em);
         }
 
         a {
@@ -1095,7 +1084,6 @@ section {
         align-items: center;
         color: var(--color-white);
         background-color: var(--color-grey-5);
-        // cursor: pointer;
         justify-content: center;
         width: 50px;
         height: 50px;

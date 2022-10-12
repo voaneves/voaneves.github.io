@@ -376,13 +376,13 @@ section {
 /*About*/
 .about-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding-top: 3.5rem;
   padding-bottom: 5rem;
 }
 .about-container .right-about {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 2rem;
 }
 .about-container .right-about .about-item {
@@ -443,7 +443,7 @@ section {
 }
 .about-stats .progress-bars {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 2rem;
 }
 .about-stats .progress-bars .progress-bar {
@@ -535,7 +535,7 @@ section {
 /*Timeline*/
 .timeline {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250, 1fr));
   grid-gap: 2rem;
   padding-bottom: 3rem;
 }
@@ -892,7 +892,7 @@ section {
 }
 .portfolio-content .portfolio-grid .card .content p {
   color: var(--color-grey-4);
-  font-size: clamp(0.8rem, 2.5vw, 1.2em);
+  font-size: clamp(0.8rem, 1vw, 1em);
 }
 .portfolio-content .portfolio-grid .card .content a {
   position: relative;
@@ -1140,6 +1140,11 @@ a.different:hover {
   padding-left: 0;
 }
 
+@media (hover: none) {
+  .cursor {
+    pointer-events: none;
+  }
+}
 @media screen and (max-width: 600px) {
   header {
     padding: 0 !important;
@@ -1178,11 +1183,7 @@ a.different:hover {
   .controls .control {
     margin: 7% 2%;
   }
-  .about-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
   .about-container .right-about {
-    grid-template-columns: repeat(1, 1fr);
     padding-top: 2.5rem;
   }
   .about-container .left-about {
@@ -1266,14 +1267,11 @@ a.different:hover {
     padding: 40px;
   }
   .timeline {
-    grid-template-columns: repeat(1, 1fr);
+    /*     grid-template-columns: repeat(1, 1fr); */
     padding-bottom: 6rem;
   }
   .container {
     padding: 2rem 2.5rem !important;
-  }
-  .about-stats .progress-bars {
-    grid-template-columns: repeat(1, 1fr);
   }
   .contact-content-con {
     flex-direction: column;
@@ -1306,12 +1304,13 @@ a.different:hover {
   .contact-item .icon {
     grid-template-columns: 25px 1fr;
   }
-  #cursor-border {
+  /*   #cursor-border {
     display: none;
   }
+
   #cursor {
     display: none;
-  }
+  } */
 }
 @media screen and (max-width: 1432px) {
   .container {
@@ -1344,9 +1343,6 @@ a.different:hover {
   }
 }
 @media screen and (max-width: 1070px) {
-  .about-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
   .about-container .right-about {
     padding-top: 2.5rem;
   }
@@ -1388,15 +1384,9 @@ a.different:hover {
   .container {
     padding: 7rem 3rem;
   }
-  .about-stats .progress-bars {
+  /*   .timeline {
     grid-template-columns: repeat(1, 1fr);
-  }
-  .about-container .right-about {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .timeline {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  } */
 }
 @font-face {
   font-family: "icomoon";
