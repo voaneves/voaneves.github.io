@@ -100,14 +100,14 @@ section {
   align-items: center;
   background-color: var(--color-grey-4);
   margin: 7% 0;
-  width: 7vh;
+  width: clamp(1vh, 10vw, 8vh);
   aspect-ratio: 1/1;
   border-radius: 50%;
   box-shadow: var(--box-shadow-1);
   transition: all 0.5s ease-out;
 }
 .controls .control i {
-  font-size: 3vh;
+  font-size: clamp(1vh, 10vw, 3vh);
   color: var(--color-grey-1);
   pointer-events: none;
 }
@@ -130,14 +130,14 @@ section {
   align-items: center;
   justify-content: center;
   z-index: 10;
-  top: 3vh;
-  right: 2vh;
+  top: 3vw;
+  right: 2vw;
 }
 .page-settings .theme-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10vh;
+  width: clamp(3em, 10vw, 5em);
   aspect-ratio: 1/1;
   border-radius: 50%;
   margin: 0 7%;
@@ -149,7 +149,7 @@ section {
   transform: translateY(-3px);
 }
 .page-settings .theme-btn i {
-  font-size: 3vh;
+  font-size: clamp(1vh, 10vw, 3vh);
   color: var(--color-grey-1);
   pointer-events: none;
 }
@@ -166,7 +166,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10vh;
+  width: clamp(3em, 10vw, 5em);
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: var(--color-grey-4);
@@ -174,7 +174,7 @@ section {
   transition: all 0.5s ease-out;
 }
 .page-settings .translate-btn span {
-  font-size: 4vh;
+  font-size: clamp(1vh, 10vw, 3vh);
   font-weight: 800;
   color: var(--color-grey-1);
   pointer-events: none;
@@ -712,7 +712,7 @@ section {
   border: 3px solid var(--color-grey-2);
   background-color: var(--color-grey-2);
   aspect-ratio: 1/1;
-  height: 12vh;
+  height: clamp(2vh, 10vw, 20vh);
   padding: 10px;
   border-radius: 50%;
   margin: auto 10px;
@@ -793,6 +793,122 @@ section {
 .game-section .games .snake button {
   opacity: 0.5;
   padding: 0 5px;
+}
+
+.portfolio-content {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio-content .portfolio-grid {
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto auto auto;
+}
+.portfolio-content .portfolio-grid .card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+  border-radius: 20px;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.portfolio-content .portfolio-grid .card:hover {
+  width: 600px;
+  transition-delay: 0s;
+}
+.portfolio-content .portfolio-grid .card:hover .circle::before {
+  -webkit-clip-path: circle(400px at center);
+          clip-path: circle(400px at center);
+}
+.portfolio-content .portfolio-grid .card:hover .circle .logo {
+  transform: scale(0);
+  transition-delay: 0s;
+}
+.portfolio-content .portfolio-grid .card:hover .content {
+  left: 0;
+  display: inline;
+  transition-delay: 0.5s;
+  opacity: 1;
+  visibility: visible;
+}
+.portfolio-content .portfolio-grid .card:hover .content img {
+  visibility: visible;
+  left: 150%;
+  transform: translate(-50%, -50%) scale(1);
+  transition-delay: 0.5s;
+}
+.portfolio-content .portfolio-grid .card .circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.portfolio-content .portfolio-grid .card .circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-grey-2);
+  -webkit-clip-path: circle(min(15vw, 120px) at center);
+          clip-path: circle(min(15vw, 120px) at center);
+  transition: 0.5s;
+}
+.portfolio-content .portfolio-grid .card .circle .logo {
+  position: relative;
+  width: min(15vw, 200px);
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.portfolio-content .portfolio-grid .card .content {
+  position: relative;
+  width: 50%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.portfolio-content .portfolio-grid .card .content h2 {
+  color: var(--color-grey-5);
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 2.5vw, 2.5em);
+  line-height: 1em;
+}
+.portfolio-content .portfolio-grid .card .content p {
+  color: var(--color-grey-4);
+  font-size: clamp(0.8rem, 2.5vw, 1.2em);
+}
+.portfolio-content .portfolio-grid .card .content a {
+  position: relative;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+.portfolio-content .portfolio-grid .card .content img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  height: 450px;
+  transition: 0.5s;
 }
 
 .contact-content-con {
@@ -956,7 +1072,7 @@ section {
 .main-title h2 {
   position: relative;
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: clamp(1rem, 10vw, 4rem);
   font-weight: 800;
 }
 .main-title h2 span {
@@ -971,7 +1087,7 @@ section {
   z-index: -1;
   transform: translate(-50%, -50%);
   font-weight: 800;
-  font-size: 6.3rem;
+  font-size: clamp(1rem, 10vw, 6.3rem);
 }
 
 /* highlight for text */
@@ -1079,11 +1195,9 @@ a.different:hover {
     flex-direction: column;
   }
   .page-settings .theme-btn {
-    width: 5vh;
     margin: 7% 2%;
   }
   .page-settings .translate-btn {
-    width: 5vh;
     margin: 7% 2%;
   }
   .page-settings .translate-btn span {
@@ -1127,6 +1241,30 @@ a.different:hover {
   .game-section .games .pedra-papel-tesoura .choices .choice {
     margin: 10px auto;
   }
+  .portfolio-content .portfolio-grid .card {
+    max-width: 200px;
+    align-items: flex-start;
+  }
+  .portfolio-content .portfolio-grid .card:hover {
+    height: 600px;
+  }
+  .portfolio-content .portfolio-grid .card:hover .content img {
+    top: initial;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 100%) scale(1);
+    height: 300px;
+  }
+  .portfolio-content .portfolio-grid .card .content {
+    width: 100%;
+    left: 0;
+    padding: 40px;
+  }
+  .portfolio-content .portfolio-grid .content {
+    width: 100%;
+    left: 0;
+    padding: 40px;
+  }
   .timeline {
     grid-template-columns: repeat(1, 1fr);
     padding-bottom: 6rem;
@@ -1136,15 +1274,6 @@ a.different:hover {
   }
   .about-stats .progress-bars {
     grid-template-columns: repeat(1, 1fr);
-  }
-  .portfolios {
-    grid-template-columns: repeat(1, 1fr);
-    padding-bottom: 6rem;
-    margin-top: 1rem;
-  }
-  .blogs {
-    grid-template-columns: repeat(1, 1fr);
-    padding-bottom: 6rem;
   }
   .contact-content-con {
     flex-direction: column;
@@ -1177,15 +1306,6 @@ a.different:hover {
   .contact-item .icon {
     grid-template-columns: 25px 1fr;
   }
-  .main-title h2 {
-    font-size: 2rem;
-  }
-  .main-title h2 span {
-    font-size: 2.3rem;
-  }
-  .main-title h2 .bg-text {
-    font-size: 2.3rem;
-  }
   #cursor-border {
     display: none;
   }
@@ -1214,28 +1334,13 @@ a.different:hover {
   .contact-content-con .right-contact {
     margin-bottom: 6rem;
   }
-  .main-title h2 .bg-text {
-    font-size: 5.5rem;
+  .portfolio-content .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 1250px) {
-  .blogs {
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 6rem;
-  }
-  .portfolios {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .header-content .right-header {
     padding-right: 9rem;
-  }
-}
-@media screen and (max-width: 660px) {
-  .blogs {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .portfolios {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media screen and (max-width: 1070px) {
@@ -1244,15 +1349,6 @@ a.different:hover {
   }
   .about-container .right-about {
     padding-top: 2.5rem;
-  }
-  .main-title h2 {
-    font-size: 4rem;
-  }
-  .main-title h2 span {
-    font-size: 4rem;
-  }
-  .main-title h2 .bg-text {
-    font-size: 4.5rem;
   }
 }
 @media screen and (max-width: 970px) {
@@ -1284,6 +1380,9 @@ a.different:hover {
     text-align: center;
     padding-top: 3rem;
   }
+  .portfolio-content .portfolio-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 @media screen and (max-width: 700px) {
   .container {
@@ -1297,15 +1396,6 @@ a.different:hover {
   }
   .timeline {
     grid-template-columns: repeat(1, 1fr);
-  }
-  .main-title h2 {
-    font-size: 3rem;
-  }
-  .main-title h2 span {
-    font-size: 3rem;
-  }
-  .main-title h2 .bg-text {
-    font-size: 4rem;
   }
 }
 @font-face {
