@@ -909,7 +909,7 @@ section {
     margin: 0 auto;
     display: grid;
     gap: 1rem;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
 
     .card {
       display: flex;

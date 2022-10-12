@@ -242,6 +242,12 @@
     padding: 7rem 11rem;
   }
 
+  .portfolio-content {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   .contact-content-con {
     flex-direction: column;
 
@@ -262,12 +268,6 @@
 
   .contact-content-con .right-contact {
     margin-bottom: 6rem;
-  }
-
-  .portfolio-content {
-    .portfolio-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 }
 

@@ -806,7 +806,7 @@ section {
   margin: 0 auto;
   display: grid;
   gap: 1rem;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
 }
 .portfolio-content .portfolio-grid .card {
   display: flex;
@@ -1317,6 +1317,9 @@ a.different:hover {
   .container {
     padding: 7rem 11rem;
   }
+  .portfolio-content .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .contact-content-con {
     flex-direction: column;
   }
@@ -1333,9 +1336,6 @@ a.different:hover {
   }
   .contact-content-con .right-contact {
     margin-bottom: 6rem;
-  }
-  .portfolio-content .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 1250px) {
