@@ -113,7 +113,7 @@ section {
     transition: all 0.5s ease-out;
 
     i {
-      font-size: clamp(1vh, 10vw, 3vh);
+      font-size: clamp(0.8vh, 5vw, 3vh);
       color: var(--color-grey-1);
       pointer-events: none;
     }
