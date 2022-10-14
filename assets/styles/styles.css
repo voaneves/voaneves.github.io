@@ -47,7 +47,7 @@
     --color-grey-2: #6c7983;
     --color-grey-3: #6c7983;
     --color-grey-4: #b2becd;
-    --color-grey-5: #f8f8f8;
+    --color-grey-5: #e8e8e8;
     --color-grey-6: #12181b;
     --color-opposite: #339eff;
   }
@@ -840,7 +840,7 @@ section {
   -webkit-clip-path: circle(400px at center);
           clip-path: circle(400px at center);
 }
-.portfolio-content .portfolio-grid .card:hover .circle .logo {
+.portfolio-content .portfolio-grid .card:hover .circle img {
   transform: scale(0);
   transition-delay: 0s;
 }
@@ -852,6 +852,7 @@ section {
   visibility: visible;
 }
 .portfolio-content .portfolio-grid .card:hover .content img {
+  border-radius: var(--br-sm-2);
   visibility: visible;
   left: 150%;
   transform: translate(-50%, -50%) scale(1);
@@ -881,9 +882,9 @@ section {
           clip-path: circle(min(15vw, 120px) at center);
   transition: 0.5s;
 }
-.portfolio-content .portfolio-grid .card .circle .logo {
+.portfolio-content .portfolio-grid .card .circle img {
   position: relative;
-  width: min(15vw, 200px);
+  width: min(15vw, 150px);
   transition: 0.5s;
   transition-delay: 0.5s;
 }
