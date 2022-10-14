@@ -22,8 +22,20 @@
     --color-grey-6: #12181b;
     --color-opposite: #ff7e33;
     --color-yellow: #fff36d;
+    /* Style variables */
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+    --font-regular: 300;
+    --font-medium: 500;
+    --font-heavy: 800;
+    --size-button: clamp(0.8vh, 5vw, 3vh);
+    --size-game-grid: clamp(2em, 10vw, 5em);
+    --text-50: 50px;
+    --text-micro: 0.8rem;
+    --text-small: clamp(0.5rem, 5vw, 1.2rem);
+    --text-medium: clamp(0.5em, 5vw, 2em);
+    --text-big: clamp(2rem, 10vw, 4rem);
+    --text-huge: clamp(3rem, 10vw, 6.3rem);
   }
   .light-mode {
     --color-primary: #ffffff;
@@ -43,7 +55,7 @@
 body {
   background-color: var(--color-primary);
   font-family: "Open Sans", sans-serif;
-  font-size: 1.1rem;
+  font-size: var(--text-small);
   color: var(--color-white);
   transition: all 0.4s ease-in-out;
 }
@@ -108,7 +120,7 @@ section {
   transition: all 0.5s ease-out;
 }
 .controls .control i {
-  font-size: clamp(0.8vh, 5vw, 3vh);
+  font-size: var(--size-button);
   color: var(--color-grey-1);
   pointer-events: none;
 }
@@ -147,7 +159,7 @@ section {
   transition: all 0.5s ease-out;
 }
 .page-settings .theme-btn i {
-  font-size: clamp(1vh, 10vw, 3vh);
+  font-size: var(--size-button);
   color: var(--color-grey-1);
   pointer-events: none;
 }
@@ -172,7 +184,7 @@ section {
   transition: all 0.5s ease-out;
 }
 .page-settings .translate-btn i {
-  font-size: clamp(1vh, 10vw, 3vh);
+  font-size: var(--size-button);
   color: var(--color-grey-1);
   pointer-events: none;
 }
@@ -189,7 +201,7 @@ section {
 /* Header-content */
 .header-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   min-height: 100vh;
 }
 .header-content .left-header {
@@ -236,7 +248,7 @@ section {
   padding-right: 18rem;
 }
 .header-content .right-header .name {
-  font-size: 3rem;
+  font-size: var(--text-big);
 }
 .header-content .right-header .name span {
   color: var(--color-secondary);
@@ -362,7 +374,7 @@ section {
 .header-content .right-header p {
   margin: 1.5rem 0;
   line-height: 2rem;
-  font-weight: 300;
+  font-weight: var(--font-regular);
 }
 
 /* About */
@@ -394,15 +406,15 @@ section {
   flex-direction: column;
 }
 .about-container .right-about .about-item .abt-text .large-text {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: var(--text-big);
+  font-weight: var(--font-heavy);
   color: var(--color-secondary);
 }
 .about-container .right-about .about-item .abt-text .small-text {
   padding-left: 3rem;
   position: relative;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: var(--text-small);
   color: var(--color-grey-1);
   letter-spacing: 2px;
 }
@@ -422,11 +434,11 @@ section {
   line-height: 2rem;
   padding: 1rem;
   color: var(--color-grey-1);
-  font-weight: 300;
+  font-weight: var(--font-regular);
 }
 .about-container .left-about h4 {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: var(--text-medium);
+  font-weight: var(--font-medium);
   text-transform: uppercase;
 }
 
@@ -444,7 +456,7 @@ section {
 }
 .about-stats .progress-bars .progress-bar .prog-title {
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: var(--font-medium);
 }
 .about-stats .progress-bars .progress-bar .progress-con {
   display: flex;
@@ -508,7 +520,7 @@ section {
 
 .stat-title {
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: var(--text-small);
   text-align: center;
   padding: 3.5rem 0;
   position: relative;
@@ -549,30 +561,37 @@ section {
   justify-content: center;
 }
 .timeline .timeline-item .tl-icon i {
-  font-size: 1.3rem;
+  font-size: var(--text-small);
 }
-.timeline .timeline-item .tl-duration {
+.timeline .timeline-item .tl-header {
+  font-weight: var(--font-heavy);
+  text-transform: uppercase;
+}
+.timeline .timeline-item .tl-header .tl-duration {
   padding: 0.2rem 0.6rem;
   background-color: var(--color-grey-5);
   border-radius: 15px;
   display: inline-block;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: 500;
+  font-size: var(--text-micro);
+  color: var(--color-white);
+}
+.timeline .timeline-item .tl-header .tl-company {
+  padding: 0.2rem 0.6rem;
+  background-color: var(--color-opposite);
+  border-radius: 15px;
+  display: inline-block;
+  font-size: var(--text-micro);
+  color: var(--color-white);
 }
 .timeline .timeline-item h5 {
   padding: 1rem 0;
   text-transform: uppercase;
-  font-size: 1.3rem;
-  font-weight: 800;
-}
-.timeline .timeline-item h5 span {
-  color: var(--color-grey-2);
-  font-weight: 500;
-  font-size: 1.2rem;
+  font-size: var(--text-medium);
+  font-weight: var(--font-heavy);
 }
 .timeline .timeline-item p {
   color: var(--color-grey-2);
+  font-size: var(--text-small);
 }
 
 /* Game section */
@@ -593,13 +612,13 @@ section {
   padding: 3px;
   padding-left: 25px;
   color: var(--color-primary);
-  font-size: clamp(0.05em, 10vw, 2em);
-  font-weight: 800;
+  font-size: var(--text-medium);
+  font-weight: var(--font-heavy);
 }
 .game-section label span {
   color: var(--color-grey-2);
-  font-size: clamp(0.01em, 10vw, 0.5em);
-  font-weight: 500;
+  font-size: var(--text-small);
+  font-weight: var(--font-medium);
 }
 .game-section li {
   margin: 10px;
@@ -623,8 +642,8 @@ section {
 }
 .game-section .games .tic-tac-toe .game-grid {
   display: inline-grid;
-  grid-template-rows: clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em);
-  grid-template-columns: clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em) clamp(2em, 10vw, 5em);
+  grid-template-rows: repeat(3, clamp(2em, 10vw, 5em));
+  grid-template-columns: repeat(3, clamp(2em, 10vw, 5em));
   margin: 10px auto;
   color: var(--color-opposite);
 }
@@ -633,24 +652,24 @@ section {
   justify-content: center;
   align-items: center;
   border: 2px solid var(--color-grey-2);
-  font-weight: 800;
-  font-size: clamp(0.5em, 10vw, 3em);
+  font-weight: var(--font-heavy);
+  font-size: var(--text-medium);
 }
 .game-section .games .tic-tac-toe .status {
+  text-transform: uppercase;
+  font-size: var(--text-small);
+  font-weight: var(--font-regular);
   background-color: var(--color-primary);
+  color: var(--color-white);
   border-radius: 5px;
   padding: 0.5em;
-  text-transform: uppercase;
-  font-size: 1em;
-  font-weight: 300;
-  color: var(--color-white);
 }
 .game-section .games .tic-tac-toe .restart {
   display: inline-block;
   justify-content: center;
   align-items: center;
   margin: 25px;
-  font-size: 2em;
+  font-size: var(--text-medium);
   color: var(--color-opposite);
   padding: 10px;
   border-radius: 10px;
@@ -660,21 +679,21 @@ section {
   border: 3px solid var(--color-primary);
   width: 300px;
   margin: 40px auto;
-  font-size: 40px;
+  font-size: var(--text-50);
   border-radius: 4px;
   padding: 15px 20px;
   position: relative;
   color: var(--color-primary);
 }
 .game-section .games .pedra-papel-tesoura .score-board .badge {
-  font-weight: 800;
+  font-weight: var(--font-heavy);
 }
 .game-section .games .pedra-papel-tesoura .score-board .badge .user-label {
   background: var(--color-secondary);
   position: absolute;
   top: 50%;
   left: -5%;
-  font-size: 0.5em;
+  font-size: var(--text-small);
   padding: 0.5em;
   transform: translate(-10%, -50%);
   border-radius: 0.5em;
@@ -684,37 +703,36 @@ section {
   position: absolute;
   top: 50%;
   right: -5%;
-  font-size: 0.5em;
+  font-size: var(--text-small);
   padding: 0.5em;
   transform: translate(10%, -50%);
   border-radius: 0.5em;
 }
 .game-section .games .pedra-papel-tesoura .result {
-  font-size: 2em;
+  font-size: var(--text-medium);
   color: var(--color-grey-2);
 }
 .game-section .games .pedra-papel-tesoura .choices {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 40px 0;
 }
 .game-section .games .pedra-papel-tesoura .choices .choice {
-  display: table;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 3px solid var(--color-grey-2);
   background-color: var(--color-grey-2);
   aspect-ratio: 1/1;
-  height: clamp(2vh, 10vw, 20vh);
+  height: calc(2 * var(--text-50));
   padding: 10px;
   border-radius: 50%;
   margin: auto 10px;
   transition: all 0.3s ease;
 }
 .game-section .games .pedra-papel-tesoura .choices .choice span {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 3rem;
+  font-size: var(--text-50);
 }
 .game-section .games .pedra-papel-tesoura .choices .winningStyles {
   border: 3px solid #4dcc7d;
@@ -740,7 +758,7 @@ section {
   justify-content: center;
   align-items: center;
   margin: 25px;
-  font-size: 2em;
+  font-size: var(--text-medium);
   padding: 10px;
   border-radius: 10px;
   color: var(--color-opposite);
@@ -754,8 +772,8 @@ section {
 .game-section .games .mine-sweeper #mine-grid tr td {
   border: 1px solid var(--color-white);
   background: var(--color-grey-2);
-  width: clamp(2em, 10vw, 4em);
-  height: clamp(2em, 10vw, 4em);
+  width: var(--size-game-grid);
+  height: var(--size-game-grid);
 }
 .game-section .games .mine-sweeper #mine-grid tr td.clicked {
   background: var(--color-primary);
@@ -771,7 +789,7 @@ section {
   justify-content: center;
   align-items: center;
   margin: 25px;
-  font-size: 2em;
+  font-size: var(--font-medium);
   padding: 10px;
   border-radius: 10px;
   color: var(--color-opposite);
@@ -881,12 +899,13 @@ section {
 .portfolio-content .portfolio-grid .card .content h2 {
   color: var(--color-grey-5);
   text-transform: uppercase;
-  font-size: clamp(1.5rem, 2.5vw, 2.5em);
+  font-size: var(--text-medium);
   line-height: 1em;
 }
 .portfolio-content .portfolio-grid .card .content p {
   color: var(--color-grey-4);
-  font-size: clamp(0.8rem, 1vw, 1em);
+  font-size: var(--text-small);
+  padding-bottom: 0.5em;
 }
 .portfolio-content .portfolio-grid .card .content a {
   position: relative;
@@ -915,11 +934,11 @@ section {
 }
 .contact-content-con .left-contact h4 {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: var(--text-medium);
   text-transform: uppercase;
 }
 .contact-content-con .left-contact p {
-  font-weight: 300;
+  font-weight: var(--font-regular);
   color: var(--color-grey-1);
   margin: 1rem 0;
   line-height: 2rem;
@@ -935,8 +954,8 @@ section {
 }
 .contact-content-con .left-contact .contact-info .contact-item p {
   color: var(--color-grey-4);
-  font-weight: 300;
-  font-size: clamp(15px, 1rem, 32px);
+  font-weight: var(--font-regular);
+  font-size: var(--text-small);
   margin: 0.3rem 0 !important;
   padding: 0 !important;
 }
@@ -949,8 +968,8 @@ section {
   align-items: center;
   background-color: var(--color-grey-1);
   color: var(--color-primary);
-  font-weight: 300;
-  font-size: 1.3rem;
+  font-weight: var(--font-regular);
+  font-size: var(--text-small);
 }
 .contact-content-con .left-contact .contact-info .contact-item .icon i {
   margin: 10px;
@@ -967,12 +986,12 @@ section {
   justify-content: center;
   color: var(--color-white);
   background-color: var(--color-grey-5);
-  width: 50px;
+  width: var(--text-50);
   aspect-ratio: 1/1;
   border-radius: 50%;
   margin: 0.4rem 0.4rem;
   transition: all 0.4s ease-in-out;
-  font-size: 1rem;
+  font-size: var(--text-small);
 }
 .contact-content-con .left-contact .contact-icon a:hover {
   background-color: var(--color-secondary);
@@ -1016,7 +1035,7 @@ section {
 .main-btn {
   border-radius: 30px;
   color: inherit;
-  font-weight: 500;
+  font-weight: var(--font-regular);
   position: relative;
   border: 1px solid var(--color-secondary);
   display: flex;
@@ -1038,7 +1057,7 @@ section {
   padding: 1rem;
 }
 .main-btn .btn-icon i {
-  font-size: 2vh;
+  font-size: var(--text-small);
 }
 .main-btn::before {
   content: "";
@@ -1066,8 +1085,8 @@ section {
 .main-title h2 {
   position: relative;
   text-transform: uppercase;
-  font-size: clamp(1rem, 10vw, 4rem);
-  font-weight: 800;
+  font-size: var(--text-big);
+  font-weight: var(--font-heavy);
 }
 .main-title h2 span {
   color: var(--color-secondary);
@@ -1080,14 +1099,14 @@ section {
   transition: all 0.4s ease-in-out;
   z-index: -1;
   transform: translate(-50%, -50%);
-  font-weight: 800;
-  font-size: clamp(1rem, 10vw, 6.3rem);
+  font-weight: var(--font-heavy);
+  font-size: var(--text-huge);
 }
 
 /* Highlight for text */
 span.highlight {
   color: var(--color-secondary);
-  font-weight: 800;
+  font-weight: var(--font-heavy);
 }
 
 /* Customizing links */
@@ -1117,12 +1136,12 @@ a.different:hover {
 }
 
 #cursor-border {
-  --size: 50px;
+  --size-cursor: 50px;
   position: fixed;
-  top: calc(var(--size) / -2);
-  left: calc(var(--size) / -2);
-  width: var(--size);
-  height: var(--size);
+  top: calc(var(--size-cursor) / -2);
+  left: calc(var(--size-cursor) / -2);
+  width: var(--size-cursor);
+  height: var(--size-cursor);
   border-radius: 50%;
   pointer-events: none;
   transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out;

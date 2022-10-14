@@ -24,18 +24,18 @@
     item.addEventListener("mouseover", (e) => {
       if (item.dataset.cursor === "pointer") {
         cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
-        cursorBorder.style.setProperty("--size", "30px");
+        cursorBorder.style.setProperty("--size-cursor", "30px");
       }
       if (item.dataset.cursor === "pointer2") {
         cursorBorder.style.backgroundColor = "white";
         cursorBorder.style.mixBlendMode = "difference";
-        cursorBorder.style.setProperty("--size", "80px");
+        cursorBorder.style.setProperty("--size-cursor", "80px");
       }
     });
     item.addEventListener("mouseout", (e) => {
       cursorBorder.style.backgroundColor = "unset";
       cursorBorder.style.mixBlendMode = "unset";
-      cursorBorder.style.setProperty("--size", "50px");
+      cursorBorder.style.setProperty("--size-cursor", "50px");
     });
   });
 })();
