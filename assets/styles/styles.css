@@ -1155,8 +1155,11 @@ a.different:hover {
 }
 
 @media (hover: none) {
-  .cursor {
-    pointer-events: none;
+  #cursor {
+    display: none;
+  }
+  #cursor-border {
+    display: none;
   }
 }
 @media screen and (max-width: 600px) {

@@ -3,8 +3,12 @@
 }
 
 @media (hover: none) {
-  .cursor {
-    pointer-events: none;
+  #cursor {
+    display: none;
+  }
+
+  #cursor-border {
+    display: none;
   }
 }
 
