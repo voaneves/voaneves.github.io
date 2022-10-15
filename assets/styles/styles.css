@@ -1123,43 +1123,35 @@ a.different:hover {
   color: var(--color-opposite);
 }
 
-/* Custom cursor */
-#cursor {
-  position: fixed;
-  top: -5px;
-  left: -5px;
-  width: 10px;
-  height: 10px;
-  background-color: var(--color-opposite);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 999;
-}
-
-#cursor-border {
-  --size-cursor: 50px;
-  position: fixed;
-  top: calc(var(--size-cursor) / -2);
-  left: calc(var(--size-cursor) / -2);
-  width: var(--size-cursor);
-  height: var(--size-cursor);
-  border-radius: 50%;
-  pointer-events: none;
-  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out;
-  z-index: 999;
-}
-
 /* Imports */
 .about-container .left-about p {
   padding-left: 0;
 }
 
-@media (hover: none) {
+/* Custom cursor */
+@media (hover: hover) {
   #cursor {
-    display: none;
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-opposite);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
   }
   #cursor-border {
-    display: none;
+    --size-cursor: 50px;
+    position: fixed;
+    top: calc(var(--size-cursor) / -2);
+    left: calc(var(--size-cursor) / -2);
+    width: var(--size-cursor);
+    height: var(--size-cursor);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out;
+    z-index: 999;
   }
 }
 @media screen and (max-width: 600px) {
