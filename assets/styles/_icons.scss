@@ -21,39 +21,35 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-translate:before {
-  content: "\e910";
+.icon-blog:before {
+  content: "\e912";
 }
 
-.icon-cloud-download:before {
-  content: "\e90f";
-}
-
-.icon-comments:before {
+.icon-linkedin:before {
   content: "\e900";
 }
 
-.icon-briefcase:before {
+.icon-adjust:before {
   content: "\e901";
 }
 
-.icon-calendar-check:before {
+.icon-envelope-open:before {
   content: "\e902";
 }
 
-.icon-map-marker:before {
+.icon-refresh:before {
   content: "\e903";
 }
 
-.icon-graduation-cap:before {
+.icon-youtube:before {
   content: "\e904";
 }
 
-.icon-globe:before {
+.icon-github:before {
   content: "\e905";
 }
 
-.icon-user:before {
+.icon-paper-plane:before {
   content: "\e906";
 }
 
@@ -61,42 +57,46 @@
   content: "\e907";
 }
 
-.icon-paper-plane:before {
+.icon-user:before {
   content: "\e908";
 }
 
-.icon-send:before {
-  content: "\e908";
-}
-
-.icon-github:before {
+.icon-globe:before {
   content: "\e909";
 }
 
-.icon-youtube-play:before {
+.icon-graduation-cap:before {
   content: "\e90a";
 }
 
-.icon-refresh:before {
+.icon-map-marker:before {
   content: "\e90b";
 }
 
-.icon-gamepad:before {
+.icon-calendar-check:before {
   content: "\e90c";
 }
 
-.icon-envelope-open:before {
+.icon-briefcase:before {
   content: "\e90d";
 }
 
-.icon-adjust:before {
+.icon-comments:before {
   content: "\e90e";
+}
+
+.icon-cloud-download:before {
+  content: "\e90f";
+}
+
+.icon-gamepad:before {
+  content: "\e910";
+}
+
+.icon-translate:before {
+  content: "\e911";
 }
 
 .icon-whatsapp:before {
   content: "\ea93";
-}
-
-.icon-linkedin:before {
-  content: "\eac9";
 }
