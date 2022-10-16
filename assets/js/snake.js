@@ -26,39 +26,23 @@
     endText = `ACABOU! CLIQUE PARA TENTAR DENOVO`;
   }
 
+  // Setting board size ans snake position
+  snakeboard.setAttribute("height", "400");
+  snakeInitial = [
+    { x: 50, y: 200 },
+    { x: 40, y: 200 },
+    { x: 30, y: 200 },
+    { x: 20, y: 200 },
+    { x: 10, y: 200 },
+  ];
   if (width > 1432) {
     snakeboard.setAttribute("width", "900");
-    snakeboard.setAttribute("height", "400");
-
-    snakeInitial = [
-      { x: 200, y: 200 },
-      { x: 190, y: 200 },
-      { x: 180, y: 200 },
-      { x: 170, y: 200 },
-      { x: 160, y: 200 },
-    ];
   } else if (width > 900) {
     snakeboard.setAttribute("width", "400");
-    snakeboard.setAttribute("height", "400");
-
-    snakeInitial = [
-      { x: 100, y: 200 },
-      { x: 90, y: 200 },
-      { x: 80, y: 200 },
-      { x: 70, y: 200 },
-      { x: 60, y: 200 },
-    ];
-  } else {
+  } else if (width > 400) {
     snakeboard.setAttribute("width", "135");
-    snakeboard.setAttribute("height", "400");
-
-    snakeInitial = [
-      { x: 50, y: 200 },
-      { x: 40, y: 200 },
-      { x: 30, y: 200 },
-      { x: 20, y: 200 },
-      { x: 10, y: 200 },
-    ];
+  } else {
+    snakeboard.setAttribute("width", "100");
   }
 
   let snake = JSON.parse(JSON.stringify(snakeInitial));
