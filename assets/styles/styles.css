@@ -1226,8 +1226,10 @@ a.different:hover {
     margin: 10px auto;
   }
   .portfolio-content .portfolio-grid .card {
-    max-width: 200px;
+    max-width: 60vw;
+    height: 200px;
     align-items: flex-start;
+    overflow: hidden;
   }
   .portfolio-content .portfolio-grid .card:hover {
     height: 600px;
