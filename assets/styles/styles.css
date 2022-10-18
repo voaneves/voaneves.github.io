@@ -142,7 +142,7 @@ section {
   top: 3vw;
   right: 2vw;
 }
-.page-settings .theme-btn {
+.page-settings .btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,43 +154,18 @@ section {
   box-shadow: var(--box-shadow-1);
   transition: all 0.5s ease-out;
 }
-.page-settings .theme-btn i {
+.page-settings .btn i {
   font-size: var(--size-button);
   color: var(--color-grey-1);
   pointer-events: none;
 }
-.page-settings .theme-btn:hover {
+.page-settings .btn:hover {
   background-color: var(--color-white);
   transform: translateY(-3px);
   transition: all 0.3s ease-in;
   box-shadow: 0 10px 20px var(--color-opposite);
 }
-.page-settings .theme-btn:hover i {
-  color: var(--color-opposite);
-}
-.page-settings .translate-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: clamp(3em, 10vw, 5em);
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background-color: var(--color-grey-4);
-  box-shadow: var(--box-shadow-1);
-  transition: all 0.5s ease-out;
-}
-.page-settings .translate-btn i {
-  font-size: var(--size-button);
-  color: var(--color-grey-1);
-  pointer-events: none;
-}
-.page-settings .translate-btn:hover {
-  background-color: var(--color-white);
-  transform: translateY(-3px);
-  transition: all 0.3s ease-in;
-  box-shadow: 0 10px 20px var(--color-opposite);
-}
-.page-settings .translate-btn:hover i {
+.page-settings .btn:hover i {
   color: var(--color-opposite);
 }
 
@@ -1178,14 +1153,8 @@ a.different:hover {
   .page-settings {
     flex-direction: column;
   }
-  .page-settings .theme-btn {
+  .page-settings .btn {
     margin: 7% 2%;
-  }
-  .page-settings .translate-btn {
-    margin: 7% 2%;
-  }
-  .page-settings .translate-btn span {
-    font-size: 2.5vh;
   }
   .game-section {
     padding-bottom: 6rem;

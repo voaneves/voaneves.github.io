@@ -7,7 +7,7 @@
       document.getElementById(button.dataset.id).classList.add("active");
     });
   });
-  document.querySelector(".theme-btn").addEventListener("click", () => {
+  document.getElementById("theme").addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
     const meta = document.querySelector('meta[name="color-scheme"]');
     if (meta.content === "light") {

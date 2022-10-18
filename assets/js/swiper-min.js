@@ -1,1 +1,0 @@
-var swiper=new Swiper(".swiper-container",{pagination:".swiper-pagination",effect:"coverflow",grabCursor:!0,centeredSlides:!0,slidesPerView:"auto",coverflow:{rotate:50,stretch:0,depth:100,modifier:1,slideShadows:!0},loop:!0});
