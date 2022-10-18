@@ -1,7 +1,10 @@
+.blog {
+    overflow: hidden;
+}
+
 /* About section */
 .blog-container {
-    padding-top: 10rem;
-    overflow: hidden;
+    padding-top: 8rem;
 
     .swiper-container {
         .swiper-wrapper {
@@ -11,7 +14,8 @@
                     border: none;
                     outline: none;
                     box-shadow: var(--box-shadow-1);
-                    border-radius: 2px;
+                    border-radius: 100px;
+                    overflow: hidden;
 
                     img {
                         display: block;
@@ -19,11 +23,17 @@
                         left: 0;
                         bottom: 0;
                         width: 100%;
-                        height: auto;
+                        height: 500px;
                         object-fit: cover;
                     }
                 }
             }
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            padding-top: 1rem;
+            color: var(--color-primary);
         }
     }
 }
