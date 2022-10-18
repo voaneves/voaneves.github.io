@@ -154,65 +154,83 @@
   <body class="main-content">
     <main>
       <section class="container blog active" id="blog">
-        <div class="main-title">
-          <h2>
-            Sobre <span>mim</span>
-            <span class="bg-text">SOBRE</span>
-          </h2>
-        </div>
         <div class="blog-container">
           <div class="swiper-container">
             <div class="swiper-wrapper">
-              <div
-                class="swiper-slide"
-                style="
-                  background-image: url(https://motos-motor.com.br/fotos/2012/10/cb-600f-2014-preta.jpg);
-                "
-              ></div>
-              <div
-                class="swiper-slide"
-                style="
-                  background-image: url(https://motos-motor.com.br/fotos/2012/10/cb-600f-2014-preta.jpg);
-                "
-              ></div>
-              <div
-                class="swiper-slide"
-                style="
-                  background-image: url(https://motos-motor.com.br/fotos/2012/10/cb-600f-2014-preta.jpg);
-                "
-              ></div>
+              <div class="swiper-slide">
+                <div class="card-image">
+                  <img
+                    src="https://source.unsplash.com/1280x720/?nature"
+                    alt="Image Slider"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-image">
+                  <img
+                    src="https://source.unsplash.com/1280x720/?nature,water,animal"
+                    alt="Image Slider"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-image">
+                  <img
+                    src="https://source.unsplash.com/1280x720/?water"
+                    alt="Image Slider"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-image">
+                  <img
+                    src="https://source.unsplash.com/1280x720/?animal"
+                    alt="Image Slider"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-image">
+                  <img
+                    src="https://source.unsplash.com/1280x720/?travel"
+                    alt="Image Slider"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-image">
+                  <img
+                    src="https://source.unsplash.com/1280x720/?flower"
+                    alt="Image Slider"
+                  />
+                </div>
+              </div>
             </div>
+            <!-- Add Scrollbar -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
       </section>
     </main>
-    <div class="controls">
+    <div class="page-settings">
       <div
-        class="control"
+        class="btn"
+        id="home"
         onclick="location.href='../';"
         title="Home"
         data-cursor="pointer"
       >
         <i class="icon-home"></i>
       </div>
-      <div
-        class="control active-btn"
-        data-id="blog"
-        title="Blog"
-        data-cursor="pointer"
-      >
-        <i class="icon-blog"></i>
-      </div>
-    </div>
-    <div class="page-settings">
-      <div class="theme-btn" data-cursor="pointer">
+      <div class="btn" id="theme" title="Mudar tema" data-cursor="pointer">
         <i class="icon-adjust"></i>
       </div>
       <div
-        class="translate-btn"
+        class="btn"
+        id="translate"
         onclick="location.href='./en';"
-        title="Translate"
+        title="Traduzir"
         data-cursor="pointer"
       >
         <i class="icon-translate"></i>

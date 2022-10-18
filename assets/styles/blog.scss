@@ -1,15 +1,29 @@
-/* About */
+/* About section */
 .blog-container {
-    .swiper-container {
-        width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
+    padding-top: 10rem;
+    overflow: hidden;
 
-    .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px;
-        height: 300px;
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                .card-image {
+                    background: var(--color-white);
+                    border: none;
+                    outline: none;
+                    box-shadow: var(--box-shadow-1);
+                    border-radius: 2px;
+
+                    img {
+                        display: block;
+                        position: relative;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
     }
 }
