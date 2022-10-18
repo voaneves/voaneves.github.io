@@ -12,7 +12,7 @@
     --color-secondary: #339eff;
     --color-white: #ffffff;
     --color-black: #000;
-    --color-grey0: #f8f8f8;
+    --color-grey-0: #f8f8f8;
     --color-grey-1: #dbe1e8;
     --color-grey-2: #b2becd;
     --color-grey-3: #6c7983;
@@ -41,7 +41,7 @@
     --color-secondary: #ff7e33;
     --color-white: #454e56;
     --color-black: #000;
-    --color-grey0: #f8f8f8;
+    --color-grey-0: #f8f8f8;
     --color-grey-1: #6c7983;
     --color-grey-2: #6c7983;
     --color-grey-3: #6c7983;
@@ -170,11 +170,24 @@ section {
   text-transform: uppercase;
   font-size: var(--text-medium);
   font-weight: var(--font-heavy);
+  color: var(--color-grey-0);
 }
 .blog-container .swiper-container .swiper-wrapper .swiper-slide .blog-item p {
   visibility: none;
   opacity: 0;
   font-size: var(--text-small);
+  color: var(--color-grey-0);
+}
+.blog-container .swiper-container .swiper-wrapper .swiper-slide .blog-item a {
+  visibility: none;
+  opacity: 0;
+  position: relative;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 1em;
+  display: inline-block;
 }
 .blog-container .swiper-container .swiper-wrapper .swiper-slide .card-image {
   z-index: -1;
@@ -195,6 +208,7 @@ section {
 }
 .blog-container .swiper-container .swiper-wrapper .swiper-slide-active {
   filter: blur(0px);
+  transition: all 0.4s ease-in-out;
 }
 .blog-container .swiper-container .swiper-wrapper .swiper-slide-active .blog-item .blog-header .blog-date-post {
   display: inline-block;
@@ -202,6 +216,14 @@ section {
 .blog-container .swiper-container .swiper-wrapper .swiper-slide-active .blog-item p {
   visibility: visible;
   opacity: 1;
+}
+.blog-container .swiper-container .swiper-wrapper .swiper-slide-active .blog-item a {
+  visibility: visible;
+  opacity: 1;
+}
+.blog-container .swiper-container .swiper-wrapper .swiper-slide-active .card-image {
+  transition: all 0.4s ease-in-out;
+  filter: brightness(0.5);
 }
 .blog-container .swiper-container .swiper-button-next,
 .blog-container .swiper-container .swiper-button-prev {
