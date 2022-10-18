@@ -146,10 +146,10 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: clamp(3em, 10vw, 5em);
+  width: clamp(3em, 10vw, 6em);
   aspect-ratio: 1/1;
   border-radius: 50%;
-  margin: 0 7%;
+  margin: 0 3%;
   background-color: var(--color-grey-4);
   box-shadow: var(--box-shadow-1);
   transition: all 0.5s ease-out;
@@ -190,7 +190,7 @@ section {
   top: 0;
   z-index: -1;
   -webkit-clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
-          clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+  clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
 }
 .header-content .left-header .image {
   border-radius: var(--br-sm-2);
@@ -205,7 +205,7 @@ section {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: all 0.4s ease-in-out;
   filter: grayscale(100%);
 }
@@ -224,7 +224,7 @@ section {
 .header-content .right-header .name span {
   color: var(--color-secondary);
   -webkit-animation: color-animation 4s linear infinite;
-          animation: color-animation 4s linear infinite;
+  animation: color-animation 4s linear infinite;
 }
 @-webkit-keyframes color-animation {
   0% {
@@ -263,7 +263,7 @@ section {
 .header-content .right-header .name .changing-text::before {
   content: "programar";
   -webkit-animation: animate-text infinite 20s;
-          animation: animate-text infinite 20s;
+  animation: animate-text infinite 20s;
 }
 @-webkit-keyframes animate-text {
   0% {
@@ -340,7 +340,7 @@ section {
   background: var(--color-grey-4);
   display: inline-block;
   -webkit-animation: cursor-blink 1s steps(2) infinite;
-          animation: cursor-blink 1s steps(2) infinite;
+  animation: cursor-blink 1s steps(2) infinite;
 }
 .header-content .right-header p {
   margin: 1.5rem 0;
@@ -595,10 +595,10 @@ section {
   margin: 10px;
   padding: 5px;
 }
-.game-section input[type=checkbox] {
+.game-section input[type="checkbox"] {
   display: none;
 }
-.game-section input[type=checkbox] ~ ul {
+.game-section input[type="checkbox"] ~ ul {
   max-height: 0;
   max-width: 0;
   opacity: 0;
@@ -606,7 +606,7 @@ section {
   white-space: nowrap;
   transition: all 1s ease;
 }
-.game-section input[type=checkbox]:checked ~ ul {
+.game-section input[type="checkbox"]:checked ~ ul {
   max-height: 100%;
   max-width: 100%;
   opacity: 1;
@@ -809,7 +809,7 @@ section {
 }
 .portfolio-content .portfolio-grid .card:hover .circle::before {
   -webkit-clip-path: circle(400px at center);
-          clip-path: circle(400px at center);
+  clip-path: circle(400px at center);
 }
 .portfolio-content .portfolio-grid .card:hover .circle img {
   transform: scale(0);
@@ -850,7 +850,7 @@ section {
   height: 100%;
   background: var(--color-grey-2);
   -webkit-clip-path: circle(min(15vw, 120px) at center);
-          clip-path: circle(min(15vw, 120px) at center);
+  clip-path: circle(min(15vw, 120px) at center);
   transition: 0.5s;
 }
 .portfolio-content .portfolio-grid .card .circle img {
@@ -1116,7 +1116,8 @@ a.different:hover {
   height: var(--size-cursor);
   border-radius: 50%;
   pointer-events: none;
-  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out;
+  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
+    height 0.15s ease-out, background-color 0.15s ease-out;
   z-index: 999;
 }
 
@@ -1179,7 +1180,12 @@ a.different:hover {
     left: 0%;
     transform: translate(-0.23rem, -1.5rem);
   }
-  .game-section .games .pedra-papel-tesoura .score-board .badge .computer-label {
+  .game-section
+    .games
+    .pedra-papel-tesoura
+    .score-board
+    .badge
+    .computer-label {
     top: 100%;
     right: 0%;
     transform: translate(0.4rem, -1rem);
@@ -1325,7 +1331,7 @@ a.different:hover {
   font-style: normal;
   font-display: block;
 }
-[class^=icon-],
+[class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
@@ -1417,4 +1423,4 @@ a.different:hover {
 
 .icon-whatsapp:before {
   content: "\ea93";
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */
