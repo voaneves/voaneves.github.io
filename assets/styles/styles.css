@@ -1101,7 +1101,7 @@ a.different:hover {
   left: -5px;
   width: 10px;
   height: 10px;
-  background-color: var(--color-opposite);
+  background-color: var(--color-white);
   border-radius: 50%;
   pointer-events: none;
   z-index: 999;
@@ -1119,6 +1119,18 @@ a.different:hover {
   pointer-events: none;
   transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out;
   z-index: 999;
+}
+
+.small-cursor {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  opacity: 0.5;
+}
+
+.big-cursor {
+  background-color: var(--color-grey-0);
+  border-color: var(--color-grey-0);
+  mix-blend-mode: difference;
 }
 
 /* Imports */

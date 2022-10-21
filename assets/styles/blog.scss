@@ -394,10 +394,22 @@ a.different:hover {
     left: -5px;
     width: 10px;
     height: 10px;
-    background-color: var(--color-opposite);
+    background-color: var(--color-white);
     border-radius: 50%;
     pointer-events: none;
     z-index: 999;
+}
+
+.small-cursor {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    opacity: 0.5;
+}
+
+.big-cursor {
+    background-color: var(--color-grey-0);
+    border-color: var(--color-grey-0);
+    mix-blend-mode: difference;
 }
 
 #cursor-border {

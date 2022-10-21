@@ -23,18 +23,17 @@
   document.querySelectorAll("[data-cursor]").forEach((item) => {
     item.addEventListener("mouseover", (e) => {
       if (item.dataset.cursor === "pointer") {
-        cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
+        cursorBorder.classList.add("small-cursor");
         cursorBorder.style.setProperty("--size-cursor", "30px");
       }
       if (item.dataset.cursor === "pointer2") {
-        cursorBorder.style.backgroundColor = "white";
-        cursorBorder.style.mixBlendMode = "difference";
+        cursorBorder.classList.add("big-cursor");
         cursorBorder.style.setProperty("--size-cursor", "80px");
       }
     });
     item.addEventListener("mouseout", (e) => {
-      cursorBorder.style.backgroundColor = "unset";
-      cursorBorder.style.mixBlendMode = "unset";
+      cursorBorder.classList.remove("small-cursor");
+      cursorBorder.classList.remove("big-cursor");
       cursorBorder.style.setProperty("--size-cursor", "50px");
     });
   });
