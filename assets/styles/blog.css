@@ -234,6 +234,7 @@ section {
 
 .blog-post-container {
   display: inline-block;
+  padding-bottom: 8rem;
 }
 .blog-post-container .header {
   display: flex;
@@ -260,11 +261,13 @@ section {
 }
 .blog-post-container .content .tags {
   position: absolute;
-  padding: 3rem;
+  padding-top: 3rem;
   font-weight: var(--font-heavy);
   text-transform: uppercase;
 }
 .blog-post-container .content .tags .blog-date-post {
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-heavy);
   padding: 0.2rem 0.6rem;
   background-color: var(--color-grey-5);
   border-radius: 15px;
@@ -273,6 +276,8 @@ section {
   color: var(--color-white);
 }
 .blog-post-container .content .tags .blog-tag {
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--font-heavy);
   padding: 0.2rem 0.6rem;
   background-color: var(--color-opposite);
   border-radius: 15px;
@@ -356,6 +361,7 @@ a.different:hover {
   width: var(--size-cursor);
   height: var(--size-cursor);
   border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--color-white);
   pointer-events: none;
   transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out;
   z-index: 999;

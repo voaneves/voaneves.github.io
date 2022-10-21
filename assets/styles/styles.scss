@@ -1231,6 +1231,7 @@ a.different:hover {
   width: var(--size-cursor);
   height: var(--size-cursor);
   border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--color-white);
   pointer-events: none;
   transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
     height 0.15s ease-out, background-color 0.15s ease-out;
