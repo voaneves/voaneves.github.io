@@ -285,14 +285,52 @@ section {
   font-size: var(--text-micro);
   color: var(--color-white);
 }
+.blog-post-container .content .image {
+  display: grid;
+  place-items: center;
+}
+.blog-post-container .content .image img {
+  display: inline-block;
+  text-align: center;
+}
+.blog-post-container .content .image span {
+  display: inline-block;
+  color: var(--color-grey-2);
+  font-size: var(--text-micro);
+}
 .blog-post-container .content p {
   font-family: "Raleway", sans-serif;
   font-weight: var(--font-thin);
   padding-top: 2em;
   color: var(--color-white);
 }
-.blog-post-container .content p span {
+.blog-post-container .content p .first-letter {
+  color: var(--color-opposite);
+  font-size: var(--text-huge);
+  padding: 0 0.3rem;
+  margin: 0 0.3rem 0 0;
+  border: 2px solid;
+  border-radius: 8px;
+  float: left;
+}
+.blog-post-container .content p .bold {
   font-weight: var(--font-black);
+}
+.blog-post-container .content p .marker {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  text-decoration-thickness: 0.4rem;
+  text-underline-offset: -0.2em;
+  -webkit-text-decoration-color: var(--color-opposite);
+          text-decoration-color: var(--color-opposite);
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  /* works in Firefox & Chrome, not in Safari */
+  -webkit-text-decoration-skip: none;
+          text-decoration-skip: none;
+  /* works in Safari, not in Firefox & Chrome */
 }
 .blog-post-container .content h3 {
   font-family: "Raleway", sans-serif;
@@ -351,25 +389,6 @@ section {
   transform: translate(-50%, -50%);
   font-weight: var(--font-heavy);
   font-size: var(--text-huge);
-}
-
-/* Highlight for text */
-span.highlight {
-  color: var(--color-secondary);
-  font-weight: var(--font-heavy);
-}
-
-/* Customizing links */
-a.different:link {
-  color: var(--color-secondary);
-}
-
-a.different:visited {
-  color: var(--color-secondary);
-}
-
-a.different:hover {
-  color: var(--color-opposite);
 }
 
 /* Custom cursor */
