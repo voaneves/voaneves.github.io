@@ -26,7 +26,12 @@
 </url>
 <url>
   <loc>https://voaneves.com/blog</loc>
-  <lastmod>2022-10-18T02:58:19+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2022-10-20T02:58:19+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://voaneves.com/blog/somos-bons-ou-maus.html</loc>
+  <lastmod>2022-10-21T02:58:19+00:00</lastmod>
+  <priority>0.70</priority>
 </url>
 </urlset>
