@@ -9,7 +9,20 @@
   });
   document.getElementById("theme").addEventListener("click", () => {
     const meta = document.querySelector('meta[name="color-scheme"]');
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (event) => {
+        const theme = event.matches ? "dark" : "light";
+      });
+
     if (meta.content === "light") {
+      meta.content = "dark";
+      document.body.classList.remove("light-mode");
+      document.body.classList.add("dark-mode");
+    } else if (
+      window.matchMedia("(prefers-color-scheme: light)").matches &&
+      meta.content === "dark light"
+    ) {
       meta.content = "dark";
       document.body.classList.remove("light-mode");
       document.body.classList.add("dark-mode");
@@ -36,7 +49,7 @@ function fragmentText(text, maxWidth, ctx) {
   if (ctx.measureText(text).width < maxWidth) {
     return [text];
   }
-
+  console.log(theme);
   while (words.length > 0) {
     while (ctx.measureText(words[0]).width >= maxWidth) {
       var tmp = words[0];
