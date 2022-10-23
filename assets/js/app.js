@@ -8,12 +8,15 @@
     });
   });
   document.getElementById("theme").addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
     const meta = document.querySelector('meta[name="color-scheme"]');
     if (meta.content === "light") {
       meta.content = "dark";
+      document.body.classList.remove("light-mode");
+      document.body.classList.add("dark-mode");
     } else {
       meta.content = "light";
+      document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
     }
   });
 })();
