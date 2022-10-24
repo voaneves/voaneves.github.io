@@ -708,18 +708,21 @@
       </div>
     </div>
     <div class="page-settings">
-      <div class="theme-btn" data-cursor="pointer">
+      <div class="btn" id="theme" title="Change theme" data-cursor="pointer">
         <i class="icon-adjust"></i>
       </div>
-      <div class="translate-btn" onclick="location.href='./';" title="Translate" data-cursor="pointer">
+      <div
+        class="btn"
+        id="translate"
+        onclick="location.href='./';"
+        title="Traduzir"
+        data-cursor="pointer"
+      >
         <i class="icon-translate"></i>
       </div>
     </div>
     <div id="cursor"></div>
     <div id="cursor-border"></div>
-    <!-- To defer the loading of stylesheets
-    just add it right before the </body> tag
-    and before any javaScript file inclusion (for performance) -->
     <script>
       function loadStyleSheet(src) {
         if (document.createStyleSheet) document.createStyleSheet(src);
