@@ -27,6 +27,7 @@
     --color-primary: #0a0a0a;
     --color-secondary: #339eff;
     --color-white: #ffffff;
+    --color-white-fixed: #ffffff;
     --color-black: #000;
     --color-grey-0: #f8f8f8;
     --color-grey-1: #dbe1e8;
@@ -44,6 +45,7 @@
     --color-primary: #ffffff;
     --color-secondary: #ff7e33;
     --color-white: #454e56;
+    --color-white-fixed: #ffffff;
     --color-black: #000;
     --color-grey-0: #f8f8f8;
     --color-grey-1: #6c7983;
@@ -59,6 +61,7 @@
   --color-primary: #ffffff;
   --color-secondary: #ff7e33;
   --color-white: #454e56;
+  --color-white-fixed: #ffffff;
   --color-black: #000;
   --color-grey-0: #f8f8f8;
   --color-grey-1: #6c7983;
@@ -74,6 +77,7 @@
   --color-primary: #0a0a0a;
   --color-secondary: #339eff;
   --color-white: #ffffff;
+  --color-white-fixed: #ffffff;
   --color-black: #000;
   --color-grey-0: #f8f8f8;
   --color-grey-1: #dbe1e8;
@@ -443,8 +447,8 @@ section {
 }
 
 .big-cursor {
-  background-color: var(--color-grey-0);
-  border-color: var(--color-grey-0);
+  background-color: var(--color-white-fixed);
+  border-color: var(--color-white-fixed);
   mix-blend-mode: difference;
 }
 
