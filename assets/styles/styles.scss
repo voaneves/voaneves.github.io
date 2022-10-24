@@ -1227,9 +1227,17 @@ section {
 
 /* Highlight for text */
 span.highlight {
-  color: var(--color-secondary);
   font-weight: var(--font-heavy);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.4rem;
+  text-underline-offset: -0.2em;
+  text-decoration-color: var(--color-opposite);
+  text-decoration-skip-ink: none;
+  text-decoration-skip: none;
 }
+
+
 
 /* Customizing links */
 a.different:link {
