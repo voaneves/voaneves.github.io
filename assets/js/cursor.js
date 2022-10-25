@@ -23,10 +23,12 @@
   document.querySelectorAll("[data-cursor]").forEach((item) => {
     item.addEventListener("mouseover", (e) => {
       if (item.dataset.cursor === "pointer") {
+        cursorBorder.classList.remove("big-cursor");
         cursorBorder.classList.add("small-cursor");
         cursorBorder.style.setProperty("--size-cursor", "30px");
       }
       if (item.dataset.cursor === "pointer2") {
+        cursorBorder.classList.remove("small-cursor");
         cursorBorder.classList.add("big-cursor");
         cursorBorder.style.setProperty("--size-cursor", "80px");
       }

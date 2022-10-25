@@ -368,6 +368,15 @@ section {
   -webkit-text-decoration-skip: none;
           text-decoration-skip: none;
 }
+.blog-post-container .content p a:link {
+  color: var(--color-secondary);
+}
+.blog-post-container .content p a:visited {
+  color: var(--color-secondary);
+}
+.blog-post-container .content p a:hover {
+  color: var(--color-opposite);
+}
 .blog-post-container .content h3 {
   font-family: "Raleway", sans-serif;
   padding: 2em 0 1em 0;
