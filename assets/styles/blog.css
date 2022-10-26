@@ -15,7 +15,7 @@
   --size-button: clamp(0.8vh, 5vw, 3vh);
   --size-game-grid: clamp(2em, 10vw, 5em);
   --text-50: 50px;
-  --text-micro: 0.8rem;
+  --text-micro: clamp(0.5em, 2.5vw, 0.8rem);
   --text-small: clamp(0.5rem, 5vw, 1.2rem);
   --text-medium: clamp(0.5em, 5vw, 2em);
   --text-big: clamp(2rem, 10vw, 4rem);
@@ -293,16 +293,14 @@ section {
   color: var(--color-grey-0);
   font-size: var(--text-big);
 }
-.blog-post-container .content {
-  padding: 4% 30%;
-}
-.blog-post-container .content .tags {
+.blog-post-container .tags {
   position: absolute;
-  padding-top: 3rem;
+  padding-left: 6%;
+  padding-top: 2rem;
   font-weight: var(--font-heavy);
   text-transform: uppercase;
 }
-.blog-post-container .content .tags .blog-date-post {
+.blog-post-container .tags .blog-date-post {
   font-family: "Open Sans", sans-serif;
   font-weight: var(--font-heavy);
   padding: 0.2rem 0.6rem;
@@ -312,7 +310,7 @@ section {
   font-size: var(--text-micro);
   color: var(--color-white);
 }
-.blog-post-container .content .tags .blog-tag {
+.blog-post-container .tags .blog-tag {
   font-family: "Open Sans", sans-serif;
   font-weight: var(--font-heavy);
   padding: 0.2rem 0.6rem;
@@ -321,6 +319,9 @@ section {
   display: inline-block;
   font-size: var(--text-micro);
   color: var(--color-white);
+}
+.blog-post-container .content {
+  padding: 4% 30%;
 }
 .blog-post-container .content .image {
   display: grid;
