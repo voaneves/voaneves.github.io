@@ -1,9 +1,8 @@
 // Swiper Configuration
 var swiper = new Swiper(".swiper-container", {
-  slidesPerView: 1.5,
-  spaceBetween: 10,
+  slidesPerView: "auto",
+  spaceBetween: 20,
   centeredSlides: true,
-  freeMode: true,
   grabCursor: true,
   loop: true,
   navigation: {

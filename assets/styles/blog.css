@@ -18,7 +18,7 @@
   --text-micro: clamp(0.5em, 2.5vw, 0.8rem);
   --text-small: clamp(0.5rem, 5vw, 1.2rem);
   --text-medium: clamp(0.5em, 5vw, 2em);
-  --text-big: clamp(2rem, 10vw, 4rem);
+  --text-big: clamp(2rem, 5vw, 4rem);
   --text-huge: clamp(3rem, 10vw, 6.3rem);
 }
 
@@ -209,7 +209,7 @@ section {
 .blog-container .swiper-container .swiper-wrapper .swiper-slide .blog-item h5 {
   padding: 1rem 0;
   text-transform: uppercase;
-  font-size: max(1em, 5vw);
+  font-size: var(--text-big);
   font-weight: var(--font-heavy);
   color: var(--color-grey-0);
 }
