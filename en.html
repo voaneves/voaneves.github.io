@@ -51,7 +51,293 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
     <link rel="canonical" href="https://voaneves.com/en" />
-    <link rel="stylesheet" href="assets/styles/styles-min.css">
+    <!-- critical CSS -->
+    <style>
+      @charset "UTF-8";
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        cursor: none;
+        --br-sm-2: 14px;
+        --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+        --font-regular: 300;
+        --font-medium: 500;
+        --font-heavy: 800;
+        --size-button: clamp(0.8vh, 5vw, 3vh);
+        --size-game-grid: clamp(2em, 10vw, 5em);
+        --text-50: 50px;
+        --text-micro: 0.8rem;
+        --text-small: clamp(0.5rem, 5vw, 1.2rem);
+        --text-medium: clamp(0.5em, 5vw, 2em);
+        --text-big: clamp(2rem, 10vw, 4rem);
+        --text-huge: clamp(3rem, 10vw, 6.3rem);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-primary: #0a0a0a;
+          --color-secondary: #339eff;
+          --color-white: #ffffff;
+          --color-black: #000;
+          --color-grey-0: #f8f8f8;
+          --color-grey-1: #dbe1e8;
+          --color-grey-2: #b2becd;
+          --color-grey-3: #6c7983;
+          --color-grey-4: #454e56;
+          --color-grey-5: #2a2e35;
+          --color-grey-6: #12181b;
+          --color-opposite: #ff7e33;
+          --color-yellow: #fff36d;
+        }
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --color-primary: #ffffff;
+          --color-secondary: #ff7e33;
+          --color-white: #454e56;
+          --color-black: #000;
+          --color-grey-0: #f8f8f8;
+          --color-grey-1: #6c7983;
+          --color-grey-2: #6c7983;
+          --color-grey-3: #6c7983;
+          --color-grey-4: #b2becd;
+          --color-grey-5: #e8e8e8;
+          --color-grey-6: #12181b;
+          --color-opposite: #339eff;
+        }
+      }
+      .header-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+      }
+      .header-content .left-header {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .header-content .left-header .h-shape {
+        transition: all 0.4s ease-in-out;
+        width: 65%;
+        height: 100%;
+        background-color: var(--color-secondary);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        -webkit-clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+        clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+      }
+      .header-content .left-header .image {
+        border-radius: var(--br-sm-2);
+        height: 90%;
+        width: 68%;
+        margin-left: 4rem;
+        background-color: var(--color-black);
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+      }
+      .header-content .left-header .image img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        transition: all 0.4s ease-in-out;
+        filter: grayscale(100%);
+      }
+      .header-content .left-header .image img:hover {
+        filter: grayscale(0);
+      }
+      .header-content .right-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 18rem;
+      }
+      .header-content .right-header .name {
+        font-size: var(--text-big);
+      }
+      .header-content .right-header .name span {
+        color: var(--color-secondary);
+        -webkit-animation: color-animation 4s linear infinite;
+        animation: color-animation 4s linear infinite;
+      }
+      @-webkit-keyframes color-animation {
+        0% {
+          color: var(--color-secondary);
+        }
+        49% {
+          color: var(--color-secondary);
+        }
+        50% {
+          color: var(--color-opposite);
+        }
+        99% {
+          color: var(--color-opposite);
+        }
+        100% {
+          color: var(--color-secondary);
+        }
+      }
+      @keyframes color-animation {
+        0% {
+          color: var(--color-secondary);
+        }
+        49% {
+          color: var(--color-secondary);
+        }
+        50% {
+          color: var(--color-opposite);
+        }
+        99% {
+          color: var(--color-opposite);
+        }
+        100% {
+          color: var(--color-secondary);
+        }
+      }
+      .header-content .right-header .name .changing-text::before {
+        content: "programar";
+        -webkit-animation: animate-text infinite 20s;
+        animation: animate-text infinite 20s;
+      }
+      @-webkit-keyframes animate-text {
+        0% {
+          content: "programar";
+        }
+        10% {
+          content: "eficiência";
+        }
+        20% {
+          content: "analytics";
+        }
+        30% {
+          content: "o piano";
+        }
+        40% {
+          content: "digital";
+        }
+        50% {
+          content: "branding";
+        }
+        60% {
+          content: "correr";
+        }
+        70% {
+          content: "sprints";
+        }
+        80% {
+          content: "a Deus";
+        }
+      }
+      @keyframes animate-text {
+        0% {
+          content: "programar";
+        }
+        10% {
+          content: "eficiência";
+        }
+        20% {
+          content: "analytics";
+        }
+        30% {
+          content: "o piano";
+        }
+        40% {
+          content: "digital";
+        }
+        50% {
+          content: "branding";
+        }
+        60% {
+          content: "correr";
+        }
+        70% {
+          content: "sprints";
+        }
+        80% {
+          content: "a Deus";
+        }
+      }
+      @-webkit-keyframes cursor-blink {
+        0% {
+          opacity: 0;
+        }
+      }
+      @keyframes cursor-blink {
+        0% {
+          opacity: 0;
+        }
+      }
+      .header-content .right-header .changing-text::after {
+        content: "";
+        width: 0.25rem;
+        height: 3rem;
+        background: var(--color-grey-4);
+        display: inline-block;
+        -webkit-animation: cursor-blink 1s steps(2) infinite;
+        animation: cursor-blink 1s steps(2) infinite;
+      }
+      .header-content .right-header p {
+        margin: 1.5rem 0;
+        line-height: 2rem;
+        font-weight: var(--font-regular);
+      }
+      @media screen and (max-width: 600px) {
+        header {
+          padding: 0 !important;
+        }
+        .container {
+          padding: 2rem 2.5rem !important;
+        }
+      }
+      @media screen and (max-width: 1432px) {
+        .container {
+          padding: 7rem 11rem;
+        }
+      }
+      @media screen and (max-width: 1070px) {
+        .header-content {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .header-content .left-header .h-shape {
+          display: none;
+        }
+        .header-content .left-header .image {
+          margin: 0 auto;
+          width: 85%;
+        }
+        .header-content .right-header {
+          grid-row: 1;
+          padding-right: 0 !important;
+          width: 90%;
+          margin: 0 auto;
+        }
+        .header-content .right-header .name {
+          font-size: 2.5rem !important;
+          text-align: center;
+          padding-top: 3rem;
+        }
+      }
+      @media screen and (max-width: 970px) {
+        .container {
+          padding: 7rem 6rem;
+        }
+        .header-content {
+          padding-bottom: 6rem;
+        }
+      }
+    </style>
+    <link
+      rel="preload"
+      href="assets/styles/styles-min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="assets/styles/styles-min.css" />
+    </noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
