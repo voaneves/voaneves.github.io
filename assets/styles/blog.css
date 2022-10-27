@@ -277,6 +277,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 2em;
 }
 .blog-post-container .header img {
   -o-object-fit: cover;
@@ -296,7 +297,6 @@ section {
 .blog-post-container .tags {
   position: absolute;
   padding-left: 6%;
-  padding-top: 2rem;
   font-weight: var(--font-heavy);
   text-transform: uppercase;
 }
@@ -326,6 +326,7 @@ section {
 .blog-post-container .content .image {
   display: grid;
   place-items: center;
+  padding-bottom: 2em;
 }
 .blog-post-container .content .image img {
   display: inline-block;
@@ -340,7 +341,7 @@ section {
 .blog-post-container .content p {
   font-family: "Raleway", sans-serif;
   font-weight: var(--font-thin);
-  padding-top: 2em;
+  padding-bottom: 2em;
   color: var(--color-white);
 }
 .blog-post-container .content p .first-letter {
@@ -380,7 +381,7 @@ section {
 }
 .blog-post-container .content h3 {
   font-family: "Raleway", sans-serif;
-  padding: 2em 0 1em 0;
+  padding: 1em 0 1em 0;
 }
 .blog-post-container .content .numbered-list {
   counter-reset: li;

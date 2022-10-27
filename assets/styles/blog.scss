@@ -312,6 +312,7 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-bottom: 2em;
 
         img {
             object-fit: cover;
@@ -333,7 +334,6 @@ section {
     .tags {
         position: absolute;
         padding-left: 6%;
-        padding-top: 2rem;
         font-weight: var(--font-heavy);
         text-transform: uppercase;
 
@@ -366,6 +366,7 @@ section {
         .image {
             display: grid;
             place-items: center;
+            padding-bottom: 2em;
 
             img {
                 display: inline-block;
@@ -383,7 +384,7 @@ section {
         p {
             font-family: "Raleway", sans-serif;
             font-weight: var(--font-thin);
-            padding-top: 2em;
+            padding-bottom: 2em;
             color: var(--color-white);
 
             .first-letter {
@@ -427,7 +428,7 @@ section {
 
         h3 {
             font-family: "Raleway", sans-serif;
-            padding: 2em 0 1em 0;
+            padding: 1em 0 1em 0;
         }
 
         .numbered-list {
