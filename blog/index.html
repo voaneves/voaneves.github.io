@@ -103,7 +103,15 @@
     />
     <link rel="shortcut icon" href="../assets/img/favicon.ico" />
     <link rel="canonical" href="https://voaneves.com/blog" />
-    <link rel="stylesheet" href="../assets/styles/blog-min.css" />
+    <link
+      rel="preload"
+      href="../assets/styles/blog-min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="../assets/styles/blog-min.css" />
+    </noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -226,7 +234,7 @@
         class="btn"
         id="home"
         title="Home"
-        onclick="location.href='somos-bons-ou-maus.html';"
+        onclick="location.href='../';"
         data-cursor="pointer"
       >
         <i class="icon-home"></i>

@@ -106,7 +106,15 @@
     />
     <link rel="shortcut icon" href="../assets/img/favicon.ico" />
     <link rel="canonical" href="https://voaneves.com/blog/somos-bons-ou-maus" />
-    <link rel="stylesheet" href="../assets/styles/blog-min.css" />
+    <link
+      rel="preload"
+      href="../assets/styles/blog-post-min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="../assets/styles/blog-post-min.css" />
+    </noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -157,10 +165,18 @@
       <section class="container blog-post active" id="blog">
         <div class="blog-post-container">
           <div class="header" data-cursor="pointer2">
-            <img
-              loading="lazy"
-              src="https://i.picsum.photos/id/1074/1920/1080.webp?hmac=6h5xui6N8f2zx_IAvWnjI123e0V-0h3-6xzQgW9eD0c"
-            />
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="
+                  https://i.picsum.photos/id/1074/600/600.webp?hmac=KIlqSnwCXrCFzr3RHtW8h5A5wGTw8eTec0pNKMbJWJo
+                "
+              />
+              <img
+                src="https://i.picsum.photos/id/1074/1920/700.webp?hmac=U01H9aWP_hep4ZhWfhPBrAa5AYGdiJXu3xNqiNrIwYc"
+                alt="Foto de um tigre, é da natureza dele ser mal?"
+              />
+            </picture>
             <h2>Somos bons ou maus?</h2>
           </div>
           <div class="tags">

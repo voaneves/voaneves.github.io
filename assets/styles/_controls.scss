@@ -1,0 +1,65 @@
+/* Controls */
+.controls {
+    position: fixed;
+    z-index: 10;
+    top: 50vh;
+    right: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+
+    .control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-grey-4);
+        margin: 7% 0;
+        width: clamp(1vh, 10vw, 8vh);
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        box-shadow: var(--box-shadow-1);
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+
+        i {
+            font-size: var(--size-button);
+            color: var(--color-grey-1);
+            pointer-events: none;
+        }
+
+        &:hover {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--color-white);
+        }
+    }
+
+    .active-btn {
+        background-color: var(--color-secondary);
+
+        i {
+            color: var(--color-white);
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .controls {
+        top: auto;
+        bottom: 0;
+        flex-direction: row;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        background-color: var(--color-grey-5);
+
+        .control {
+            margin: 7% 2%;
+        }
+    }
+}

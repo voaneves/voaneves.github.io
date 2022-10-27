@@ -1,0 +1,59 @@
+/* Page settings */
+.page-settings {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    top: 3vw;
+    right: 2vw;
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: clamp(3em, 10vw, 6em);
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        margin: 0 4%;
+        background-color: var(--color-grey-4);
+        box-shadow: var(--box-shadow-1);
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+
+        i {
+            font-size: var(--size-button);
+            color: var(--color-grey-1);
+            pointer-events: none;
+        }
+
+        &:hover {
+            background-color: var(--color-white);
+            transform: translateY(-3px);
+            -webkit-transition: all 0.3s ease-in;
+            -moz-transition: all 0.3s ease-in;
+            -o-transition: all 0.3s ease-in;
+            -ms-transition: all 0.3s ease-in;
+            transition: all 0.3s ease-in;
+            box-shadow: 0 10px 20px var(--color-opposite);
+
+            i {
+                color: var(--color-opposite);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .page-settings {
+        flex-direction: column;
+
+        .page-settings .btn {
+            margin: 7% 2%;
+        }
+    }
+}
