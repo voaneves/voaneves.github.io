@@ -3,24 +3,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  header {
-    padding: 0 !important;
-  }
-
-  .controls {
-    top: auto;
-    bottom: 0;
-    flex-direction: row;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    background-color: var(--color-grey-5);
-
-    .control {
-      margin: max(0, 7%) max(0, 2%);
-    }
-  }
-
   .about-container {
     .right-about {
       padding-top: 2.5rem;
@@ -32,14 +14,6 @@
       p {
         padding-left: 0;
       }
-    }
-  }
-
-  .page-settings {
-    flex-direction: column;
-
-    .btn {
-      margin: 7% 2%;
     }
   }
 
@@ -139,10 +113,6 @@
     padding-bottom: 6rem;
   }
 
-  .container {
-    padding: 2rem 2.5rem !important;
-  }
-
   .contact-content-con {
     flex-direction: column;
 
@@ -179,10 +149,6 @@
 }
 
 @media screen and (max-width: 1432px) {
-  .container {
-    padding: 7rem 11rem;
-  }
-
   .portfolio-content {
     .portfolio-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -213,34 +179,6 @@
 }
 
 @media screen and (max-width: 1070px) {
-  .header-content {
-    grid-template-columns: repeat(1, 1fr);
-
-    .left-header {
-      .h-shape {
-        display: none;
-      }
-
-      .image {
-        margin: 0 auto;
-        width: 85%;
-      }
-    }
-
-    .right-header {
-      grid-row: 1;
-      padding-right: 0rem !important;
-      width: 90%;
-      margin: 0 auto;
-
-      .name {
-        font-size: 2.5rem !important;
-        text-align: center;
-        padding-top: 3rem;
-      }
-    }
-  }
-
   .about-container {
     .right-about {
       padding-top: 2.5rem;
@@ -249,16 +187,8 @@
 }
 
 @media screen and (max-width: 970px) {
-  .container {
-    padding: 7rem 6rem;
-  }
-
   .about-container .left-about {
     padding-right: 0rem;
-  }
-
-  .header-content {
-    padding-bottom: 6rem;
   }
 
   .portfolio-content {
