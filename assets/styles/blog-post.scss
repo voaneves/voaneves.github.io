@@ -132,6 +132,19 @@
             padding: 1em 0 1em 0;
         }
 
+        .quote {
+            margin-bottom: 2em;
+            background: var(--color-grey-4);
+            padding: 0.5em;
+            padding-bottom: 1em;
+            border-radius: 1em;
+
+            ficaption,
+            blockquote {
+                margin: 1em;
+            }
+        }
+
         .numbered-list {
             counter-reset: li;
             list-style-type: none;

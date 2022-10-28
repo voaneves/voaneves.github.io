@@ -119,6 +119,17 @@
   font-family: "Raleway", sans-serif;
   padding: 1em 0 1em 0;
 }
+.blog-post-container .content .quote {
+  margin-bottom: 2em;
+  background: var(--color-grey-4);
+  padding: 0.5em;
+  padding-bottom: 1em;
+  border-radius: 1em;
+}
+.blog-post-container .content .quote ficaption,
+.blog-post-container .content .quote blockquote {
+  margin: 1em;
+}
 .blog-post-container .content .numbered-list {
   counter-reset: li;
   list-style-type: none;
