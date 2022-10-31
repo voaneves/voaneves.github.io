@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br">
+<html lang="pt-BR" xmlns="https://www.w3.org/1999/xhtml" xml:lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -7,7 +7,10 @@
       content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10.0"
     />
     <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="filosofia moderna, comportamento" />
+    <meta
+      name="keywords"
+      content="finanças, investimento, parcelamento, dinheiro"
+    />
     <meta
       name="description"
       content="De onde vem a nossa humanidade? Somos bons ou maus? Falaremos sobre filosofia, buscando sentido na genética e até antropologia. Venha ler mais!"
@@ -115,8 +118,6 @@
       rel="canonical"
       href="https://voaneves.com/blog/o-pobre-que-compra-iphone"
     />
-    <link rel="shortcut icon" href="../assets/img/favicon.ico" />
-    <link rel="canonical" href="https://voaneves.com/blog/somos-bons-ou-maus" />
     <link
       rel="preload"
       href="../assets/styles/blog-post-min.css"
@@ -176,15 +177,28 @@
       <section class="container blog-post active" id="blog">
         <div class="blog-post-container">
           <div class="header" data-cursor="pointer2">
-            <img
-              loading="lazy"
-              src="https://i.picsum.photos/id/240/1920/1080.webp?hmac=rp27Vg_S0QwgiEokxINFWto_tWJGv3OHsZqDA9EOyYM"
-            />
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="
+                  https://i.picsum.photos/id/240/600/600.webp?hmac=mygtsIPIjyydbGywlnT4vBTPqsW1X888SCivbeHpr-M
+                "
+              />
+              <img
+                src="https://i.picsum.photos/id/240/1920/700.webp?hmac=u9DbLz5nkWKbBSfWqZVku3vIMg9I7Zwi-ri5OIQNIZI"
+                alt="Foto de um tigre, é da natureza dele ser mal?"
+              />
+            </picture>
             <h2>O pobre que compra iPhone</h2>
+          </div>
+          <div class="tags">
+            <p class="blog-date-post">27/10/2022</p>
+            <p class="blog-tag">Finanças</p>
           </div>
           <div class="content">
             <p>
-              Em locais com grande desigualdade de renda,
+              <span class="bold first-letter">E</span>m locais com grande
+              desigualdade de renda,
               <span class="bold marker"
                 >os que tem menos vivem sob grande estresse social, possuem
                 maiores chances de estarem depressivas</span
@@ -356,13 +370,11 @@
             <h3>Referências bibliográficas</h3>
             <ul class="numbered-list">
               <li>
-                <cite>
-                  RIDLEY, M., Rao, G., Schilbach, F., & Patel, V. (2020).
-                  Poverty, depression, and anxiety: Causal evidence and
-                  mechanisms. Em Science (Vol. 370, Issue 6522). American
-                  Association for the Advancement of Science (AAAS).
-                  https://doi.org/10.1126/science.aay0214
-                </cite>
+                RIDLEY, M., Rao, G., Schilbach, F., & Patel, V. (2020). Poverty,
+                depression, and anxiety: Causal evidence and mechanisms. Em
+                Science (Vol. 370, Issue 6522). American Association for the
+                Advancement of Science (AAAS).
+                <a href="https://doi.org/10.1126/science.aay0214">DOI</a>
               </li>
               <li>
                 <cite>
@@ -372,14 +384,16 @@
                   Evidence from the US Health and Retirement Study. Em
                   Proceedings of the National Academy of Sciences (Vol. 119,
                   Issue 25). Proceedings of the National Academy of Sciences.
-                  https://doi.org/10.1073/pnas.2202780119
+                  <a href="https://doi.org/10.1073/pnas.2202780119">DOI</a>
                 </cite>
               </li>
               <li>
                 <cite>
                   Kawasaki, G. (2015, April 28). The art of evangelism. Harvard
                   Business Review. Retrieved October 27, 2022, from
-                  https://hbr.org/2015/05/the-art-of-evangelism
+                  <a href="https://hbr.org/2015/05/the-art-of-evangelism"
+                    >LINK</a
+                  >
                 </cite>
               </li>
               <li>
@@ -387,14 +401,17 @@
                   CAMPBELL, Heidi & La Pastina, Antonio. (2010). How the iPhone
                   became divine: New media, religion and the intertextual
                   circulation of meaning. New Media & Society - NEW MEDIA SOC.
-                  12. 10.1177/1461444810362204
+                  12. <a href="10.1177/1461444810362204">DOI</a>
                 </cite>
               </li>
               <li>
                 <cite>
                   UBEL, P. (2022) How the psychology of Income Inequality
                   Benefits Luxury Brands, Forbes. Forbes Magazine. Available at:
-                  https://www.forbes.com/sites/peterubel/2017/02/28/do-luxury-brands-benefit-from-income-inequality/?sh=57bfdd3527b5
+                  <a
+                    href="https://www.forbes.com/sites/peterubel/2017/02/28/do-luxury-brands-benefit-from-income-inequality/?sh=57bfdd3527b5"
+                    >LINK</a
+                  >
                   (Accessed: October 27, 2022)
                 </cite>
               </li>
@@ -403,7 +420,10 @@
                   PAUL, Trina. (2021, November 30). Here's why budgets don't
                   work for a lot of people. CNBC. Retrieved October 27, 2022,
                   from
-                  https://www.cnbc.com/select/why-budgets-dont-work-for-people/
+                  <a
+                    href="https://www.cnbc.com/select/why-budgets-dont-work-for-people/"
+                    >LINK</a
+                  >
                 </cite>
               </li>
               <li>
@@ -411,40 +431,48 @@
                   LEWIS, Cora. (2022, September 15) As 'buy now, pay later'
                   plans grow, so do delinquencies. (n.d.). Retrieved October 28,
                   2022, from
-                  https://www.usnews.com/news/us/articles/2022-09-15/as-buy-now-pay-later-plans-grow-so-do-delinquencies
+                  <a
+                    href="https://www.usnews.com/news/us/articles/2022-09-15/as-buy-now-pay-later-plans-grow-so-do-delinquencies"
+                    >LINK</a
+                  >
                 </cite>
               </li>
               <li>
                 <cite>
                   DI, Wenhua and Su, Yichen, Conspicuous Consumption: Vehicle
                   Purchases by Non-Prime Consumers (September 17, 2022).
-                  http://dx.doi.org/10.2139/ssrn.3857387
+                  <a href="http://dx.doi.org/10.2139/ssrn.3857387">DOI</a>
                 </cite>
               </li>
             </ul>
             <h3>Dicas de leitura</h3>
             <ul class="numbered-list">
               <li>
-                Desperte o gigante interior - Anthony Robins (Fala sobre
-                neurolinguística e PNL, com uma abordagem de auto-ajuda).
+                Pai Rico, Pai Pobre (Rich Dad Poor Dad) - Robert Kiyosaki (Guia
+                de como investir, como separar dinheiro, criação de orçamentos,
+                de uma forma divertida).
               </li>
               <li>
-                O gene altruista - Atahualpa Fernandez (Dissertação sobre a
-                relação da moral com a seleção natural, com ênfase em Darwin,
-                Altruísmo e códigos de moral e ética).
+                A psicologia do dinheiro (The psichology of money) - Morgan
+                Housel (Ensina como pensar à respeito do dinheiro, de forma
+                prática e baseada no mundo real, não em planilhas do Excel).
               </li>
               <li>
-                Consiliência - A unidade do conhecimento - E. O. Wilson
-                (Discussão sobre a união das ciências em prol da obtenção de
-                respostas sobre a natureza humana).
+                Trabalhe 4 horas por semana (The 4-hours workweek) - Tim Ferris
+                (Trabalha na mudança de mindset, priorizando o que for
+                necessário para sair dos trabalhos 9-to-5)
               </li>
-              <li>The Goodness Paradox - Richard Wrangham.</li>
             </ul>
-            <div class="tags">
-              <p class="blog-date-post">23/10/2022</p>
-              <p class="blog-tag">Filosofia</p>
-            </div>
           </div>
+          <script
+            src="https://utteranc.es/client.js"
+            repo="voaneves/voaneves.github.io"
+            issue-term="title"
+            label="[Comments]"
+            theme="preferred-color-scheme"
+            crossorigin="anonymous"
+            async
+          ></script>
         </div>
       </section>
     </main>

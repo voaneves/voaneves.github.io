@@ -20,7 +20,7 @@
   -o-object-fit: cover;
      object-fit: cover;
   max-height: 700px;
-  width: 100%;
+  max-width: 100%;
   filter: brightness(0.5);
 }
 .blog-post-container .header h2 {
@@ -106,18 +106,18 @@
   -webkit-text-decoration-skip: none;
           text-decoration-skip: none;
 }
-.blog-post-container .content p a:link {
-  color: var(--color-secondary);
-}
-.blog-post-container .content p a:visited {
-  color: var(--color-secondary);
-}
-.blog-post-container .content p a:hover {
-  color: var(--color-opposite);
-}
 .blog-post-container .content h3 {
   font-family: "Raleway", sans-serif;
   padding: 1em 0 1em 0;
+}
+.blog-post-container .content a:link {
+  color: var(--color-secondary);
+}
+.blog-post-container .content a:visited {
+  color: var(--color-secondary);
+}
+.blog-post-container .content a:hover {
+  color: var(--color-opposite);
 }
 .blog-post-container .content .quote {
   margin-bottom: 2em;

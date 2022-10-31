@@ -19,7 +19,7 @@
         img {
             object-fit: cover;
             max-height: 700px;
-            width: 100%;
+            max-width: 100%;
             filter: brightness(0.5);
         }
 
@@ -111,25 +111,25 @@
                 text-decoration-skip-ink: none;
                 text-decoration-skip: none;
             }
-
-            a {
-                &:link {
-                    color: var(--color-secondary);
-                }
-
-                &:visited {
-                    color: var(--color-secondary);
-                }
-
-                &:hover {
-                    color: var(--color-opposite);
-                }
-            }
         }
 
         h3 {
             font-family: "Raleway", sans-serif;
             padding: 1em 0 1em 0;
+        }
+
+        a {
+            &:link {
+                color: var(--color-secondary);
+            }
+
+            &:visited {
+                color: var(--color-secondary);
+            }
+
+            &:hover {
+                color: var(--color-opposite);
+            }
         }
 
         .quote {
