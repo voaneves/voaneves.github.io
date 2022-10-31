@@ -18,13 +18,13 @@
         border-radius: 50%;
         margin: 0 4%;
         background-color: var(--color-grey-4);
+        border: none;
         box-shadow: var(--box-shadow-1);
         -webkit-transition: all 0.5s ease-out;
         -moz-transition: all 0.5s ease-out;
         -o-transition: all 0.5s ease-out;
         -ms-transition: all 0.5s ease-out;
         transition: all 0.5s ease-out;
-        padding: 5px;
 
         i {
             font-size: var(--size-button);

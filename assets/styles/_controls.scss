@@ -18,6 +18,7 @@
         margin: 7% 0;
         width: clamp(1vh, 10vw, 8vh);
         aspect-ratio: 1 / 1;
+        border: none;
         border-radius: 50%;
         box-shadow: var(--box-shadow-1);
         -webkit-transition: all 0.5s ease-out;
