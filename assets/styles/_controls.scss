@@ -33,9 +33,18 @@
         }
 
         &:hover {
-            transition: all 0.3s ease-in-out;
+            background-color: var(--color-white);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px var(--color-white);
+            -webkit-transition: all 0.3s ease-in;
+            -moz-transition: all 0.3s ease-in;
+            -o-transition: all 0.3s ease-in;
+            -ms-transition: all 0.3s ease-in;
+            transition: all 0.3s ease-in;
+            box-shadow: 0 10px 20px var(--color-opposite);
+
+            i {
+                color: var(--color-opposite);
+            }
         }
     }
 
@@ -44,6 +53,16 @@
 
         i {
             color: var(--color-white);
+        }
+
+        &:hover {
+            background-color: var(--color-secondary);
+            box-shadow: none;
+            transform: none;
+
+            i {
+                color: var(--color-white);
+            }
         }
     }
 }
