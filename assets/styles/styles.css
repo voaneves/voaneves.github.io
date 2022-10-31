@@ -1250,18 +1250,7 @@ section {
 
 .highlight {
   font-weight: var(--font-heavy);
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
-  -webkit-text-decoration-style: solid;
-  text-decoration-style: solid;
-  text-decoration-thickness: 0.4rem;
-  text-underline-offset: -0.2em;
-  -webkit-text-decoration-color: var(--color-opposite);
-  text-decoration-color: var(--color-opposite);
-  -webkit-text-decoration-skip-ink: none;
-  text-decoration-skip-ink: none;
-  -webkit-text-decoration-skip: none;
-  text-decoration-skip: none;
+  color: var(--color-opposite);
 }
 
 .different:link {
