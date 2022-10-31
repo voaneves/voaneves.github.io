@@ -114,6 +114,7 @@
         cursor: none;
         --br-sm-2: 14px;
         --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+        --color-white-2: #ffffff;
         --font-regular: 300;
         --font-medium: 500;
         --font-heavy: 800;
@@ -1259,6 +1260,7 @@
         data-id="home"
         title="Home"
         data-cursor="pointer"
+        data-tooltip="HOME"
       >
         <i class="icon-home"></i>
       </button>
@@ -1267,6 +1269,7 @@
         data-id="about"
         title="Sobre"
         data-cursor="pointer"
+        data-tooltip="SOBRE"
       >
         <i class="icon-user"></i>
       </button>
@@ -1275,6 +1278,7 @@
         data-id="games"
         title="Jogos"
         data-cursor="pointer"
+        data-tooltip="GAMES"
       >
         <i class="icon-gamepad"></i>
       </button>
@@ -1283,6 +1287,7 @@
         data-id="portfolio"
         title="Portfolio"
         data-cursor="pointer"
+        data-tooltip="PORTFOLIO"
       >
         <i class="icon-briefcase"></i>
       </button>
@@ -1291,6 +1296,7 @@
         onclick="location.href='./blog';"
         title="Blog"
         data-cursor="pointer"
+        data-tooltip="BLOG"
       >
         <i class="icon-blog"></i>
       </button>
@@ -1299,12 +1305,19 @@
         data-id="contact"
         title="Contato"
         data-cursor="pointer"
+        data-tooltip="CONTATO"
       >
         <i class="icon-envelope-open"></i>
       </button>
     </div>
     <div class="page-settings">
-      <button class="btn" id="theme" title="Mudar o tema" data-cursor="pointer">
+      <button
+        class="btn"
+        id="theme"
+        title="Mudar o tema"
+        data-cursor="pointer"
+        data-tooltip="TROCAR TEMA"
+      >
         <i class="icon-adjust"></i>
       </button>
       <button
@@ -1313,6 +1326,7 @@
         onclick="location.href='./en';"
         title="Translate"
         data-cursor="pointer"
+        data-tooltip="TRANSLATE"
       >
         <i class="icon-translate"></i>
       </button>

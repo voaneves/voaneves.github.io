@@ -1,0 +1,31 @@
+[data-tooltip] {
+    &:before {
+        content: attr(data-tooltip);
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        padding: 10px;
+        color: var(--color-white-2);
+        border-radius: 10px;
+        font-weight: 800;
+        width: 80px;
+        margin-left: -200px;
+        background: var(--color-grey-4);
+        font-size: 1em;
+    }
+
+    &:hover {
+        &:before {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    [data-tooltip] {
+        &:before {
+            display: none;
+        }
+    }
+}

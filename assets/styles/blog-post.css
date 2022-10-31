@@ -188,6 +188,7 @@
   cursor: none;
   --br-sm-2: 14px;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+  --color-white-2: #ffffff;
   --font-thin: 100;
   --font-regular: 300;
   --font-medium: 500;
@@ -208,7 +209,6 @@
     --color-primary: #0a0a0a;
     --color-secondary: #339eff;
     --color-white: #ffffff;
-    --color-white-fixed: #ffffff;
     --color-black: #000;
     --color-grey-0: #f8f8f8;
     --color-grey-1: #dbe1e8;
@@ -226,7 +226,6 @@
     --color-primary: #ffffff;
     --color-secondary: #ff7e33;
     --color-white: #454e56;
-    --color-white-fixed: #ffffff;
     --color-black: #000;
     --color-grey-0: #f8f8f8;
     --color-grey-1: #6c7983;
@@ -242,7 +241,6 @@
   --color-primary: #ffffff;
   --color-secondary: #ff7e33;
   --color-white: #454e56;
-  --color-white-fixed: #ffffff;
   --color-black: #000;
   --color-grey-0: #f8f8f8;
   --color-grey-1: #6c7983;
@@ -258,7 +256,6 @@
   --color-primary: #0a0a0a;
   --color-secondary: #339eff;
   --color-white: #ffffff;
-  --color-white-fixed: #ffffff;
   --color-black: #000;
   --color-grey-0: #f8f8f8;
   --color-grey-1: #dbe1e8;
@@ -500,4 +497,29 @@ section {
 
 .icon-circle-left:before {
   content: "\e914";
+}
+
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  padding: 10px;
+  color: var(--color-white-2);
+  border-radius: 10px;
+  font-weight: 800;
+  width: 80px;
+  margin-left: -200px;
+  background: var(--color-grey-4);
+  font-size: 1em;
+}
+[data-tooltip]:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  [data-tooltip]:before {
+    display: none;
+  }
 }/*# sourceMappingURL=blog-post.css.map */
