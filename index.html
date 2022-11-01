@@ -332,14 +332,27 @@
         -webkit-animation: cursor-blink 1s steps(2) infinite;
         animation: cursor-blink 1s steps(2) infinite;
       }
-      .header-content .right-header p {
+      .header-content .right-header .header-text {
+        display: inline-block;
         margin: 1.5rem 0;
         line-height: 2rem;
         font-weight: var(--font-regular);
       }
+      .header-content .right-header .header-text-mobile {
+        margin: 1.5rem 0;
+        line-height: 2rem;
+        font-weight: var(--font-regular);
+        display: none;
+      }
       @media screen and (max-width: 600px) {
         header {
           padding: 0 !important;
+        }
+        .header-content .right-header .header-text-mobile {
+          display: inline-block;
+        }
+        .header-content .right-header .header-text {
+          display: none;
         }
         .container {
           padding: 2rem 2.5rem !important;
@@ -447,17 +460,25 @@
             Olá, sou <span>Victor.</span> Um engenheiro que ama <br />
             <span class="changing-text"></span>
           </h1>
-          <p>
+          <p class="header-text">
             Especialista em
             <span class="highlight"
               >transformar sua empresa para o digital</span
             >
             com
-            <span class="marker"
+            <span class="highlight"
               >inovação, análise de dados, indicadores e aplicativos</span
             >. Faço soluções customizadas de inteligência artificial em Python,
             web design, jogos, crio identidades visuais, tudo isso baseado em
             prototipagem rápida e colaboração interdisciplinar. Meu
+            <span class="highlight">próximo projeto é com você</span>. Bora?
+          </p>
+          <p class="header-text-mobile">
+            Especialista em
+            <span class="highlight"
+              >transformar sua empresa para o digital</span
+            >
+            com inovação, análise de dados, indicadores e aplicativos. Meu
             <span class="highlight">próximo projeto é com você</span>. Bora?
           </p>
           <div class="btn-con" data-cursor="pointer2">
@@ -472,7 +493,6 @@
               </span>
             </a>
           </div>
-          <br />
           <div class="btn-con" data-cursor="pointer2">
             <a
               href="https://wa.me/5563999999337"
@@ -485,7 +505,6 @@
               </span>
             </a>
           </div>
-          <br />
           <div class="btn-con" data-cursor="pointer2">
             <a href="assets/cv-pt.pdf" class="main-btn" target="_blank">
               <span class="btn-text">Baixar CV</span>
@@ -494,7 +513,6 @@
               </span>
             </a>
           </div>
-          <br />
         </div>
       </div>
     </header>
@@ -1236,17 +1254,19 @@
                     placeholder="Mensagem aqui..."
                   ></textarea>
                 </div>
-                <div class="submit-btn" data-cursor="pointer2">
-                  <a
-                    href="javascript:;"
-                    onclick="document.getElementById('formspree').submit();"
-                    class="main-btn"
-                  >
-                    <span class="btn-text">Enviar</span>
-                    <span class="btn-icon">
-                      <i class="icon-paper-plane"></i>
-                    </span>
-                  </a>
+                <div class="submit-btn">
+                  <div class="btn-con" data-cursor="pointer2">
+                    <a
+                      href="javascript:;"
+                      onclick="document.getElementById('formspree').submit();"
+                      class="main-btn"
+                    >
+                      <span class="btn-text">Enviar</span>
+                      <span class="btn-icon">
+                        <i class="icon-paper-plane"></i>
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </form>
             </div>

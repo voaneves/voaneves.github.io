@@ -1,4 +1,8 @@
 /* Independent components */
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65, 0, .076, 1)) {
+    transition: $property $duration $ease;
+}
+
 .btn-con {
     display: flex;
     align-self: flex-start;
@@ -15,15 +19,16 @@
     align-self: flex-start;
     align-items: center;
     overflow: hidden;
+    margin-bottom: 10px;
 
     .btn-text {
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
 
     .btn-icon {
         background-color: var(--color-secondary);
         width: 5vh;
-        height: 5vh;
+        aspect-ratio: 1 / 1;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -35,25 +40,22 @@
         }
     }
 
-    &::before {
+    &:before {
         content: "";
         position: absolute;
         top: 0;
         right: 0;
         transform: translateX(100%);
-        transition: all 0.4s ease-out;
         z-index: -1;
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
     }
 
     &:hover {
-        transition: all 0.4s ease-out;
-
-        &::before {
+        &:before {
             width: 100%;
             height: 100%;
             background-color: var(--color-secondary);
             transform: translateX(0);
-            transition: all 0.4s ease-out;
         }
     }
 }

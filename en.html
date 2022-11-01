@@ -333,14 +333,27 @@
         -webkit-animation: cursor-blink 1s steps(2) infinite;
         animation: cursor-blink 1s steps(2) infinite;
       }
-      .header-content .right-header p {
+      .header-content .right-header .header-text {
+        display: inline-block;
         margin: 1.5rem 0;
         line-height: 2rem;
         font-weight: var(--font-regular);
       }
+      .header-content .right-header .header-text-mobile {
+        margin: 1.5rem 0;
+        line-height: 2rem;
+        font-weight: var(--font-regular);
+        display: none;
+      }
       @media screen and (max-width: 600px) {
         header {
           padding: 0 !important;
+        }
+        .header-content .right-header .header-text-mobile {
+          display: inline-block;
+        }
+        .header-content .right-header .header-text {
+          display: none;
         }
         .container {
           padding: 2rem 2.5rem !important;
@@ -440,7 +453,7 @@
           <h1 class="name">
             Hi, I'm <span>Victor.</span> An engineer who loves to program.
           </h1>
-          <p>
+          <p class="header-text">
             My passion is tech, so I specialized in
             <span class="highlight">Digital Transformation</span>, making custom
             AI solutions in Python and web dev, besides visual identities for
@@ -448,9 +461,15 @@
             disciplines. My
             <span class="highlight">next project is with you</span>. Up for it?
           </p>
+          <p class="header-text-mobile">
+            Specialist in bringing your company to the
+            <span class="highlight">digital era</span>, with dashboards, apps,
+            data science and KPIs. My
+            <span class="highlight">next project is with you</span>. Up for it?
+          </p>
           <div class="btn-con" data-cursor="pointer2">
             <a
-              href="https://koalendar.com/e/reuniao-com-victor-neves"
+              href="https://koalendar.com/e/meet-with-victor-neves"
               class="main-btn"
               target="_blank"
             >
@@ -460,7 +479,6 @@
               </span>
             </a>
           </div>
-          <br />
           <div class="btn-con" data-cursor="pointer2">
             <a
               href="https://wa.me/5563999999337"
@@ -473,7 +491,6 @@
               </span>
             </a>
           </div>
-          <br />
           <div class="btn-con" data-cursor="pointer2">
             <a href="assets/cv-pt.pdf" class="main-btn" target="_blank">
               <span class="btn-text">Download CV</span>
@@ -482,7 +499,6 @@
               </span>
             </a>
           </div>
-          <br />
         </div>
       </div>
     </header>
@@ -496,7 +512,7 @@
         </div>
         <div class="about-container">
           <div class="left-about">
-            <h4>Informações sobre mim</h4>
+            <h4>More about me</h4>
             <p>
               Every step of my career I have always been an
               <span class="highlight">apprentice</span>, striving to achieve
@@ -514,11 +530,23 @@
                 </span>
               </a>
             </div>
+            <div class="btn-con" data-cursor="pointer2">
+              <a
+                href="https://koalendar.com/e/meet-with-victor-neves"
+                class="main-btn"
+                target="_blank"
+              >
+                <span class="btn-text">Schedule a meeting</span>
+                <span class="btn-icon">
+                  <i class="icon-calendar-check"></i>
+                </span>
+              </a>
+            </div>
           </div>
           <div class="right-about">
             <div class="about-item">
               <div class="abt-text">
-                <p class="large-text">SEBRAE ALI</p>
+                <p class="large-text">ALI</p>
                 <p class="small-text">Current <br />job</p>
               </div>
             </div>
@@ -1146,7 +1174,7 @@
                     target="_blank"
                     data-cursor="pointer"
                   >
-                    <i class="icon-youtube-play"></i>
+                    <i class="icon-youtube"></i>
                   </a>
                   <a
                     href="https://linkedin.com/in/voaneves"
@@ -1212,17 +1240,19 @@
                     placeholder="Write a beautiful message here"
                   ></textarea>
                 </div>
-                <div class="submit-btn" data-cursor="pointer2">
-                  <a
-                    href="javascript:;"
-                    onclick="document.getElementById('formspree').submit();"
-                    class="main-btn"
-                  >
-                    <span class="btn-text">Send</span>
-                    <span class="btn-icon">
-                      <i class="icon-paper-plane"></i>
-                    </span>
-                  </a>
+                <div class="submit-btn">
+                  <div class="btn-con" data-cursor="pointer2">
+                    <a
+                      href="javascript:;"
+                      onclick="document.getElementById('formspree').submit();"
+                      class="main-btn"
+                    >
+                      <span class="btn-text">Send</span>
+                      <span class="btn-icon">
+                        <i class="icon-paper-plane"></i>
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </form>
             </div>
