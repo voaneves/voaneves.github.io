@@ -1,0 +1,117 @@
+@mixin cubic-bezier($property: all, $duration: 0.4s, $ease: cubic-bezier(.17, .67, .83, .67)) {
+    transition: $property $duration $ease;
+    -webkit-transition: $property $duration $ease;
+    -moz-transition: $property $duration $ease;
+    -o-transition: $property $duration $ease;
+}
+
+@mixin ease-in-out($property: all, $duration: 0.4s, $ease: ease-in-out) {
+    transition: $property $duration $ease;
+    -webkit-transition: $property $duration $ease;
+    -moz-transition: $property $duration $ease;
+    -o-transition: $property $duration $ease;
+}
+
+@mixin inline-block-center {
+    @include inline-block;
+    @include align-items;
+    @include justify-content;
+}
+
+@mixin flex-center {
+    @include flex;
+    @include align-items;
+    @include justify-content;
+}
+
+@mixin flex-start {
+    @include flex;
+    @include align-items;
+    @include justify-content(flex-start);
+}
+
+@mixin flex-space-between {
+    @include flex;
+    @include align-items;
+    @include justify-content(space-between);
+}
+
+@mixin flex-space-around {
+    @include flex;
+    @include align-items;
+    @include justify-content(space-around);
+}
+
+@mixin inline-block {
+    display: inline-block;
+}
+
+@mixin flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin grid {
+    display: -webkit-grid;
+    display: -ms-grid;
+    display: grid;
+}
+
+@mixin align-items ($value: center) {
+    @if $value ==flex-start {
+        -webkit-box-align: start;
+        -moz-box-align: start;
+        -ms-flex-align: start;
+    }
+
+    @else if $value ==flex-end {
+        -webkit-box-align: end;
+        -moz-box-align: end;
+        -ms-flex-align: end;
+    }
+
+    @else {
+        -webkit-box-align: $value;
+        -moz-box-align: $value;
+        -ms-flex-align: $value;
+    }
+
+    -webkit-align-items: $value;
+    align-items: $value;
+}
+
+@mixin justify-content ($value: center) {
+    @if $value ==flex-start {
+        -webkit-box-pack: start;
+        -moz-box-pack: start;
+        -ms-flex-pack: start;
+    }
+
+    @else if $value ==flex-end {
+        -webkit-box-pack: end;
+        -moz-box-pack: end;
+        -ms-flex-pack: end;
+    }
+
+    @else if $value ==space-between {
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+    }
+
+    @else if $value ==space-around {
+        -ms-flex-pack: distribute;
+    }
+
+    @else {
+        -webkit-box-pack: $value;
+        -moz-box-pack: $value;
+        -ms-flex-pack: $value;
+    }
+
+    -webkit-justify-content: $value;
+    justify-content: $value;
+}

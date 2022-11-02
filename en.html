@@ -120,7 +120,6 @@
         --font-medium: 500;
         --font-heavy: 800;
         --size-button: clamp(0.8vh, 5vw, 3vh);
-        --size-game-grid: clamp(2em, 10vw, 5em);
         --text-50: 50px;
         --text-micro: 0.8rem;
         --text-small: clamp(0.5rem, 5vw, 1.2rem);
@@ -728,18 +727,37 @@
               optimization. The sites I made included visual identity, MKT
               campaign and Google Ads. Wordpress and GitHub Pages specialist.
               Examples:
-              <a class="different" href="https://boasobras.org"
+              <a class="different" href="https://boasobras.org" target="_blank"
                 >boasobras.org</a
               >
-              <a class="different" href="https://mte.org.br">mte.org.br</a>
-              <a class="different" href="https://voaneves.com">voaneves.com</a>
-              <a class="different" href="https://motagodinho.com.br"
+              <a class="different" href="https://mte.org.br" target="_blank"
+                >mte.org.br</a
+              >
+              <a class="different" href="https://voaneves.com" target="_blank"
+                >voaneves.com</a
+              >
+              <a
+                class="different"
+                href="https://motagodinho.com.br"
+                target="_blank"
                 >motagodinho.com.br</a
               >
-              <a class="different" href="https://instagram.com/mariaflor"
+              <a
+                class="different"
+                href="https://instagram.com/mariaflor"
+                target="_blank"
                 >maria flor</a
               >
             </p>
+            <br />
+            <div class="btn-con" data-cursor="pointer2">
+              <a href="./games" class="main-btn" target="_blank">
+                <span class="btn-text">Games I made</span>
+                <span class="btn-icon">
+                  <i class="icon-gamepad"></i>
+                </span>
+              </a>
+            </div>
           </div>
           <div class="timeline-item">
             <div class="tl-icon">
@@ -852,7 +870,10 @@
             <p>
               The Scientific Initiation was in Titanium Nanotubes for biomedical
               applications with the professor Rubens Caram, from
-              <a class="different" href="http://www.fem.unicamp.br/~labmet/"
+              <a
+                class="different"
+                href="http://www.fem.unicamp.br/~labmet/"
+                target="_blank"
                 >Labmet</a
               >. CNPq scholarship holder and presented the project at the PIBIC
               congress at UNICAMP.
@@ -874,128 +895,6 @@
               experiences I've ever had. 3600 hours.
             </p>
           </div>
-        </div>
-      </section>
-      <section class="container games" id="games">
-        <div class="main-title">
-          <h2>
-            Gaming <span>area</span>
-            <span class="bg-text">PLAY</span>
-          </h2>
-        </div>
-        <div class="game-section">
-          <ul>
-            <li>
-              <input type="checkbox" id="cb1" />
-              <label for="cb1">TIC-TAC-TOE <span>(click to play)</span> </label>
-              <ul>
-                <li>
-                  <div class="games">
-                    <div class="tic-tac-toe">
-                      <div class="game-grid">
-                        <div data-cell-index="0" class="cell"></div>
-                        <div data-cell-index="1" class="cell"></div>
-                        <div data-cell-index="2" class="cell"></div>
-                        <div data-cell-index="3" class="cell"></div>
-                        <div data-cell-index="4" class="cell"></div>
-                        <div data-cell-index="5" class="cell"></div>
-                        <div data-cell-index="6" class="cell"></div>
-                        <div data-cell-index="7" class="cell"></div>
-                        <div data-cell-index="8" class="cell"></div>
-                      </div>
-                      <h2 class="status"></h2>
-                      <div class="restart">
-                        <i class="icon-refresh"></i>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <input type="checkbox" id="cb2" />
-              <label for="cb2"
-                >Rock, Paper, Scissors <span>(click to play)</span>
-              </label>
-              <ul>
-                <li>
-                  <div class="games">
-                    <div class="pedra-papel-tesoura">
-                      <div class="score-board">
-                        <div class="badge">
-                          <div class="user-label">YOU</div>
-                          <div class="computer-label">COMP</div>
-                        </div>
-                        <span id="user-score">0</span> :
-                        <span id="computer-score">0</span>
-                      </div>
-                      <div class="result">
-                        <p>Choose rock, paper or scissors to start!</p>
-                      </div>
-                      <div class="choices">
-                        <div id="rock" class="choice">
-                          <span>✊</span>
-                        </div>
-                        <div id="paper" class="choice">
-                          <span>✋</span>
-                        </div>
-                        <div id="scissors" class="choice">
-                          <span>✌️</span>
-                        </div>
-                      </div>
-                      <div class="reset">
-                        <i class="icon-refresh"></i>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <input type="checkbox" id="cb3" />
-              <label for="cb3"
-                >MINE SWEEPER <span>(click to play)</span>
-              </label>
-              <ul>
-                <li>
-                  <div class="games">
-                    <div class="mine-sweeper">
-                      <table id="mine-grid"></table>
-                      <div class="refresh">
-                        <i class="icon-refresh"></i>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <input type="checkbox" id="cb4" />
-              <label for="cb4">SNAKE <span>(click to play)</span> </label>
-              <ul>
-                <li>
-                  <div class="games">
-                    <div class="snake">
-                      <canvas id="snakeboard"></canvas>
-                      <br />
-                      <button id="up">▲</button>
-                      <br />
-                      <button id="left">◀</button>
-                      <button id="right">▶</button>
-                      <br />
-                      <button id="down">▼</button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </div>
       </section>
       <section class="container portfolio" id="portfolio">
@@ -1278,15 +1177,6 @@
         data-tooltip="ABOUT"
       >
         <i class="icon-user"></i>
-      </button>
-      <button
-        class="control"
-        data-id="games"
-        title="Games"
-        data-cursor="pointer"
-        data-tooltip="GAMES"
-      >
-        <i class="icon-gamepad"></i>
       </button>
       <button
         class="control"

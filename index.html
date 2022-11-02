@@ -119,7 +119,6 @@
         --font-medium: 500;
         --font-heavy: 800;
         --size-button: clamp(0.8vh, 5vw, 3vh);
-        --size-game-grid: clamp(2em, 10vw, 5em);
         --text-50: 50px;
         --text-micro: 0.8rem;
         --text-small: clamp(0.5rem, 5vw, 1.2rem);
@@ -408,6 +407,10 @@
       type="font/woff2"
       crossorigin
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
     <script defer type="application/ld+json">
       {
@@ -431,10 +434,11 @@
     </script>
     <script defer src="sw-min.js"></script>
     <script defer src="assets/js/app-min.js"></script>
-    <script defer src="assets/js/tic-tac-toe-min.js"></script>
-    <script defer src="assets/js/rock-paper-scissors-min.js"></script>
-    <script defer src="assets/js/mine-min.js"></script>
-    <script defer src="assets/js/snake-min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+    ></script>
+    <script defer src="assets/js/swiper.js"></script>
     <script defer src="assets/js/cursor-min.js"></script>
   </head>
   <body class="main-content">
@@ -540,6 +544,18 @@
             <div class="btn-con" data-cursor="pointer2">
               <a href="assets/cv-pt.pdf" class="main-btn" target="_blank">
                 <span class="btn-text">Baixar CV</span>
+                <span class="btn-icon">
+                  <i class="icon-cloud-download"></i>
+                </span>
+              </a>
+            </div>
+            <div class="btn-con" data-cursor="pointer2">
+              <a
+                href="https://koalendar.com/e/reuniao-com-victor-neves"
+                class="main-btn"
+                target="_blank"
+              >
+                <span class="btn-text">Agende um horário</span>
                 <span class="btn-icon">
                   <i class="icon-cloud-download"></i>
                 </span>
@@ -730,20 +746,37 @@
               setor, com foco na satisfação do cliente e otimização de ROI. Os
               sites que fiz incluíram a Identidade Visual, campanha MKT e em
               alguns casos até o Google Ads. Exemplos:
-              <a class="different" href="https://boasobras.org"
+              <a class="different" href="https://boasobras.org" target="_blank"
                 >boasobras.org</a
               >
-              <a class="different" href="https://mte.org.br">mte.org.br</a>
-              <a class="different" href="https://voaneves.com">voaneves.com</a>
-              <a class="different" href="https://motagodinho.com.br"
+              <a class="different" href="https://mte.org.br" target="_blank"
+                >mte.org.br</a
+              >
+              <a class="different" href="https://voaneves.com" target="_blank"
+                >voaneves.com</a
+              >
+              <a
+                class="different"
+                href="https://motagodinho.com.br"
+                target="_blank"
                 >motagodinho.com.br</a
               >
               <a
                 class="different"
                 href="https://www.google.com/search?q=maria%20flor%20palmas&oq=maria+flor+palmas&aqs=chrome..69i57j0i10i22i30j0i22i30l5j69i60.2994j0j4&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:10&tbm=lcl&sxsrf=ALiCzsa0Y90KO6Vg3CoJwrUgaueoiWGOGA:1666480051397&rflfq=1&num=10&rldimm=6870208411713646920&lqi=ChFtYXJpYSBmbG9yIHBhbG1hc0jFisyxjLCAgAhaIRAAEAEYABgBGAIiEW1hcmlhIGZsb3IgcGFsbWFzMgJwdJIBFmhlYWx0aF9hbmRfYmVhdXR5X3Nob3CqARIQASoOIgptYXJpYSBmbG9yKAw&phdesc=Y4mY-vfWQFQ&ved=2ahUKEwi3mfT7-fT6AhVSLbkGHa_EAEMQvS56BAgREA0&sa=X&rlst=f#rlfi=hd:;si:6870208411713646920,l,ChFtYXJpYSBmbG9yIHBhbG1hc0jFisyxjLCAgAhaIRAAEAEYABgBGAIiEW1hcmlhIGZsb3IgcGFsbWFzMgJwdJIBFmhlYWx0aF9hbmRfYmVhdXR5X3Nob3CqARIQASoOIgptYXJpYSBmbG9yKAw,y,Y4mY-vfWQFQ;mv:[[-10.1649625,-48.314006],[-10.262521999999999,-48.3292302]]"
+                target="_blank"
                 >maria flor</a
               >
             </p>
+            <br />
+            <div class="btn-con" data-cursor="pointer2">
+              <a href="./games" class="main-btn" target="_blank">
+                <span class="btn-text">Jogos que fiz</span>
+                <span class="btn-icon">
+                  <i class="icon-gamepad"></i>
+                </span>
+              </a>
+            </div>
           </div>
           <div class="timeline-item">
             <div class="tl-icon">
@@ -857,7 +890,10 @@
             <p>
               A Iniciação Científica foi em Nanotubos de Titânio para aplicações
               biomédicas com o professor Rubens Caram, do
-              <a class="different" href="http://www.fem.unicamp.br/~labmet/"
+              <a
+                class="different"
+                href="http://www.fem.unicamp.br/~labmet/"
+                target="_blank"
                 >Labmet</a
               >. Bolsista CNPq e apresentei o projeto no congresso PIBIC na
               UNICAMP.
@@ -881,134 +917,7 @@
           </div>
         </div>
       </section>
-      <section class="container games" id="games">
-        <div class="main-title">
-          <h2>
-            JOGUE <span>AGORA</span>
-            <span class="bg-text">JOGOS</span>
-          </h2>
-        </div>
-        <div class="game-section">
-          <ul>
-            <li>
-              <input type="checkbox" id="cb1" />
-              <label for="cb1"
-                >JOGO DA VELHA <span>(clique aqui para jogar)</span>
-              </label>
-              <ul>
-                <li>
-                  <div class="games">
-                    <div class="tic-tac-toe">
-                      <div class="game-grid">
-                        <div data-cell-index="0" class="cell"></div>
-                        <div data-cell-index="1" class="cell"></div>
-                        <div data-cell-index="2" class="cell"></div>
-                        <div data-cell-index="3" class="cell"></div>
-                        <div data-cell-index="4" class="cell"></div>
-                        <div data-cell-index="5" class="cell"></div>
-                        <div data-cell-index="6" class="cell"></div>
-                        <div data-cell-index="7" class="cell"></div>
-                        <div data-cell-index="8" class="cell"></div>
-                      </div>
-                      <h2 class="status"></h2>
-                      <div class="restart">
-                        <i class="icon-refresh"></i>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <input type="checkbox" id="cb2" />
-              <label for="cb2"
-                >PEDRA, PAPEL E TESOURA <span>(clique aqui para jogar)</span>
-              </label>
-              <ul>
-                <li>
-                  <div class="games">
-                    <div class="pedra-papel-tesoura">
-                      <div class="score-board">
-                        <div class="badge">
-                          <div class="user-label">VOCÊ</div>
-                          <div class="computer-label">COMP</div>
-                        </div>
-                        <div class="score">
-                          <span id="user-score">0</span> :
-                          <span id="computer-score">0</span>
-                        </div>
-                      </div>
-                      <div class="result">
-                        <p>Escolha pedra, papel ou tesoura para começar!</p>
-                      </div>
-                      <div class="choices">
-                        <div id="rock" class="choice">
-                          <span>✊</span>
-                        </div>
-                        <div id="paper" class="choice">
-                          <span>✋</span>
-                        </div>
-                        <div id="scissors" class="choice">
-                          <span>✌️</span>
-                        </div>
-                      </div>
-                      <div class="reset">
-                        <i class="icon-refresh"></i>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <input type="checkbox" id="cb3" />
-              <label for="cb3"
-                >CAMPO MINADO <span>(clique aqui para jogar)</span>
-              </label>
-              <ul>
-                <li>
-                  <div class="games">
-                    <div class="mine-sweeper">
-                      <table id="mine-grid"></table>
-                      <div class="refresh">
-                        <i class="icon-refresh"></i>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <input type="checkbox" id="cb4" />
-              <label for="cb4"
-                >SNAKE <span>(clique aqui para jogar)</span>
-              </label>
-              <ul>
-                <li>
-                  <div class="games">
-                    <div class="snake">
-                      <canvas id="snakeboard"></canvas>
-                      <br />
-                      <button id="up">▲</button>
-                      <br />
-                      <button id="left">◀</button>
-                      <button id="right">▶</button>
-                      <br />
-                      <button id="down">▼</button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </section>
+
       <section class="container portfolio" id="portfolio">
         <div class="main-title">
           <h2>
@@ -1017,109 +926,87 @@
           </h2>
         </div>
         <div class="portfolio-content">
-          <div class="portfolio-grid">
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/oab-logo.webp" />
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div
+                class="swiper-slide"
+                data-cursor="pointer2"
+                onclick="location.href='./o-pobre-que-compra-iphone';"
+              >
+                <div class="blog-item">
+                  <div class="blog-header">
+                    <p class="blog-date-post">27/10/2022</p>
+                    <p class="blog-tag">Finanças</p>
+                  </div>
+                  <h5>O pobre que compra iPhone</h5>
+                  <p>
+                    Um estudo sobre a independência financeira e o aumento no
+                    indíce de inadimplência.
+                  </p>
+                  <a href="o-pobre-que-compra-iphone.html">Explore</a>
+                </div>
+                <div class="card-image">
+                  <picture>
+                    <source
+                      media="(max-width: 600px)"
+                      srcset="
+                        https://i.picsum.photos/id/240/600/600.webp?hmac=mygtsIPIjyydbGywlnT4vBTPqsW1X888SCivbeHpr-M
+                      "
+                    />
+                    <source
+                      media="(max-width: 1920px)"
+                      srcset="
+                        https://i.picsum.photos/id/240/1600/600.webp?hmac=gxEbYej8lwhIOA8mLlr6jr6Robts-LIPVBnjsvLtJ9o
+                      "
+                    />
+                    <img
+                      src="https://i.picsum.photos/id/240/2500/600.webp?hmac=05O-q67uHZYG0TnES1a9djqqPC0oMTs_4y4cUKZ0HLY"
+                      alt="O pobre que compra iPhone"
+                    />
+                  </picture>
+                </div>
               </div>
-              <div class="content">
-                <h2>CAATO Tocantins</h2>
-                <p>
-                  Site baseado no Wordpress. Atualizei tema, core, fiz mudanças
-                  de layout, estabeleci redirecionamentos e encurtei URLs, além
-                  de fazer o SEO.
-                </p>
-                <a href="https://caato.com.br/" data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/caato.webp" />
-              </div>
-            </div>
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/mota-logo.webp" />
-              </div>
-              <div class="content">
-                <h2>Mota & Godinho</h2>
-                <p>
-                  Site baseado no Wordpress. Foquei no SEO do website, além de
-                  atualizar core, plugins e etc. Mudanças de layout, além de
-                  mudanças de conteúdo. Otimização mobile-friendly.
-                </p>
-                <a href="https://motagodinho.com.br/" data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/mota.webp" />
-              </div>
-            </div>
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/mte-logo.webp" />
-              </div>
-              <div class="content">
-                <h2>MTE Unicamp</h2>
-                <p>
-                  Fiz alterações de layout quando ainda era Drupal, otimizei
-                  SEO, fiz virar mobile-friendly, atualizei, acompanhei durante
-                  desenvolvimento posteriores.
-                </p>
-                <a href="https://mte.org.br/" data-cursor="pointer2">Explore</a>
-                <img loading="lazy" src="assets/img/port/mte.webp" />
-              </div>
-            </div>
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/boas-logo.webp" />
-              </div>
-              <div class="content">
-                <h2>Boas Obras</h2>
-                <p>
-                  Website criado do 0, foi feito no GitHub pages usando um tema.
-                  Atualizações, manutenções, Identidade visual também e
-                  otimização de SEO.
-                </p>
-                <a href="https://boasobras.org/" data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/boas.webp" />
-              </div>
-            </div>
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/voaneves-logo.webp" />
-              </div>
-              <div class="content">
-                <h2>Portfolio do voaneves</h2>
-                <p>
-                  Website extremamente otimizado para celulares, evitando
-                  media-queries e todos os jogos foram criados. Gostou? Manda
-                  feedback pelo contato 👍
-                </p>
-                <a href="https://voaneves.com/" data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/voaneves.webp" />
+              <div
+                class="swiper-slide"
+                data-cursor="pointer2"
+                onclick="location.href='./somos-bons-ou-maus';"
+              >
+                <div class="blog-item">
+                  <div class="blog-header">
+                    <p class="blog-date-post">23/10/2022</p>
+                    <p class="blog-tag">Filosofia</p>
+                  </div>
+                  <h5>Somos bons ou maus?</h5>
+                  <p>
+                    Perspectivas à respeito de uma questão tão antiga quanto o
+                    homem.
+                  </p>
+                  <a>Explore</a>
+                </div>
+                <div class="card-image">
+                  <picture>
+                    <source
+                      media="(max-width: 600px)"
+                      srcset="
+                        https://i.picsum.photos/id/1074/600/600.webp?hmac=KIlqSnwCXrCFzr3RHtW8h5A5wGTw8eTec0pNKMbJWJo
+                      "
+                    />
+                    <source
+                      media="(max-width: 1920px)"
+                      srcset="
+                        https://i.picsum.photos/id/1074/1600/600.webp?hmac=Nedk1VExFv3RK_W_ZTcz6WOGSQS1wooqChVmHjFsEMY
+                      "
+                    />
+                    <img
+                      src="https://i.picsum.photos/id/1074/2500/600.webp?hmac=tD3m4_ApM5-_hwZ8TQ07J66TIi7kH9EXMKXfAftbxcA"
+                      alt="Somos bons ou maus?"
+                    />
+                  </picture>
+                </div>
               </div>
             </div>
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/snake-logo.webp" />
-              </div>
-              <div class="content">
-                <h2>Repositório do Snake Game</h2>
-                <p>
-                  É um jogo da cobrinha, focado em agentes AI. Foi pensado para
-                  Reinforcement Learning e pode ser trocado por envs do Open AI
-                  Gym.
-                </p>
-                <a
-                  href="https://github.com/voaneves/snake-on-pygame/"
-                  data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/snake.webp" />
-              </div>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
         </div>
       </section>
@@ -1292,15 +1179,6 @@
         data-tooltip="SOBRE"
       >
         <i class="icon-user"></i>
-      </button>
-      <button
-        class="control"
-        data-id="games"
-        title="Jogos"
-        data-cursor="pointer"
-        data-tooltip="GAMES"
-      >
-        <i class="icon-gamepad"></i>
       </button>
       <button
         class="control"
