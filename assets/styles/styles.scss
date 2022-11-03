@@ -67,12 +67,14 @@
 
   .left-about {
     padding-right: 5rem;
+    font-weight: var(--font-thin);
 
     p {
+
+      font-weight: var(--font-thin);
       line-height: 2rem;
       padding: 1rem;
       color: var(--color-grey-1);
-      font-weight: var(--font-regular);
     }
 
     h4 {
@@ -266,115 +268,93 @@
 }
 
 .portfolio-content {
-  padding-top: 8rem;
+  padding-top: 3rem;
 
   .swiper-container {
     .swiper-wrapper {
       .swiper-slide {
-        @include flex-center;
-        filter: blur(4px);
+        @include grid;
+        @include ease-in-out;
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        height: 70vh;
+        border-radius: 20px;
+        background: var(--color-primary);
+        box-shadow: var(--box-shadow-1);
 
-        .blog-item {
-          position: absolute;
-          padding: 3rem;
+        .portfolio-title {
+          @include flex-center;
+          padding-top: 1rem;
 
-          .blog-header {
-            font-weight: var(--font-heavy);
-            text-transform: uppercase;
-
-            .blog-date-post {
-              padding: 0.2rem 0.6rem;
-              background-color: var(--color-grey-5);
-              border-radius: 15px;
-              display: inline-block;
-              font-size: var(--text-micro);
-              color: var(--color-white);
-            }
-
-            .blog-tag {
-              padding: 0.2rem 0.6rem;
-              background-color: var(--color-opposite);
-              border-radius: 15px;
-              display: inline-block;
-              font-size: var(--text-micro);
-              color: var(--color-white);
-            }
-          }
-
-          h5 {
-            padding: 1rem 0;
+          h2 {
+            text-align: center;
             text-transform: uppercase;
             font-size: var(--text-big);
             font-weight: var(--font-heavy);
-            color: var(--color-grey-0);
-          }
-
-          p {
-            visibility: none;
-            opacity: 0;
-            font-size: var(--text-small);
-            color: var(--color-grey-0);
-          }
-
-          a {
-            visibility: none;
-            opacity: 0;
-            position: relative;
-            color: var(--color-white);
-            background-color: var(--color-primary);
-            padding: 10px 20px;
-            border-radius: 10px;
-            margin-top: clamp(0.5em, 2.5vw, 1em);
-            display: inline-block;
           }
         }
 
-        .card-image {
-          z-index: -1;
-          min-width: 200px;
-          overflow: hidden;
-          box-shadow: var(--box-shadow-1);
-          border-radius: 50px;
+        .portfolio-image {
+          @include flex-center;
+          margin: 1rem;
 
           img {
-            display: block;
-            position: relative;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 55vh;
-            object-fit: cover;
-          }
-        }
-      }
-
-      .swiper-slide-active {
-        filter: blur(0px);
-        @include ease-in-out;
-
-        .blog-item {
-          p {
-            visibility: visible;
-            opacity: 1;
-          }
-
-          a {
-            visibility: visible;
-            opacity: 1;
+            width: min(350px, 100%);
           }
         }
 
-        .card-image {
+        .portfolio-text {
+          @include flex-center;
+          margin-top: 1rem;
+
+          .text-container {
+            width: min(800px, 70%);
+
+            .text {
+              @include inline-block;
+              color: var(--color-grey-1);
+              font-size: var(--text-small);
+            }
+
+            .text-mobile {
+              display: none;
+              color: var(--color-grey-1);
+              font-size: var(--text-small);
+            }
+
+            .link {
+              @include inline-block;
+              position: relative;
+              color: var(--color-primary);
+              background-color: var(--color-white);
+              padding: 10px 20px;
+              border-radius: 10px;
+              margin-top: clamp(0.5em, 2.5vw, 1em);
+            }
+          }
+        }
+
+        &:hover {
           @include ease-in-out;
-          filter: brightness(0.5);
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px var(--color-opposite);
         }
       }
     }
 
     .swiper-button-next,
     .swiper-button-prev {
-      padding-top: 5rem;
+      font-size: 2em;
+      border-radius: 50%;
+      height: 25px;
+      width: 25px;
+      background-color: var(--color-white);
       color: var(--color-primary);
+      box-shadow: var(--box-shadow-1);
+
+      &:after {
+        content: "";
+      }
     }
   }
 }
@@ -533,43 +513,6 @@
     }
   }
 
-  .portfolio-content {
-    .portfolio-grid {
-      .card {
-        max-width: 60vw;
-        height: 200px;
-        align-items: flex-start;
-        overflow: hidden;
-
-        &:hover {
-          height: 600px;
-
-          .content {
-            img {
-              top: initial;
-              bottom: 30px;
-              left: 50%;
-              transform: translate(-50%, 100%) scale(1);
-              height: 300px;
-            }
-          }
-        }
-
-        .content {
-          width: 100%;
-          left: 0;
-          padding: 40px;
-        }
-      }
-
-      .content {
-        width: 100%;
-        left: 0;
-        padding: 40px;
-      }
-    }
-  }
-
   .timeline {
     padding-bottom: 6rem;
   }
@@ -611,8 +554,22 @@
 
 @media screen and (max-width: 1432px) {
   .portfolio-content {
-    .portfolio-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .portfolio-text {
+            .text-container {
+              .text {
+                display: none;
+              }
+
+              .text-mobile {
+                @include inline-block;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -650,11 +607,5 @@
 @media screen and (max-width: 970px) {
   .about-container .left-about {
     padding-right: 0rem;
-  }
-
-  .portfolio-content {
-    .portfolio-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
   }
 }

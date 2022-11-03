@@ -97,7 +97,12 @@ body {
     transition: all 0.4s ease-in-out;
 }
 
-a {
+a,
+a:hover,
+a:visited,
+a:active,
+a:link {
+    color: inherit;
     text-decoration: none;
 }
 

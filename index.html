@@ -159,6 +159,9 @@
           --color-opposite: #339eff;
         }
       }
+      p {
+        font-family: "Raleway", sans-serif;
+      }
       .header-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -335,12 +338,12 @@
         display: inline-block;
         margin: 1.5rem 0;
         line-height: 2rem;
-        font-weight: var(--font-regular);
+        font-weight: var(--font-thin);
       }
       .header-content .right-header .header-text-mobile {
         margin: 1.5rem 0;
         line-height: 2rem;
-        font-weight: var(--font-regular);
+        font-weight: var(--font-thin);
         display: none;
       }
       @media screen and (max-width: 600px) {
@@ -387,6 +390,11 @@
         .header-content {
           padding-bottom: 6rem;
         }
+        .header-content .right-header .name {
+          font-size: 2.5rem !important;
+          text-align: center;
+          padding-top: 0 !important;
+        }
       }
     </style>
     <link
@@ -398,15 +406,6 @@
     <noscript>
       <link rel="stylesheet" href="assets/styles/styles.css" />
     </noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;800&display=swap"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -438,7 +437,7 @@
       defer
       src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
     ></script>
-    <script defer src="assets/js/swiper.min.js"></script>
+    <script defer src="assets/js/swiper_cube.min.js"></script>
     <script defer src="assets/js/cursor.min.js"></script>
   </head>
   <body class="main-content">
@@ -927,85 +926,376 @@
         <div class="portfolio-content">
           <div class="swiper-container">
             <div class="swiper-wrapper">
-              <div
-                class="swiper-slide"
-                data-cursor="pointer2"
-                onclick="location.href='./o-pobre-que-compra-iphone';"
-              >
-                <div class="blog-item">
-                  <div class="blog-header">
-                    <p class="blog-date-post">27/10/2022</p>
-                    <p class="blog-tag">Finanças</p>
+              <a href="https://caato.com.br" target="_blank">
+                <div class="swiper-slide" data-cursor="pointer2">
+                  <div class="portfolio-title">
+                    <h2>CAATO</h2>
                   </div>
-                  <h5>O pobre que compra iPhone</h5>
-                  <p>
-                    Um estudo sobre a independência financeira e o aumento no
-                    indíce de inadimplência.
-                  </p>
-                  <a href="o-pobre-que-compra-iphone.html">Explore</a>
-                </div>
-                <div class="card-image">
-                  <picture>
-                    <source
-                      media="(max-width: 600px)"
-                      srcset="
-                        https://i.picsum.photos/id/240/600/600.webp?hmac=mygtsIPIjyydbGywlnT4vBTPqsW1X888SCivbeHpr-M
-                      "
-                    />
-                    <source
-                      media="(max-width: 1920px)"
-                      srcset="
-                        https://i.picsum.photos/id/240/1600/600.webp?hmac=gxEbYej8lwhIOA8mLlr6jr6Robts-LIPVBnjsvLtJ9o
-                      "
-                    />
-                    <img
-                      src="https://i.picsum.photos/id/240/2500/600.webp?hmac=05O-q67uHZYG0TnES1a9djqqPC0oMTs_4y4cUKZ0HLY"
-                      alt="O pobre que compra iPhone"
-                    />
-                  </picture>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                data-cursor="pointer2"
-                onclick="location.href='./somos-bons-ou-maus';"
-              >
-                <div class="blog-item">
-                  <div class="blog-header">
-                    <p class="blog-date-post">23/10/2022</p>
-                    <p class="blog-tag">Filosofia</p>
+                  <div class="portfolio-image">
+                    <img src="assets/img/port/caato-layout.webp" />
                   </div>
-                  <h5>Somos bons ou maus?</h5>
-                  <p>
-                    Perspectivas à respeito de uma questão tão antiga quanto o
-                    homem.
-                  </p>
-                  <a>Explore</a>
+                  <div class="portfolio-text">
+                    <div class="text-container">
+                      <p class="text">
+                        <span class="highlight"
+                          >Atualizei o tema, core e plugins</span
+                        >, fiz mudanças de layout, estabeleci redirecionamentos
+                        e encurtei URLs, além de fazer o SEO.
+                        <span class="highlight"
+                          >Otimizei a velocidade de acesso ao site</span
+                        >, com score no lighthouse saindo de 43/100 para 92/100.
+                        Verifiquei spam enviado para as caixas de e-mail.
+                        <span class="highlight"
+                          >Prestei serviços de manutenção e criação</span
+                        >, conforme necessidade da CAATO. Tema baseado no
+                        Wordpress.
+                      </p>
+                      <p class="text-mobile">
+                        <span class="highlight"
+                          >Atualizei o tema, core e plugins</span
+                        >, fiz mudanças de layout, estabeleci redirecionamentos
+                        e encurtei URLs, além de fazer o SEO.
+                        <span class="highlight"
+                          >Otimizei a velocidade de acesso ao site</span
+                        >, com score no lighthouse saindo de 43/100 para 92/100.
+                        Verifiquei spam enviado para as caixas de e-mail.
+                        Wordpress.
+                      </p>
+                      <a class="link">Explore</a>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-image">
-                  <picture>
-                    <source
-                      media="(max-width: 600px)"
-                      srcset="
-                        https://i.picsum.photos/id/1074/600/600.webp?hmac=KIlqSnwCXrCFzr3RHtW8h5A5wGTw8eTec0pNKMbJWJo
-                      "
-                    />
-                    <source
-                      media="(max-width: 1920px)"
-                      srcset="
-                        https://i.picsum.photos/id/1074/1600/600.webp?hmac=Nedk1VExFv3RK_W_ZTcz6WOGSQS1wooqChVmHjFsEMY
-                      "
-                    />
-                    <img
-                      src="https://i.picsum.photos/id/1074/2500/600.webp?hmac=tD3m4_ApM5-_hwZ8TQ07J66TIi7kH9EXMKXfAftbxcA"
-                      alt="Somos bons ou maus?"
-                    />
-                  </picture>
+              </a>
+              <a href="https://motagodinho.com.br" target="_blank">
+                <div class="swiper-slide" data-cursor="pointer2">
+                  <div class="portfolio-title">
+                    <h2>Mota & Godinho</h2>
+                  </div>
+                  <div class="portfolio-image">
+                    <img src="assets/img/port/mota-layout.webp" />
+                  </div>
+                  <div class="portfolio-text">
+                    <div class="text-container">
+                      <p class="text">
+                        Foquei no <span class="highlight">SEO do website</span>,
+                        além de atualizar core, plugins e etc.
+                        <span class="highlight"
+                          >Aceleração de carregamento do site</span
+                        >, através de plugins do wordpress, com score lighthouse
+                        saindo do 62 para o 91. Mudanças de layout, além de
+                        mudanças de conteúdo.
+                        <span class="highlight"
+                          >Otimização mobile-friendly.</span
+                        >
+                        Modificaçãos e redesign do footer/header. Site baseado
+                        no Wordpress.
+                      </p>
+                      <p class="text-mobile">
+                        Foquei no <span class="highlight">SEO do website</span>,
+                        além de atualizar core, plugins e etc.
+                        <span class="highlight"
+                          >Aceleração de carregamento do site</span
+                        >, através de plugins do wordpress, com score lighthouse
+                        chegando a 91. Mudanças de layout e conteúdo.
+                        <span class="highlight"
+                          >Otimização mobile-friendly.</span
+                        >
+                      </p>
+                      <a class="link">Explore</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </a>
+              <a href="https://mte.org.br" target="_blank">
+                <div class="swiper-slide" data-cursor="pointer2">
+                  <div class="portfolio-title">
+                    <h2>MTE Unicamp</h2>
+                  </div>
+                  <div class="portfolio-image">
+                    <img src="assets/img/port/mte-layout.webp" />
+                  </div>
+                  <div class="portfolio-text">
+                    <div class="text-container">
+                      <p class="text">
+                        Alterações no layout enquanto o CMS era o Drupal.
+                        <span class="highlight"
+                          >Desenvolvimento do website para mobile.</span
+                        >
+                        Criação de conteúdo, redesign, criação de formulários,
+                        <span class="highlight">otimização de SEO</span>.
+                        Acompanhamento de desenvolvimento posteriores.
+                        Remodelação do framework utilizado para CSS.
+                        Participação na criação e design da
+                        <span class="highlight">feira talento</span>, maior
+                        feira de recrutamento da américa latina.
+                      </p>
+                      <p class="text-mobile">
+                        Alterações no layout enquanto o CMS era o Drupal.
+                        <span class="highlight"
+                          >Criação do website para mobile.</span
+                        >
+                        Criação de conteúdo, redesign, criação de formulários,
+                        <span class="highlight">otimização de SEO</span>.
+                        Acompanhamento de desenvolvimento posteriores.
+                      </p>
+                      <a class="link">Explore</a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="https://boasobras.org" target="_blank">
+                <div class="swiper-slide" data-cursor="pointer2">
+                  <div class="portfolio-title">
+                    <h2>Boas Obras</h2>
+                  </div>
+                  <div class="portfolio-image">
+                    <img src="assets/img/port/boas-layout.webp" />
+                  </div>
+                  <div class="portfolio-text">
+                    <div class="text-container">
+                      <p class="text">
+                        <span class="highlight">Website criado do 0</span>, foi
+                        feito no GitHub pages usando um tema, Jekyll e Hugo.
+                        Conteúdo criado para a ONG, focado para mobile. O
+                        intuito era divulgar para possíveis interessados as
+                        ações.
+                        <span class="highlight"
+                          >Atualizações, manutenções, Identidade visual também e
+                          otimização de SEO</span
+                        >. O projeto está pausado, porém caso alguém tenha
+                        interesse em ajudar, fale comigo!
+                      </p>
+                      <p class="text-mobile">
+                        <span class="highlight">Website criado do 0</span>, foi
+                        feito no GitHub pages usando um tema, Jekyll e Hugo.
+                        Conteúdo criado focado na ONG, focado para mobile.
+                        <span class="highlight"
+                          >Atualizações, manutenções, Identidade visual também e
+                          otimização de SEO.</span
+                        >
+                        Desenvolvimento pausado, caso tenha interesse, fala
+                        comigo!
+                      </p>
+                      <a class="link">Explore</a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="https://wa.me/5563999999337" target="_blank">
+                <div class="swiper-slide" data-cursor="pointer2">
+                  <div class="portfolio-title">
+                    <h2>Criação de apps</h2>
+                  </div>
+                  <div class="portfolio-image">
+                    <img src="assets/img/port/app-layout.webp" />
+                  </div>
+                  <div class="portfolio-text">
+                    <div class="text-container">
+                      <p class="text">
+                        Criação de 10+ apps para clientes,
+                        <span class="highlight"
+                          >com design responsivo, focado na experiência do
+                          usuário e compatibilidade.</span
+                        >
+                        Para alguns, fiz marketing de conteúdo e também pesquisa
+                        de mercado, além de criação de artes e criação de um
+                        calendário de MKT. Tecnologias utilizadas foram:
+                        <span class="highlight"
+                          >React Native, Flutter, Javascript, PWA.</span
+                        >
+                        Objetivo dos apps é a exploração do
+                        <span class="highlight"
+                          >omnichannel e satisfação do cliente.</span
+                        >
+                        Serviços oferecidos são: Mockup/Design de Interface de
+                        usuário, apps para Android, apps para iPhone, Web Apps.
+                        Os aplicativos que criei variam desde coloridos e cheio
+                        de vida até o design mínimo.
+                        <span class="highlight"
+                          >Conversão de Website para App, notificações por push,
+                          GCM, integração com Google, Facebook, Instagram,
+                          Github, etc. Integração de API.</span
+                        >
+                      </p>
+                      <p class="text-mobile">
+                        Criação de
+                        <span class="highlight">10+ apps para clientes</span>,
+                        com design responsivo, focado na experiência do usuário
+                        e compatibilidade. Para alguns, fiz
+                        <span class="highlight"
+                          >marketing de conteúdo e também pesquisa de
+                          mercado</span
+                        >. Tecnologias utilizadas foram: React Native,
+                        <span class="highlight">Flutter</span>, Javascript, PWA.
+                      </p>
+                      <a class="link">Fale comigo!</a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="https://wa.me/5563999999337" target="_blank">
+                <div class="swiper-slide" data-cursor="pointer2">
+                  <div class="portfolio-title">
+                    <h2>Criação de apps</h2>
+                  </div>
+                  <div class="portfolio-image">
+                    <img src="assets/img/port/app-layout.webp" />
+                  </div>
+                  <div class="portfolio-text">
+                    <div class="text-container">
+                      <p class="text">
+                        Criação de 10+ apps para clientes,
+                        <span class="highlight"
+                          >com design responsivo, focado na experiência do
+                          usuário e compatibilidade.</span
+                        >
+                        Para alguns, fiz marketing de conteúdo e também pesquisa
+                        de mercado, além de criação de artes e criação de um
+                        calendário de MKT. Tecnologias utilizadas foram:
+                        <span class="highlight"
+                          >React Native, Flutter, Javascript, PWA.</span
+                        >
+                        Objetivo dos apps é a exploração do
+                        <span class="highlight"
+                          >omnichannel e satisfação do cliente.</span
+                        >
+                        Serviços oferecidos são: Mockup/Design de Interface de
+                        usuário, apps para Android, apps para iPhone, Web Apps.
+                        Os aplicativos que criei variam desde coloridos e cheio
+                        de vida até o design mínimo.
+                        <span class="highlight"
+                          >Conversão de Website para App, notificações por push,
+                          GCM, integração com Google, Facebook, Instagram,
+                          Github, etc. Integração de API.</span
+                        >
+                      </p>
+                      <p class="text-mobile">
+                        Criação de
+                        <span class="highlight">10+ apps para clientes</span>,
+                        com design responsivo, focado na experiência do usuário
+                        e compatibilidade. Para alguns, fiz
+                        <span class="highlight"
+                          >marketing de conteúdo e também pesquisa de
+                          mercado</span
+                        >. Tecnologias utilizadas foram: React Native,
+                        <span class="highlight">Flutter</span>, Javascript, PWA.
+                      </p>
+                      <a class="link">Fale comigo!</a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="https://wa.me/5563999999337" target="_blank">
+                <div class="swiper-slide" data-cursor="pointer2">
+                  <div class="portfolio-title">
+                    <h2>Criação de apps</h2>
+                  </div>
+                  <div class="portfolio-image">
+                    <img src="assets/img/port/app-layout.webp" />
+                  </div>
+                  <div class="portfolio-text">
+                    <div class="text-container">
+                      <p class="text">
+                        Criação de 10+ apps para clientes,
+                        <span class="highlight"
+                          >com design responsivo, focado na experiência do
+                          usuário e compatibilidade.</span
+                        >
+                        Para alguns, fiz marketing de conteúdo e também pesquisa
+                        de mercado, além de criação de artes e criação de um
+                        calendário de MKT. Tecnologias utilizadas foram:
+                        <span class="highlight"
+                          >React Native, Flutter, Javascript, PWA.</span
+                        >
+                        Objetivo dos apps é a exploração do
+                        <span class="highlight"
+                          >omnichannel e satisfação do cliente.</span
+                        >
+                        Serviços oferecidos são: Mockup/Design de Interface de
+                        usuário, apps para Android, apps para iPhone, Web Apps.
+                        Os aplicativos que criei variam desde coloridos e cheio
+                        de vida até o design mínimo.
+                        <span class="highlight"
+                          >Conversão de Website para App, notificações por push,
+                          GCM, integração com Google, Facebook, Instagram,
+                          Github, etc. Integração de API.</span
+                        >
+                      </p>
+                      <p class="text-mobile">
+                        Criação de
+                        <span class="highlight">10+ apps para clientes</span>,
+                        com design responsivo, focado na experiência do usuário
+                        e compatibilidade. Para alguns, fiz
+                        <span class="highlight"
+                          >marketing de conteúdo e também pesquisa de
+                          mercado</span
+                        >. Tecnologias utilizadas foram: React Native,
+                        <span class="highlight">Flutter</span>, Javascript, PWA.
+                      </p>
+                      <a class="link">Fale comigo!</a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="https://wa.me/5563999999337" target="_blank">
+                <div class="swiper-slide" data-cursor="pointer2">
+                  <div class="portfolio-title">
+                    <h2>Criação de apps</h2>
+                  </div>
+                  <div class="portfolio-image">
+                    <img src="assets/img/port/app-layout.webp" />
+                  </div>
+                  <div class="portfolio-text">
+                    <div class="text-container">
+                      <p class="text">
+                        Criação de 10+ apps para clientes,
+                        <span class="highlight"
+                          >com design responsivo, focado na experiência do
+                          usuário e compatibilidade.</span
+                        >
+                        Para alguns, fiz marketing de conteúdo e também pesquisa
+                        de mercado, além de criação de artes e criação de um
+                        calendário de MKT. Tecnologias utilizadas foram:
+                        <span class="highlight"
+                          >React Native, Flutter, Javascript, PWA.</span
+                        >
+                        Objetivo dos apps é a exploração do
+                        <span class="highlight"
+                          >omnichannel e satisfação do cliente.</span
+                        >
+                        Serviços oferecidos são: Mockup/Design de Interface de
+                        usuário, apps para Android, apps para iPhone, Web Apps.
+                        Os aplicativos que criei variam desde coloridos e cheio
+                        de vida até o design mínimo.
+                        <span class="highlight"
+                          >Conversão de Website para App, notificações por push,
+                          GCM, integração com Google, Facebook, Instagram,
+                          Github, etc. Integração de API.</span
+                        >
+                      </p>
+                      <p class="text-mobile">
+                        Criação de
+                        <span class="highlight">10+ apps para clientes</span>,
+                        com design responsivo, focado na experiência do usuário
+                        e compatibilidade. Para alguns, fiz
+                        <span class="highlight"
+                          >marketing de conteúdo e também pesquisa de
+                          mercado</span
+                        >. Tecnologias utilizadas foram: React Native,
+                        <span class="highlight">Flutter</span>, Javascript, PWA.
+                      </p>
+                      <a class="link">Fale comigo!</a>
+                    </div>
+                  </div>
+                </div>
+              </a>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next" data-cursor="pointer">
+              <i class="icon-circle-right"></i>
+            </div>
+            <div class="swiper-button-prev" data-cursor="pointer">
+              <i class="icon-circle-left"></i>
+            </div>
           </div>
         </div>
       </section>
