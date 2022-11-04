@@ -517,6 +517,19 @@
     padding-bottom: 6rem;
   }
 
+  .portfolio-content {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          height: 700px;
+        }
+      }
+    }
+  }
+
   .contact-content-con {
     flex-direction: column;
 

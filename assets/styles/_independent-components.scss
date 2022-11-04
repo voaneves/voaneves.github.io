@@ -21,8 +21,6 @@
     .btn-icon {
         @include flex-center;
         background-color: var(--color-secondary);
-        width: 5vh;
-        aspect-ratio: 1 / 1;
         border-radius: 50%;
         padding: 1rem;
 
@@ -31,22 +29,21 @@
         }
     }
 
-    &:before {
+    &::before {
+        @include cubic-bezier;
         content: "";
         position: absolute;
+        width: 0;
+        height: 100%;
         top: 0;
         right: 0;
-        transform: translateX(100%);
         z-index: -1;
-        @include cubic-bezier;
     }
 
     &:hover {
         &:before {
             width: 100%;
-            height: 100%;
             background-color: var(--color-secondary);
-            transform: translateX(0);
         }
     }
 }
