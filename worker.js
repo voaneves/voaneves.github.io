@@ -23,8 +23,6 @@ const PRECACHE_URLS = [
   "en.html",
   "assets/styles/styles-min.css",
   "assets/js/app-min.js",
-  "assets/js/tic-tac-toe-min.js",
-  "assets/js/rock-paper-scissors-min.js",
 ];
 
 // The install handler takes care of precaching the resources we always need.
