@@ -17,10 +17,10 @@
     --size-game-grid: clamp(2em, 10vw, 5em);
     --text-50: 50px;
     --text-micro: min(5vw, 0.8rem);
-    --text-small: clamp(1rem, 5vw, 1.2rem);
-    --text-medium: clamp(0.5em, 5vw, 2em);
-    --text-big: clamp(2rem, 5vw, 4rem);
-    --text-huge: clamp(3rem, 10vw, 6.3rem);
+    --text-small: clamp(1em, 5vw, 1.2em);
+    --text-medium: clamp(1.3em, 5vw, 2em);
+    --text-big: clamp(1.5em, 5vw, 3em);
+    --text-huge: clamp(2em, 5vw, 4em);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,7 +44,7 @@
 @media (prefers-color-scheme: light) {
     :root {
         --color-primary: #ffffff;
-        --color-secondary: #ff7e33;
+        --color-secondary: #CC4B00;
         --color-white: #454e56;
         --color-black: #000;
         --color-grey-0: #f8f8f8;
@@ -54,7 +54,7 @@
         --color-grey-4: #b2becd;
         --color-grey-5: #e8e8e8;
         --color-grey-6: #12181b;
-        --color-opposite: #339eff;
+        --color-opposite: #0074E0;
     }
 }
 
