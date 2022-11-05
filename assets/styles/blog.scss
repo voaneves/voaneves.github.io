@@ -10,6 +10,7 @@
 /* About section */
 .blog {
     overflow: hidden;
+    padding: 1rem;
 }
 
 .blog-container {
@@ -20,77 +21,78 @@
     // MAIN CONTENT
     .grid {
         display: grid;
+        align-items: start;
         grid-gap: 6rem;
         grid-template-columns: repeat(auto-fit,
-                minmax(18rem, 1fr));
-        align-items: start;
+                minmax(300px, 1fr));
 
         &__item {
-            background-color: #fff;
+            @include ease-in-out;
+            background-color: var(--color-grey-6);
             border-radius: .4rem;
             overflow: hidden;
             box-shadow: 0 3rem 6rem rgba(0, 0, 0, .1);
-            cursor: pointer;
-            @include ease-in-out;
 
             &:hover {
                 transform: translateY(-.5%);
                 box-shadow: 0 4rem 8rem rgba(0, 0, 0, .2);
             }
-        }
-    }
 
-    .card {
-        &__img {
-            display: block;
-            width: 100%;
-            max-height: 150px;
-            object-fit: cover;
-        }
+            .card {
+                &__img {
+                    @include flex-center;
 
-        &__content {
-            padding: 3rem 3rem;
-        }
+                    img {
+                        object-fit: cover;
+                        height: 200px;
+                        max-width: 100%;
+                    }
+                }
 
-        &__header {
-            font-size: var(--text-medium);
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-        }
+                &__content {
+                    padding: 3rem 3rem;
+                }
 
-        &__text {
-            font-size: var(--text-small);
-            letter-spacing: .1rem;
-            line-height: 1.7;
-            color: var(--color-grey-5);
-            margin-bottom: 2.5rem;
-        }
+                &__header {
+                    font-size: var(--text-medium);
+                    font-weight: 800;
+                    color: var(--color-white);
+                    margin-bottom: 1.5rem;
+                }
 
-        &__btn {
-            display: block;
-            width: 100%;
-            padding: 1.5rem;
-            font-size: var(--text-small);
-            text-align: center;
-            color: var(--color-secondary);
-            background-color: var(--color-opposite);
-            border: none;
-            border-radius: .4rem;
-            @include ease-in-out;
-            cursor: pointer;
+                &__text {
+                    font-size: var(--text-micro);
+                    letter-spacing: .1rem;
+                    line-height: 1.7;
+                    color: var(--color-grey-2);
+                    margin-bottom: 2.5rem;
+                }
 
-            span {
-                margin-left: 1rem;
-                @include ease-in-out;
-            }
+                &__btn {
+                    display: block;
+                    width: 100%;
+                    padding: 1rem;
+                    font-size: var(--text-small);
+                    text-align: center;
+                    color: var(--color-white);
+                    background-color: var(--color-primary);
+                    border: none;
+                    border-radius: .4rem;
+                    @include ease-in-out;
+                    cursor: pointer;
 
-            &:hover,
-            &:active {
-                background-color: var(--color-opposite);
+                    span {
+                        @include ease-in-out;
+                    }
 
-                span {
-                    margin-left: 1.5rem;
+                    &:hover,
+                    &:active {
+                        background-color: var(--color-opposite);
+
+                        span {
+                            margin-left: 1.5rem;
+                        }
+                    }
                 }
             }
         }
@@ -123,23 +125,5 @@
             font-weight: var(--font-heavy);
             font-size: var(--text-huge);
         }
-    }
-}
-
-@media screen and (max-width: 970px) {
-    .blog {
-        padding: 5rem 6rem;
-    }
-
-    .blog-post-container {
-        .content {
-            padding: 2rem 10%;
-        }
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .blog {
-        padding: 0 !important;
     }
 }
