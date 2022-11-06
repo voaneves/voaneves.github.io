@@ -21,7 +21,7 @@
 
     // MAIN CONTENT
     .grid {
-        display: grid;
+        @include grid;
         align-items: start;
         grid-gap: 6rem;
         grid-template-columns: repeat(auto-fit,
@@ -80,7 +80,6 @@
                     border: none;
                     border-radius: .4rem;
                     @include ease-in-out;
-                    cursor: pointer;
 
                     span {
                         @include ease-in-out;

@@ -160,6 +160,9 @@
           --color-opposite: #339eff;
         }
       }
+      p {
+        font-family: "Raleway", sans-serif;
+      }
       .header-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -336,12 +339,12 @@
         display: inline-block;
         margin: 1.5rem 0;
         line-height: 2rem;
-        font-weight: var(--font-regular);
+        font-weight: var(--font-thin);
       }
       .header-content .right-header .header-text-mobile {
         margin: 1.5rem 0;
         line-height: 2rem;
-        font-weight: var(--font-regular);
+        font-weight: var(--font-thin);
         display: none;
       }
       @media screen and (max-width: 600px) {
@@ -387,6 +390,11 @@
         }
         .header-content {
           padding-bottom: 6rem;
+        }
+        .header-content .right-header .name {
+          font-size: 2.5rem !important;
+          text-align: center;
+          padding-top: 0 !important;
         }
       }
     </style>
@@ -901,109 +909,270 @@
           </h2>
         </div>
         <div class="portfolio-content">
-          <div class="portfolio-grid">
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/oab-logo.webp" />
+          <a href="https://caato.com.br" target="_blank">
+            <div class="portfolio-item" data-cursor="pointer2">
+              <div class="portfolio-title">
+                <h2>CAATO</h2>
               </div>
-              <div class="content">
-                <h2>CAATO Tocantins</h2>
-                <p>
-                  Website based on Wordpress. Updated the theme, core, made
-                  layout changes and shortened URLs, besides doing SEO.
-                </p>
-                <a href="https://caato.com.br/" data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/caato.webp" />
+              <div class="portfolio-image">
+                <img loading="lazy" src="assets/img/port/caato-layout.webp" />
+              </div>
+              <div class="portfolio-text">
+                <div class="text-container">
+                  <p class="text">
+                    <span class="highlight"
+                      >Updated theme, core and plugins</span
+                    >, made layout changes, set up redirects and shortened URLs,
+                    in addition to doing the SEO.
+                    <span class="highlight"
+                      >I optimized the speed of access to the site</span
+                    >, with a lighthouse score going from 43/100 to 92/100. I
+                    checked for spam sent to the mailboxes.
+                    <span class="highlight"
+                      >I provided maintenance and creative services</span
+                    >, as required by CAATO. WordPress based theme.
+                  </p>
+                  <p class="text-mobile">
+                    <span class="highlight"
+                      >Updated theme, core and plugins</span
+                    >, made layout changes, set up redirects and shortened URLs,
+                    in addition to doing the SEO.
+                    <span class="highlight"
+                      >I optimized the speed of access to the site</span
+                    >, with a lighthouse score going from 43/100 to 92/100.
+                    Website on Wordpress.
+                  </p>
+                  <span class="link">Explore</span>
+                </div>
               </div>
             </div>
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/mota-logo.webp" />
-              </div>
-              <div class="content">
+          </a>
+          <a href="https://motagodinho.com.br" target="_blank">
+            <div class="portfolio-item" data-cursor="pointer2">
+              <div class="portfolio-title">
                 <h2>Mota & Godinho</h2>
-                <p>
-                  Webiste based on Wordpress. I've focused on the website SEO,
-                  whilst also upgrading the core, theme and plugins. Layout
-                  changes, content changes, mobile-friendly optmization.
-                </p>
-                <a href="https://motagodinho.com.br/" data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/mota.webp" />
+              </div>
+              <div class="portfolio-image">
+                <img loading="lazy" src="assets/img/port/mota-layout.webp" />
+              </div>
+              <div class="portfolio-text">
+                <div class="text-container">
+                  <p class="text">
+                    I focused on <span class="highlight">website SEO</span>, in
+                    addition to updating core, plugins and etc.
+                    <span class="highlight">Site loading acceleration</span>,
+                    through wordpress plugins, with lighthouse score going from
+                    62 to 91. Layout changes in addition to changes of content.
+                    <span class="highlight">Mobile-friendly optimization.</span>
+                    Footer/header modifications and redesign. website based on
+                    wordpress.
+                  </p>
+                  <p class="text-mobile">
+                    I focused on <span class="highlight">website SEO</span>, in
+                    addition to updating core, plugins and etc.
+                    <span class="highlight">Site loading acceleration</span>,
+                    through wordpress plugins, with lighthouse score reaching
+                    91.
+                    <span class="highlight">Mobile-friendly optimization.</span>
+                  </p>
+                  <span class="link">Explore</span>
+                </div>
               </div>
             </div>
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/mte-logo.webp" />
-              </div>
-              <div class="content">
+          </a>
+          <a href="https://mte.org.br" target="_blank">
+            <div class="portfolio-item" data-cursor="pointer2">
+              <div class="portfolio-title">
                 <h2>MTE Unicamp</h2>
-                <p>
-                  Website based on Drupal. Optimized SEO, did layout changes,
-                  added content/sections, made it mobile-friendly, upgraded and
-                  follow-up development.
-                </p>
-                <a href="https://mte.org.br/" data-cursor="pointer2">Explore</a>
-                <img loading="lazy" src="assets/img/port/mte.webp" />
+              </div>
+              <div class="portfolio-image">
+                <img loading="lazy" src="assets/img/port/mte-layout.webp" />
+              </div>
+              <div class="portfolio-text">
+                <div class="text-container">
+                  <p class="text">
+                    Layout changes while the CMS was Drupal.
+                    <span class="highlight"
+                      >Website development for mobile.</span
+                    >
+                    Content creation, redesign, form creation,
+                    <span class="highlight">SEO optimization</span>. Follow-up
+                    of further development. refurbishment of the framework used
+                    for CSS. Participation in the creation and
+                    <span class="highlight">talent fair</span> design, largest
+                    recruitment fair in latin america.
+                  </p>
+                  <p class="text-mobile">
+                    Layout changes while the CMS was Drupal.
+                    <span class="highlight"
+                      >Creation of the website for mobile.</span
+                    >
+                    Content creation, redesign, form creation,
+                    <span class="highlight">SEO optimization</span>. Follow-up
+                    of further development.
+                  </p>
+                  <span class="link">Explore</span>
+                </div>
               </div>
             </div>
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/boas-logo.webp" />
-              </div>
-              <div class="content">
+          </a>
+          <a href="https://boasobras.org" target="_blank">
+            <div class="portfolio-item" data-cursor="pointer2">
+              <div class="portfolio-title">
                 <h2>Boas Obras</h2>
-                <p>
-                  Website made from scratch on GitHub Pages, using a theme.
-                  Updates, maintenance, visual identity, SEO optimization and
-                  made it mobile-friendly.
-                </p>
-                <a href="https://boasobras.org/" data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/boas.webp" />
+              </div>
+              <div class="portfolio-image">
+                <img loading="lazy" src="assets/img/port/boas-layout.webp" />
+              </div>
+              <div class="portfolio-text">
+                <div class="text-container">
+                  <p class="text">
+                    <span class="highlight">Website created from 0</span>, was
+                    made on GitHub pages using a theme, Jekyll and Hugo. Content
+                    created for the NGO, focused on mobile. the intention was to
+                    publicize the actions to possible interested parties.
+                    <span class="highlight"
+                      >Updates, maintenance, visual identity too and SEO
+                      optimization</span
+                    >. The project is paused, but in case anyone is interested
+                    to help, talk to me!
+                  </p>
+                  <p class="text-mobile">
+                    <span class="highlight">Website created from 0</span>, was
+                    made on GitHub pages using a theme, Jekyll and Hugo. Content
+                    created focused on the NGO, focused on mobile.
+                    <span class="highlight"
+                      >Updates, maintenance, visual identity too and SEO
+                      optimization.</span
+                    >
+                    Development paused.
+                  </p>
+                  <span class="link">Explore</span>
+                </div>
               </div>
             </div>
-            <div class="card">
-              <div class="circle">
-                <img loading="lazy" src="assets/img/port/voaneves-logo.webp" />
+          </a>
+          <a href="https://wa.me/5563999999337" target="_blank">
+            <div class="portfolio-item" data-cursor="pointer2">
+              <div class="portfolio-title">
+                <h2>Criação de apps</h2>
               </div>
-              <div class="content">
-                <h2>Victor Neves' Portfolio</h2>
-                <p>
-                  Website extremly optimized for cellphones, avoiding
-                  media-queries. Liked it? Send feedback through the contact
-                  forms 👍
-                </p>
-                <a href="https://voaneves.com/" data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/voaneves.webp" />
+              <div class="portfolio-image">
+                <img loading="lazy" src="assets/img/port/app-layout.webp" />
+              </div>
+              <div class="portfolio-text">
+                <div class="text-container">
+                  <p class="text">
+                    Creation of 10+ apps for clients,
+                    <span class="highlight"
+                      >with responsive design, focused on user experience and
+                      compatibility.</span
+                    >
+                    For some, I did content marketing and also research market,
+                    in addition to creating arts and creating a calendar of MKT.
+                    Technologies used were:
+                    <span class="highlight"
+                      >React Native, Flutter, Javascript, PWA.</span
+                    >
+                    The purpose of apps is to explore the
+                    <span class="highlight"
+                      >omnichannel and customer satisfaction.</span
+                    >
+                    Services offered are: User Interface Mockup/Design user,
+                    Android apps, iPhone apps, Web Apps. You apps I've created
+                    range from colorful and full of life down to the minimal
+                    design.
+                    <span class="highlight"
+                      >Conversion from Website to App, push notifications, GCM,
+                      integration with Google, Facebook, Instagram, Github and
+                      API.</span
+                    >
+                  </p>
+                  <p class="text-mobile">
+                    creation of
+                    <span class="highlight">10+ apps for clients</span>, with
+                    responsive design, focused on user experience and
+                    compatibility. For some, I did
+                    <span class="highlight"
+                      >content marketing and also market research</span
+                    >. Technologies used were: React Native,
+                    <span class="highlight">Flutter</span>, Javascript, PWA.
+                  </p>
+                  <span class="link">Fale comigo!</span>
+                </div>
               </div>
             </div>
-            <div class="card">
-              <div class="circle">
+          </a>
+          <a href="https://github.com/voaneves/snake-on-pygame" target="_blank">
+            <div class="portfolio-item" data-cursor="pointer2">
+              <div class="portfolio-title">
+                <h2>Repositório snake-on-pygame</h2>
+              </div>
+              <div class="portfolio-image">
                 <img loading="lazy" src="assets/img/port/snake-logo.webp" />
               </div>
-              <div class="content">
-                <h2>Snake Game Repository</h2>
-                <p>
-                  This is a game meant for usage on Reinforcement Learning
-                  models, specifically keras. It's meant to be swappable with
-                  Open AI's Gym.
-                </p>
-                <a
-                  href="https://github.com/voaneves/snake-on-pygame/"
-                  data-cursor="pointer2"
-                  >Explore</a
-                >
-                <img loading="lazy" src="assets/img/port/snake.webp" />
+              <div class="portfolio-text">
+                <div class="text-container">
+                  <p class="text">
+                    It's a snake game,
+                    <span class="highlight">focused on AI agents.</span> It was
+                    thought for
+                    <span class="highlight">Reinforcement Learning</span> and
+                    can be exchanged for Open AI Gym environments.
+                  </p>
+                  <p class="text-mobile">
+                    It's a snake game,
+                    <span class="highlight">focused on AI agents.</span> It was
+                    thought for
+                    <span class="highlight">Reinforcement Learning</span> and
+                    can be exchanged for Open AI Gym environments.
+                  </p>
+                  <a
+                    href="https://github.com/voaneves/snake-on-pygame"
+                    class="link"
+                    >Explore</a
+                  >
+                </div>
               </div>
             </div>
-          </div>
+          </a>
+          <a href="https://github.com/voaneves/colab-rl" target="_blank">
+            <div class="portfolio-item" data-cursor="pointer2">
+              <div class="portfolio-title">
+                <h2>Repositório colab-rl</h2>
+              </div>
+              <div class="portfolio-image">
+                <img loading="lazy" src="assets/img/port/colab-logo.webp" />
+              </div>
+              <div class="portfolio-text">
+                <div class="text-container">
+                  <p class="text">
+                    Algorithms of
+                    <span class="highlight">Reinforcement Learning</span>
+                    focused on virtual games. The objective is to maximize
+                    reward, in the most efficient way, this is done through
+                    algorithms like
+                    <span class="highlight">DQN, ACER, RAINBOW, etc.</span> It
+                    was applied in several environments of OpenAI Gym, SnakeAI
+                    and other games I created.
+                  </p>
+                  <p class="text-mobile">
+                    Algorithms of
+                    <span class="highlight">Reinforcement Learning</span>
+                    focused on virtual games. The objective is to maximize
+                    reward, in the most efficient way, this is done through
+                    algorithms like
+                    <span class="highlight">DQN, ACER, RAINBOW, etc.</span> It
+                    was applied in several environments of OpenAI Gym, SnakeAI
+                    and other games I created.
+                  </p>
+                  <a href="https://github.com/voaneves/colab-rl" class="link"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
       </section>
       <section class="container contact" id="contact">

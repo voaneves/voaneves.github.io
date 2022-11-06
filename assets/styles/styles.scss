@@ -269,93 +269,77 @@
 }
 
 .portfolio-content {
-  padding-top: 3rem;
+  padding: 3rem 0;
 
-  .swiper-container {
-    .swiper-wrapper {
-      .swiper-slide {
-        @include grid;
-        @include ease-in-out;
-        grid-template-columns: 1fr;
-        grid-auto-rows: min-content;
-        height: 70vh;
-        border-radius: 20px;
-        background: var(--color-primary);
-        box-shadow: var(--box-shadow-1);
+  .portfolio-item {
+    @include grid;
+    @include ease-in-out;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    max-height: 100vh;
+    border-radius: 20px;
+    background: var(--color-primary);
+    box-shadow: var(--box-shadow-1);
+    margin-bottom: 6rem;
 
-        .portfolio-title {
-          @include flex-center;
-          padding-top: 1rem;
+    .portfolio-title {
+      @include flex-center;
+      padding-top: 1rem;
 
-          h2 {
-            text-align: center;
-            text-transform: uppercase;
-            font-size: var(--text-big);
-            font-weight: var(--font-heavy);
-          }
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: var(--text-big);
+        font-weight: var(--font-heavy);
+      }
+    }
+
+    .portfolio-image {
+      @include flex-center;
+      margin: 1rem;
+
+      img {
+        max-height: 250px;
+        width: min(350px, 100%);
+      }
+    }
+
+    .portfolio-text {
+      @include flex-center;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      .text-container {
+        width: min(800px, 70%);
+
+        .text {
+          @include inline-block;
+          color: var(--color-grey-1);
+          font-size: var(--text-small);
         }
 
-        .portfolio-image {
-          @include flex-center;
-          margin: 1rem;
-
-          img {
-            width: min(350px, 100%);
-          }
+        .text-mobile {
+          display: none;
+          color: var(--color-grey-1);
+          font-size: var(--text-small);
         }
 
-        .portfolio-text {
-          @include flex-center;
+        .link {
+          @include inline-block;
+          position: relative;
+          color: var(--color-primary);
+          background-color: var(--color-white);
+          padding: 10px 20px;
+          border-radius: 10px;
           margin-top: 1rem;
-
-          .text-container {
-            width: min(800px, 70%);
-
-            .text {
-              @include inline-block;
-              color: var(--color-grey-1);
-              font-size: var(--text-small);
-            }
-
-            .text-mobile {
-              display: none;
-              color: var(--color-grey-1);
-              font-size: var(--text-small);
-            }
-
-            .link {
-              @include inline-block;
-              position: relative;
-              color: var(--color-primary);
-              background-color: var(--color-white);
-              padding: 10px 20px;
-              border-radius: 10px;
-              margin-top: clamp(0.5em, 2.5vw, 1em);
-            }
-          }
-        }
-
-        &:hover {
-          @include ease-in-out;
-          transform: translateY(-3px);
-          box-shadow: 0 10px 20px var(--color-opposite);
         }
       }
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-      font-size: 2em;
-      border-radius: 50%;
-      height: 25px;
-      width: 25px;
-      background-color: var(--color-white);
-      color: var(--color-primary);
-      box-shadow: var(--box-shadow-1);
-
-      &:after {
-        content: "";
-      }
+    &:hover {
+      @include ease-in-out;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px var(--color-opposite);
     }
   }
 }
@@ -521,14 +505,6 @@
   .portfolio-content {
     padding-top: 1rem;
     padding-bottom: 3rem;
-
-    .swiper-container {
-      .swiper-wrapper {
-        .swiper-slide {
-          height: 700px;
-        }
-      }
-    }
   }
 
   .contact-content-con {
@@ -568,19 +544,15 @@
 
 @media screen and (max-width: 1432px) {
   .portfolio-content {
-    .swiper-container {
-      .swiper-wrapper {
-        .swiper-slide {
-          .portfolio-text {
-            .text-container {
-              .text {
-                display: none;
-              }
+    .portfolio-item {
+      .portfolio-text {
+        .text-container {
+          .text {
+            display: none;
+          }
 
-              .text-mobile {
-                @include inline-block;
-              }
-            }
+          .text-mobile {
+            @include inline-block;
           }
         }
       }
