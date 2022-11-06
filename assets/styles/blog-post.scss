@@ -5,6 +5,7 @@
 @import "cursor";
 @import "icons";
 @import "tooltip";
+@import "scrollbar";
 
 /* Blog post */
 .blog-post {
@@ -151,7 +152,6 @@
         }
 
         .numbered-list {
-            @include flex-center;
             counter-reset: li;
             list-style-type: none;
             line-height: 18px;
