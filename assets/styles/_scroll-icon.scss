@@ -1,0 +1,29 @@
+.arrow-up {
+    @include ease-in-out;
+    border-radius: 1em;
+    position: fixed;
+    top: 90vh;
+    right: 5vw;
+    z-index: 99;
+
+    .symbol {
+        content: '';
+        width: 0.5em;
+        height: 0.5em;
+        border-right: 2px solid var(--color-white);
+        border-bottom: 2px solid var(--color-white);
+        transform: rotate(225deg);
+    }
+
+    .text {
+        margin-left: -0.33rem;
+        font-size: 0.8rem;
+        font-weight: 800;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .arrow-up {
+        top: 80vh;
+    }
+}

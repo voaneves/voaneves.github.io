@@ -8,6 +8,7 @@
 @import "independent-components";
 @import "tooltip";
 @import "scrollbar";
+@import "scroll-icon";
 
 /* About */
 .about-container {
@@ -277,7 +278,7 @@
     grid-template-columns: 1fr;
     grid-auto-rows: min-content;
     max-height: 100vh;
-    border-radius: 20px;
+    border-radius: 10px;
     background: var(--color-primary);
     box-shadow: var(--box-shadow-1);
     margin-bottom: 6rem;
@@ -339,7 +340,7 @@
     &:hover {
       @include ease-in-out;
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px var(--color-opposite);
+      box-shadow: 0 10px 20px var(--color-secondary);
     }
   }
 }

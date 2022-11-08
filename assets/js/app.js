@@ -4,9 +4,24 @@
       document.querySelector(".active-btn").classList.remove("active-btn");
       this.classList.add("active-btn");
       document.querySelector(".active").classList.remove("active");
-      document.getElementById(button.dataset.id).classList.add("active");
+      currentPage = document.getElementById(button.dataset.id);
+      currentPage.classList.add("active");
     });
   });
+
+  function appearArrow() {
+    scrollHeight = currentPage.scrollHeight;
+    arrowUp = document.querySelector(".arrow-up");
+
+    if (scrollHeight > height) {
+      arrowUp.style.opacity = 0;
+
+      document.querySelector(".arrow-up").style.opacity =
+        window.scrollY > 100 ? 1 : 0;
+    } else arrowUp.style.opacity = 0;
+  }
+  document.addEventListener("scroll", appearArrow);
+
   document.getElementById("theme").addEventListener("click", () => {
     const meta = document.querySelector('meta[name="color-scheme"]');
     window
@@ -39,6 +54,12 @@ var width =
   document.documentElement.clientWidth ||
   document.body.clientWidth;
 
+var height =
+  window.innerHeight ||
+  document.documentElement.clientHeight ||
+  document.body.clientHeight;
+
+var currentPage;
 const englishOrNot = document.location.href.search("en");
 
 function fragmentText(text, maxWidth, ctx) {
@@ -49,7 +70,7 @@ function fragmentText(text, maxWidth, ctx) {
   if (ctx.measureText(text).width < maxWidth) {
     return [text];
   }
-  console.log(theme);
+
   while (words.length > 0) {
     while (ctx.measureText(words[0]).width >= maxWidth) {
       var tmp = words[0];
