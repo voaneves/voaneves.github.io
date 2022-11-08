@@ -6,21 +6,15 @@
       document.querySelector(".active").classList.remove("active");
       currentPage = document.getElementById(button.dataset.id);
       currentPage.classList.add("active");
+
+      window.onscroll = function () {
+        var scrolled = window.pageYOffset || document.documentElement.scrollTop,
+          arrowUp = document.querySelector(".arrow-up");
+
+        arrowUp.style.opacity = scrolled > 150 ? 1 : 0;
+      };
     });
   });
-
-  function appearArrow() {
-    scrollHeight = currentPage.scrollHeight;
-    arrowUp = document.querySelector(".arrow-up");
-
-    if (scrollHeight > height) {
-      arrowUp.style.opacity = 0;
-
-      document.querySelector(".arrow-up").style.opacity =
-        window.scrollY > 100 ? 1 : 0;
-    } else arrowUp.style.opacity = 0;
-  }
-  document.addEventListener("scroll", appearArrow);
 
   document.getElementById("theme").addEventListener("click", () => {
     const meta = document.querySelector('meta[name="color-scheme"]');
