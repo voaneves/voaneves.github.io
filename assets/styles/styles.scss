@@ -10,6 +10,102 @@
 @import "scrollbar";
 @import "scroll-icon";
 
+
+/* Header */
+.header-content {
+  .left-header {
+    .image {
+      img {
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+
+  .right-header {
+    .name {
+      span {
+        color: var(--color-secondary);
+        -webkit-animation: 4s linear infinite color-animation;
+        animation: 4s linear infinite color-animation;
+      }
+
+      .changing-text {
+        &::before {
+          content: "programar";
+          -webkit-animation: 20s infinite animate-text;
+          animation: 20s infinite animate-text;
+        }
+      }
+    }
+
+    .changing-text {
+      &::after {
+        -webkit-animation: 1s steps(2) infinite cursor-blink;
+        animation: 1s steps(2) infinite cursor-blink;
+      }
+    }
+  }
+}
+
+@keyframes color-animation {
+
+  0%,
+  100%,
+  49% {
+    color: var(--color-secondary);
+  }
+
+  50%,
+  99% {
+    color: var(--color-opposite);
+  }
+}
+
+@keyframes animate-text {
+  0% {
+    content: "programar";
+  }
+
+  10% {
+    content: "eficiência";
+  }
+
+  20% {
+    content: "analytics";
+  }
+
+  30% {
+    content: "o piano";
+  }
+
+  40% {
+    content: "digital";
+  }
+
+  50% {
+    content: "branding";
+  }
+
+  60% {
+    content: "correr";
+  }
+
+  70% {
+    content: "sprints";
+  }
+
+  80% {
+    content: "a Deus";
+  }
+}
+
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
 /* About */
 .about-container {
   @include grid;
