@@ -110,6 +110,11 @@
     <!-- critical CSS -->
     <style>
       @charset "UTF-8";
+      .controls,
+      .page-settings {
+        position: fixed;
+        z-index: 10;
+      }
       .main-btn .btn-icon i,
       body {
         font-size: var(--text-small);
@@ -258,8 +263,6 @@
       }
       .controls {
         justify-content: center;
-        position: fixed;
-        z-index: 10;
         top: 50vh;
         right: 3vw;
         flex-direction: column;
@@ -270,6 +273,22 @@
         margin: 7% 0;
         width: clamp(1vh, 10vw, 8vh);
         aspect-ratio: 1/1;
+      }
+      .page-settings {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        top: 3vw;
+        right: 2vw;
+      }
+      .page-settings .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: min(10vw, 80px);
+        aspect-ratio: 1/1;
+        margin: 0 4%;
       }
       .btn-con,
       .main-btn {
@@ -331,8 +350,12 @@
           transform: translateX(-50%);
           width: 100%;
         }
-        .controls .control {
+        .controls .control,
+        .page-settings .btn {
           margin: 7% 2%;
+        }
+        .page-settings {
+          flex-direction: column;
         }
       }
       @media screen and (max-width: 1070px) {
@@ -361,9 +384,6 @@
       @media screen and (max-width: 970px) {
         .container {
           padding: 7rem 6rem;
-        }
-        .header-content {
-          padding-bottom: 6rem;
         }
         .header-content .right-header .name {
           font-size: 2.5rem !important;
@@ -465,44 +485,46 @@
             com inovação, análise de dados, indicadores e aplicativos. Meu
             <span class="highlight">próximo projeto é com você</span>. Bora?
           </p>
-          <div class="btn-con">
-            <a
-              href="https://koalendar.com/e/reuniao-com-victor-neves"
-              class="main-btn"
-              target="_blank"
-              data-cursor="pointer2"
-            >
-              <span class="btn-text">Marque uma reunião</span>
-              <span class="btn-icon">
-                <i class="icon-calendar-check"></i>
-              </span>
-            </a>
-          </div>
-          <div class="btn-con">
-            <a
-              href="https://wa.me/5563999999337"
-              class="main-btn"
-              target="_blank"
-              data-cursor="pointer2"
-            >
-              <span class="btn-text">Fale comigo</span>
-              <span class="btn-icon">
-                <i class="icon-comments"></i>
-              </span>
-            </a>
-          </div>
-          <div class="btn-con">
-            <a
-              href="assets/cv-pt.pdf"
-              class="main-btn"
-              target="_blank"
-              data-cursor="pointer2"
-            >
-              <span class="btn-text">Baixar CV</span>
-              <span class="btn-icon">
-                <i class="icon-cloud-download"></i>
-              </span>
-            </a>
+          <div class="header-btns">
+            <div class="btn-con">
+              <a
+                href="https://koalendar.com/e/reuniao-com-victor-neves"
+                class="main-btn"
+                target="_blank"
+                data-cursor="pointer2"
+              >
+                <span class="btn-text">Marque uma reunião</span>
+                <span class="btn-icon">
+                  <i class="icon-calendar-check"></i>
+                </span>
+              </a>
+            </div>
+            <div class="btn-con">
+              <a
+                href="https://wa.me/5563999999337"
+                class="main-btn"
+                target="_blank"
+                data-cursor="pointer2"
+              >
+                <span class="btn-text">Fale comigo</span>
+                <span class="btn-icon">
+                  <i class="icon-comments"></i>
+                </span>
+              </a>
+            </div>
+            <div class="btn-con">
+              <a
+                href="assets/cv-pt.pdf"
+                class="main-btn"
+                target="_blank"
+                data-cursor="pointer2"
+              >
+                <span class="btn-text">Baixar CV</span>
+                <span class="btn-icon">
+                  <i class="icon-cloud-download"></i>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

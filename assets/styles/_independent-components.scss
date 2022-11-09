@@ -8,25 +8,23 @@
     @include flex-start;
     border-radius: 30px;
     color: inherit;
-    font-weight: var(--font-regular);
     position: relative;
-    border: 1px solid var(--color-secondary);
-    overflow: hidden;
+    border: 2px solid var(--color-secondary);
     margin-bottom: 10px;
 
     .btn-text {
-        padding: 0 1rem;
+        white-space: nowrap;
+        font-weight: var(--font-regular);
     }
 
     .btn-icon {
         @include flex-center;
         background-color: var(--color-secondary);
         border-radius: 50%;
-        height: 2.5em;
-        width: 2.5em;
+        min-width: 2.5em;
 
         i {
-            font-size: var(--text-small);
+            font-size: var(--text-micro);
         }
     }
 

@@ -107,6 +107,11 @@
     <!-- critical CSS -->
     <style>
       @charset "UTF-8";
+      .controls,
+      .page-settings {
+        position: fixed;
+        z-index: 10;
+      }
       .main-btn .btn-icon i,
       body {
         font-size: var(--text-small);
@@ -175,13 +180,8 @@
         top: 0;
         padding: 3rem 18rem;
       }
-      .container {
-        display: none;
-        transform: translateY(-100%) scale(0);
-      }
       .active {
-        display: block;
-        transform: translateY(0) scaleY(1);
+        opacity: 1;
       }
       .header-content {
         display: grid;
@@ -260,8 +260,6 @@
       }
       .controls {
         justify-content: center;
-        position: fixed;
-        z-index: 10;
         top: 50vh;
         right: 3vw;
         flex-direction: column;
@@ -272,6 +270,22 @@
         margin: 7% 0;
         width: clamp(1vh, 10vw, 8vh);
         aspect-ratio: 1/1;
+      }
+      .page-settings {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        top: 3vw;
+        right: 2vw;
+      }
+      .page-settings .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: min(10vw, 80px);
+        aspect-ratio: 1/1;
+        margin: 0 4%;
       }
       .btn-con,
       .main-btn {
@@ -333,8 +347,12 @@
           transform: translateX(-50%);
           width: 100%;
         }
-        .controls .control {
+        .controls .control,
+        .page-settings .btn {
           margin: 7% 2%;
+        }
+        .page-settings {
+          flex-direction: column;
         }
       }
       @media screen and (max-width: 1070px) {
@@ -363,9 +381,6 @@
       @media screen and (max-width: 970px) {
         .container {
           padding: 7rem 6rem;
-        }
-        .header-content {
-          padding-bottom: 6rem;
         }
         .header-content .right-header .name {
           font-size: 2.5rem !important;

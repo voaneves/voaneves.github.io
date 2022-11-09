@@ -44,6 +44,12 @@
         animation: 1s steps(2) infinite cursor-blink;
       }
     }
+
+    .header-btns {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
   }
 }
 
@@ -63,15 +69,15 @@
 
 @keyframes animate-text {
   0% {
-    content: "programar";
+    content: "digital";
   }
 
   10% {
-    content: "eficiência";
+    content: "analytics";
   }
 
   20% {
-    content: "analytics";
+    content: "correr";
   }
 
   30% {
@@ -79,15 +85,15 @@
   }
 
   40% {
-    content: "digital";
-  }
-
-  50% {
     content: "branding";
   }
 
+  50% {
+    content: "programar";
+  }
+
   60% {
-    content: "correr";
+    content: "eficiência";
   }
 
   70% {
