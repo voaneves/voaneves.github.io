@@ -21,8 +21,6 @@ const RUNTIME = "runtime";
 const PRECACHE_URLS = [
   "./", // Alias for index.html
   "en.html",
-  "assets/styles/styles-min.css",
-  "assets/js/app-min.js",
 ];
 
 // The install handler takes care of precaching the resources we always need.
