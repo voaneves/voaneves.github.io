@@ -3,7 +3,7 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("worker.min.js").then(
       function (registration) {
         console.log(
-          "ServiceWorker registration successful with scope: ",
+          "❤️ ServiceWorker registration successful with scope: ",
           registration.scope
         );
       },
