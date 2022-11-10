@@ -16,12 +16,51 @@
   .left-header {
     .image {
       img {
-        transition: all 0.4s ease-in-out;
+        @include ease-in-out;
       }
     }
   }
 
   .right-header {
+    .mobile-img {
+      ul {
+        border-radius: 10px;
+        background-color: var(--color-secondary);
+      }
+
+      label {
+        border-radius: 5px;
+        color: var(--color-white);
+        font-size: var(--text-medium);
+
+        span {
+          font-size: var(--text-small);
+          font-weight: var(--font-heavy);
+        }
+      }
+
+      li {
+        .image {
+          @include flex-center;
+
+          img {
+            @include ease-in-out;
+            max-width: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+
+            &:hover {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+
+      input[type="checkbox"]~ul {
+        @include ease-in-out;
+      }
+    }
+
     .name {
       span {
         color: var(--color-secondary);

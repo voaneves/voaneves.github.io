@@ -189,7 +189,7 @@
       .header-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        min-height: 100vh;
+        height: 100vh;
       }
       .header-content .left-header {
         display: flex;
@@ -260,6 +260,41 @@
         line-height: 2rem;
         font-weight: var(--font-thin);
         display: none;
+      }
+      .header-content .right-header .mobile-img {
+        display: none;
+        text-align: center;
+        padding-bottom: 0.5rem;
+      }
+      .header-content .right-header .mobile-img ul {
+        list-style-type: none;
+        max-width: 100%;
+      }
+      .header-content .right-header .mobile-img label {
+        padding: 3px;
+      }
+      .header-content .right-header .mobile-img li {
+        margin: 10px;
+        padding: 5px;
+      }
+      .header-content .right-header .mobile-img input[type="checkbox"] {
+        display: none;
+      }
+      .header-content .right-header .mobile-img input[type="checkbox"] ~ ul {
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .header-content
+        .right-header
+        .mobile-img
+        input[type="checkbox"]:checked
+        ~ ul {
+        max-height: 100%;
+        max-width: 100%;
+        opacity: 1;
       }
       .controls {
         justify-content: center;
@@ -333,11 +368,22 @@
         header {
           padding: 0 !important;
         }
+        .header-content {
+          height: auto;
+          display: block;
+          margin-bottom: 70px;
+        }
+        .header-content .left-header .image {
+          display: none;
+        }
         .header-content .right-header .header-text-mobile {
           display: inline-block;
         }
         .header-content .right-header .header-text {
           display: none;
+        }
+        .header-content .right-header .mobile-img {
+          display: inline-block;
         }
         .container {
           padding: 2rem 2.5rem !important;
@@ -485,6 +531,36 @@
             com inovação, análise de dados, indicadores e aplicativos. Meu
             <span class="highlight">próximo projeto é com você</span>. Bora?
           </p>
+          <div class="mobile-img">
+            <ul>
+              <li>
+                <input type="checkbox" id="cb1" />
+                <label for="cb1">QUEM SOU <span>EU</span> </label>
+                <ul>
+                  <li>
+                    <div class="image">
+                      <picture>
+                        <source
+                          media="(max-width: 600px)"
+                          srcset="assets/img/main-small.webp"
+                          alt="Foto de capa, comigo usando uma jaqueta"
+                        />
+                        <source
+                          media="(max-width: 1920px)"
+                          srcset="assets/img/main.webp"
+                          alt="Foto de capa, comigo usando uma jaqueta"
+                        />
+                        <img
+                          src="assets/img/main.webp"
+                          alt="Foto de capa, comigo usando uma jaqueta"
+                        />
+                      </picture>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
           <div class="header-btns">
             <div class="btn-con">
               <a
