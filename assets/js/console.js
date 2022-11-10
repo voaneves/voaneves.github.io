@@ -13,8 +13,9 @@ function consoleText() {
     "margin: 6px 0 6px 0",
     "color: rgba(238,58,136,1)",
   ].join(";");
-  console.log("%cHello World! I'm Victor.", styles);
-  console.log("%cThank you for checking out my work!", styles2);
+  console.log("%cHey there! I'm Victor.", styles);
+  console.log("%cIt's a pleasure to have you here!", styles2);
+  console.log("%cHave a look at my work ▼", styles2);
   const gradient = [
     "font-size: 14px",
     "color: #fff",
@@ -37,6 +38,6 @@ function consoleText() {
     gradient,
     styles2
   );
-  console.log("%cHave a wonderful day!", styles2);
+  console.log("%cHope to see you again 🙂", styles2);
 }
 consoleText();
