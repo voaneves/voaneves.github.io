@@ -2,7 +2,7 @@
   "metadata": {
     "name": "voaneves.com",
     "lastOpened": 0,
-    "created": 1666058431850
+    "created": 1667769523626
   },
   "iconSets": [
     {
@@ -129,11 +129,19 @@
       "selection": [
         {
           "order": 1,
+          "id": 19,
+          "prevSize": 28,
+          "code": 59660,
+          "name": "youtube",
+          "tempChar": ""
+        },
+        {
+          "order": 1,
           "id": 18,
           "name": "cloud-download",
           "prevSize": 28,
           "code": 59650,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 1,
@@ -141,7 +149,7 @@
           "name": "comments",
           "prevSize": 28,
           "code": 59651,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 1,
@@ -149,7 +157,7 @@
           "name": "briefcase",
           "prevSize": 28,
           "code": 59652,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 1,
@@ -157,7 +165,7 @@
           "name": "calendar-check",
           "prevSize": 28,
           "code": 59653,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 1,
@@ -165,7 +173,7 @@
           "name": "map-marker",
           "prevSize": 28,
           "code": 59654,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 1,
@@ -173,7 +181,7 @@
           "name": "graduation-cap",
           "prevSize": 28,
           "code": 59655,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 1,
@@ -181,7 +189,7 @@
           "name": "globe",
           "prevSize": 28,
           "code": 59656,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 1,
@@ -189,7 +197,7 @@
           "name": "user",
           "prevSize": 28,
           "code": 59657,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 1,
@@ -197,7 +205,7 @@
           "name": "paper-plane",
           "prevSize": 28,
           "code": 59658,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 1,
@@ -205,10 +213,10 @@
           "name": "github",
           "prevSize": 28,
           "code": 59659,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
-          "order": 1,
+          "order": 0,
           "id": 8,
           "name": "youtube",
           "prevSize": 28,
@@ -264,7 +272,7 @@
           "tempChar": ""
         },
         {
-          "order": 1,
+          "order": 0,
           "id": 1,
           "name": "circle-right",
           "prevSize": 28,
@@ -272,7 +280,7 @@
           "tempChar": ""
         },
         {
-          "order": 2,
+          "order": 0,
           "id": 0,
           "name": "circle-left",
           "prevSize": 28,
@@ -290,13 +298,28 @@
         "licenseURL": "https://github.com/FortAwesome/Font-Awesome#license",
         "iconsHash": 309851062,
         "importSize": {
-          "width": 30,
+          "width": 28,
           "height": 28
         }
       },
       "height": 1024,
       "prevSize": 28,
       "icons": [
+        {
+          "id": 19,
+          "paths": [
+            "M406.286 644.571l276.571-142.857-276.571-144.571v287.429zM512 152c215.429 0 358.286 10.286 358.286 10.286 20 2.286 64 2.286 102.857 43.429 0 0 31.429 30.857 40.571 101.714 10.857 82.857 10.286 165.714 10.286 165.714v77.714s0.571 82.857-10.286 165.714c-9.143 70.286-40.571 101.714-40.571 101.714-38.857 40.571-82.857 40.571-102.857 42.857 0 0-142.857 10.857-358.286 10.857v0c-266.286-2.286-348-10.286-348-10.286-22.857-4-74.286-2.857-113.143-43.429 0 0-31.429-31.429-40.571-101.714-10.857-82.857-10.286-165.714-10.286-165.714v-77.714s-0.571-82.857 10.286-165.714c9.143-70.857 40.571-101.714 40.571-101.714 38.857-41.143 82.857-41.143 102.857-43.429 0 0 142.857-10.286 358.286-10.286v0z"
+          ],
+          "attrs": [
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "tags": [
+            "youtube-play"
+          ],
+          "grid": 14
+        },
         {
           "id": 18,
           "paths": [
@@ -605,7 +628,6 @@
       "colorThemes": []
     }
   ],
-  "uid": -1,
   "preferences": {
     "showGlyphs": true,
     "showCodes": true,
@@ -615,7 +637,9 @@
     "fontPref": {
       "prefix": "icon-",
       "metadata": {
-        "fontFamily": "icomoon"
+        "fontFamily": "icomoon",
+        "majorVersion": 1,
+        "minorVersion": 0
       },
       "metrics": {
         "emSize": 1024,
@@ -632,5 +656,6 @@
       "bgColor": 16777215
     },
     "historySize": 50
-  }
+  },
+  "uid": -1
 }
