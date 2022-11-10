@@ -173,7 +173,7 @@
         }
       }
       body {
-        font-family: "Open Sans", sans-serif;
+        font-family: sans-serif;
       }
       section {
         min-height: 100vh;
@@ -346,8 +346,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 2.5em;
-        width: 2.5em;
+        min-height: 2.5em;
+        min-width: 2.5em;
       }
       .main-btn::before {
         content: "";
@@ -438,15 +438,6 @@
         }
       }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;800&display=swap"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
     <link
       rel="preload"
       href="assets/styles/styles.css"
@@ -630,9 +621,11 @@
                 target="_blank"
               >
                 <span class="btn-text">Agende um horário</span>
-                <span class="btn-icon">
-                  <i class="icon-calendar-check"></i>
-                </span>
+                <div class="test">
+                  <span class="btn-icon">
+                    <i class="icon-calendar-check"></i>
+                  </span>
+                </div>
               </a>
             </div>
           </div>

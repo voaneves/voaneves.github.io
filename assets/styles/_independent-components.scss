@@ -19,8 +19,8 @@
 
     .btn-icon {
         @include flex-center;
-        background-color: var(--color-secondary);
         border-radius: 50%;
+        min-height: 2.5em;
         min-width: 2.5em;
 
         i {
