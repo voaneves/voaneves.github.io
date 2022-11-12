@@ -341,6 +341,27 @@
   }
 }
 
+.timeline-text {
+  @include grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  justify-items: center;
+
+  p {
+    text-align: center;
+    width: min(700px, 100%);
+    color: var(--color-grey-2);
+
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+}
+
 /* Timeline */
 .timeline {
   @include grid;

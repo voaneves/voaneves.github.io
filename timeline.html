@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10.0"
+    />
+    <meta name="keywords" content="timeline, mario" />
+    <meta
+      name="description"
+      content="Minha timeline, no estilo do Super Mario"
+    />
+    <meta name="subject" content="Blog" />
+    <meta name="copyright" content="voaneves" />
+    <meta name="language" content="pt-br" />
+    <meta name="robots" content="index, follow" />
+    <meta name="summary" content="Minha timeline, no estilo do Super Mario" />
+    <meta name="Classification" content="Business" />
+    <meta name="author" content="Victor Neves, victorneves478@gmail.com" />
+    <meta name="designer" content="Victor Neves" />
+    <meta name="reply-to" content="victorneves478@gmail.com" />
+    <meta name="owner" content="Victor Neves" />
+    <meta name="url" content="https://voaneves.com/blog" />
+    <meta name="rating" content="General" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      color="#0a0a0a"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      color="#ffffff"
+    />
+    <meta property="og:url" content="https://voaneves.com/blog" />
+    <meta property="og:image" content="assets/img/og-img.webp" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Minha timeline, no estilo do Super Mario"
+    />
+    <meta
+      property="og:title"
+      content="Minha timeline, no estilo do Super Mario"
+    />
+    <meta
+      name="twitter:card"
+      content="Minha timeline, no estilo do Super Mario"
+    />
+    <meta name="twitter:site" content="@voaneves" />
+    <meta
+      name="twitter:title"
+      content="Minha timeline, no estilo do Super Mario"
+    />
+    <meta
+      name="twitter:description"
+      content="Minha timeline, no estilo do Super Mario"
+    />
+    <meta name="twitter:image" content="assets/img/main.webp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Content-Language" content="pt-br" />
+    <title>Minha timeline, no estilo do Super Mario</title>
+    <meta name="msapplication-TileColor" content="#191d2b" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/android-chrome-512x512.png"
+      sizes="512x512"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/img/apple-touch-icon.png"
+    />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <link rel="canonical" href="https://voaneves.com/timeline" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+    />
+    <link
+      rel="preload"
+      href="assets/styles/timeline.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="assets/styles/timeline.css" />
+    </noscript>
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
+    <script defer type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Victor Neves, Especialista em Transformação Digital",
+        "url": "https://voaneves.com",
+        "logo": "https://voaneves.com/assets/img/logo.webp",
+        "sameAs": [
+          "https://github.com/voaneves",
+          "https://youtube.com/c/voaneves",
+          "https://linkedin.com/in/voaneves"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "TO",
+          "postalCode": "77000-000",
+          "addressCountry": "BR"
+        }
+      }
+    </script>
+    <script defer src="sw.min.js"></script>
+    <script defer src="assets/js/app.min.js"></script>
+    <script defer src="assets/js/cursor.min.js"></script>
+    <script defer src="assets/js/console.min.js"></script>
+    <script defer src="assets/js/timeline.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="stage">
+        <header>
+          <h1>Super Victor Timeline</h1>
+          <h2>
+            Descubra o que eu fiz na minha vida e carreira através do icônico
+            jogo Super Mario World.
+          </h2>
+          <p id="info" class="info">(clique nos tubos!)</p>
+        </header>
+        <ul id="events" data-cursor="pointer2"></ul>
+        <div id="mario" class="mario idle" data-cursor="pointer"></div>
+      </div>
+      <div id="ground" class="ground">
+        <div id="grass" class="grass"></div>
+      </div>
+    </div>
+    <div class="page-settings">
+      <div
+        class="btn"
+        id="home"
+        title="Home"
+        onclick="location.href='./';"
+        data-cursor="pointer"
+        data-tooltip="HOME"
+      >
+        <i class="icon-home"></i>
+      </div>
+      <div
+        class="btn"
+        id="theme"
+        title="Mudar o tema"
+        data-cursor="pointer"
+        data-tooltip="MUDAR TEMA"
+      >
+        <i class="icon-adjust"></i>
+      </div>
+    </div>
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
+  </body>
+</html>

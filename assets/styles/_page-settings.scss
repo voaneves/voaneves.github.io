@@ -31,6 +31,81 @@
     }
 }
 
+#translate {
+
+    &:focus,
+    &:active {
+        .dropdown {
+            transform: translate(0, 20px);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .material-icons {
+        border-radius: 100%;
+        animation: ripple 0.6s linear infinite;
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(#000, .1);
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            box-shadow: 2px -2px 6px rgba(#000, .05);
+            border-top: 6px solid #fff;
+            border-right: 6px solid #fff;
+            border-bottom: 6px solid transparent;
+            border-left: 6px solid transparent;
+            transform: rotate(-45deg);
+            mix-blend-mode: multiple;
+        }
+
+        li {
+            z-index: 1;
+            position: relative;
+            background: #fff;
+            padding: 0 20px;
+            color: #666;
+
+            &:first-child {
+                border-radius: 4px 4px 0 0;
+            }
+
+            &:last-child {
+                border-radius: 0 0 4px 4px;
+
+                a {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        a {
+            display: block;
+            border-bottom: 1px solid rgba(#000, .05);
+            padding: 16px 0;
+            color: inherit;
+            font-size: 10px;
+            text-decoration: none;
+        }
+    }
+}
+
 @media screen and (max-width: 600px) {
     .page-settings {
         flex-direction: column;
