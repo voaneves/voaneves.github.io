@@ -118,12 +118,13 @@ const pipeHandler = (event) => {
       mario.classList.remove(`walk-${dir}`);
       mario.classList.add(`search-${dir}`);
       target.classList.add("active");
-      playSfx("pipe");
+      pipe.play();
     },
     duration,
     dir,
     event.currentTarget
   );
+  theme_song.play();
 
   // store position
   currentIndex = index;
@@ -141,50 +142,5 @@ timeline.forEach((event, index) => {
   e.addEventListener("click", pipeHandler.bind(this));
 });
 
-/* Audio handling */
-const canAudio = "AudioContext" in window || "webkitAudioContext" in window;
-const buffers = {};
-let context = void 0;
-
-if (canAudio) {
-  var AudioContext = window.AudioContext || window.webkitAudioContext;
-  context = new AudioContext(); // Make it crossbrowser
-  var gainNode = context.createGain();
-  gainNode.gain.value = 1; // set volume to 100%
-}
-
-const playSfx = function play(id) {
-  if (!canAudio || !buffers.hasOwnProperty(id)) return;
-  const buffer = buffers[id];
-  const source = context.createBufferSource();
-  source.buffer = buffer;
-  source.connect(context.destination);
-  source.start();
-};
-
-const loadBuffers = (urls, ids) => {
-  if (typeof urls == "string") urls = [urls];
-  if (typeof ids == "string") ids = [ids];
-  urls.forEach((url, index) => {
-    window
-      .fetch(url)
-      .then((response) => response.arrayBuffer())
-      .then((arrayBuffer) =>
-        context.decodeAudioData(
-          arrayBuffer,
-          (audioBuffer) => {
-            buffers[ids[index]] = audioBuffer;
-          },
-          (error) => console.log(error)
-        )
-      );
-  });
-};
-
-loadBuffers(
-  [
-    "https://github.com/voaneves/voaneves.github.io/raw/main/assets/audio/pipe.mp3",
-    "https://github.com/voaneves/voaneves.github.io/raw/main/assets/audio/theme.mp3",
-  ],
-  ["pipe", "theme"]
-);
+var pipe = new Audio("assets/audio/pipe.mp3");
+var theme_song = new Audio("assets/audio/theme.mp3");
