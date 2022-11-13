@@ -181,4 +181,10 @@ const loadBuffers = (urls, ids) => {
   });
 };
 
-loadBuffers(["", ""], ["pipe", "theme"]);
+loadBuffers(
+  [
+    "https://github.com/voaneves/voaneves.github.io/raw/main/assets/audio/pipe.mp3",
+    "https://github.com/voaneves/voaneves.github.io/raw/main/assets/audio/theme.mp3",
+  ],
+  ["pipe", "theme"]
+);
