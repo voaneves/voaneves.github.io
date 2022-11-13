@@ -21,49 +21,53 @@ const timeline = [
   },
   {
     year: 2012,
+    month_name: "Julho 2012",
+    title: "Comecei a desenvolver sites para ONGs",
+  },
+  {
+    year: 2012,
     month_name: "Dezembro 2012",
     title: "Minha iniciação científica em nanotubos de titânio",
   },
   {
     year: 2014,
     month_name: "Julho 2014",
-    title: "Entre na empresa Jr. MTE, na UNICAMP",
+    title: "Entrei na empresa Jr. MTE, na UNICAMP",
   },
   {
-    year: 1992,
-    month_name: "October 1992",
-    title: "Super Mario Land: 6 Golden Coins",
+    year: 2017,
+    month_name: "Janeiro 2017",
+    title: "Comecei a trabalhar na Coca-Cola FEMSA",
   },
   {
-    year: 1995,
-    month_name: "August 1995",
-    title: "Super Mario World 2: Yoshi's Island",
-  },
-  { year: 1996, month_name: "June 1996", title: "Super Mario 64" },
-  {
-    year: 2002,
-    month_name: "July 2002",
-    title: "Super Mario Sunshine",
+    year: 2018,
+    month_name: "Julho 2018",
+    title: "Viajei para a Alemanha para um estágio na KRONES/AG",
   },
   {
-    year: 2006,
-    month_name: "May 2006",
-    title: "New Super Mario Bros.",
+    year: 2019,
+    month_name: "Janeiro 2019",
+    title: "Virei Trainee na Coca-Cola FEMSA",
   },
   {
-    year: 2007,
-    month_name: "November 2007",
-    title: "Super Mario Galaxy",
+    year: 2019,
+    month_name: "Outubro 2019",
+    title: "Voltei pro Tocantins e comecei a trabalhar no Damásio",
   },
   {
-    year: 2009,
-    month_name: "November 2009",
-    title: "New Super Mario Bros. Wii",
+    year: 2021,
+    month_name: "Junho 2021",
+    title: "Aprofundei meus conhecimentos em Ciências de Dados na IBM",
   },
   {
-    year: 2010,
-    month_name: "May 2010",
-    title: "Super Mario Galaxy 2",
+    year: 2022,
+    month_name: "Janeiro de 2022",
+    title: "Comecei a desenvolver sites e criar apps profissionalmente",
+  },
+  {
+    year: 2022,
+    month_name: "Setembro 2022",
+    title: "Virei ALI do SEBRAE",
   },
 ];
 
@@ -136,27 +140,6 @@ timeline.forEach((event, index) => {
   eventsContainer.appendChild(e);
   e.addEventListener("click", pipeHandler.bind(this));
 });
-/* document.addEventListener("keydown", function (e) {
-  e = e || window.event;
-
-  if (e.key === "ArrowLeft") {
-    mario.classList.add("walk-left");
-  } else if (e.key === "ArrowRight") {
-    mario.classList.add("walk-right");
-  }
-});
-
-document.addEventListener("keyup", function (e) {
-  e = e || window.event;
-
-  if (e.key === "ArrowLeft") {
-    mario.classList.remove("walk-left");
-    mario.classList.add("idle");
-  } else if (e.key === "ArrowRight") {
-    mario.classList.remove("walk-right");
-    mario.classList.add("idle");
-  }
-}); */
 
 /* Audio handling */
 const canAudio = "AudioContext" in window || "webkitAudioContext" in window;
@@ -198,4 +181,4 @@ const loadBuffers = (urls, ids) => {
   });
 };
 
-loadBuffers(["https://assets.codepen.io/439000/smb_pipe.mp3"], ["pipe"]);
+loadBuffers(["", ""], ["pipe", "theme"]);
