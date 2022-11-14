@@ -232,7 +232,6 @@
         flex-direction: column;
         justify-content: center;
         padding-right: 18rem;
-        text-align: justify;
       }
       .controls,
       .controls .control {
@@ -257,12 +256,14 @@
         margin: 1.5rem 0;
         line-height: 2rem;
         font-weight: var(--font-thin);
+        text-align: justify;
       }
       .header-content .right-header .header-text-mobile {
         margin: 1.5rem 0;
         line-height: 2rem;
         font-weight: var(--font-thin);
         display: none;
+        text-align: justify;
       }
       .header-content .right-header .mobile-img {
         display: none;
@@ -1427,25 +1428,25 @@
             </div>
             <div class="right-contact">
               <form
-                id="formspree"
+                id="headless"
                 method="POST"
-                action="https://formspree.io/f/xbjbdrqv"
+                action="https://app.headlessforms.cloud/api/v1/form-submission/AGlY7jQwOX"
                 class="contact-form"
               >
-                <div class="input-control" data-cursor="pointer">
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Seu nome completo"
-                  />
-                </div>
                 <div class="input-control" data-cursor="pointer">
                   <input
                     type="email"
                     name="email"
                     required
                     placeholder="Seu melhor email"
+                  />
+                </div>
+                <div class="input-control" data-cursor="pointer">
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Seu nome completo"
                   />
                 </div>
                 <div class="input-control" data-cursor="pointer">
