@@ -213,7 +213,7 @@
     font-weight: var(--font-thin);
 
     p {
-
+      text-align: justify;
       font-weight: var(--font-thin);
       line-height: 2rem;
       padding: 1rem;
@@ -420,6 +420,7 @@
     }
 
     p {
+      text-align: justify;
       color: var(--color-grey-2);
       font-size: var(--text-small);
     }
@@ -474,6 +475,7 @@
 
       .text-container {
         width: min(800px, 70%);
+        text-align: justify;
 
         .text {
           @include inline-block;
