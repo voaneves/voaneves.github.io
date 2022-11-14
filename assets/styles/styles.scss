@@ -613,8 +613,10 @@
       }
     }
 
-    .submit-btn {
+    button {
       @include flex-start;
+      font-size: 1.2rem;
+      background-color: transparent;
     }
   }
 }
