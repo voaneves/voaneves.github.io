@@ -102,15 +102,15 @@
       href="assets/img/apple-touch-icon.png"
     />
     <link rel="shortcut icon" href="assets/img/favicon.ico" />
-    <link rel="canonical" href="https://voaneves.com/arts" />
+    <link rel="canonical" href="https://voaneves.com/loading" />
     <link
       rel="preload"
-      href="assets/styles/arts.css"
+      href="assets/styles/loading.css"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
-      <link rel="stylesheet" href="assets/styles/arts.css" />
+      <link rel="stylesheet" href="assets/styles/loading.css" />
     </noscript>
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
     <script defer type="application/ld+json">
@@ -140,19 +140,19 @@
   </head>
   <body class="main-content">
     <main>
-      <section class="container art active" id="art">
+      <section class="container loading active" id="loading">
         <div class="main-title">
           <h2>
-            Arte <span>CSS</span>
-            <span class="bg-text">ARTE</span>
+            Loading <span>ART</span>
+            <span class="bg-text">CSS</span>
           </h2>
         </div>
-        <div class="art-container">
-          <div class="arts">
-            <div class="art-item">
+        <div class="loading-container">
+          <div class="loading-items">
+            <div class="loading-item">
               <div class="fingerprintClass"></div>
             </div>
-            <div class="art-item">
+            <div class="loading-item">
               <svg
                 class="ip"
                 viewBox="0 0 256 128"
@@ -201,25 +201,72 @@
       </section>
     </main>
     <div class="page-settings">
-      <div
+      <button
         class="btn"
         id="home"
         title="Home"
-        onclick="location.href='./';"
+        onclick="location.href='../';"
         data-cursor="pointer"
         data-tooltip="HOME"
       >
         <i class="icon-home"></i>
-      </div>
-      <div
+      </button>
+      <button
         class="btn"
         id="theme"
         title="Mudar o tema"
         data-cursor="pointer"
-        data-tooltip="MUDAR TEMA"
+        data-tooltip="TROCAR TEMA"
       >
         <i class="icon-adjust"></i>
-      </div>
+      </button>
+      <button
+        class="btn"
+        id="translate"
+        title="Translate"
+        data-cursor="pointer"
+        data-tooltip="TRANSLATE"
+      >
+        <i class="icon-translate"></i>
+        <ul class="dropdown">
+          <li>
+            <a
+              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=en&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+              >EN</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=es&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+              >ES</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=de&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+              >DE</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=fr&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+              >FR</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=kr&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+              >KR</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=ru&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+              >RU</a
+            >
+          </li>
+        </ul>
+      </button>
     </div>
     <div id="cursor"></div>
     <div id="cursor-border"></div>

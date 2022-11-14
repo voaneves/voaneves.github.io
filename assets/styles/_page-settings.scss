@@ -5,11 +5,11 @@
     flex-direction: row;
     top: 3vw;
     right: 2vw;
-    z-index: 11;
 
     .btn {
         @include flex-center;
         @include ease-in-out;
+        position: relative;
         width: min(10vw, 80px);
         aspect-ratio: 1 / 1;
         border-radius: 50%;
@@ -27,58 +27,6 @@
         &:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px var(--color-white);
-        }
-    }
-}
-
-#translate {
-    &:hover {
-        .dropdown {
-            display: block;
-        }
-    }
-
-    .dropdown {
-        display: none;
-        position: absolute;
-        top: 45%;
-        left: 0;
-        width: 100%;
-        border-radius: 4px;
-        box-shadow: 0 4px 12px rgba(#000, .1);
-        background-color: var(--color-grey-5);
-        text-align: center;
-        padding-top: 40px;
-
-        li {
-            background-color: var(--color-grey-5);
-            color: var(--color-white);
-
-            &:hover {
-                background-color: var(--color-white);
-                color: var(--color-primary);
-            }
-
-            &:first-child {
-                border-radius: 4px 4px 0 0;
-            }
-
-            &:last-child {
-                border-radius: 0 0 4px 4px;
-
-                a {
-                    border-bottom: 0;
-                }
-            }
-        }
-
-        a {
-            display: block;
-            border-bottom: 1px solid rgba(#000, .05);
-            padding: 8px 0;
-            color: inherit;
-            font-size: 10px;
-            text-decoration: none;
         }
     }
 }

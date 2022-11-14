@@ -7,21 +7,22 @@
 @import "tooltip";
 @import "scrollbar";
 @import "scroll-icon";
+@import "dropdown";
 
-.art {
+.loading {
     overflow: hidden;
     padding: 1rem;
 }
 
-.art-container {
+.loading-container {
     @include flex-center;
     padding-top: 4rem;
 
-    .arts {
+    .loading-items {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
 
-        .art-item {
+        .loading-item {
             margin: 10rem 0;
 
             .fingerprintClass {
