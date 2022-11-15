@@ -80,6 +80,7 @@ const mario = document.getElementById("mario");
 const ground = document.getElementById("ground");
 const grass = document.getElementById("grass");
 const eventsContainer = document.getElementById("events");
+let playingTheme = false;
 let currentIndex = -1;
 let currentPipe;
 let int1;
@@ -122,15 +123,17 @@ const pipeHandler = (event) => {
       mario.classList.remove(`walk-${dir}`);
       mario.classList.add(`search-${dir}`);
       target.classList.add("active");
-      /* pipe.play(); */
       playSfx("pipe");
     },
     duration,
     dir,
     event.currentTarget
   );
-  /* theme_song.play(); */
-  playSfx("theme");
+
+  if (!playingTheme) {
+    playSfx("theme");
+    playingTheme = true;
+  }
 
   // store position
   currentIndex = index;
@@ -149,9 +152,6 @@ timeline.forEach((event, index) => {
   e.addEventListener("click", pipeHandler.bind(this));
   console.log(event.title.includes("Peach"));
 });
-
-/* var pipe = new Audio("assets/audio/pipe.mp3");
-var theme_song = new Audio("assets/audio/theme.mp3"); */
 
 /* Audio handling */
 const canAudio = "AudioContext" in window || "webkitAudioContext" in window;
