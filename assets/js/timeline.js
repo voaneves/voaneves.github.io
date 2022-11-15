@@ -100,7 +100,6 @@ const pipeHandler = (event) => {
   const curXpos = -100 - currentIndex * 150 - 25;
   const distance = curXpos - xpos;
   const duration = Math.abs(distance) * 3;
-  // console.log(distance);
   eventsContainer.style.transitionDuration = `${duration}ms`;
   eventsContainer.style.transform = `translateX(${xpos}px)`;
   ground.style.transitionDuration = `${duration}ms`;
@@ -123,13 +122,15 @@ const pipeHandler = (event) => {
       mario.classList.remove(`walk-${dir}`);
       mario.classList.add(`search-${dir}`);
       target.classList.add("active");
-      pipe.play();
+      /* pipe.play(); */
+      playSfx("pipe");
     },
     duration,
     dir,
     event.currentTarget
   );
-  theme_song.play();
+  /* theme_song.play(); */
+  playSfx("theme");
 
   // store position
   currentIndex = index;
@@ -149,5 +150,50 @@ timeline.forEach((event, index) => {
   console.log(event.title.includes("Peach"));
 });
 
-var pipe = new Audio("assets/audio/pipe.mp3");
-var theme_song = new Audio("assets/audio/theme.mp3");
+/* var pipe = new Audio("assets/audio/pipe.mp3");
+var theme_song = new Audio("assets/audio/theme.mp3"); */
+
+/* Audio handling */
+const canAudio = "AudioContext" in window || "webkitAudioContext" in window;
+const buffers = {};
+let context = void 0;
+
+if (canAudio) {
+  var AudioContext = window.AudioContext || window.webkitAudioContext;
+  context = new AudioContext(); // Make it crossbrowser
+  var gainNode = context.createGain();
+  gainNode.gain.value = 1; // set volume to 100%
+}
+
+const playSfx = function play(id) {
+  if (!canAudio || !buffers.hasOwnProperty(id)) return;
+  const buffer = buffers[id];
+  const source = context.createBufferSource();
+  source.buffer = buffer;
+  source.connect(context.destination);
+  source.start();
+};
+
+const loadBuffers = (urls, ids) => {
+  if (typeof urls == "string") urls = [urls];
+  if (typeof ids == "string") ids = [ids];
+  urls.forEach((url, index) => {
+    window
+      .fetch(url)
+      .then((response) => response.arrayBuffer())
+      .then((arrayBuffer) =>
+        context.decodeAudioData(
+          arrayBuffer,
+          (audioBuffer) => {
+            buffers[ids[index]] = audioBuffer;
+          },
+          (error) => console.log(error)
+        )
+      );
+  });
+};
+
+loadBuffers(
+  ["assets/audio/pipe.mp3", "assets/audio/theme.mp3"],
+  ["pipe", "theme"]
+);
