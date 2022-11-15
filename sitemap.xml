@@ -10,9 +10,14 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://voaneves.com/en</loc>
-  <lastmod>2022-10-18T02:58:19+00:00</lastmod>
+  <loc>https://voaneves.com/timeline</loc>
+  <lastmod>2022-11-15T02:58:19+00:00</lastmod>
   <priority>0.95</priority>
+</url>
+<url>
+  <loc>https://voaneves.com/loading</loc>
+  <lastmod>2022-11-15T02:58:19+00:00</lastmod>
+  <priority>0.85</priority>
 </url>
 <url>
   <loc>https://voaneves.com/assets/cv-pt.pdf</loc>
@@ -32,6 +37,11 @@
 <url>
   <loc>https://voaneves.com/blog/somos-bons-ou-maus.html</loc>
   <lastmod>2022-10-21T02:58:19+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://voaneves.com/blog/o-pobre-que-usa-iphone.html</loc>
+  <lastmod>2022-11-02T02:58:19+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 </urlset>
