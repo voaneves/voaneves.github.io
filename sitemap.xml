@@ -7,6 +7,7 @@
 <url>
   <loc>https://voaneves.com/</loc>
   <lastmod>2022-10-18T02:58:19+00:00</lastmod>
+  <changefreq>always</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
@@ -15,7 +16,12 @@
   <priority>0.95</priority>
 </url>
 <url>
-  <loc>https://voaneves.com/loading</loc>
+  <loc>https://voaneves.com/loading.html</loc>
+  <lastmod>2022-11-15T02:58:19+00:00</lastmod>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://voaneves.com/games.html</loc>
   <lastmod>2022-11-15T02:58:19+00:00</lastmod>
   <priority>0.85</priority>
 </url>
@@ -32,6 +38,7 @@
 <url>
   <loc>https://voaneves.com/blog</loc>
   <lastmod>2022-10-20T02:58:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.70</priority>
 </url>
 <url>
