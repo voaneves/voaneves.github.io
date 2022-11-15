@@ -133,7 +133,7 @@ const pipeHandler = (event) => {
 
 // setup timeline
 timeline.forEach((event, index) => {
-  const e = document.createElement("div");
+  const e = document.createElement("li");
   e.classList.add("event");
   e.dataset.index = index;
   e.dataset.title = event.title;
