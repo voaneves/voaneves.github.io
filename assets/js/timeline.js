@@ -130,8 +130,8 @@ const pipeHandler = (event) => {
     event.currentTarget
   );
 
-  if (!playingTheme) {
-    playSfx("theme");
+  if (playingTheme === false) {
+    playSfx("theme", true);
     playingTheme = true;
   }
 
@@ -165,13 +165,14 @@ if (canAudio) {
   gainNode.gain.value = 1; // set volume to 100%
 }
 
-const playSfx = function play(id) {
+const playSfx = function play(id, loop = false) {
   if (!canAudio || !buffers.hasOwnProperty(id)) return;
   const buffer = buffers[id];
   const source = context.createBufferSource();
   source.buffer = buffer;
   source.connect(context.destination);
   source.start();
+  source.loop = loop;
 };
 
 const loadBuffers = (urls, ids) => {
