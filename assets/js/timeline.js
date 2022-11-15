@@ -69,6 +69,11 @@ const timeline = [
     month_name: "Setembro 2022",
     title: "Virei ALI do SEBRAE",
   },
+  {
+    year: 2022,
+    month_name: "Setembro 2022",
+    title: "Casei com a minha Peach...",
+  },
 ];
 
 const mario = document.getElementById("mario");
@@ -134,12 +139,14 @@ const pipeHandler = (event) => {
 // setup timeline
 timeline.forEach((event, index) => {
   const e = document.createElement("li");
-  e.classList.add("event");
+  if (event.title.includes("Peach")) e.classList.add("peach");
+  else e.classList.add("event");
   e.dataset.index = index;
   e.dataset.title = event.title;
   e.dataset.month = event.month_name;
   eventsContainer.appendChild(e);
   e.addEventListener("click", pipeHandler.bind(this));
+  console.log(event.title.includes("Peach"));
 });
 
 var pipe = new Audio("assets/audio/pipe.mp3");
