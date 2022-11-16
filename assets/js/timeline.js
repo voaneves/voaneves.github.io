@@ -150,7 +150,6 @@ timeline.forEach((event, index) => {
   e.dataset.month = event.month_name;
   eventsContainer.appendChild(e);
   e.addEventListener("click", pipeHandler.bind(this));
-  console.log(event.title.includes("Peach"));
 });
 
 /* Audio handling */
