@@ -11,33 +11,18 @@ button:has(.dropdown) {
 }
 
 .dropdown {
+    @include cubic-bezier;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    width: 50%;
+    top: 50%;
+    left: 100%;
     border-radius: 4px;
     text-align: left;
     opacity: 0;
     visibility: hidden;
 
-    &:before {
-        content: '';
-        position: absolute;
-        top: -6px;
-        left: 50%;
-        width: 0;
-        height: 0;
-        box-shadow: 2px -2px 6px rgba(var(--color-black), .05);
-        border-top: 6px solid var(--color-grey-5);
-        border-right: 6px solid var(--color-grey-5);
-        border-bottom: 6px solid transparent;
-        border-left: 6px solid transparent;
-        transform: rotate(-45deg);
-        mix-blend-mode: multiple;
-    }
 
     li {
-        @include cubic-bezier;
         text-align: center;
         position: relative;
         background: var(--color-grey-5);
@@ -48,11 +33,11 @@ button:has(.dropdown) {
         }
 
         &:first-child {
-            border-radius: 4px 4px 0 0;
+            border-radius: 0 10px 0 0;
         }
 
         &:last-child {
-            border-radius: 0 0 4px 4px;
+            border-radius: 0 0 10px 0px;
 
             a {
                 border-bottom: 0;

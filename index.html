@@ -110,10 +110,6 @@
     <!-- critical CSS -->
     <style>
       @charset "UTF-8";
-      .controls,
-      .page-settings {
-        position: fixed;
-      }
       .main-btn .btn-icon i,
       body {
         font-size: var(--text-small);
@@ -176,7 +172,7 @@
       }
       section {
         min-height: 100vh;
-        width: 100%;
+        width: calc(100% - min(max(60px, 7vw), 90px));
         position: absolute;
         left: 0;
         top: 0;
@@ -184,6 +180,7 @@
       }
       .container {
         display: none;
+        margin-left: min(max(60px, 7vw), 90px);
       }
       .active {
         display: block;
@@ -232,11 +229,6 @@
         flex-direction: column;
         justify-content: center;
         padding-right: 18rem;
-      }
-      .controls,
-      .controls .control {
-        display: flex;
-        align-items: center;
       }
       .header-content .right-header .name {
         font-size: var(--text-big);
@@ -300,37 +292,6 @@
         max-width: 100%;
         opacity: 1;
       }
-      .controls {
-        z-index: 10;
-        justify-content: center;
-        top: 50vh;
-        right: 3vw;
-        flex-direction: column;
-        transform: translateY(-50%);
-      }
-      .controls .control {
-        justify-content: center;
-        margin: 7% 0;
-        width: clamp(1vh, 10vw, 8vh);
-        aspect-ratio: 1/1;
-      }
-      .page-settings {
-        z-index: 11;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        top: 3vw;
-        right: 2vw;
-      }
-      .page-settings .btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: min(10vw, 80px);
-        aspect-ratio: 1/1;
-        margin: 0 4%;
-      }
       .btn-con,
       .main-btn {
         align-items: center;
@@ -392,27 +353,12 @@
           display: inline-block;
         }
         .container {
-          padding: 2rem 2.5rem !important;
-        }
-        .controls {
-          top: auto;
-          bottom: 0;
-          flex-direction: row;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100%;
-        }
-        .controls .control,
-        .page-settings .btn {
-          margin: 7% 2%;
-        }
-        .page-settings {
-          flex-direction: column;
+          padding: 1rem !important;
         }
       }
       @media screen and (max-width: 1070px) {
         .header-content {
-          grid-template-columns: repeat(1, 1fr);
+          grid-template-columns: 1fr;
         }
         .header-content .left-header .h-shape {
           display: none;
@@ -434,13 +380,9 @@
         }
       }
       @media screen and (max-width: 970px) {
-        .container {
-          padding: 7rem 6rem;
-        }
         .header-content .right-header .name {
           font-size: 2.5rem !important;
           text-align: center;
-          padding-top: 0 !important;
         }
       }
     </style>
@@ -1478,121 +1420,122 @@
         </div>
       </section>
     </main>
-    <div class="controls">
-      <button
-        class="control active-btn"
-        data-id="home"
-        title="Home"
-        data-cursor="pointer"
-        data-tooltip="HOME"
-      >
-        <i class="icon-home"></i>
-      </button>
-      <button
-        class="control"
-        data-id="about"
-        title="Sobre"
-        data-cursor="pointer"
-        data-tooltip="SOBRE"
-      >
-        <i class="icon-user"></i>
-      </button>
-      <button
-        class="control"
-        data-id="portfolio"
-        title="Portfolio"
-        data-cursor="pointer"
-        data-tooltip="PORTFOLIO"
-      >
-        <i class="icon-briefcase"></i>
-      </button>
-      <button
-        class="control"
-        onclick="location.href='./blog';"
-        title="Blog"
-        data-cursor="pointer"
-        data-tooltip="BLOG"
-      >
-        <i class="icon-blog"></i>
-      </button>
-      <button
-        class="control"
-        data-id="contact"
-        title="Contato"
-        data-cursor="pointer"
-        data-tooltip="CONTATO"
-      >
-        <i class="icon-envelope-open"></i>
-      </button>
-    </div>
-    <div class="page-settings">
-      <button
-        class="btn"
-        id="theme"
-        title="Mudar o tema"
-        data-cursor="pointer"
-        data-tooltip="TROCAR TEMA"
-      >
-        <i class="icon-adjust"></i>
-      </button>
-      <button
-        class="btn"
-        id="translate"
-        title="Translate"
-        data-cursor="pointer"
-        data-tooltip="TRANSLATE"
-      >
-        <i class="icon-translate"></i>
-        <ul class="dropdown">
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=en&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >EN</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=es&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >ES</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=de&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >DE</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=fr&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >FR</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=ko&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >KR</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=ar&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >AR</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=ru&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >RU</a
-            >
-          </li>
-        </ul>
-      </button>
+    <div class="sidebar">
+      <div class="sidebar-wrapper">
+        <button
+          class="control active-btn"
+          data-id="home"
+          title="Home"
+          data-cursor="pointer"
+          data-tooltip="HOME"
+        >
+          <i class="icon-home"></i>
+        </button>
+        <button
+          class="control"
+          data-id="about"
+          title="Sobre"
+          data-cursor="pointer"
+          data-tooltip="SOBRE"
+        >
+          <i class="icon-user"></i>
+        </button>
+        <button
+          class="control"
+          data-id="portfolio"
+          title="Portfolio"
+          data-cursor="pointer"
+          data-tooltip="PORTFOLIO"
+        >
+          <i class="icon-briefcase"></i>
+        </button>
+        <button
+          class="control"
+          onclick="location.href='./blog';"
+          title="Blog"
+          data-cursor="pointer"
+          data-tooltip="BLOG"
+        >
+          <i class="icon-blog"></i>
+        </button>
+        <button
+          class="control"
+          data-id="contact"
+          title="Contato"
+          data-cursor="pointer"
+          data-tooltip="CONTATO"
+        >
+          <i class="icon-envelope-open"></i>
+        </button>
+      </div>
+      <div class="sidebar-wrapper">
+        <button
+          class="page-settings"
+          id="theme"
+          title="Mudar o tema"
+          data-cursor="pointer"
+          data-tooltip="TROCAR TEMA"
+        >
+          <i class="icon-adjust"></i>
+        </button>
+        <button
+          class="page-settings"
+          id="translate"
+          title="Translate"
+          data-cursor="pointer"
+          data-tooltip="TRANSLATE"
+        >
+          <i class="icon-translate"></i>
+          <ul class="dropdown">
+            <li>
+              <a
+                href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=en&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                >EN</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=es&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                >ES</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=de&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                >DE</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=fr&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                >FR</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=ko&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                >KR</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=ar&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                >AR</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://voaneves-com.translate.goog/?_x_tr_sl=pt&_x_tr_tl=ru&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                >RU</a
+              >
+            </li>
+          </ul>
+        </button>
+      </div>
     </div>
     <a href="#">
       <div class="arrow-up" style="opacity: 0">
         <div class="symbol"></div>
-        <span class="text">UP</span>
       </div>
     </a>
     <div id="cursor"></div>

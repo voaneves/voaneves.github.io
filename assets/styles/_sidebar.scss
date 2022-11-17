@@ -1,0 +1,63 @@
+/* Sidebar */
+.sidebar {
+    @include flex-center;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: min(max(60px, 7vw), 90px);
+    top: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    border-right: 1px solid var(--color-grey-6);
+
+    &-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        border-bottom: 1px solid var(--color-grey-6);
+        padding: 36px 0;
+
+        &+& {
+            border-bottom: none;
+        }
+
+        .page-settings,
+        .control {
+            @include flex-center;
+            @include ease-in-out;
+            margin: max(20px, 7%) 0;
+            border: none;
+            background-color: var(--color-grey-4);
+            border-radius: 10px;
+            padding: min(max(7px, 1vw), 10px);
+
+            i {
+                font-size: max(1rem, 1vw);
+                color: var(--color-grey-1);
+                pointer-events: none;
+            }
+
+            &:hover {
+                i {
+                    color: var(--color-opposite);
+                }
+            }
+        }
+
+        .active-btn {
+            background-color: var(--color-secondary);
+
+            i {
+                color: var(--color-white);
+            }
+
+            &:hover {
+                box-shadow: none;
+                transform: none;
+
+                i {
+                    color: var(--color-white);
+                }
+            }
+        }
+    }
+}

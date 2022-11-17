@@ -107,16 +107,17 @@ a:link {
 
 section {
     min-height: 100vh;
-    width: 100%;
+    width: calc(100% - min(max(60px, 7vw), 90px));
     position: absolute;
     left: 0;
     top: 0;
-    padding: 3rem 18rem;
+    padding: 3rem min(max(1rem, 10vw), 18rem);
     content-visibility: auto;
 }
 
 .container {
     display: none;
+    margin-left: min(max(60px, 7vw), 90px);
 }
 
 .active {

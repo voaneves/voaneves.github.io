@@ -1,8 +1,7 @@
 /* Imports */
 @import "header";
 @import "include";
-@import "controls";
-@import "page-settings";
+@import "sidebar";
 @import "cursor";
 @import "icons";
 @import "independent-components";
@@ -154,13 +153,14 @@
 /* About */
 .about-container {
   @include grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 2rem;
   padding-top: 3.5rem;
   padding-bottom: 5rem;
 
   .right-about {
     @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-gap: 2rem;
 
     .about-item {
@@ -209,7 +209,6 @@
   }
 
   .left-about {
-    padding-right: 5rem;
     font-weight: var(--font-thin);
 
     p {
@@ -365,27 +364,28 @@
 /* Timeline */
 .timeline {
   @include grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   grid-gap: 2rem;
-  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 
   .timeline-item {
     position: relative;
-    padding-left: 3rem;
+    padding-left: 2rem;
     border-left: 1px solid var(--color-grey-5);
 
     .tl-icon {
+      @include flex-center;
       position: absolute;
-      left: -27px;
+      left: -20px;
       top: 0;
       background-color: var(--color-secondary);
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      @include flex-center;
 
       i {
-        font-size: var(--text-small);
+        font-size: 1rem;
       }
     }
 
@@ -413,7 +413,7 @@
     }
 
     h5 {
-      padding: 1rem 0;
+      /* padding: 1rem 0; */
       text-transform: uppercase;
       font-size: var(--text-medium);
       font-weight: var(--font-heavy);
@@ -428,12 +428,8 @@
 }
 
 /* Portfolio section */
-.portfolio {
-  overflow: hidden;
-}
-
 .portfolio-content {
-  padding: 3rem 0;
+  padding-top: 4rem;
 
   .portfolio-item {
     @include grid;
@@ -444,7 +440,7 @@
     border-radius: 10px;
     background: var(--color-primary);
     box-shadow: var(--box-shadow-1);
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 
     .portfolio-title {
       @include flex-center;
@@ -655,23 +651,21 @@
     .right-about {
       padding-top: 2.5rem;
     }
+  }
 
-    .left-about {
-      padding-right: 0;
-
-      p {
-        padding-left: 0;
-      }
+  .about-stats {
+    .progress-bars {
+      grid-template-columns: 1fr;
     }
   }
 
   .timeline {
-    padding-bottom: 6rem;
+    grid-template-columns: 1fr;
   }
 
   .portfolio-content {
-    padding-top: 1rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
   }
 
   .contact-content-con {
@@ -754,11 +748,5 @@
     .right-about {
       padding-top: 2.5rem;
     }
-  }
-}
-
-@media screen and (max-width: 970px) {
-  .about-container .left-about {
-    padding-right: 0rem;
   }
 }

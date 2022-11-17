@@ -1,4 +1,14 @@
 ::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(21 20 26 / 63%);
+    border-radius: 10px;
+}
+
+/* ::-webkit-scrollbar {
     z-index: -1;
     width: 10px;
 }
@@ -20,4 +30,4 @@
         border-left-width: 4px;
         background-color: var(--color-grey-6);
     }
-}
+} */
