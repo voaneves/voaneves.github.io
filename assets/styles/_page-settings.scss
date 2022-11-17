@@ -4,7 +4,7 @@
     position: fixed;
     flex-direction: row;
     top: 3vw;
-    right: 2vw;
+    left: 2vw;
 
     .btn {
         @include flex-center;
