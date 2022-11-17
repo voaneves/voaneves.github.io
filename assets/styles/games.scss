@@ -1,7 +1,7 @@
 /* Import */
 @import "header";
 @import "include";
-@import "page-settings";
+@import "sidebar";
 @import "cursor";
 @import "icons";
 @import "tooltip";
@@ -31,7 +31,7 @@
 
         span {
             color: var(--color-grey-2);
-            font-size: var(--text-small);
+            font-size: 1rem;
             font-weight: var(--font-medium);
         }
     }
@@ -64,8 +64,8 @@
         .tic-tac-toe {
             .game-grid {
                 display: inline-grid;
-                grid-template-rows: repeat(3, clamp(2em, 10vw, 5em));
-                grid-template-columns: repeat(3, clamp(2em, 10vw, 5em));
+                grid-template-rows: repeat(3, clamp(2rem, 10vw, 5rem));
+                grid-template-columns: repeat(3, clamp(2rem, 10vw, 5rem));
                 margin: 10px auto;
                 color: var(--color-opposite);
 
@@ -280,8 +280,12 @@
 }
 
 @media screen and (max-width: 600px) {
+    section {
+        padding: 1rem !important;
+    }
+
     .game-section {
-        padding-bottom: 6rem;
+        padding-bottom: 3rem;
 
         .games {
             .pedra-papel-tesoura {
