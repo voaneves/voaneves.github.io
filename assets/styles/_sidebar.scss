@@ -36,6 +36,22 @@
                 pointer-events: none;
             }
 
+            &::before {
+                @include cubic-bezier;
+                display: flex;
+                justify-content: flex-start;
+                content: attr(data-tooltip);
+                text-align: right;
+                position: absolute;
+                padding: 10px;
+                color: var(--color-grey-1);
+                width: fit-content;
+                background: var(--color-grey-4);
+                font-size: 1em;
+                white-space: nowrap;
+                height: max-content;
+            }
+
             &:hover {
                 i {
                     color: var(--color-opposite);
