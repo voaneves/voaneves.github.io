@@ -66,21 +66,6 @@
         -webkit-animation: 4s linear infinite color-animation;
         animation: 4s linear infinite color-animation;
       }
-
-      .changing-text {
-        &::before {
-          content: "programar";
-          -webkit-animation: 20s infinite animate-text;
-          animation: 20s infinite animate-text;
-        }
-      }
-    }
-
-    .changing-text {
-      &::after {
-        -webkit-animation: 1s steps(2) infinite cursor-blink;
-        animation: 1s steps(2) infinite cursor-blink;
-      }
     }
 
     .header-btns {
