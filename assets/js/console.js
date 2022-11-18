@@ -1,7 +1,7 @@
 function consoleText() {
   console.clear();
   const styles = [
-    "color: white",
+    "color: #fff",
     "background: rgba(0, 4, 40, 1)",
     "font-size: 18px",
     "padding: 12px",
@@ -11,7 +11,6 @@ function consoleText() {
     "font-size: 14px",
     "padding: 16px",
     "margin: 6px 0 6px 0",
-    "color: #fff",
   ].join(";");
   console.log("%cHey there! I'm Victor.", styles);
   console.log("%cIt's a pleasure to have you here!", styles2);

@@ -6,31 +6,15 @@
   let currentPlayer = "X";
   let gameState = ["", "", "", "", "", "", "", "", ""];
 
-  let winningMessage;
-  let drawMessage;
-  let currentPlayerTurn;
-
-  if (englishOrNot != "-1") {
-    winningMessage = function () {
-      return `Player ${currentPlayer} won`;
-    };
-    drawMessage = function () {
-      return `It was a draw!`;
-    };
-    currentPlayerTurn = function () {
-      return `It's ${currentPlayer} turn`;
-    };
-  } else {
-    winningMessage = function () {
-      return `O jogador ${currentPlayer} venceu`;
-    };
-    drawMessage = function () {
-      return `Deu empate!`;
-    };
-    currentPlayerTurn = function () {
-      return `É a vez do ${currentPlayer}`;
-    };
-  }
+  let winningMessage = function () {
+    return `O jogador ${currentPlayer} venceu`;
+  };
+  let drawMessage = function () {
+    return `Deu empate!`;
+  };
+  let currentPlayerTurn = function () {
+    return `É a vez do ${currentPlayer}`;
+  };
 
   statusElement.innerHTML = currentPlayerTurn();
 
