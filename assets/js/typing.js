@@ -9,7 +9,7 @@
 
   const typingDelay = 100;
   const erasingDelay = 50;
-  const newTextDelay = 500;
+  const newTextDelay = 1000;
   let textArrayIndex = 0;
   let charIndex = 0;
 

@@ -60,7 +60,7 @@
     }
 
     .name {
-      .typed-text {
+      span {
         color: var(--color-secondary);
         -webkit-animation: 4s linear infinite color-animation;
         animation: 4s linear infinite color-animation;
@@ -68,14 +68,7 @@
 
       .caret {
         display: inline-block;
-        background-color: #ccc;
-        margin-left: 0.1rem;
-        width: 3px;
         animation: blink 1s infinite;
-
-        .typing {
-          animation: none;
-        }
       }
     }
 
@@ -104,23 +97,23 @@
 
 @keyframes blink {
   0% {
-    background-color: #ccc;
+    color: inherit;
   }
 
   49% {
-    background-color: #ccc;
+    color: inherit;
   }
 
   50% {
-    background-color: transparent;
+    color: transparent;
   }
 
   99% {
-    background-color: transparent;
+    color: transparent;
   }
 
   100% {
-    background-color: #ccc;
+    color: inherit;
   }
 }
 
