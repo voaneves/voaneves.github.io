@@ -60,10 +60,22 @@
     }
 
     .name {
-      span {
+      .typed-text {
         color: var(--color-secondary);
         -webkit-animation: 4s linear infinite color-animation;
         animation: 4s linear infinite color-animation;
+      }
+
+      .caret {
+        display: inline-block;
+        background-color: #ccc;
+        margin-left: 0.1rem;
+        width: 3px;
+        animation: blink 1s infinite;
+
+        .typing {
+          animation: none;
+        }
       }
     }
 
@@ -89,48 +101,26 @@
   }
 }
 
-@keyframes animate-text {
+
+@keyframes blink {
   0% {
-    content: "digital";
+    background-color: #ccc;
   }
 
-  10% {
-    content: "analytics";
-  }
-
-  20% {
-    content: "correr";
-  }
-
-  30% {
-    content: "o piano";
-  }
-
-  40% {
-    content: "branding";
+  49% {
+    background-color: #ccc;
   }
 
   50% {
-    content: "programar";
+    background-color: transparent;
   }
 
-  60% {
-    content: "eficiência";
+  99% {
+    background-color: transparent;
   }
 
-  70% {
-    content: "sprints";
-  }
-
-  80% {
-    content: "a Deus";
-  }
-}
-
-
-@keyframes cursor-blink {
-  0% {
-    opacity: 0;
+  100% {
+    background-color: #ccc;
   }
 }
 
