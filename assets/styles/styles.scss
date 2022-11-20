@@ -202,7 +202,7 @@
 }
 
 /* About */
-/* .about-container {
+.about-container {
   @include grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-gap: 2rem;
@@ -410,10 +410,10 @@
     align-items: center;
     margin: 2rem 0;
   }
-} */
+}
 
 /* Timeline */
-/* .timeline {
+.timeline {
   @include grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   grid-gap: 2rem;
@@ -475,7 +475,7 @@
       font-size: var(--text-small);
     }
   }
-} */
+}
 
 /* Portfolio section */
 .portfolio-content {
