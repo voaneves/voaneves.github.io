@@ -11,22 +11,86 @@
 
 /* Header */
 .header-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+
   .left-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .h-shape {
+      width: 65%;
+      height: 100%;
+      background-color: var(--color-secondary);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      -webkit-clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
+      clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
+    }
+
     .image {
+      border-radius: var(--br-sm-2);
+      height: 90%;
+      width: 68%;
+      margin-left: 4rem;
+      background-color: var(--color-black);
+      overflow: hidden;
+
       img {
         @include ease-in-out;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        filter: grayscale(100%);
+
+        &:hover {
+          filter: grayscale(0);
+        }
       }
     }
   }
 
   .right-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 18rem;
+
+    .header-text {
+      display: inline-block;
+      margin: 1.5rem 0;
+      line-height: 2rem;
+      font-weight: var(--font-thin);
+      text-align: justify
+    }
+
+    .header-text-mobile {
+      margin: 1.5rem 0;
+      line-height: 2rem;
+      font-weight: var(--font-thin);
+      display: none;
+      text-align: justify
+    }
+
     .mobile-img {
+      display: none;
+      text-align: center;
+      padding-bottom: .5rem;
+
       ul {
+        list-style-type: none;
+        max-width: 100%;
         border-radius: 10px;
         background-color: var(--color-secondary);
       }
 
       label {
+        padding: 3px;
         border-radius: 5px;
         color: var(--color-primary);
         font-size: var(--text-medium);
@@ -38,6 +102,9 @@
       }
 
       li {
+        margin: 10px;
+        padding: 5px;
+
         .image {
           @include flex-center;
 
@@ -54,12 +121,29 @@
         }
       }
 
-      input[type="checkbox"]~ul {
+      input[type=checkbox] {
+        display: none
+      }
+
+      input[type=checkbox]:checked~ul {
+        max-height: 100%;
+        max-width: 100%;
+        opacity: 1;
+      }
+
+      input[type=checkbox]~ul {
         @include ease-in-out;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        white-space: nowrap
       }
     }
 
     .name {
+      font-size: var(--text-big);
+
       span {
         color: var(--color-secondary);
         -webkit-animation: 4s linear infinite color-animation;
@@ -118,7 +202,7 @@
 }
 
 /* About */
-.about-container {
+/* .about-container {
   @include grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-gap: 2rem;
@@ -326,10 +410,10 @@
     align-items: center;
     margin: 2rem 0;
   }
-}
+} */
 
 /* Timeline */
-.timeline {
+/* .timeline {
   @include grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   grid-gap: 2rem;
@@ -380,7 +464,6 @@
     }
 
     h5 {
-      /* padding: 1rem 0; */
       text-transform: uppercase;
       font-size: var(--text-medium);
       font-weight: var(--font-heavy);
@@ -392,7 +475,7 @@
       font-size: var(--text-small);
     }
   }
-}
+} */
 
 /* Portfolio section */
 .portfolio-content {
@@ -614,6 +697,36 @@
 
 /* Media queries */
 @media screen and (max-width: 600px) {
+  header {
+    padding: 0 !important
+  }
+
+  .header-content {
+    height: auto;
+    display: block;
+    margin-bottom: 70px;
+
+    .left-header {
+      .image {
+        display: none
+      }
+    }
+
+    .right-header {
+      .header-text-mobile {
+        display: inline-block
+      }
+
+      .header-text {
+        display: none
+      }
+
+      .mobile-img {
+        display: inline-block
+      }
+    }
+  }
+
   .about-container {
     .right-about {
       padding-top: 2.5rem;
@@ -710,7 +823,46 @@
   }
 }
 
+@media screen and (max-width:970px) {
+  .header-content {
+    .right-header {
+      .name {
+        font-size: 2.5rem !important;
+        text-align: center
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1070px) {
+  .header-content {
+    grid-template-columns: 1fr;
+
+    .left-header {
+      .h-shape {
+        display: none
+      }
+
+      .image {
+        margin: 0 auto;
+        width: 85%
+      }
+    }
+
+    .right-header {
+      grid-row: 1;
+      padding-right: 0 !important;
+      width: 90%;
+      margin: 0 auto;
+
+      .name {
+        font-size: 2.5rem !important;
+        text-align: center;
+        padding-top: 3rem
+      }
+    }
+  }
+
   .about-container {
     .right-about {
       padding-top: 2.5rem;
