@@ -94,6 +94,7 @@ body {
     font-size: var(--text-small);
     color: var(--color-white);
     transition: all 0.4s ease-in-out;
+    content-visibility: auto;
 }
 
 a,
