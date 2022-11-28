@@ -3,20 +3,18 @@
     button.addEventListener("click", function () {
       document.querySelector(".active-btn").classList.remove("active-btn");
       this.classList.add("active-btn");
-      document.querySelector(".active").classList.remove("active");
-      document.getElementById(button.dataset.id).classList.add("active");
+      sidebar.classList.toggle("open");
     });
   });
 
   window.onscroll = function () {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop,
-    arrowUp = document.querySelector(".arrow-up");
+      arrowUp = document.querySelector(".arrow-up");
 
     arrowUp.style.opacity = scrolled > 150 ? 1 : 0;
   };
 
   document.querySelector(".sidebar-toggle").addEventListener("click", () => {
-    const sidebar = document.querySelector(".sidebar");
     sidebar.classList.toggle("open");
   });
 
@@ -27,6 +25,7 @@
 })();
 
 const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+const sidebar = document.querySelector(".sidebar");
 
 var width =
   window.innerWidth ||

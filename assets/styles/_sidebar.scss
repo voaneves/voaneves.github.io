@@ -1,150 +1,123 @@
 /* Sidebar */
 .sidebar {
-    @include flex-center;
-    @include cubic-bezier;
-    flex-direction: column;
-    position: fixed;
-    height: 100%;
-    width: min(max(60px, 7vw), 90px);
+  @include flex-center;
+  @include cubic-bezier;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: -10px;
+  height: 60vh;
+  width: 20px;
+  border-radius: 20px;
+  background-color: var(--color-primary);
+  transform: translateY(-50%);
+  box-shadow: 0 3px 15px var(--color-white);
+
+  &.open {
     top: 0;
     left: 0;
-    background-color: var(--color-primary);
-    border-right: 1px solid var(--color-grey-6);
+    border-radius: 0;
+    height: 100%;
+    width: 100vw;
+    transform: none;
+    box-shadow: none;
 
-    &.open {
-        width: 200px;
+    .sidebar-toggle {
+      left: 0px;
+      border-bottom: 1px solid var(--color-grey-6);
 
-        .sidebar-toggle {
-            &::before {
-                transform: translateY(0px) rotate(45deg);
-            }
+      &::before {
+        width: 30px;
+        transform: translateY(0px) rotate(45deg);
+      }
 
-            &::after {
-                transform: translateY(0px) rotate(-45deg);
-                box-shadow: 0 0 0;
-            }
-        }
-
-        .sidebar-wrapper {
-
-            .page-settings,
-            .control {
-                span {
-                    display: block;
-                }
-
-                &:hover {
-                    span {
-                        color: var(--color-opposite);
-                    }
-                }
-            }
-
-            .active-btn {
-                &:hover {
-                    span {
-                        color: var(--color-white);
-                    }
-                }
-            }
-        }
+      &::after {
+        width: 30px;
+        transform: translateY(0px) rotate(-45deg);
+        box-shadow: 0 0 0;
+      }
     }
 
+    .sidebar-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 15px 0;
 
+      .page-settings,
+      .control {
+        @include flex-start;
+        margin: 10px 0;
+        border: none;
+        width: fit-content;
+        border-radius: 10px;
+        background-color: transparent;
+        padding: min(max(7px, 1vw), 10px);
+        opacity: 1;
+        visibility: visible;
 
-    &-toggle {
-        @include flex-center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        border-bottom: 1px solid var(--color-grey-6);
-        padding: 0 23px;
-
-        &::before {
-            @include cubic-bezier;
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 2px;
-            background: var(--color-grey-4);
-            transform: translateY(-8px);
+        span {
+          @include inline-block;
+          color: var(--color-grey-4);
+          font-size: max(1.4rem, 2vw);
+          font-weight: 800;
+          @include cubic-bezier;
         }
 
-        &::after {
-            @include cubic-bezier;
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 2px;
-            background: var(--color-grey-4);
-            transform: translateY(8px);
-            box-shadow: 0 -8px 0 var(--color-grey-4);
+        &:hover {
+          span {
+            color: var(--color-opposite);
+          }
         }
+      }
+
+      .active-btn {
+        background-color: var(--color-secondary) !important;
+
+        span {
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+
+  &-toggle {
+    @include flex-center;
+    background-color: var(--color-white);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -10px;
+    height: 60px;
+    border: 1px solid var(--color-primary);
+    border-radius: 0 20px 20px 0;
+    padding: 0 19px;
+
+    &::before {
+      @include cubic-bezier;
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: var(--color-primary);
+      transform: translateY(-8px);
     }
 
-    &-wrapper {
-        display: grid;
-        grid-template-columns: 1fr;
-        border-bottom: 1px solid var(--color-grey-6);
-        padding: 36px 0;
-
-        &+& {
-            border-bottom: none;
-        }
-
-        .page-settings,
-        .control {
-            @include flex-center;
-            @include ease-in-out;
-            margin: max(20px, 7%) 0;
-            border: none;
-            width: fit-content;
-            background-color: var(--color-grey-4);
-            border-radius: 10px;
-            padding: min(max(7px, 1vw), 10px);
-
-            i {
-                @include cubic-bezier;
-                font-size: max(1rem, 1vw);
-                color: var(--color-grey-1);
-                pointer-events: none;
-            }
-
-            span {
-                @include cubic-bezier;
-                padding-left: 10px;
-                color: var(--color-grey-1);
-                display: none;
-                font-size: max(0.7rem, 0.6vw);
-                font-weight: 800;
-            }
-
-            &:hover {
-                i {
-                    color: var(--color-opposite);
-                }
-            }
-        }
-
-        .active-btn {
-            background-color: var(--color-secondary);
-
-            span,
-            i {
-                color: var(--color-white);
-            }
-
-            &:hover {
-                span {
-                    color: var(--color-white);
-                }
-
-                i {
-                    color: var(--color-white);
-                }
-            }
-        }
+    &::after {
+      @include cubic-bezier;
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: var(--color-primary);
+      transform: translateY(8px);
+      box-shadow: 0 -8px 0 var(--color-primary);
     }
+  }
+
+  .sidebar-wrapper {
+    .page-settings,
+    .control {
+      display: none;
+    }
+  }
 }

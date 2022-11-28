@@ -1,67 +1,83 @@
 /* Independent components */
 .btn-con {
-    @include flex-start;
-    color: var(--color-white);
+  @include flex-start;
+  color: var(--color-white);
 }
 
 .main-btn {
-    @include flex-start;
-    border-radius: 30px;
-    color: inherit;
-    position: relative;
-    border: 2px solid var(--color-secondary);
-    margin-bottom: 10px;
+  @include flex-start;
+  overflow: hidden;
+  border-radius: 30px;
+  color: inherit;
+  position: relative;
+  border: 2px solid var(--color-secondary);
+  margin-bottom: 10px;
 
-    .btn-text {
-        white-space: nowrap;
-        font-weight: var(--font-regular);
+  .btn-text {
+    white-space: nowrap;
+    font-weight: var(--font-regular);
+    padding: 0 1rem;
+  }
+
+  .btn-icon {
+    @include flex-center;
+    border-radius: 50%;
+    min-height: 2.5em;
+    min-width: 2.5em;
+
+    i {
+      font-size: var(--text-micro);
     }
+  }
 
-    .btn-icon {
-        @include flex-center;
-        border-radius: 50%;
-        min-height: 2.5em;
-        min-width: 2.5em;
+  &::before {
+    @include cubic-bezier;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
 
-        i {
-            font-size: var(--text-micro);
-        }
+  &:hover {
+    &:before {
+      width: 100%;
+      background-color: var(--color-secondary);
     }
-
-    &::before {
-        @include cubic-bezier;
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 100%;
-        top: 0;
-        right: 0;
-        z-index: -1;
-    }
-
-    &:hover {
-        &:before {
-            width: 100%;
-            background-color: var(--color-secondary);
-        }
-    }
+  }
 }
 
 .highlight {
-    font-weight: var(--font-heavy);
-    color: var(--color-opposite);
+  font-weight: var(--font-heavy);
+  color: var(--color-opposite);
 }
 
 .different {
-    &:link {
-        color: var(--color-secondary);
-    }
+  &:link {
+    color: var(--color-secondary);
+  }
 
-    &:visited {
-        color: var(--color-secondary);
-    }
+  &:visited {
+    color: var(--color-secondary);
+  }
 
-    &:hover {
-        color: var(--color-opposite);
-    }
+  &:hover {
+    color: var(--color-opposite);
+  }
+}
+
+.bold {
+  font-weight: var(--font-black);
+}
+
+.marker {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.4rem;
+  text-underline-offset: -0.2em;
+  text-decoration-color: var(--color-opposite);
+  text-decoration-skip-ink: none;
+  text-decoration-skip: none;
 }
