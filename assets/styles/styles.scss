@@ -953,6 +953,7 @@
     max-width: 500px;
     padding: 1.5rem;
     text-align: center;
+    color: var(--color-white-2);
   }
 
   .contact-icon {
@@ -963,8 +964,8 @@
     a {
       @include flex-center;
       @include ease-in-out;
-      color: var(--color-white);
-      background-color: var(--color-grey-5);
+      color: var(--color-black);
+      background-color: var(--color-white-2);
       width: var(--text-50);
       aspect-ratio: 1/1;
       border-radius: 50%;
