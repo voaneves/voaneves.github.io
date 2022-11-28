@@ -123,8 +123,8 @@
           @include ease-in-out;
           -o-object-fit: cover;
           object-fit: cover;
-          width: auto;
-          height: 500;
+          width: 333px;
+          height: 500px;
           filter: grayscale(100%);
           animation-name: fade;
           animation-iteration-count: infinite;
