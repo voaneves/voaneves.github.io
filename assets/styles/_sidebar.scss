@@ -39,42 +39,46 @@
     }
 
     .sidebar-wrapper {
-      display: grid;
-      grid-template-columns: 1fr;
-      padding: 15px 0;
+      display: flex;
+      flex-direction: column;
 
-      .page-settings,
-      .control {
-        @include flex-start;
-        margin: 10px 0;
-        border: none;
-        width: fit-content;
-        border-radius: 10px;
-        background-color: transparent;
-        padding: min(max(7px, 1vw), 10px);
-        opacity: 1;
-        visibility: visible;
+      .sidebar-menu {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        padding: 15px 0;
 
-        span {
-          @include inline-block;
-          color: var(--color-grey-4);
-          font-size: max(1.4rem, 2vw);
-          font-weight: 800;
-          @include cubic-bezier;
-        }
+        .page-settings,
+        .control {
+          display: inline;
+          margin: 10px 0;
+          border: none;
+          width: fit-content;
+          border-radius: 10px;
+          background-color: transparent;
+          padding: min(max(7px, 1vw), 10px);
 
-        &:hover {
           span {
-            color: var(--color-opposite);
+            @include inline-block;
+            color: var(--color-grey-4);
+            font-size: max(1.4rem, 2vw);
+            font-weight: 800;
+            @include cubic-bezier;
+          }
+
+          &:hover {
+            span {
+              color: var(--color-opposite);
+            }
           }
         }
-      }
 
-      .active-btn {
-        background-color: var(--color-secondary) !important;
+        .active-btn {
+          background-color: var(--color-secondary) !important;
 
-        span {
-          color: var(--color-white);
+          span {
+            color: var(--color-white);
+          }
         }
       }
     }
@@ -92,16 +96,7 @@
     border-radius: 0 20px 20px 0;
     padding: 0 19px;
 
-    &::before {
-      @include cubic-bezier;
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 2px;
-      background: var(--color-primary);
-      transform: translateY(-8px);
-    }
-
+    &::before,
     &::after {
       @include cubic-bezier;
       content: "";
@@ -109,6 +104,13 @@
       width: 20px;
       height: 2px;
       background: var(--color-primary);
+    }
+
+    &::before {
+      transform: translateY(-8px);
+    }
+
+    &::after {
       transform: translateY(8px);
       box-shadow: 0 -8px 0 var(--color-primary);
     }
