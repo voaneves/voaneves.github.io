@@ -42,7 +42,7 @@
         &:after {
           content: "🟄";
           padding: 25px;
-          color: red;
+          color: var(--color-secondary);
         }
       }
     }
@@ -673,13 +673,16 @@
 
     &_number {
       @include flex-center;
-      color: var(--color-black);
+      color: var(--color-white-2);
       font-size: 10rem;
-      width: 100%;
+      border-radius: 50%;
+      background-color: var(--color-secondary);
+      width: 15rem;
+      height: 15rem;
       @include cubic-bezier;
 
       &:hover {
-        color: #583c87;
+        color: var(--color-white-2);
         text-shadow: -1px -1px white, 1px 1px darken(white, 50%),
           2px 2px darken(white, 52%), 3px 3px darken(white, 54%),
           4px 4px darken(white, 56%), 5px 5px darken(white, 58%),
@@ -702,38 +705,31 @@
         @include flex-center;
         max-width: 90vw;
         height: 150px;
+        border-radius: 50px;
         box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.3);
 
-        .monitor-wrapper {
+        .monitor {
           @include flex-center;
-          max-width: 95%;
-          height: 130px;
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
 
-          .monitor {
-            @include flex-center;
-            width: 100%;
-            height: 100px;
-            overflow: hidden;
-            white-space: nowrap;
-            border: 2px solid white;
+          .text {
+            color: #9f6914;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 5rem;
+            position: relative;
+            display: inline-block;
+            animation: move 30s infinite linear;
+          }
 
-            .text {
-              color: #9f6914;
-              text-transform: uppercase;
-              font-weight: 800;
-              font-size: 5rem;
-              position: relative;
-              display: inline-block;
-              animation: move 30s infinite linear;
+          @keyframes move {
+            from {
+              left: 4000px;
             }
-
-            @keyframes move {
-              from {
-                left: 4000px;
-              }
-              to {
-                left: -4000px;
-              }
+            to {
+              left: -4000px;
             }
           }
         }
@@ -804,17 +800,22 @@
     @include flex-center;
     color: var(--color-white-2);
     font-size: 10rem;
-    @include cubic-bezier;
+    animation: neon 1.5s ease-in-out infinite alternate;
+    /* @include cubic-bezier; */
 
-    &:hover {
-      color: var(--color-secondary);
-      text-shadow: -1px -1px white, 1px 1px darken(white, 50%),
-        2px 2px darken(white, 52%), 3px 3px darken(white, 54%),
-        4px 4px darken(white, 56%), 5px 5px darken(white, 58%),
-        6px 6px darken(white, 60%), 7px 7px darken(white, 62%),
-        8px 8px darken(white, 64%), 9px 9px darken(white, 66%),
-        10px 10px darken(white, 68%), 11px 11px darken(white, 70%),
-        18px 18px 30px rgba(black, 0.4), 18px 18px 10px rgba(black, 0.4);
+    @keyframes neon {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+          0 0 40px var(--color-secondary), 0 0 70px var(--color-secondary),
+          0 0 80px var(--color-secondary), 0 0 100px var(--color-secondary),
+          0 0 150px var(--color-secondary);
+      }
+      to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+          0 0 20px var(--color-secondary), 0 0 35px var(--color-secondary),
+          0 0 40px var(--color-secondary), 0 0 50px var(--color-secondary),
+          0 0 75px var(--color-secondary);
+      }
     }
   }
   .text-wrapper {
@@ -841,7 +842,7 @@
       content: attr(data-text);
       position: absolute;
       left: 2px;
-      text-shadow: -1px 0 red;
+      text-shadow: -1px 0 --var(-color-secondary);
       top: 0;
       color: white;
       overflow: hidden;
@@ -852,7 +853,7 @@
     @keyframes noise-anim-2 {
       $steps: 20;
       @for $i from 0 through $steps {
-        #{percentage($i*(1/$steps))} {
+        #{percentage($i*(calc(1/$steps)))} {
           clip: rect(random(100) + px, 9999px, random(100) + px, 0);
         }
       }
@@ -908,7 +909,7 @@
     @include flex-center;
     max-width: 80%;
     border-radius: 50px;
-    border: 2px solid var(--color-secondary);
+    border: 2px solid #cc0000;
     margin: 5rem 0;
     overflow: hidden;
 
@@ -918,12 +919,12 @@
         &_content {
           span {
             font-size: 2rem;
-            color: var(--color-secondary);
+            color: #cc0000;
 
             &:after {
               content: "-";
               padding: 0 10px;
-              color: var(--color-secondary);
+              color: #cc0000;
             }
           }
         }

@@ -76,7 +76,7 @@
 .spotlight {
   text-transform: uppercase;
   font-weight: 800;
-  font-size: min(max(3.5rem, 10vw), 10rem);
+  font-size: min(max(3rem, 10vw), 10rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +86,7 @@
   &:before {
     content: attr(data-text);
     position: absolute;
-    background: linear-gradient(#ffacac, #583c87, #e45a84, #f4d58d, #ffacac);
+    background: linear-gradient(#f1be48, #222222, #cc0000, #990000, #edad19);
     background-clip: text;
     color: transparent;
     background-size: 100% 90%;
