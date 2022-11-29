@@ -31,13 +31,12 @@
       will-change: transform;
 
       span {
-        text-align: center;
         color: var(--color-white);
         font-weight: 800;
         white-space: nowrap;
         font-size: max(5rem, 10vw);
         line-height: 1.2;
-        font-weight: 700;
+        font-weight: 800;
         text-transform: uppercase;
 
         &:after {
@@ -101,6 +100,17 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+
+      .marquee {
+        &__wrapper {
+          &_content {
+            span {
+              color: white;
+              mix-blend-mode: difference;
+            }
+          }
+        }
+      }
     }
 
     .image-wrapper {
@@ -703,23 +713,23 @@
         @include flex-center;
         max-width: 90vw;
         height: 150px;
-        background-color: var(--color-grey-1);
+        background-color: #050321;
+        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.3);
 
         .monitor-wrapper {
           @include flex-center;
           background: #050321;
           max-width: 95%;
           height: 130px;
-          box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.3);
 
           .monitor {
             @include flex-center;
-            width: 95%;
+            width: 100%;
             height: 100px;
-            background-color: #344151;
+            background-color: #050321;
             overflow: hidden;
             white-space: nowrap;
-            box-shadow: inset 0px 5px 10px 2px rgba(0, 0, 0, 0.3);
+            border: 2px solid white;
 
             .text {
               color: #ebb55f;
