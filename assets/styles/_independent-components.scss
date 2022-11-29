@@ -19,17 +19,6 @@
     padding: 0 1rem;
   }
 
-  .btn-icon {
-    @include flex-center;
-    border-radius: 50%;
-    min-height: 2.5em;
-    min-width: 2.5em;
-
-    i {
-      font-size: var(--text-micro);
-    }
-  }
-
   &::before {
     @include cubic-bezier;
     content: "";

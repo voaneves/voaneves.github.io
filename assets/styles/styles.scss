@@ -117,42 +117,10 @@
           width: 333px;
           height: 500px;
           filter: grayscale(100%);
-          animation-name: fade;
-          animation-iteration-count: infinite;
-          animation-duration: 6s;
 
           &:hover {
             filter: grayscale(0);
           }
-        }
-
-        @keyframes fade {
-          0% {
-            opacity: 0;
-          }
-          20% {
-            opacity: 1;
-          }
-          33% {
-            opacity: 1;
-          }
-          53% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
-
-        .f1 {
-          animation-delay: 0s;
-        }
-        .f2 {
-          animation-delay: -4s;
-        }
-
-        .f3 {
-          animation-delay: -2s;
         }
       }
     }
@@ -162,15 +130,19 @@
     display: inline-flex;
     flex-wrap: wrap;
     position: absolute;
-    top: 95vh;
+    top: 92vh;
     right: 50px;
     gap: 5px;
     font-size: 0.6rem;
+
+    .main-btn {
+      height: 48px;
+    }
   }
 
   .loves-what {
     position: absolute;
-    top: 95vh;
+    top: calc(92vh + 18px);
     left: 50px;
     font-size: 0.6rem;
 
@@ -904,7 +876,7 @@
     @keyframes noise-anim {
       $steps: 20;
       @for $i from 0 through $steps {
-        #{percentage($i*(1/$steps))} {
+        #{percentage($i*(calc(1/$steps)))} {
           clip: rect(random(100) + px, 9999px, random(100) + px, 0);
         }
       }
@@ -1016,19 +988,6 @@ footer {
 /* Media queries */
 @media screen and (max-width: 600px) {
   .header-content {
-    .middle {
-      .image-wrapper {
-        .image {
-          border-radius: 0;
-
-          .f2,
-          .f3 {
-            position: absolute;
-          }
-        }
-      }
-    }
-
     .header-btns {
       #meeting,
       #cv {
