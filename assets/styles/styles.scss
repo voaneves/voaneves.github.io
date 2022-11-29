@@ -7,7 +7,6 @@
 @import "independent-components";
 @import "scrollbar";
 @import "scroll-icon";
-@import "dropdown";
 @import "icons";
 @import "toast";
 @import "bokeh";
@@ -133,11 +132,6 @@
     top: 92vh;
     right: 50px;
     gap: 5px;
-    font-size: 0.6rem;
-
-    .main-btn {
-      height: 48px;
-    }
   }
 
   .loves-what {
@@ -648,23 +642,25 @@
 
 /* Portfolio section */
 .portfolio-content {
-  background-color: var(--color-white);
+  background-color: var(--color-white-2);
   padding-bottom: 10rem;
+  margin-top: 1rem;
 
   .portfolio-tag {
-    position: absolute;
+    margin-top: 2rem;
+    position: relative;
     top: 0;
-    left: 10%;
-    background-color: var(--color-primary);
-    width: 1px;
-    height: 100px;
+    left: 0;
+    background-color: var(--color-black);
+    width: 200px;
+    height: 1px;
 
     span {
-      position: absolute;
-      color: var(--color-primary);
+      color: var(--color-black);
+      display: flex;
+      justify-content: flex-end;
       top: 40px;
       font-size: 0.6rem;
-      writing-mode: vertical-lr;
     }
   }
 
@@ -678,13 +674,13 @@
 
     &_number {
       @include flex-center;
-      color: var(--color-primary);
+      color: var(--color-black);
       font-size: 10rem;
       width: 100%;
       @include cubic-bezier;
 
       &:hover {
-        color: red;
+        color: #583c87;
         text-shadow: -1px -1px white, 1px 1px darken(white, 50%),
           2px 2px darken(white, 52%), 3px 3px darken(white, 54%),
           4px 4px darken(white, 56%), 5px 5px darken(white, 58%),
@@ -703,84 +699,47 @@
       gap: 40px;
       text-align: justify;
 
-      $color-1: #583c87;
-      $color-2: #311509;
-      $color-3: red;
-      $color-4: var(--color-grey-2);
+      .table {
+        @include flex-center;
+        max-width: 90vw;
+        height: 150px;
+        background-color: var(--color-grey-1);
 
-      h1 {
-        font-size: min(max(3rem, 5vw), 5em);
-        transform: rotate(-8deg);
-        text-align: center;
-        text-shadow: -2px -2px 0 $color-1, 2px -2px 0 $color-1,
-          -2px 2px 0 $color-1, 2px 2px 0 $color-1, 6px 6px 0 $color-4,
-          10px 10px 0 $color-3, 14px 14px 0 $color-2, 18px 18px 0 $color-4,
-          22px 22px 0 $color-3;
-        animation: tripy 0.33s infinite;
+        .monitor-wrapper {
+          @include flex-center;
+          background: #050321;
+          max-width: 95%;
+          height: 130px;
+          box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.3);
 
-        &:after {
-          content: "Projetos que fiz!";
-        }
+          .monitor {
+            @include flex-center;
+            width: 95%;
+            height: 100px;
+            background-color: #344151;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: inset 0px 5px 10px 2px rgba(0, 0, 0, 0.3);
 
-        &:hover:after {
-          content: "Scroll down to see it";
-        }
+            p {
+              text-transform: uppercase;
+              font-family: "VT323", monospace;
+              font-size: 5rem;
+              position: relative;
+              display: inline-block;
+              animation: move 30s infinite linear;
+              color: #ebb55f;
+            }
 
-        &:hover {
-          text-shadow: none;
-          animation: none;
-          color: $color-4;
-        }
-      }
-
-      @keyframes tripy {
-        0% {
-          color: $color-2;
-          text-shadow: -2px -2px 0 $color-1, 2px -2px 0 $color-1,
-            -2px 2px 0 $color-1, 2px 2px 0 $color-1, 6px 6px 0 $color-4,
-            10px 10px 0 $color-3, 14px 14px 0 $color-2, 18px 18px 0 $color-4,
-            22px 22px 0 $color-3;
-        }
-
-        33% {
-          color: $color-4;
-          text-shadow: -2px -2px 0 $color-1, 2px -2px 0 $color-1,
-            -2px 2px 0 $color-1, 2px 2px 0 $color-1, 6px 6px 0 $color-3,
-            10px 10px 0 $color-2, 14px 14px 0 $color-4, 18px 18px 0 $color-3,
-            22px 22px 0 $color-2;
-        }
-
-        66% {
-          color: $color-3;
-          text-shadow: -2px -2px 0 $color-1, 2px -2px 0 $color-1,
-            -2px 2px 0 $color-1, 2px 2px 0 $color-1, 6px 6px 0 $color-2,
-            10px 10px 0 $color-4, 14px 14px 0 $color-3, 18px 18px 0 $color-2,
-            22px 22px 0 $color-4;
-        }
-
-        100% {
-          color: $color-2;
-          text-shadow: -2px -2px 0 $color-1, 2px -2px 0 $color-1,
-            -2px 2px 0 $color-1, 2px 2px 0 $color-1, 6px 6px 0 $color-4,
-            10px 10px 0 $color-3, 14px 14px 0 $color-2, 18px 18px 0 $color-4,
-            22px 22px 0 $color-3;
-        }
-      }
-
-      span {
-        max-width: 600px;
-        color: var(--color-primary);
-        padding-top: 3rem;
-
-        .first-letter {
-          background-color: var(--color-opposite);
-          color: var(--color-white);
-          font-size: 2.2rem;
-          padding: 0 0.3rem;
-          margin: 0 0.3rem 0 0;
-          border: 2px solid;
-          border-radius: 8px;
-          float: left;
+            @keyframes move {
+              from {
+                left: 4000px;
+              }
+              to {
+                left: -4000px;
+              }
+            }
+          }
         }
       }
     }
@@ -922,7 +881,7 @@
     color: var(--color-white-2);
   }
 
-  .contact-icon {
+  .contact-icons {
     @include flex-space-around;
     flex-wrap: wrap;
     margin-top: 2rem;
