@@ -721,14 +721,14 @@
             white-space: nowrap;
             box-shadow: inset 0px 5px 10px 2px rgba(0, 0, 0, 0.3);
 
-            p {
+            .text {
+              color: #ebb55f;
               text-transform: uppercase;
-              font-family: "VT323", monospace;
+              font-weight: 800;
               font-size: 5rem;
               position: relative;
               display: inline-block;
               animation: move 30s infinite linear;
-              color: #ebb55f;
             }
 
             @keyframes move {
@@ -886,7 +886,7 @@
     flex-wrap: wrap;
     margin-top: 2rem;
 
-    a {
+    .icon {
       @include flex-center;
       @include ease-in-out;
       color: var(--color-black);
@@ -896,6 +896,7 @@
       border-radius: 50%;
       margin: 0.4rem 0.4rem;
       font-size: var(--text-small);
+      border: none;
 
       &:hover {
         background-color: var(--color-secondary);
