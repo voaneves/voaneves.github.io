@@ -98,15 +98,6 @@
     @include flex-center;
     flex-direction: column;
 
-    .header-text {
-      display: inline-block;
-      margin: 1.5rem 0;
-      line-height: 2rem;
-      font-weight: var(--font-thin);
-      text-align: justify;
-      max-width: 800px;
-    }
-
     .name-marquee {
       position: absolute;
       top: 50%;
