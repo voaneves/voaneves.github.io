@@ -59,7 +59,6 @@
           padding: min(max(7px, 1vw), 10px);
 
           span {
-            @include inline-block;
             color: var(--color-grey-4);
             font-size: max(1.4rem, 2vw);
             font-weight: 800;
