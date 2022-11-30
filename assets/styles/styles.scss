@@ -171,28 +171,6 @@
   }
 }
 
-/* @keyframes blink {
-  0% {
-    color: inherit;
-  }
-
-  49% {
-    color: inherit;
-  }
-
-  50% {
-    color: transparent;
-  }
-
-  99% {
-    color: transparent;
-  }
-
-  100% {
-    color: inherit;
-  }
-} */
-
 /* Quem sou */
 .who-section {
   @include flex-center;
@@ -200,7 +178,7 @@
   .who-wrapper {
     @include flex-center;
     flex-direction: column;
-    background-color: var(--color-grey-4);
+    border: 2px solid var(--color-grey-4);
     width: 95%;
     border-radius: 50px;
     height: 90vh;
@@ -220,7 +198,7 @@
         width: 70%;
 
         &:hover {
-          color: var(--color-opposite);
+          color: var(--color-secondary);
           text-shadow: -1px -1px white, 1px 1px darken(white, 50%),
             2px 2px darken(white, 52%), 3px 3px darken(white, 54%),
             4px 4px darken(white, 56%), 5px 5px darken(white, 58%),
@@ -244,12 +222,11 @@
           color: var(--color-white);
 
           .first-letter {
-            background-color: var(--color-opposite);
-            color: var(--color-grey-4);
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
             font-size: 2.2rem;
             padding: 0 0.3rem;
             margin: 0 0.3rem 0 0;
-            border: 2px solid;
             border-radius: 8px;
             float: left;
           }
@@ -264,7 +241,7 @@
             span {
               &:after {
                 content: "✹";
-                color: var(--color-opposite);
+                color: var(--color-secondary);
               }
             }
           }
@@ -431,27 +408,27 @@
         }
 
         .text-copy:nth-child(1) {
-          stroke: #4d163d;
+          stroke: #edad19;
           animation-delay: -1;
         }
 
         .text-copy:nth-child(2) {
-          stroke: #840037;
+          stroke: #990000;
           animation-delay: -2s;
         }
 
         .text-copy:nth-child(3) {
-          stroke: #bd0034;
+          stroke: #cc0000;
           animation-delay: -3s;
         }
 
         .text-copy:nth-child(4) {
-          stroke: #bd0034;
+          stroke: #222222;
           animation-delay: -4s;
         }
 
         .text-copy:nth-child(5) {
-          stroke: #fdb731;
+          stroke: #f1be48;
           animation-delay: -5s;
         }
 
@@ -925,6 +902,11 @@ footer {
           }
         }
       }
+    }
+  }
+  div:has(.bokeh) {
+    .bokeh {
+      display: none;
     }
   }
 }

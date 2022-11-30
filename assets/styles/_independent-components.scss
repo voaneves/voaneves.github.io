@@ -42,7 +42,7 @@
 
 .highlight {
   font-weight: var(--font-heavy);
-  color: var(--color-opposite);
+  color: var(--color-secondary);
 }
 
 .different {
@@ -55,7 +55,7 @@
   }
 
   &:hover {
-    color: var(--color-opposite);
+    color: var(--color-secondary);
   }
 }
 
@@ -68,7 +68,7 @@
   text-decoration-style: solid;
   text-decoration-thickness: 0.4rem;
   text-underline-offset: -0.2em;
-  text-decoration-color: var(--color-opposite);
+  text-decoration-color: var(--color-secondary);
   text-decoration-skip-ink: none;
   text-decoration-skip: none;
 }
