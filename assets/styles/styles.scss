@@ -3,7 +3,6 @@
 @import "include";
 @import "sidebar";
 @import "cursor";
-@import "aos";
 @import "independent-components";
 @import "scrollbar";
 @import "scroll-icon";
@@ -108,7 +107,7 @@
       background-color: transparent;
       border: none;
 
-      &:nth-child(odd) {
+      &:first-child {
         border-right: 2px solid var(--color-white);
       }
 
@@ -116,6 +115,7 @@
         color: var(--color-white);
       }
     }
+
     .active_setting {
       background-color: var(--color-secondary) !important;
 
