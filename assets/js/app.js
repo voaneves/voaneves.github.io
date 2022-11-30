@@ -19,10 +19,8 @@
   });
 
   document.getElementById("theme").addEventListener("click", function () {
-    if (darkTheme.matches) {
-      document.body.classList.toggle("light-mode");
-      this.classList.add("active-setting");
-    } else document.body.classList.toggle("dark-mode");
+    if (darkTheme.matches) document.body.classList.toggle("light-mode");
+    else document.body.classList.toggle("dark-mode");
   });
 })();
 

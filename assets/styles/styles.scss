@@ -96,9 +96,11 @@
     .setting {
       @include flex-center;
       background-color: transparent;
+      font-size: 1.2rem;
       border: none;
 
       &:first-child {
+        font-size: 1.1rem;
         border-right: 2px solid var(--color-white);
       }
 

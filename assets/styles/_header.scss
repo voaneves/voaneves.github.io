@@ -38,6 +38,10 @@
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
     --color-opposite: #ff7e33;
+
+    .icon-theme:before {
+      content: "\e901";
+    }
   }
 }
 
@@ -55,6 +59,10 @@
     --color-grey-5: #e8e8e8;
     --color-grey-6: #b2becd;
     --color-opposite: #cc4b00;
+
+    .icon-theme:before {
+      content: "\e903";
+    }
   }
 }
 
@@ -71,6 +79,10 @@
   --color-grey-5: #e8e8e8;
   --color-grey-6: #b2becd;
   --color-opposite: #cc4b00;
+
+  .icon-theme:before {
+    content: "\e903";
+  }
 }
 
 .dark-mode {
@@ -86,6 +98,10 @@
   --color-grey-5: #2a2e35;
   --color-grey-6: #12181b;
   --color-opposite: #ff7e33;
+
+  .icon-theme:before {
+    content: "\e901";
+  }
 }
 
 body {
