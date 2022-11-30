@@ -65,8 +65,6 @@
 
     span {
       color: var(--color-secondary);
-      -webkit-animation: 4s linear infinite color-animation;
-      animation: 4s linear infinite color-animation;
     }
 
     .caret {
@@ -174,19 +172,6 @@
       font-size: 0.6rem;
       writing-mode: vertical-lr;
     }
-  }
-}
-
-@keyframes color-animation {
-  0%,
-  100%,
-  49% {
-    color: var(--color-secondary);
-  }
-
-  50%,
-  99% {
-    color: var(--color-opposite);
   }
 }
 

@@ -1,6 +1,5 @@
 (function () {
   const typedTextSpan = document.querySelector(".typed-text");
-  const cursorSpan = document.querySelector(".caret");
   let textArray = new Array();
 
   document.querySelectorAll(".text-string").forEach((element) => {
