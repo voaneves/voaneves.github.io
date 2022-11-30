@@ -116,6 +116,13 @@
         color: var(--color-white);
       }
     }
+    .active_setting {
+      background-color: var(--color-secondary) !important;
+
+      i {
+        color: var(--color-white-2);
+      }
+    }
   }
 
   .scroll-tag {

@@ -18,9 +18,11 @@
     sidebar.classList.toggle("open");
   });
 
-  document.getElementById("theme").addEventListener("click", () => {
-    if (darkTheme.matches) document.body.classList.toggle("light-mode");
-    else document.body.classList.toggle("dark-mode");
+  document.getElementById("theme").addEventListener("click", function () {
+    if (darkTheme.matches) {
+      document.body.classList.toggle("light-mode");
+      this.classList.add("active-setting");
+    } else document.body.classList.toggle("dark-mode");
   });
 })();
 
