@@ -69,16 +69,26 @@
 
   .name-tag {
     position: absolute;
+    display: flex;
     top: 10px;
     right: 0;
     background-color: var(--color-white);
+    border: none;
     width: 100px;
     height: 1px;
+    font-size: 0.6rem;
 
     span {
       display: flex;
       justify-content: flex-start;
-      font-size: 0.6rem;
+      padding-left: 0.3rem;
+      margin-top: 0.08rem;
+    }
+
+    &:before {
+      color: #48bf53;
+      content: "⬤";
+      font-size: 0.7rem;
     }
   }
 
@@ -193,9 +203,12 @@
 
       &_number {
         @include flex-center;
-        @include cubic-bezier;
+        background-color: var(--color-opposite);
         font-size: 10rem;
-        width: 70%;
+        width: 15rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        @include cubic-bezier;
 
         &:hover {
           color: var(--color-secondary);
@@ -408,7 +421,7 @@
         }
 
         .text-copy:nth-child(1) {
-          stroke: #edad19;
+          stroke: var(--color-opposite);
           animation-delay: -1;
         }
 
@@ -418,7 +431,7 @@
         }
 
         .text-copy:nth-child(3) {
-          stroke: #cc0000;
+          stroke: var(--color-secondary);
           animation-delay: -3s;
         }
 
@@ -835,7 +848,7 @@
     @include flex-center;
     max-width: 80%;
     border-radius: 50px;
-    border: 2px solid #cc0000;
+    border: 2px solid var(--color-secondary);
     margin: 5rem 0;
     overflow: hidden;
 
@@ -845,12 +858,12 @@
         &_content {
           span {
             font-size: 2rem;
-            color: #cc0000;
+            color: var(--color-secondary);
 
             &:after {
               content: "-";
               padding: 0 10px;
-              color: #cc0000;
+              color: var(--color-secondary);
             }
           }
         }

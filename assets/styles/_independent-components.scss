@@ -42,7 +42,7 @@
 
 .highlight {
   font-weight: var(--font-heavy);
-  color: var(--color-secondary);
+  color: var(--color-opposite);
 }
 
 .different {
@@ -68,7 +68,7 @@
   text-decoration-style: solid;
   text-decoration-thickness: 0.4rem;
   text-underline-offset: -0.2em;
-  text-decoration-color: var(--color-secondary);
+  text-decoration-color: var(--color-opposite);
   text-decoration-skip-ink: none;
   text-decoration-skip: none;
 }
@@ -138,7 +138,7 @@
         text-transform: uppercase;
 
         &:after {
-          content: "🟄";
+          content: "✪";
           padding: 25px;
           color: var(--color-secondary);
         }
