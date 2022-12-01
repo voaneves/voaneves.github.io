@@ -19,6 +19,7 @@ button:has(.dropdown) {
   opacity: 0;
   padding: 0 10px;
   visibility: hidden;
+  @include cubic-bezier;
 
   &:before {
     content: "";
@@ -35,10 +36,11 @@ button:has(.dropdown) {
   }
 
   li {
-    z-index: 1;
     position: relative;
     background: #fff;
     color: #666;
+    width: fit-content;
+    height: 3rem;
 
     &:first-child {
       border-radius: 4px 4px 0 0;
@@ -55,7 +57,7 @@ button:has(.dropdown) {
 
   a {
     display: block;
-    border-bottom: 1px solid rgba(#000, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 16px 0;
     color: inherit;
     font-size: 10px;

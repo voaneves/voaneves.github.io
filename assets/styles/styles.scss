@@ -77,10 +77,12 @@
     width: 100px;
     height: 1px;
     font-size: 0.6rem;
+    z-index: 10;
 
     span {
       display: flex;
       justify-content: flex-start;
+      color: var(--color-white);
       padding-left: 0.3rem;
       margin-top: 0.08rem;
     }
@@ -102,6 +104,7 @@
     transform: translateX(-50%);
     border: 2px solid var(--color-white);
     border-radius: 50px;
+    z-index: 9;
 
     .setting {
       @include flex-center;
