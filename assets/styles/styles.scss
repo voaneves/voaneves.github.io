@@ -8,7 +8,6 @@
 @import "scroll-icon";
 @import "icons";
 @import "toast";
-@import "bokeh";
 @import "dropdown";
 
 .header-content {
@@ -194,7 +193,7 @@
     border: 2px solid var(--color-grey-4);
     width: 95%;
     border-radius: 50px;
-    height: 90vh;
+    min-height: 90vh;
     overflow: hidden;
 
     .who-grid {
@@ -257,7 +256,6 @@
             span {
               &:after {
                 content: "✹";
-                color: var(--color-secondary);
               }
             }
           }
