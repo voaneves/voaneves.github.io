@@ -883,6 +883,21 @@ footer {
   }
 }
 
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
 /* Media queries */
 @media screen and (max-width: 600px) {
   .header-content {
@@ -916,11 +931,6 @@ footer {
           }
         }
       }
-    }
-  }
-  div:has(.bokeh) {
-    .bokeh {
-      display: none;
     }
   }
 }

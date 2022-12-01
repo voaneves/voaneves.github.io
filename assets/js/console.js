@@ -1,5 +1,4 @@
 function consoleText() {
-  console.clear();
   const styles = [
     "color: #fff",
     "background: rgba(0, 4, 40, 1)",
