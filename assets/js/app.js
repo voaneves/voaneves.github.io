@@ -15,7 +15,7 @@
   };
 
   document.querySelector(".sidebar-toggle").addEventListener("click", () => {
-    sidebar.classList.toggle("open");
+    document.querySelector(".sidebar").classList.toggle("open");
   });
 
   document.getElementById("theme").addEventListener("click", function () {
@@ -24,8 +24,7 @@
   });
 })();
 
-const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-const sidebar = document.querySelector(".sidebar");
+var darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
 var width =
   window.innerWidth ||

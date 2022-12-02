@@ -83,13 +83,14 @@
       justify-content: flex-start;
       color: var(--color-white);
       padding-left: 0.3rem;
-      margin-top: 0.08rem;
+      margin-top: 0.1rem;
     }
 
     &:before {
       color: #48bf53;
       content: "⬤";
       font-size: 0.7rem;
+      text-shadow: 0 0 2px #48bf53, 0 0 4px #48bf53, 0 0 6px #48bf53;
     }
   }
 
@@ -118,14 +119,6 @@
 
       i {
         color: var(--color-white);
-      }
-    }
-
-    .active_setting {
-      background-color: var(--color-secondary) !important;
-
-      i {
-        color: var(--color-white-2);
       }
     }
   }
@@ -651,7 +644,7 @@
             font-size: 5rem;
             position: relative;
             display: inline-block;
-            animation: move 30s infinite linear;
+            animation: move 50s infinite linear;
           }
 
           @keyframes move {
