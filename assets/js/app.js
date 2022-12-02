@@ -8,10 +8,8 @@
   });
 
   window.onscroll = function () {
-    var scrolled = window.pageYOffset || document.documentElement.scrollTop,
-      arrowUp = document.querySelector(".arrow-up");
-
-    arrowUp.style.opacity = scrolled > 150 ? 1 : 0;
+    var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    document.querySelector(".arrow-up").style.opacity = scrolled > 150 ? 1 : 0;
   };
 
   document.querySelector(".sidebar-toggle").addEventListener("click", () => {

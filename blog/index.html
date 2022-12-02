@@ -145,13 +145,66 @@
   <body class="main-content">
     <main>
       <section class="container blog active" id="blog">
-        <div class="main-title">
-          <h2>
-            <span>Ensaios</span>
-            <span class="bg-text">Blog</span>
-          </h2>
-        </div>
         <div class="blog-container">
+          <div class="settings-wrapper">
+            <button
+              class="setting"
+              id="theme"
+              title="Mudar o tema"
+              data-cursor="pointer"
+            >
+              <i class="icon-theme"></i>
+            </button>
+            <button
+              class="setting"
+              id="translate"
+              title="Translate"
+              data-cursor="pointer"
+            >
+              <i class="icon-translate"></i>
+              <ul class="dropdown">
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/blog/?_x_tr_sl=pt&_x_tr_tl=en&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                    >EN</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/blog/?_x_tr_sl=pt&_x_tr_tl=es&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                    >ES</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/blog/?_x_tr_sl=pt&_x_tr_tl=de&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                    >DE</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/blog/?_x_tr_sl=pt&_x_tr_tl=fr&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                    >FR</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/blog/?_x_tr_sl=pt&_x_tr_tl=kr&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                    >KR</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/blog/?_x_tr_sl=pt&_x_tr_tl=ru&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
+                    >RU</a
+                  >
+                </li>
+              </ul>
+            </button>
+          </div>
+          <div class="blog-tag">
+            <span>BLOG</span>
+          </div>
           <div class="grid">
             <div class="grid__item">
               <div class="card">
@@ -205,7 +258,46 @@
         </div>
       </section>
     </main>
-    <div class="sidebar">
+    <nav class="sidebar">
+      <button class="sidebar-toggle" aria-label="Abrir o menu"></button>
+      <div class="sidebar-wrapper">
+        <div class="sidebar-menu">
+          <a href="#" aria-label="Link para ir para a seção inicial">
+            <button
+              class="control"
+              data-id="home"
+              title="Home"
+              data-cursor="pointer"
+            >
+              <span>Home</span>
+            </button></a
+          >
+          <a
+            href="#contact-content"
+            aria-label="Link para ir para a seção final"
+          >
+            <button
+              class="control"
+              data-id="contact"
+              title="Contato"
+              data-cursor="pointer"
+            >
+              <span>How</span>
+            </button>
+          </a>
+          <a href="./blog" aria-label="Link para ir para o meu blog">
+            <button
+              class="control active-btn"
+              title="Blog"
+              data-cursor="pointer"
+            >
+              <span>Blog</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!--     <div class="sidebar">
       <div class="sidebar-toggle"></div>
       <div class="sidebar-wrapper">
         <button
@@ -278,6 +370,16 @@
         </button>
       </div>
     </div>
+ -->
+    <a
+      href="#"
+      data-cursor="pointer"
+      aria-label="Botão para ir ao topo da página."
+    >
+      <div class="arrow-up" style="opacity: 0">
+        <div class="symbol"></div>
+      </div>
+    </a>
     <div id="cursor"></div>
     <div id="cursor-border"></div>
   </body>
