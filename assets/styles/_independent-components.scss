@@ -1,7 +1,6 @@
 /* Independent components */
 .btn-con {
   @include flex-start;
-  color: var(--color-white);
 }
 
 .main-btn {
@@ -33,6 +32,8 @@
   }
 
   &:hover {
+    color: var(--color-white-2);
+
     &:before {
       width: 100%;
       background-color: var(--color-secondary);

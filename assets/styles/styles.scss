@@ -59,7 +59,7 @@
   }
 
   .header-btns {
-    display: inline-flex;
+    @include flex-start;
     position: absolute;
     top: 92vh;
     right: 50px;
