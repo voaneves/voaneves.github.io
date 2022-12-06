@@ -176,7 +176,7 @@
 }
 
 /* Quem sou */
-.who-section {
+.who-content {
   @include flex-center;
 
   .who-wrapper {
@@ -274,7 +274,7 @@
 }
 
 /* Work */
-.work-container {
+.work-content {
   @include grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-gap: 2rem;
@@ -392,10 +392,21 @@
   }
 }
 
-/* Timeline */
 .timeline {
+  .spacer {
+    display: flex;
+    align-items: flex-end;
+
+    img {
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
   .timeline-wrapper {
-    padding-bottom: 15rem;
+    padding-bottom: 25rem;
 
     .container {
       @include flex-center;
@@ -448,7 +459,6 @@
 
     .timeline-text {
       @include flex-center;
-      padding-top: 10rem;
 
       p {
         text-align: center;
@@ -477,6 +487,7 @@
       max-width: 1200px;
       gap: 15px;
       margin: 0 auto;
+      margin-bottom: 10rem;
 
       &:hover > .card:not(:hover) .card__image {
         filter: brightness(0.5) saturate(0.5) blur(20px);
@@ -561,16 +572,14 @@
   }
 }
 
-/* Portfolio section */
+/* Portfolio */
 .portfolio-content {
   background-color: var(--color-white-2);
   padding-bottom: 10rem;
-  margin-top: 1rem;
 
   .portfolio-tag {
-    margin-top: 2rem;
     position: relative;
-    top: 1rem;
+    top: 3rem;
     left: 0;
     background-color: var(--color-black);
     width: 200px;
@@ -682,31 +691,181 @@
       }
 
       &:last-of-type {
-        margin-bottom: 25rem;
+        margin-bottom: 5rem;
+      }
+    }
+  }
+}
+
+/* services */
+.services-content {
+  min-height: 100vh;
+  background-color: var(--color-white-2);
+
+  .services-marquee {
+    @include flex-center;
+    overflow: hidden;
+    margin-bottom: 10rem;
+    border-top: 2px solid var(--color-black);
+    border-bottom: 2px solid var(--color-black);
+
+    .marquee {
+      height: 12rem;
+      &__wrapper {
+        @include flex-center;
+        &_content {
+          .outline {
+            font-size: 10rem;
+            color: var(--color-white-2) !important;
+            text-shadow: -2px -2px 0 var(--color-black),
+              2px -2px 0 var(--color-black), -2px 2px 0 var(--color-black),
+              2px 2px 0 var(--color-black);
+
+            &:after {
+              content: "◆";
+              color: var(--color-white-2);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .services-accordion {
+    max-width: 700px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 40rem;
+
+    .title {
+      @include flex-start;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #dce7eb;
+
+      h2 {
+        @include flex-start;
+        font-size: 2rem;
+        color: var(--color-secondary);
+        line-height: 34px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        padding-bottom: 0.5rem;
+
+        .number {
+          @include flex-center;
+          border-radius: 50%;
+          height: 1.5rem;
+          aspect-ratio: 1 / 1;
+          font-weight: 800;
+          font-size: 1rem;
+          background-color: var(--color-secondary);
+          color: var(--color-white-2);
+          margin-right: 1rem;
+        }
+      }
+
+      .small-text {
+        font-size: 1rem;
+        color: rgba(48, 69, 92, 0.8);
+        margin-left: 1rem;
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    p {
+      color: rgba(48, 69, 92, 0.8);
+      font-size: 17px;
+      line-height: 26px;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      text-align: justify;
+      max-height: 800px;
+      opacity: 1;
+      transform: translate(0, 0);
+      margin-top: 14px;
+      z-index: 2;
+      transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    ul {
+      list-style: none;
+      perspective: 900;
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 4px;
+        padding-top: 1.5rem;
+
+        i {
+          position: absolute;
+          transform: translate(-6px, 0);
+          margin-top: 16px;
+          right: 0;
+
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            background-color: var(--color-secondary);
+            width: 3px;
+            height: 9px;
+            transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          }
+
+          &:before {
+            transform: translate(-2px, 0) rotate(45deg);
+          }
+
+          &:after {
+            transform: translate(2px, 0) rotate(-45deg);
+          }
+        }
+
+        input[type="checkbox"] {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          opacity: 0;
+
+          &:checked ~ p {
+            margin-top: 0;
+            max-height: 0;
+            opacity: 0;
+            transform: translate(0, 50%);
+          }
+
+          &:checked ~ i:before {
+            transform: translate(2px, 0) rotate(45deg);
+          }
+
+          &:checked ~ i:after {
+            transform: translate(-2px, 0) rotate(-45deg);
+          }
+        }
       }
     }
   }
 
   .spacer {
-    aspect-ratio: 960/540;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url("../img/waves.svg");
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  /*     svg {
+    display: flex;
+    align-items: flex-end;
+
+    img {
+      height: 100vh;
+      width: 100vw;
       position: absolute;
       bottom: 0;
-      left: 0;
-      width: 100%;
-    } */
+    }
+  }
 }
 
-/* Contact section */
+/* Contact */
 .contact-content {
   padding-top: 3.5rem;
   background-color: #0a0a0a;
@@ -733,7 +892,6 @@
     color: var(--color-white-2);
     font-size: 10rem;
     animation: neon 1.5s ease-in-out infinite alternate;
-    /* @include cubic-bezier; */
 
     @keyframes neon {
       from {
@@ -878,7 +1036,7 @@ footer {
 .hidden {
   opacity: 0;
   visibility: hidden;
-  filter: blur(5px);
+  filter: blur(10px);
   transform: translateX(-100%);
   transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }

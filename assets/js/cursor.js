@@ -37,6 +37,7 @@
     document.querySelectorAll("[data-cursor]").forEach((item) => {
       item.addEventListener("mouseover", (e) => {
         if (item.dataset.cursor === "pointer") {
+          cursor.style.opacity = 0;
           cursorBorder.classList.add("small-cursor");
           cursorBorder.style.setProperty("--size-cursor", "30px");
         } else if (item.dataset.cursor === "pointer2") {

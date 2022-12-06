@@ -41,9 +41,21 @@
   }
 }
 
-.highlight {
+.highlight,
+.call-to-action {
   font-weight: var(--font-heavy);
+  padding: 0 4px;
+  border-radius: 20px;
+}
+
+.call-to-action {
+  color: var(--color-white-2);
+  background-color: var(--color-secondary);
+}
+
+.highlight {
   color: var(--color-opposite);
+  border: 2px solid var(--color-opposite);
 }
 
 .different {

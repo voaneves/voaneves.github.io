@@ -2,12 +2,12 @@
   /* Menu Handler */
   const controls = document.querySelectorAll(".control");
   const sections = document.querySelectorAll("section");
-  const observer_controls = new IntersectionObserver(
-    (entries, observer_controls) => {
+  const control_observer = new IntersectionObserver(
+    (entries, control_observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const index = Array.from(sections).indexOf(entry.target);
-          console.log(entry.target);
+          /* console.log(entry.target); */
           document.querySelector(".active-btn").classList.remove("active-btn");
           controls[index].classList.add("active-btn");
         }
@@ -18,7 +18,7 @@
     }
   );
   sections.forEach((section) => {
-    observer_controls.observe(section);
+    control_observer.observe(section);
   });
   const sidebar = document.querySelector(".sidebar");
   controls.forEach((control) => {

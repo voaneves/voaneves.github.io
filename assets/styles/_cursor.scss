@@ -1,19 +1,19 @@
 /* Custom cursor */
 #cursor {
   position: fixed;
-  top: -5px;
-  left: -5px;
-  width: 12px;
-  height: 12px;
-  background-color: var(--color-white);
+  top: -7.5px;
+  left: -7.5px;
+  width: 15px;
+  height: 15px;
+  background-color: var(--color-secondary);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 999;
   border: 1px solid var(--color-grey-4);
+  transition: opacity 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  z-index: 999;
 }
 
 #cursor-border {
-  @include cubic-bezier;
   --size-cursor: 50px;
   position: fixed;
   top: calc(var(--size-cursor) / -2);
@@ -22,36 +22,43 @@
   height: var(--size-cursor);
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(--color-white);
+  background-color: var(--color-secondary);
   pointer-events: none;
   transition: top 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955),
     left 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955),
     width 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955),
     height 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955),
     background-color 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    opacity 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    opacity 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  opacity: 0.2;
   z-index: 998;
 }
 
 .small-cursor {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  opacity: 0.5;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  opacity: 0.7 !important;
 
   .cursor-tooltip {
-    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 }
 
 .big-cursor {
-  background-color: white;
+  opacity: 1 !important;
+  background-color: white !important;
   mix-blend-mode: difference;
 }
 
 .cursor-tooltip {
-  display: none;
   position: relative;
+  opacity: 0;
+  visibility: hidden;
   bottom: 35px;
   right: 35px;
+  transition: opacity 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    visibility 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
   svg {
     display: block;
