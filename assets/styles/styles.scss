@@ -880,7 +880,7 @@
     color: var(--color-white-2);
     width: 200px;
     height: 1px;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
 
     span {
       display: flex;
@@ -1026,10 +1026,14 @@
 }
 
 footer {
-  background-color: var(--color-white);
-  color: var(--color-primary);
+  background-color: var(--color-white-2);
   padding: 1rem 0;
   text-align: center;
+  color: var(--color-primary);
+
+  .link {
+    color: var(--color-primary);
+  }
 
   .small-text {
     font-size: 0.8rem;
@@ -1059,7 +1063,7 @@ footer {
       }
     }
   }
-  .who-section {
+  .who-content {
     .who-wrapper {
       width: 90%;
 

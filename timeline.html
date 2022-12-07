@@ -198,8 +198,11 @@
       @media (prefers-color-scheme: dark) {
         :root {
           --color-primary: #0a0a0a;
+          --color-secondary: #fff;
           --color-white: #ffffff;
+          --color-white-2: #0a0a0a;
           --color-grey-1: #dbe1e8;
+          --color-grey-4: #454e56;
           --color-blue: #049cd8;
           --color-sky: #042642;
           --color-yellow: #fbd000;
@@ -214,8 +217,11 @@
       @media (prefers-color-scheme: light) {
         :root {
           --color-primary: #ffffff;
-          --color-white: #454e56;
+          --color-secondary: #0a0a0a;
+          --color-white: #0a0a0a;
+          --color-white-2: #fff;
           --color-grey-1: #6c7983;
+          --color-grey-4: #b2becd;
           --color-blue: #036187;
           --color-sky: #b1d9f9;
           --color-yellow: #fbd000;
@@ -483,7 +489,7 @@
               <span>Home</span>
             </button></a
           >
-          <a href="#who" aria-label="Link para ir para a seção 'Quem sou'">
+          <a href="./#who" aria-label="Link para ir para a seção 'Quem sou'">
             <button
               class="control"
               data-id="about"
@@ -493,7 +499,10 @@
               <span>Who</span>
             </button></a
           >
-          <a href="#timeline" aria-label="Link para ir para a seção 'Timeline'">
+          <a
+            href="./#timeline"
+            aria-label="Link para ir para a seção 'Timeline'"
+          >
             <button
               class="control"
               data-id="about"
@@ -504,7 +513,7 @@
             </button></a
           >
           <a
-            href="#contact-content"
+            href="./#contact-content"
             aria-label="Link para ir para a seção final"
           >
             <button
@@ -524,69 +533,6 @@
         </div>
       </div>
     </div>
-
-    <!--     <div class="page-settings">
-      <button
-        class="btn"
-        id="home"
-        title="Home"
-        onclick="location.href='../';"
-        data-cursor="pointer"
-      >
-        <i class="icon-home"></i>
-      </button>
-      <button class="btn" id="theme" title="Mudar o tema" data-cursor="pointer">
-        <i class="icon-adjust"></i>
-      </button>
-      <button
-        class="btn"
-        id="translate"
-        title="Translate"
-        data-cursor="pointer"
-        data-tooltip="TRANSLATE"
-      >
-        <i class="icon-translate"></i>
-        <ul class="dropdown">
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/timeline?_x_tr_sl=pt&_x_tr_tl=en&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >EN</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/timeline?_x_tr_sl=pt&_x_tr_tl=es&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >ES</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/timeline?_x_tr_sl=pt&_x_tr_tl=de&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >DE</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/timeline?_x_tr_sl=pt&_x_tr_tl=fr&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >FR</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/timeline?_x_tr_sl=pt&_x_tr_tl=kr&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >KR</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://voaneves-com.translate.goog/timeline?_x_tr_sl=pt&_x_tr_tl=ru&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-              >RU</a
-            >
-          </li>
-        </ul>
-      </button>
-    </div>
- -->
     <div id="cursor"></div>
     <div id="cursor-border"></div>
   </body>
