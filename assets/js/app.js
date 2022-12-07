@@ -33,7 +33,10 @@
   /* AOC Handler */
   const scroll_observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      entry.target.classList.toggle("show", entry.isIntersecting);
+      entry.target.classList.toggle(
+        "show",
+        entry.isIntersecting || entry.intersectionRatio > 0
+      );
     });
   });
   document
