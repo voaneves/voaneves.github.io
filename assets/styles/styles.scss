@@ -182,7 +182,7 @@
   .who-wrapper {
     @include flex-center;
     flex-direction: column;
-    border: 2px solid var(--color-grey-4);
+    border: 2px solid var(--color-white);
     width: 95%;
     border-radius: 50px;
     min-height: 90vh;
@@ -264,6 +264,7 @@
       height: 100px;
 
       span {
+        color: var(--color-white);
         position: absolute;
         top: 40px;
         font-size: 0.6rem;
@@ -990,7 +991,7 @@
         background-color: var(--color-secondary);
 
         i {
-          color: var(--color-primary);
+          color: var(--color-white-2);
         }
       }
     }
@@ -1025,7 +1026,8 @@
 }
 
 footer {
-  background-color: var(--color-grey-4);
+  background-color: var(--color-white);
+  color: var(--color-primary);
   padding: 1rem 0;
   text-align: center;
 
