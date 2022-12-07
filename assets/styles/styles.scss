@@ -29,6 +29,11 @@
       @include flex-center;
       border-radius: 30px;
       overflow: hidden;
+      mask-image: linear-gradient(
+        rgb(0 0 0 / 1),
+        rgb(0 0 0 / 0.3),
+        rgb(0 0 0 / 0)
+      );
 
       img {
         @include ease-in-out;
