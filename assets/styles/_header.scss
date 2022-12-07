@@ -7,7 +7,7 @@
   scroll-behavior: smooth;
   --br-sm-2: 14px;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
-  --color-white-2: #ffffff;
+  --color-white-2: #fff;
   --color-yellow: #fff36d;
   --font-thin: 100;
   --font-regular: 300;
@@ -28,7 +28,7 @@
   :root {
     --color-primary: #0a0a0a;
     --color-secondary: #f50000;
-    --color-white: #ffffff;
+    --color-white: #fff;
     --color-black: #000;
     --color-grey-0: #f8f8f8;
     --color-grey-1: #dbe1e8;
@@ -47,7 +47,7 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --color-primary: #ffffff;
+    --color-primary: #fff;
     --color-secondary: #cc0000;
     --color-white: #3d454c;
     --color-black: #000;
@@ -67,9 +67,9 @@
 }
 
 .light-mode {
-  --color-primary: #ffffff;
+  --color-primary: #fff;
   --color-secondary: #cc0000;
-  --color-white: #454e56;
+  --color-white: #3d454c;
   --color-black: #000;
   --color-grey-0: #f8f8f8;
   --color-grey-1: #6c7983;
@@ -88,7 +88,7 @@
 .dark-mode {
   --color-primary: #0a0a0a;
   --color-secondary: #f50000;
-  --color-white: #ffffff;
+  --color-white: #fff;
   --color-black: #000;
   --color-grey-0: #f8f8f8;
   --color-grey-1: #dbe1e8;
