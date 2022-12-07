@@ -197,15 +197,15 @@
 
       &_number {
         @include flex-center;
-        background-color: var(--color-opposite);
         font-size: 10rem;
         width: 15rem;
         aspect-ratio: 1/1;
         border-radius: 50%;
+        color: var(--color-white-2);
+        background-color: var(--color-opposite);
         @include cubic-bezier;
 
         &:hover {
-          color: var(--color-secondary);
           text-shadow: -1px -1px white, 1px 1px darken(white, 50%),
             2px 2px darken(white, 52%), 3px 3px darken(white, 54%),
             4px 4px darken(white, 56%), 5px 5px darken(white, 58%),
@@ -1037,7 +1037,6 @@ footer {
 .hidden {
   opacity: 0;
   visibility: hidden;
-  filter: blur(10px);
   transform: translateX(-100%);
   transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
@@ -1045,7 +1044,6 @@ footer {
 .show {
   opacity: 1;
   visibility: visible;
-  filter: blur(0);
   transform: translateX(0);
 }
 
