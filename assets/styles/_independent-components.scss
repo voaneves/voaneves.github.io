@@ -43,19 +43,19 @@
 
 .highlight,
 .call-to-action {
-  font-weight: var(--font-heavy);
-  padding: 0 4px;
-  border-radius: 20px;
+  padding: 0 10px;
 }
 
 .call-to-action {
   color: var(--color-white-2);
+  border-radius: 20px;
   background-color: var(--color-secondary);
+  height: 48px;
+  border: none;
 }
 
 .highlight {
   color: var(--color-opposite);
-  border: 2px solid var(--color-opposite);
 }
 
 .different {
