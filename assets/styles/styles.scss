@@ -36,12 +36,12 @@
       );
 
       img {
-        @include ease-in-out;
         -o-object-fit: cover;
         object-fit: cover;
         width: 333px;
         height: 500px;
         filter: grayscale(100%);
+        transition: filter 0.4s ease-in-out;
 
         &:hover {
           filter: grayscale(0);
@@ -116,7 +116,7 @@
       font-size: 1.2rem;
       border: none;
 
-      &:first-child {
+      &--first-child {
         font-size: 1.1rem;
         border-right: 2px solid var(--color-white);
       }
@@ -208,7 +208,7 @@
         border-radius: 50%;
         color: var(--color-white-2);
         background-color: var(--color-secondary);
-        @include cubic-bezier;
+        transition: text-shadow 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
         &:hover {
           text-shadow: -1px -1px white, 1px 1px darken(white, 50%),
@@ -306,12 +306,13 @@
     border: 1px solid var(--color-grey-5);
     border-radius: 5px;
     box-shadow: 1px 2px 15px var(--color-white);
-    @include ease-in-out;
+    transition: border 0.4s ease-in-out, box-shadow 0.4s ease-in-out,
+      transform 0.4s ease-in-out;
 
     &:hover {
       transform: translateY(-5px);
       border: 1px solid var(--color-secondary);
-      box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
+      box-shadow: 1px 4px 15px var(--color-secondary);
     }
 
     .work-text {
@@ -413,54 +414,17 @@
   }
 
   .timeline-wrapper {
-    padding-bottom: 25rem;
+    padding-bottom: 15rem;
 
     .container {
       @include flex-center;
 
-      svg {
-        font-size: 10.5rem;
-        width: 960px;
-
-        .text-copy {
-          fill: none;
-          stroke: white;
-          stroke-dasharray: 6% 29%;
-          stroke-width: 5px;
-          stroke-dashoffset: 0%;
-          animation: stroke-offset 5.5s infinite linear;
-        }
-
-        .text-copy:nth-child(1) {
-          stroke: var(--color-opposite);
-          animation-delay: -1;
-        }
-
-        .text-copy:nth-child(2) {
-          stroke: #990000;
-          animation-delay: -2s;
-        }
-
-        .text-copy:nth-child(3) {
-          stroke: var(--color-secondary);
-          animation-delay: -3s;
-        }
-
-        .text-copy:nth-child(4) {
-          stroke: #222222;
-          animation-delay: -4s;
-        }
-
-        .text-copy:nth-child(5) {
-          stroke: #f1be48;
-          animation-delay: -5s;
-        }
-
-        @keyframes stroke-offset {
-          100% {
-            stroke-dashoffset: -35%;
-          }
-        }
+      .text {
+        font-size: min(max(3rem, 10vw), 10.5rem);
+        color: var(--color-primary);
+        text-shadow: -2px -2px 0 var(--color-white),
+          2px -2px 0 var(--color-white), -2px 2px 0 var(--color-white),
+          2px 2px 0 var(--color-white);
       }
     }
 
@@ -494,7 +458,7 @@
       max-width: 1200px;
       gap: 15px;
       margin: 0 auto;
-      margin-bottom: 10rem;
+      margin-bottom: 20rem;
 
       &:hover > .card:not(:hover) .card__image {
         filter: brightness(0.5) saturate(0.5) blur(20px);
@@ -530,7 +494,7 @@
         &__image {
           transform-origin: center;
           transform: scale(1) translateZ(0);
-          @include cubic-bezier;
+          transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
 
           img {
             border-radius: 30px;
@@ -617,10 +581,9 @@
       background-color: var(--color-secondary);
       width: 15rem;
       height: 15rem;
-      @include cubic-bezier;
+      transition: text-shadow 0.4s ease-in-out;
 
       &:hover {
-        color: var(--color-white-2);
         text-shadow: -1px -1px white, 1px 1px darken(white, 50%),
           2px 2px darken(white, 52%), 3px 3px darken(white, 54%),
           4px 4px darken(white, 56%), 5px 5px darken(white, 58%),
@@ -690,15 +653,11 @@
       text-shadow: 1px 1px black;
       background-color: transparent;
       box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3);
-      margin-bottom: 50rem;
+      margin-bottom: 10rem;
 
       img {
         width: 100%;
         height: auto;
-      }
-
-      &:last-of-type {
-        margin-bottom: 5rem;
       }
     }
   }
@@ -792,7 +751,8 @@
       transform: translate(0, 0);
       margin-top: 14px;
       z-index: 2;
-      transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+        margin-top 0.4s ease-in-out, max-height 0.4s ease-in-out;
     }
 
     ul {
@@ -821,7 +781,7 @@
             background-color: var(--color-secondary);
             width: 3px;
             height: 9px;
-            transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            transition: transform 0.4s ease-in-out;
           }
 
           &:before {
@@ -1098,7 +1058,6 @@
 
     .icon {
       @include flex-center;
-      @include ease-in-out;
       color: var(--color-black);
       background-color: var(--color-white-2);
       width: var(--text-50);
@@ -1107,6 +1066,7 @@
       margin: 0.4rem 0.4rem;
       font-size: var(--text-small);
       border: none;
+      transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 
       &:hover {
         background-color: var(--color-secondary);
@@ -1163,14 +1123,12 @@ footer {
 
 .hidden {
   opacity: 0;
-  visibility: hidden;
   transform: translateX(-100%);
-  transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .show {
   opacity: 1;
-  visibility: visible;
   transform: translateX(0);
 }
 

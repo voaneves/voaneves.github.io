@@ -113,7 +113,7 @@ body {
   font-family: sans-serif;
   font-size: var(--text-small);
   color: var(--color-white);
-  transition: all 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
 }
 
 a,

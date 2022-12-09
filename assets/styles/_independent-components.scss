@@ -21,7 +21,6 @@
   }
 
   &::before {
-    @include cubic-bezier;
     content: "";
     position: absolute;
     width: 0;
@@ -29,6 +28,7 @@
     top: 0;
     right: 0;
     z-index: -1;
+    transition: width 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
 
   &:hover {

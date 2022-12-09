@@ -1,7 +1,6 @@
 /* Sidebar */
 .sidebar {
   @include flex-center;
-  @include cubic-bezier;
   flex-direction: column;
   position: fixed;
   top: 50%;
@@ -12,6 +11,7 @@
   background-color: var(--color-primary);
   transform: translateY(-50%);
   box-shadow: 0 3px 15px var(--color-white);
+  transition: top 0.4s ease-in-out, left 0.4 ease-in-out;
 
   &.open {
     top: 0;
@@ -62,7 +62,7 @@
             color: var(--color-grey-4);
             font-size: max(1.4rem, 2vw);
             font-weight: 800;
-            @include cubic-bezier;
+            transition: color 0.4s ease-in-out;
           }
 
           &:hover {
@@ -97,12 +97,13 @@
 
     &::before,
     &::after {
-      @include cubic-bezier;
       content: "";
       position: absolute;
       width: 20px;
       height: 2px;
-      background: var(--color-primary);
+      background-color: var(--color-primary);
+      transition: width 0.4s ease-in-out, transform 0.4s ease-in-out,
+        box-shadow 0.4s ease-in-out;
     }
 
     &::before {

@@ -19,7 +19,8 @@ button:has(.dropdown) {
   opacity: 0;
   padding: 0 10px;
   visibility: hidden;
-  @include cubic-bezier;
+  transition: top 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    opacity 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
   &:before {
     content: "";
@@ -41,18 +42,6 @@ button:has(.dropdown) {
     color: #666;
     width: fit-content;
     height: 3rem;
-
-    &:first-child {
-      border-radius: 4px 4px 0 0;
-    }
-
-    &:last-child {
-      border-radius: 0 0 4px 4px;
-
-      a {
-        border-bottom: 0;
-      }
-    }
   }
 
   a {
