@@ -1,4 +1,6 @@
 (function () {
+  if (!("IntersectionObserver" in window))
+    console.log("No IntersectionObserver API, website may behave strangely.");
   /* Menu Handler */
   const controls = document.querySelectorAll(".control");
   const sections = document.querySelectorAll("section");
