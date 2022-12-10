@@ -98,6 +98,43 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico" />
     <link rel="canonical" href="https://voaneves.com/timeline" />
     <style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-primary: #0a0a0a;
+          --color-secondary: #fff;
+          --color-white: #ffffff;
+          --color-white-2: #0a0a0a;
+          --color-grey-1: #dbe1e8;
+          --color-grey-4: #454e56;
+          --color-blue: #049cd8;
+          --color-sky: #042642;
+          --color-yellow: #fbd000;
+          --color-red: #e52521;
+        }
+
+        :root .icon-theme:before {
+          content: "\e901";
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --color-primary: #ffffff;
+          --color-secondary: #0a0a0a;
+          --color-white: #0a0a0a;
+          --color-white-2: #fff;
+          --color-grey-1: #6c7983;
+          --color-grey-4: #b2becd;
+          --color-blue: #036187;
+          --color-sky: #b1d9f9;
+          --color-yellow: #fbd000;
+          --color-red: #e52521;
+        }
+
+        :root .icon-theme:before {
+          content: "\e903";
+        }
+      }
       .sidebar {
         display: flex;
         align-items: center;
@@ -169,7 +206,7 @@
       }
       @font-face {
         font-family: "icomoon";
-        src: url(assets/fonts/icomoon.woff2) format("woff2");
+        src: url(assets/fonts/header.woff2) format("woff2");
         font-weight: 400;
         font-style: normal;
         font-display: block;
@@ -194,43 +231,6 @@
       a:link {
         color: inherit;
         text-decoration: none;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --color-primary: #0a0a0a;
-          --color-secondary: #fff;
-          --color-white: #ffffff;
-          --color-white-2: #0a0a0a;
-          --color-grey-1: #dbe1e8;
-          --color-grey-4: #454e56;
-          --color-blue: #049cd8;
-          --color-sky: #042642;
-          --color-yellow: #fbd000;
-          --color-red: #e52521;
-        }
-
-        :root .icon-theme:before {
-          content: "\e901";
-        }
-      }
-
-      @media (prefers-color-scheme: light) {
-        :root {
-          --color-primary: #ffffff;
-          --color-secondary: #0a0a0a;
-          --color-white: #0a0a0a;
-          --color-white-2: #fff;
-          --color-grey-1: #6c7983;
-          --color-grey-4: #b2becd;
-          --color-blue: #036187;
-          --color-sky: #b1d9f9;
-          --color-yellow: #fbd000;
-          --color-red: #e52521;
-        }
-
-        :root .icon-theme:before {
-          content: "\e903";
-        }
       }
       html,
       body {

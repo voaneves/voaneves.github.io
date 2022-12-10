@@ -1,5 +1,6 @@
 /* Custom cursor */
 #cursor {
+  display: none;
   position: fixed;
   top: -7.5px;
   left: -7.5px;
@@ -14,6 +15,7 @@
 }
 
 #cursor-border {
+  display: none;
   --size-cursor: 50px;
   position: fixed;
   top: calc(var(--size-cursor) / -2);

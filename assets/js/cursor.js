@@ -5,11 +5,10 @@
   const cursorPos = { x: 0, y: 0 };
   const cursorBorderPos = { x: 0, y: 0 };
 
-  if ("ontouchstart" in window) {
-    cursor.style.display = "none";
-    cursorBorder.style.display = "none";
-  } else {
+  if (!("ontouchstart" in window)) {
     document.addEventListener("mousemove", (e) => {
+      cursor.style.display = "block";
+      cursorBorder.style.display = "block";
       cursorPos.x = e.clientX;
       cursorPos.y = e.clientY;
 

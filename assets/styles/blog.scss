@@ -3,7 +3,6 @@
 @import "include";
 @import "sidebar";
 @import "cursor";
-@import "icons";
 @import "scrollbar";
 @import "scroll-icon";
 @import "dropdown";
@@ -76,15 +75,15 @@
     margin-top: calc(4vh);
 
     &__item {
-      @include ease-in-out;
       background-color: var(--color-grey-6);
       border-radius: 0.4rem;
       overflow: hidden;
       box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 
       &:hover {
         transform: translateY(-0.5%);
-        box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4rem 8rem var(--color-white);
       }
 
       .card {
@@ -127,11 +126,8 @@
           background-color: var(--color-primary);
           border: none;
           border-radius: 0.4rem;
-          @include ease-in-out;
-
-          span {
-            @include ease-in-out;
-          }
+          transition: margin-left 0.4s ease-in-out,
+            background-color 0.4s ease-in-out;
 
           &:hover,
           &:active {
@@ -143,35 +139,6 @@
           }
         }
       }
-    }
-  }
-}
-
-/* Main title */
-.main-title {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-
-  h2 {
-    position: relative;
-    text-transform: uppercase;
-    font-size: var(--text-big);
-    font-weight: var(--font-heavy);
-
-    span {
-      color: var(--color-secondary);
-    }
-
-    .bg-text {
-      @include ease-in-out;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      color: var(--color-grey-5);
-      z-index: -1;
-      transform: translate(-50%, -50%);
-      font-weight: var(--font-heavy);
-      font-size: var(--text-huge);
     }
   }
 }
