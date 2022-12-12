@@ -77,13 +77,19 @@
 }
 
 .marker {
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-thickness: 1.3rem;
-  text-underline-offset: -1rem;
-  text-decoration-color: var(--color-opposite);
-  text-decoration-skip-ink: none;
-  text-decoration-skip: none;
+  margin: 0 -0.4em;
+  padding: 0.05em 0.4em;
+  border-radius: 0.7em 0.3em;
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-opposite) 10%,
+    var(--color-opposite) 85%,
+    var(--color-primary)
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .spotlight {
