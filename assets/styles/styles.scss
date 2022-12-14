@@ -858,7 +858,7 @@
     @include flex-center;
     color: var(--color-white-2);
     font-size: 10rem;
-    animation: neon 1.5s ease-in-out infinite alternate;
+    animation: neon 2s ease-in-out infinite alternate;
 
     @keyframes neon {
       from {
@@ -895,23 +895,48 @@
         color: #fff;
         overflow: hidden;
         clip: rect(0, 900px, 0, 0);
-        animation: noise-anim 2s infinite linear alternate-reverse;
-      }
-
-      &:before {
-        content: attr(data-text);
-        position: absolute;
-        left: -2px;
-        text-shadow: 1px 0 blue;
-        top: 0;
-        color: white;
-        overflow: hidden;
-        clip: rect(0, 900px, 0, 0);
-        animation: noise-anim-2 3s infinite linear alternate-reverse;
+        animation: crt-me 2s infinite linear alternate-reverse;
       }
     }
 
-    @keyframes noise-anim {
+    //Animation Keyframes
+    @keyframes crt-me {
+      0% {
+        clip: rect(31px, 9999px, 94px, 0);
+      }
+      10% {
+        clip: rect(112px, 9999px, 76px, 0);
+      }
+      20% {
+        clip: rect(85px, 9999px, 77px, 0);
+      }
+      30% {
+        clip: rect(27px, 9999px, 97px, 0);
+      }
+      40% {
+        clip: rect(64px, 9999px, 98px, 0);
+      }
+      50% {
+        clip: rect(61px, 9999px, 85px, 0);
+      }
+      60% {
+        clip: rect(99px, 9999px, 114px, 0);
+      }
+      70% {
+        clip: rect(34px, 9999px, 115px, 0);
+      }
+      80% {
+        clip: rect(98px, 9999px, 129px, 0);
+      }
+      90% {
+        clip: rect(43px, 9999px, 96px, 0);
+      }
+      100% {
+        clip: rect(82px, 9999px, 64px, 0);
+      }
+    }
+
+    /*     @keyframes noise-anim {
       0% {
         clip: rect(13px, 9999px, 58px, 0);
       }
@@ -975,9 +1000,9 @@
       100% {
         clip: rect(86px, 9999px, 32px, 0);
       }
-    }
+    } */
 
-    @keyframes noise-anim-2 {
+    /*     @keyframes noise-anim-2 {
       0% {
         clip: rect(20px, 9999px, 3px, 0);
       }
@@ -1041,7 +1066,7 @@
       100% {
         clip: rect(100px, 9999px, 19px, 0);
       }
-    }
+    } */
   }
 
   .text {
@@ -1122,13 +1147,13 @@ footer {
 }
 
 .hidden {
-  opacity: 0;
+  opacity: 0 !important;
   transform: translateX(-100%);
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out 0.2s;
 }
 
 .show {
-  opacity: 1;
+  opacity: 1 !important;
   transform: translateX(0);
 }
 

@@ -127,11 +127,11 @@ a:link {
 section {
   min-height: 100vh;
   width: 100%;
-  content-visibility: auto;
 }
 
 .container {
   display: block;
+  content-visibility: auto;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

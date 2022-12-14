@@ -10,331 +10,328 @@
 
 /* Game section */
 .game-section {
-    text-align: center;
-    margin: 50px;
+  text-align: center;
+  margin: 50px;
 
-    ul {
-        list-style-type: none;
-        max-width: 1200px;
-        border-radius: 5px;
-        background-color: var(--color-white);
+  ul {
+    list-style-type: none;
+    max-width: 1200px;
+    border-radius: 5px;
+    background-color: var(--color-white);
+  }
+
+  label {
+    border-radius: 5px;
+    padding: 3px;
+    padding-left: 25px;
+    color: var(--color-primary);
+    font-size: var(--text-medium);
+    font-weight: var(--font-heavy);
+
+    span {
+      color: var(--color-grey-2);
+      font-size: 1rem;
+      font-weight: var(--font-medium);
     }
+  }
 
-    label {
+  li {
+    margin: 10px;
+    padding: 5px;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"] ~ ul {
+    max-height: 0;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  input[type="checkbox"]:checked ~ ul {
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 1;
+  }
+
+  .games {
+    .tic-tac-toe {
+      .game-grid {
+        display: inline-grid;
+        grid-template-rows: repeat(3, clamp(2rem, 10vw, 5rem));
+        grid-template-columns: repeat(3, clamp(2rem, 10vw, 5rem));
+        margin: 10px auto;
+        color: var(--color-opposite);
+
+        .cell {
+          @include flex-center;
+          border: 2px solid var(--color-grey-2);
+          font-weight: var(--font-heavy);
+          font-size: var(--text-medium);
+        }
+      }
+
+      .status {
+        text-transform: uppercase;
+        font-size: var(--text-small);
+        font-weight: var(--font-regular);
+        background-color: var(--color-primary);
+        color: var(--color-white);
         border-radius: 5px;
-        padding: 3px;
-        padding-left: 25px;
-        color: var(--color-primary);
+        padding: 0.5em;
+      }
+
+      .restart {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        margin: 25px;
         font-size: var(--text-medium);
-        font-weight: var(--font-heavy);
+        color: var(--color-opposite);
+        padding: 10px;
+        border-radius: 10px;
+        background-color: var(--color-primary);
+      }
+    }
 
-        span {
-            color: var(--color-grey-2);
-            font-size: 1rem;
-            font-weight: var(--font-medium);
+    .pedra-papel-tesoura {
+      .score-board {
+        border: 3px solid var(--color-primary);
+        width: 300px;
+        margin: 40px auto;
+        font-size: var(--text-50);
+        border-radius: 4px;
+        padding: 15px 20px;
+        position: relative;
+        color: var(--color-primary);
+
+        .badge {
+          font-weight: var(--font-heavy);
+
+          .user-label {
+            background: var(--color-secondary);
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            font-size: var(--text-small);
+            padding: 0.5em;
+            transform: translate(-10%, -50%);
+            border-radius: 0.5em;
+          }
+
+          .computer-label {
+            background: var(--color-opposite);
+            position: absolute;
+            top: 50%;
+            right: -5%;
+            font-size: var(--text-small);
+            padding: 0.5em;
+            transform: translate(10%, -50%);
+            border-radius: 0.5em;
+          }
         }
-    }
+      }
 
-    li {
-        margin: 10px;
-        padding: 5px;
-    }
+      .result {
+        font-size: var(--text-medium);
+        color: var(--color-grey-2);
+      }
 
-    input[type="checkbox"] {
-        display: none;
-    }
+      .choices {
+        @include flex-space-around;
+        flex-wrap: wrap;
+        padding: 40px 0;
 
-    input[type="checkbox"]~ul {
-        @include ease-in-out;
-        max-height: 0;
-        max-width: 0;
-        opacity: 0;
-        overflow: hidden;
-        white-space: nowrap;
-    }
+        .choice {
+          @include flex-center;
+          border: 3px solid var(--color-grey-2);
+          background-color: var(--color-grey-2);
+          aspect-ratio: 1 / 1;
+          height: calc(2 * var(--text-50));
+          padding: 10px;
+          border-radius: 50%;
+          margin: auto 10px;
 
-    input[type="checkbox"]:checked~ul {
-        max-height: 100%;
-        max-width: 100%;
-        opacity: 1;
-    }
-
-    .games {
-        .tic-tac-toe {
-            .game-grid {
-                display: inline-grid;
-                grid-template-rows: repeat(3, clamp(2rem, 10vw, 5rem));
-                grid-template-columns: repeat(3, clamp(2rem, 10vw, 5rem));
-                margin: 10px auto;
-                color: var(--color-opposite);
-
-                .cell {
-                    @include flex-center;
-                    border: 2px solid var(--color-grey-2);
-                    font-weight: var(--font-heavy);
-                    font-size: var(--text-medium);
-                }
-            }
-
-            .status {
-                text-transform: uppercase;
-                font-size: var(--text-small);
-                font-weight: var(--font-regular);
-                background-color: var(--color-primary);
-                color: var(--color-white);
-                border-radius: 5px;
-                padding: 0.5em;
-            }
-
-            .restart {
-                display: inline-block;
-                justify-content: center;
-                align-items: center;
-                margin: 25px;
-                font-size: var(--text-medium);
-                color: var(--color-opposite);
-                padding: 10px;
-                border-radius: 10px;
-                background-color: var(--color-primary);
-            }
+          span {
+            font-size: var(--text-50);
+          }
         }
 
-        .pedra-papel-tesoura {
-            .score-board {
-                border: 3px solid var(--color-primary);
-                width: 300px;
-                margin: 40px auto;
-                font-size: var(--text-50);
-                border-radius: 4px;
-                padding: 15px 20px;
-                position: relative;
-                color: var(--color-primary);
-
-                .badge {
-                    font-weight: var(--font-heavy);
-
-                    .user-label {
-                        background: var(--color-secondary);
-                        position: absolute;
-                        top: 50%;
-                        left: -5%;
-                        font-size: var(--text-small);
-                        padding: 0.5em;
-                        transform: translate(-10%, -50%);
-                        border-radius: 0.5em;
-                    }
-
-                    .computer-label {
-                        background: var(--color-opposite);
-                        position: absolute;
-                        top: 50%;
-                        right: -5%;
-                        font-size: var(--text-small);
-                        padding: 0.5em;
-                        transform: translate(10%, -50%);
-                        border-radius: 0.5em;
-                    }
-                }
-            }
-
-            .result {
-                font-size: var(--text-medium);
-                color: var(--color-grey-2);
-            }
-
-            .choices {
-                @include flex-space-around;
-                flex-wrap: wrap;
-                padding: 40px 0;
-
-                .choice {
-                    @include flex-center;
-                    @include ease-in-out;
-                    border: 3px solid var(--color-grey-2);
-                    background-color: var(--color-grey-2);
-                    aspect-ratio: 1 / 1;
-                    height: calc(2 * var(--text-50));
-                    padding: 10px;
-                    border-radius: 50%;
-                    margin: auto 10px;
-
-                    span {
-                        font-size: var(--text-50);
-                    }
-                }
-
-                .winningStyles {
-                    border: 3px solid #4dcc7d;
-                    background-color: #043507;
-                    box-shadow: 0 0 20px #043507;
-                }
-
-                .losingStyles {
-                    border: 3px solid #c52e2e;
-                    background-color: #2e0303;
-                    box-shadow: 0 0 20px #2e0303;
-                }
-
-                .drawStyles {
-                    border: 3px solid #444;
-                    background-color: #222;
-                    box-shadow: 0 0 20px #222;
-                }
-            }
-
-            sup {
-                margin: 0;
-                padding: 0;
-            }
-
-            .reset {
-                @include inline-block-center;
-                margin: 25px;
-                font-size: var(--text-medium);
-                padding: 10px;
-                border-radius: 10px;
-                color: var(--color-opposite);
-                background-color: var(--color-primary);
-            }
+        .winningStyles {
+          border: 3px solid #4dcc7d;
+          background-color: #043507;
+          box-shadow: 0 0 20px #043507;
         }
 
-        .mine-sweeper {
-            #mine-grid {
-                @include flex-center;
-
-                tr td {
-                    border: 1px solid var(--color-white);
-                    background: var(--color-grey-2);
-                    width: var(--size-game-grid);
-                    height: var(--size-game-grid);
-                }
-
-                tr td.clicked {
-                    background: var(--color-primary);
-                }
-
-                tr td.right-clicked {
-                    background: var(--color-yellow);
-                }
-
-                tr td.mine {
-                    background: var(--color-opposite);
-                }
-            }
-
-            .refresh {
-                @include inline-block-center;
-                margin: 25px;
-                font-size: var(--font-medium);
-                padding: 10px;
-                border-radius: 10px;
-                color: var(--color-opposite);
-                background-color: var(--color-primary);
-            }
+        .losingStyles {
+          border: 3px solid #c52e2e;
+          background-color: #2e0303;
+          box-shadow: 0 0 20px #2e0303;
         }
 
-        .snake {
-            #snakeboard {
-                @include inline-block-center;
-                position: relative;
-                border: 1px solid var(--color-primary);
-                background-color: var(--color-grey-2);
-            }
-
-            button {
-                opacity: 0.5;
-                padding: 0 5px;
-            }
+        .drawStyles {
+          border: 3px solid #444;
+          background-color: #222;
+          box-shadow: 0 0 20px #222;
         }
+      }
+
+      sup {
+        margin: 0;
+        padding: 0;
+      }
+
+      .reset {
+        @include inline-block-center;
+        margin: 25px;
+        font-size: var(--text-medium);
+        padding: 10px;
+        border-radius: 10px;
+        color: var(--color-opposite);
+        background-color: var(--color-primary);
+      }
     }
+
+    .mine-sweeper {
+      #mine-grid {
+        @include flex-center;
+
+        tr td {
+          border: 1px solid var(--color-white);
+          background: var(--color-grey-2);
+          width: var(--size-game-grid);
+          height: var(--size-game-grid);
+        }
+
+        tr td.clicked {
+          background: var(--color-primary);
+        }
+
+        tr td.right-clicked {
+          background: var(--color-yellow);
+        }
+
+        tr td.mine {
+          background: var(--color-opposite);
+        }
+      }
+
+      .refresh {
+        @include inline-block-center;
+        margin: 25px;
+        font-size: var(--font-medium);
+        padding: 10px;
+        border-radius: 10px;
+        color: var(--color-opposite);
+        background-color: var(--color-primary);
+      }
+    }
+
+    .snake {
+      #snakeboard {
+        @include inline-block-center;
+        position: relative;
+        border: 1px solid var(--color-primary);
+        background-color: var(--color-grey-2);
+      }
+
+      button {
+        opacity: 0.5;
+        padding: 0 5px;
+      }
+    }
+  }
 }
 
 /* Main title */
 .main-title {
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
 
-    h2 {
-        position: relative;
-        text-transform: uppercase;
-        font-size: var(--text-big);
-        font-weight: var(--font-heavy);
+  h2 {
+    position: relative;
+    text-transform: uppercase;
+    font-size: var(--text-big);
+    font-weight: var(--font-heavy);
 
-        span {
-            color: var(--color-secondary);
-        }
-
-        .bg-text {
-            @include ease-in-out;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            color: var(--color-grey-5);
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            font-weight: var(--font-heavy);
-            font-size: var(--text-huge);
-        }
+    span {
+      color: var(--color-secondary);
     }
+
+    .bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: var(--color-grey-5);
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      font-weight: var(--font-heavy);
+      font-size: var(--text-huge);
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {
-    section {
-        padding: 1rem !important;
-    }
+  section {
+    padding: 1rem !important;
+  }
 
-    .game-section {
-        padding-bottom: 3rem;
+  .game-section {
+    padding-bottom: 3rem;
 
-        .games {
-            .pedra-papel-tesoura {
-                .score-board {
-                    width: 80px;
-                    height: 300px;
+    .games {
+      .pedra-papel-tesoura {
+        .score-board {
+          width: 80px;
+          height: 300px;
 
-                    .score {
-                        &::before {
-                            content: "";
-                            display: inline-block;
-                            vertical-align: middle;
-                        }
-
-                        span {
-                            display: block;
-                            background-color: var(--color-grey-2);
-                            padding: 10px;
-                            border-radius: 10px;
-                        }
-                    }
-
-                    .badge {
-                        .user-label {
-                            top: 0%;
-                            left: 0%;
-                            transform: translate(-0.23rem, -1.5rem);
-                        }
-
-                        .computer-label {
-                            top: 100%;
-                            right: 0%;
-                            transform: translate(0.4rem, -1rem);
-                        }
-                    }
-                }
-
-                .result {
-                    display: none;
-                }
-
-                .choices {
-                    flex-direction: column;
-                    margin: 0;
-
-                    .choice {
-                        margin: 10px auto;
-                    }
-                }
+          .score {
+            &::before {
+              content: "";
+              display: inline-block;
+              vertical-align: middle;
             }
+
+            span {
+              display: block;
+              background-color: var(--color-grey-2);
+              padding: 10px;
+              border-radius: 10px;
+            }
+          }
+
+          .badge {
+            .user-label {
+              top: 0%;
+              left: 0%;
+              transform: translate(-0.23rem, -1.5rem);
+            }
+
+            .computer-label {
+              top: 100%;
+              right: 0%;
+              transform: translate(0.4rem, -1rem);
+            }
+          }
         }
+
+        .result {
+          display: none;
+        }
+
+        .choices {
+          flex-direction: column;
+          margin: 0;
+
+          .choice {
+            margin: 10px auto;
+          }
+        }
+      }
     }
+  }
 }
