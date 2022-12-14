@@ -6,7 +6,7 @@
   const cursorBorderPos = { x: 0, y: 0 };
 
   if (!("ontouchstart" in window)) {
-    document.addEventListener("mousemove", (e) => {
+    document.addEventListener("pointermove", (e) => {
       cursor.style.display = "block";
       cursorBorder.style.display = "block";
       cursorPos.x = e.clientX;
@@ -24,17 +24,17 @@
       requestAnimationFrame(loop);
     });
 
-    document.documentElement.addEventListener("mouseleave", () => {
+    document.documentElement.addEventListener("pointerleave", () => {
       cursor.style.display = "none";
       cursorBorder.style.display = "none";
     });
-    document.documentElement.addEventListener("mouseenter", () => {
+    document.documentElement.addEventListener("pointerenter", () => {
       cursor.style.display = "block";
       cursorBorder.style.display = "block";
     });
 
     document.querySelectorAll("[data-cursor]").forEach((item) => {
-      item.addEventListener("mouseover", (e) => {
+      item.addEventListener("pointerover", (e) => {
         if (item.dataset.cursor === "pointer") {
           cursor.style.opacity = 0;
           cursorBorder.classList.add("small-cursor");
@@ -45,7 +45,7 @@
           cursorBorder.style.setProperty("--size-cursor", "80px");
         }
       });
-      item.addEventListener("mouseout", (e) => {
+      item.addEventListener("pointerout", (e) => {
         cursor.style.opacity = 1;
         cursorBorder.classList.remove("small-cursor");
         cursorBorder.classList.remove("big-cursor");
