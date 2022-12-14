@@ -290,15 +290,12 @@
   }
 
   .work-item {
-    border: 1px solid var(--color-grey-5);
     border-radius: 5px;
     box-shadow: 1px 2px 15px var(--color-white);
-    transition: border 0.4s ease-in-out, box-shadow 0.4s ease-in-out,
-      transform 0.4s ease-in-out;
+    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
 
     &:hover {
       transform: translateY(-5px);
-      border: 1px solid var(--color-secondary);
       box-shadow: 1px 4px 15px var(--color-secondary);
     }
 
