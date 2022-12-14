@@ -290,13 +290,40 @@
   }
 
   .work-item {
-    border-radius: 5px;
-    box-shadow: 1px 2px 15px var(--color-white);
-    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transition: transform ease 0.5s;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      transition: opacity ease 0.5s;
+    }
+
+    &::after {
+      box-shadow: 1px 4px 15px var(--color-secondary);
+      opacity: 0;
+    }
+
+    &::before {
+      box-shadow: 1px 4px 15px var(--color-white);
+      opacity: 1;
+    }
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 1px 4px 15px var(--color-secondary);
+      transform: translateY(-10px);
+
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
     }
 
     .work-text {
@@ -445,7 +472,7 @@
       margin-bottom: 20rem;
 
       &:hover > .card:not(:hover) .card__image {
-        filter: brightness(0.5) saturate(0.5) blur(20px);
+        filter: brightness(0.5) saturate(0.5);
       }
 
       .card {

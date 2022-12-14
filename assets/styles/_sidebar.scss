@@ -110,15 +110,16 @@
         padding: min(max(7px, 1vw), 10px);
 
         span {
-          color: var(--color-grey-4);
+          color: var(--color-white);
           font-size: max(1.4rem, 2vw);
           font-weight: 800;
-          transition: color 0.4s ease-in-out;
+          opacity: 0.1;
+          transition: opacity 0.4s ease-in-out;
         }
 
         &:hover {
           span {
-            color: var(--color-white);
+            opacity: 1;
           }
         }
       }
@@ -127,7 +128,8 @@
         background-color: var(--color-secondary) !important;
 
         span {
-          color: var(--color-white-2);
+          color: white;
+          opacity: 1;
         }
       }
     }
