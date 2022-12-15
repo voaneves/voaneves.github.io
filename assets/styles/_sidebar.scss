@@ -5,12 +5,10 @@
   position: fixed;
   top: 50%;
   left: -10px;
-  height: 60vh;
-  width: 20px;
-  border-radius: 0 20px 20px 0;
+  height: 0;
+  width: 0;
   background-color: var(--color-primary);
   transform: translateY(-50%);
-  box-shadow: 0 3px 15px var(--color-white);
   transition: left 0.4s ease-in-out, top 0.4s ease-in-out 0.4s,
     width 0.4s ease-in-out 0.4s, height 0.4s ease-in-out 0.4s,
     transform 0.4s ease-in-out 0.4s;
