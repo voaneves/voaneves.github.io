@@ -24,6 +24,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      width: 100%;
     }
 
     .image {
@@ -60,7 +61,7 @@
 
     span {
       color: var(--color-secondary);
-      font-weight: 800;
+      font-weight: bold;
     }
   }
 
@@ -194,6 +195,7 @@
         aspect-ratio: 1/1;
         border-radius: 50%;
         color: var(--color-white-2);
+        font-family: sans-serif !important;
         background-color: var(--color-secondary);
         transition: text-shadow 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
@@ -333,7 +335,7 @@
 
       .large-text {
         font-size: var(--text-big);
-        font-weight: var(--font-heavy);
+        font-weight: bold;
         color: var(--color-secondary);
       }
 
@@ -590,6 +592,7 @@
       font-size: 10rem;
       border-radius: 50%;
       background-color: var(--color-secondary);
+      font-family: sans-serif !important;
       width: 15rem;
       height: 15rem;
       transition: text-shadow 0.4s ease-in-out;
@@ -629,7 +632,7 @@
           .text {
             color: #9f6914;
             text-transform: uppercase;
-            font-weight: 800;
+            font-weight: bold;
             font-size: 5rem;
             position: relative;
             display: inline-block;
@@ -715,7 +718,7 @@
         font-size: 2rem;
         color: var(--color-secondary);
         line-height: 34px;
-        font-weight: 300;
+        font-weight: lighter;
         letter-spacing: 1px;
         padding-bottom: 0.5rem;
 
@@ -724,7 +727,7 @@
           border-radius: 50%;
           height: 1.5rem;
           aspect-ratio: 1 / 1;
-          font-weight: 800;
+          font-weight: bold;
           font-size: 1rem;
           background-color: var(--color-secondary);
           color: var(--color-white-2);
@@ -860,6 +863,7 @@
     @include flex-center;
     color: var(--color-white-2);
     font-size: 10rem;
+    font-family: sans-serif !important;
     animation: neon 2s ease-in-out infinite alternate;
   }
   .text-wrapper {
@@ -973,6 +977,7 @@ footer {
   padding: 1rem 0;
   text-align: center;
   color: var(--color-black);
+  font-weight: light;
 
   .link {
     color: var(--color-black);
