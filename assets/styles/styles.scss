@@ -56,7 +56,7 @@
     position: absolute;
     top: 92vh;
     left: 50px;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     line-height: 1;
 
     span {
@@ -110,7 +110,7 @@
     transform: translateX(-50%);
     border: 2px solid var(--color-white);
     border-radius: 50px;
-    z-index: 9;
+    z-index: 3;
 
     .setting {
       @include flex-center;
@@ -660,9 +660,13 @@
       box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3);
       margin-bottom: 10rem;
 
-      img {
-        width: 100%;
-        height: auto;
+      picture {
+        max-width: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }

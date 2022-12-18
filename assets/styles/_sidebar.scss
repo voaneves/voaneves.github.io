@@ -9,6 +9,7 @@
   width: 0;
   background-color: var(--color-primary);
   transform: translateY(-50%);
+  z-index: 4;
   transition: left 0.4s ease-in-out, top 0.4s ease-in-out 0.4s,
     width 0.4s ease-in-out 0.4s, transform 0.4s ease-in-out 0.4s;
 
