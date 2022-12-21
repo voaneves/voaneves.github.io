@@ -1,11 +1,10 @@
 (function () {
   const cursor = document.querySelector("#cursor");
   const cursorBorder = document.querySelector("#cursor-border");
-  const cursorTooltip = document.querySelector("#cursor-tooltip");
   const cursorPos = { x: 0, y: 0 };
   const cursorBorderPos = { x: 0, y: 0 };
 
-  if (!("ontouchstart" in window)) {
+  if (!("ontouchstart" in document.documentElement)) {
     document.addEventListener("pointermove", (e) => {
       cursor.style.display = "block";
       cursorBorder.style.display = "block";
@@ -28,13 +27,9 @@
       cursor.style.display = "none";
       cursorBorder.style.display = "none";
     });
-    document.documentElement.addEventListener("pointerenter", () => {
-      cursor.style.display = "block";
-      cursorBorder.style.display = "block";
-    });
 
     document.querySelectorAll("[data-cursor]").forEach((item) => {
-      item.addEventListener("pointerover", (e) => {
+      item.addEventListener("pointerover", () => {
         if (item.dataset.cursor === "pointer") {
           cursor.style.opacity = 0;
           cursorBorder.classList.add("small-cursor");
@@ -42,10 +37,10 @@
         } else if (item.dataset.cursor === "pointer2") {
           cursor.style.opacity = 0;
           cursorBorder.classList.add("big-cursor");
-          cursorBorder.style.setProperty("--size-cursor", "80px");
+          cursorBorder.style.setProperty("--size-cursor", "100px");
         }
       });
-      item.addEventListener("pointerout", (e) => {
+      item.addEventListener("pointerout", () => {
         cursor.style.opacity = 1;
         cursorBorder.classList.remove("small-cursor");
         cursorBorder.classList.remove("big-cursor");
