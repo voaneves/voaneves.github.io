@@ -74,10 +74,6 @@
         opacity 0.4s cubic-bezier(0.57, 0.21, 0.69, 3.25);
     }
 
-    &:hover {
-      transform: scale(1.2);
-    }
-
     &:active {
       transform: scale(0.9);
     }
@@ -88,17 +84,6 @@
     &::after {
       transform: translateY(8px);
       box-shadow: 0 -8px 0 white;
-    }
-  }
-
-  &:not(.open) {
-    .sidebar-toggle {
-      &:hover {
-        &::before,
-        &::after {
-          opacity: 1;
-        }
-      }
     }
   }
 
@@ -182,5 +167,26 @@
   }
   90% {
     border-radius: 25% 75% 70% 30% / 39% 50% 50% 61%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sidebar {
+    &-toggle {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &:not(.open) {
+      .sidebar-toggle {
+        &:hover {
+          &::before,
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }
