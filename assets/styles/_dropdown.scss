@@ -1,6 +1,5 @@
 button:has(.dropdown) {
-  &:focus,
-  &:active {
+  &:hover {
     .dropdown {
       transform: translate(0, 20px);
       opacity: 1;
@@ -19,8 +18,7 @@ button:has(.dropdown) {
   opacity: 0;
   padding: 0 10px;
   visibility: hidden;
-  transition: top 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    opacity 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 
   &:before {
     content: "";
