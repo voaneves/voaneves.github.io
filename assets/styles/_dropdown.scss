@@ -1,4 +1,11 @@
 button:has(.dropdown) {
+  &:after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 50px;
+  }
+
   &:hover {
     .dropdown {
       transform: translate(0, 20px);
@@ -11,7 +18,7 @@ button:has(.dropdown) {
 .dropdown {
   position: absolute;
   top: 3vh;
-  background: #fff;
+  background: white;
   border-radius: 4px;
   box-shadow: 1px 2px 15px var(--color-white);
   text-align: left;
@@ -24,6 +31,7 @@ button:has(.dropdown) {
     content: "";
     position: absolute;
     top: -6px;
+    left: 26px;
     width: 0;
     height: 0;
     border-top: 6px solid #fff;
@@ -34,9 +42,17 @@ button:has(.dropdown) {
     mix-blend-mode: multiple;
   }
 
+  &:after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    width: 60px;
+    height: 0;
+    background-color: white;
+  }
+
   li {
     position: relative;
-    background: #fff;
     color: #666;
     width: fit-content;
     height: 3rem;
