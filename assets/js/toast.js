@@ -57,15 +57,20 @@ class MessageBox {
     msgboxClose.onclick = (evt) => {
       evt.preventDefault();
       if (msgboxBox.classList.contains("msgbox-box-hide")) return;
-      clearTimeout(this.msgboxTimeout);
       this.msgboxTimeout = null;
       this.hide(msgboxBox, callback);
     };
 
     if (option.closeTime > 0) {
-      this.msgboxTimeout = setTimeout(() => {
+      const wait = (time) =>
+        new Promise((resolve) => setTimeout(resolve, time));
+
+      wait(option.closeTime).then(() => {
         this.hide(msgboxBox, callback);
-      }, option.closeTime);
+      });
+      /*       this.msgboxTimeout = setTimeout(() => {
+        this.hide(msgboxBox, callback);
+      }, option.closeTime);*/
     }
   }
 
@@ -81,7 +86,6 @@ class MessageBox {
     if (msgboxBox !== null) msgboxBox.classList.add("msgbox-box-hide");
     await this.hideMessageBox(msgboxBox);
     this.msgBoxArea.removeChild(msgboxBox);
-    clearTimeout(this.msgboxTimeout);
     if (typeof callback === "function") callback();
   }
 }
