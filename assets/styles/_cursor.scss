@@ -10,7 +10,7 @@
   border-radius: 50%;
   pointer-events: none;
   border: 1px solid var(--color-white);
-  transition: opacity 0.4s cubic-bezier(0.57, 0.21, 0.69, 3.25);
+  transition: opacity 0.15s linear;
   z-index: 999;
 }
 
@@ -26,12 +26,9 @@
   box-shadow: 0 0 0 1px white;
   background-color: var(--color-secondary);
   pointer-events: none;
-  transition: top 0.15s cubic-bezier(0.57, 0.21, 0.69, 3.25),
-    left 0.15s cubic-bezier(0.57, 0.21, 0.69, 3.25),
-    width 0.15s cubic-bezier(0.57, 0.21, 0.69, 3.25),
-    height 0.15s cubic-bezier(0.57, 0.21, 0.69, 3.25),
-    background-color 0.15s cubic-bezier(0.57, 0.21, 0.69, 3.25),
-    opacity 0.15s cubic-bezier(0.57, 0.21, 0.69, 3.25);
+  transition: top 0.15s ease-in-out, left 0.15s ease-in-out, width 0.15s linear,
+    height 0.15s linear, background-color 0.15s ease-in-out,
+    opacity 0.15s linear, content 0.15s ease-in-out;
   opacity: 0.2;
   z-index: 998;
 }
@@ -40,10 +37,20 @@
   opacity: 1 !important;
   background-color: rgba(0, 0, 0, 0.3) !important;
 
-  .cursor-tooltip {
+  &::after {
+    content: "🡥";
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /*   .cursor-tooltip {
     opacity: 1 !important;
     visibility: visible;
-  }
+  } */
 }
 
 .big-cursor {
@@ -52,7 +59,7 @@
   mix-blend-mode: difference;
 }
 
-.cursor-tooltip {
+/* .cursor-tooltip {
   position: relative;
   opacity: 0;
   visibility: hidden;
@@ -62,7 +69,7 @@
     visibility 0.15s cubic-bezier(0.57, 0.21, 0.69, 3.25);
 
   &::after {
-    /* content: attr(data-tooltip); */
+    content: attr(data-tooltip);
     content: "CLICK";
     position: absolute;
     color: black;
@@ -75,4 +82,4 @@
     letter-spacing: 0.2rem;
     border: 1px solid black;
   }
-}
+} */
