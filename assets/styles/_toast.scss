@@ -8,15 +8,13 @@
 
 .msgbox-box {
   font-size: inherit;
-  background-color: rgba(#000000, 0.7);
+  background-color: var(--color-primary);
   margin: 0 1rem 1.5rem;
   display: flex;
   flex-direction: column;
   position: relative;
   max-width: 400px;
   border-radius: 12px;
-  box-shadow: 0 10px 15px rgba(#000000, 0.65);
-  backdrop-filter: blur(4px);
   transition: opacity 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
   &.msgbox-box-hide {
