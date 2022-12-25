@@ -62,15 +62,9 @@ class MessageBox {
     };
 
     if (option.closeTime > 0) {
-      const wait = (time) =>
-        new Promise((resolve) => setTimeout(resolve, time));
-
       wait(option.closeTime).then(() => {
         this.hide(msgboxBox, callback);
       });
-      /*       this.msgboxTimeout = setTimeout(() => {
-        this.hide(msgboxBox, callback);
-      }, option.closeTime);*/
     }
   }
 
@@ -90,11 +84,13 @@ class MessageBox {
   }
 }
 
+const wait = (time) => new Promise((resolve) => setTimeout(resolve, time));
+
 const msgbox = new MessageBox({
   closeTime: 10000,
 });
 
-const dataToast = [
+const msgs = [
   {
     id: "seb",
     title: "SEBRAE",
@@ -233,7 +229,7 @@ const dataToast = [
 
 document.querySelectorAll("[data-toast]").forEach((button) => {
   button.addEventListener("click", function () {
-    let s = dataToast.filter((d) => d.id === this.dataset.toast)[0];
+    let s = msgs.filter((d) => d.id === this.dataset.toast)[0];
     msgbox.show(s.message, s.title, s.legend, s.link);
   });
 });
