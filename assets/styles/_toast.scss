@@ -8,7 +8,7 @@
 
 .msgbox-box {
   font-size: inherit;
-  background-color: var(--color-primary);
+  background-color: var(--color-white);
   margin: 0 1rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -24,12 +24,12 @@
 
 .msgbox-title {
   padding: 1.5rem 0 0 1.5rem;
-  color: var(--color-grey-0);
+  color: var(--color-primary);
 }
 
 .msgbox-legend {
   padding: 0 0 0 1.5rem;
-  color: var(--color-white-2);
+  color: var(--color-primary);
 }
 
 .msgbox-content {
@@ -37,7 +37,7 @@
   padding: 0 1.5rem 1.5rem 1.5rem;
   padding-bottom: 0.75rem;
   flex-shrink: 1;
-  color: var(--color-grey-0);
+  color: var(--color-primary);
 }
 
 .msgbox-command {
@@ -47,18 +47,20 @@
 }
 
 .msgbox-close {
-  color: var(--color-grey-0);
+  color: var(--color-primary);
   font-size: inherit;
   text-decoration: none;
   margin: 0 1rem;
   flex-grow: 0;
   flex-shrink: 0;
+  padding: 3px 10px;
+  border-radius: 10px;
   position: relative;
   transition: color 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    text-shadow 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    background-color 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
   &:hover {
-    color: #efefef;
-    text-shadow: 0 0 4px #ffffff;
+    color: white;
+    background-color: var(--color-secondary);
   }
 }

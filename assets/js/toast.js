@@ -1,86 +1,87 @@
 class MessageBox {
-  constructor(option) {
-    this.option = option;
+  constructor(options) {
+    this.options = options;
+    this.area = document.querySelector("#msgbox-area");
 
-    this.msgBoxArea = document.querySelector("#msgbox-area");
-
-    if (this.msgBoxArea === null) {
-      this.msgBoxArea = document.createElement("DIV");
-      this.msgBoxArea.setAttribute("id", "msgbox-area");
-      this.msgBoxArea.classList.add("msgbox-area");
-
-      document.body.appendChild(this.msgBoxArea);
+    if (this.area === null) {
+      this.area = document.createElement("DIV");
+      this.area.setAttribute("id", "msgbox-area");
+      this.area.classList.add("msgbox-area");
+      document.body.appendChild(this.area);
     }
   }
 
-  show(msg, title, legend, link, callback, closeLabel) {
-    if (msg === "" || msg === undefined || msg === null)
+  show(message, title, legend, link, callback, closeLabel) {
+    if (message === "" || message === undefined || message === null) {
       throw "Message is empty or not defined.";
-    if (closeLabel === undefined || closeLabel === null) closeLabel = "Close";
-
-    const option = this.option;
-    const msgboxBox = document.createElement("DIV");
-    const msgboxContent = document.createElement("DIV");
-    const msgboxCommand = document.createElement("DIV");
-    const msgboxClose = document.createElement("A");
-    const msgboxTitle = document.createElement("h5");
-    const msgboxLegend = document.createElement("h2");
-
-    msgboxTitle.classList.add("msgbox-title");
-    msgboxTitle.innerText = title;
-    msgboxLegend.classList.add("msgbox-legend");
-    msgboxLegend.innerText = legend;
-    msgboxContent.classList.add("msgbox-content");
-    msgboxContent.innerHTML = msg;
-    msgboxCommand.classList.add("msgbox-command");
-    msgboxClose.classList.add("msgbox-close");
-    msgboxClose.setAttribute("href", "#");
-    msgboxClose.innerText = closeLabel;
-    msgboxBox.classList.add("msgbox-box");
-    msgboxBox.appendChild(msgboxTitle);
-    msgboxBox.appendChild(msgboxLegend);
-    msgboxBox.appendChild(msgboxContent);
-    msgboxCommand.appendChild(msgboxClose);
-
-    if (link != undefined || link != null) {
-      const msgboxExplore = document.createElement("A");
-      msgboxExplore.classList.add("msgbox-close");
-      msgboxExplore.setAttribute("href", link);
-      msgboxExplore.setAttribute("target", "_blank");
-      msgboxExplore.innerText = "Explore";
-      msgboxCommand.appendChild(msgboxExplore);
+    }
+    if (closeLabel === undefined || closeLabel === null) {
+      closeLabel = "Close";
     }
 
-    msgboxBox.appendChild(msgboxCommand);
+    const box = document.createElement("DIV");
+    const content = document.createElement("DIV");
+    const command = document.createElement("DIV");
+    const close = document.createElement("A");
+    const titleTag = document.createElement("h5");
+    const legendTag = document.createElement("h2");
 
-    this.msgBoxArea.appendChild(msgboxBox);
-    msgboxClose.onclick = (evt) => {
+    titleTag.classList.add("msgbox-title");
+    titleTag.innerText = title;
+    legendTag.classList.add("msgbox-legend");
+    legendTag.innerText = legend;
+    content.classList.add("msgbox-content");
+    content.innerHTML = message;
+    command.classList.add("msgbox-command");
+    close.classList.add("msgbox-close");
+    close.setAttribute("href", "#");
+    close.innerText = closeLabel;
+    box.classList.add("msgbox-box");
+    box.appendChild(titleTag);
+    box.appendChild(legendTag);
+    box.appendChild(content);
+    command.appendChild(close);
+
+    if (link) {
+      const explore = document.createElement("A");
+      explore.classList.add("msgbox-close");
+      explore.setAttribute("href", link);
+      explore.setAttribute("target", "_blank");
+      explore.innerText = "Explore";
+      command.appendChild(explore);
+    }
+
+    box.appendChild(command);
+    this.area.appendChild(box);
+    close.onclick = (evt) => {
       evt.preventDefault();
-      if (msgboxBox.classList.contains("msgbox-box-hide")) return;
-      this.msgboxTimeout = null;
-      this.hide(msgboxBox, callback);
+      if (box.classList.contains("msgbox-box-hide")) {
+        return;
+      }
+      this.timeout = null;
+      this.hide(box, callback);
     };
 
-    if (option.closeTime > 0) {
-      wait(option.closeTime).then(() => {
-        this.hide(msgboxBox, callback);
+    if (this.options.closeTime > 0) {
+      wait(this.options.closeTime).then(() => {
+        this.hide(box, callback);
       });
     }
   }
 
-  hideMessageBox(msgboxBox) {
+  hideMessageBox(box) {
     return new Promise((resolve) => {
-      msgboxBox.ontransitionend = () => {
-        resolve();
-      };
+      box.ontransitionend = () => resolve();
     });
   }
 
-  async hide(msgboxBox, callback) {
-    if (msgboxBox !== null) msgboxBox.classList.add("msgbox-box-hide");
-    await this.hideMessageBox(msgboxBox);
-    this.msgBoxArea.removeChild(msgboxBox);
-    if (typeof callback === "function") callback();
+  async hide(box, callback) {
+    if (box) box.classList.add("msgbox-box-hide");
+    await this.hideMessageBox(box);
+    this.area.removeChild(box);
+    if (typeof callback === "function") {
+      callback();
+    }
   }
 }
 
