@@ -9,6 +9,7 @@
 .msgbox-box {
   font-size: inherit;
   background-color: var(--color-white);
+  box-shadow: 1px 4px 15px var(--color-primary);
   margin: 0 1rem 1.5rem;
   display: flex;
   flex-direction: column;
