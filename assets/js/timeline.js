@@ -142,50 +142,50 @@ const pipeHandler = (event) => {
 
 // setup timeline
 timeline.forEach((event, index) => {
-  const e = document.createElement("li");
-  if (event.title.includes("Peach")) e.classList.add("peach");
-  else e.classList.add("event");
-  e.dataset.index = index;
-  e.dataset.title = event.title;
-  e.dataset.month = event.month_name;
-  eventsContainer.appendChild(e);
-  e.addEventListener("click", pipeHandler.bind(this));
+  const eventElement = document.createElement("li");
+  eventElement.classList.add(event.title.includes("Peach") ? "peach" : "event");
+  eventElement.dataset.index = index;
+  eventElement.dataset.title = event.title;
+  eventElement.dataset.month = event.month_name;
+  eventsContainer.appendChild(eventElement);
+  eventElement.addEventListener("click", pipeHandler);
 });
 
-/* Audio handling */
-const canAudio = "AudioContext" in window || "webkitAudioContext" in window;
-const buffers = {};
-let context = void 0;
+// Audio handling
+let canAudio = "AudioContext" in window || "webkitAudioContext" in window;
+let audioContext;
+let gainNode;
+let audioBuffers = {};
 
 if (canAudio) {
-  var AudioContext = window.AudioContext || window.webkitAudioContext;
-  context = new AudioContext(); // Make it crossbrowser
-  var gainNode = context.createGain();
-  gainNode.gain.value = 1; // set volume to 100%
+  audioContext = new AudioContext();
+  gainNode = audioContext.createGain();
+  gainNode.gain.value = 1;
 }
 
-const playSfx = function play(id, loop = false) {
-  if (!canAudio || !buffers.hasOwnProperty(id)) return;
-  const buffer = buffers[id];
-  const source = context.createBufferSource();
+const playSfx = (id, loop = false) => {
+  if (!canAudio || !audioBuffers.hasOwnProperty(id)) return;
+  const buffer = audioBuffers[id];
+  const source = audioContext.createBufferSource();
   source.buffer = buffer;
-  source.connect(context.destination);
+  source.connect(audioContext.destination);
   source.start();
   source.loop = loop;
 };
 
-const loadBuffers = (urls, ids) => {
-  if (typeof urls == "string") urls = [urls];
-  if (typeof ids == "string") ids = [ids];
-  urls.forEach((url, index) => {
+const loadAudio = (urls, ids) => {
+  let audioUrls = typeof urls == "string" ? [urls] : urls;
+  let audioIds = typeof ids == "string" ? [ids] : ids;
+
+  audioUrls.forEach((url, index) => {
     window
       .fetch(url)
-      .then((response) => response.arrayBuffer())
+      .then((res) => res.arrayBuffer())
       .then((arrayBuffer) =>
-        context.decodeAudioData(
+        audioContext.decodeAudioData(
           arrayBuffer,
           (audioBuffer) => {
-            buffers[ids[index]] = audioBuffer;
+            audioBuffers[audioIds[index]] = audioBuffer;
           },
           (error) => console.log(error)
         )
@@ -193,7 +193,7 @@ const loadBuffers = (urls, ids) => {
   });
 };
 
-loadBuffers(
+loadAudio(
   ["assets/audio/pipe.mp3", "assets/audio/theme.mp3"],
   ["pipe", "theme"]
 );
