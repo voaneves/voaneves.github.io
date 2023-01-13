@@ -101,7 +101,7 @@
       @media (prefers-color-scheme: dark) {
         :root {
           --color-primary: #0a0a0a;
-          --color-secondary: #fff;
+          --color-secondary: #f50000;
           --color-white: #ffffff;
           --color-white-2: #0a0a0a;
           --color-grey-1: #dbe1e8;
@@ -110,6 +110,7 @@
           --color-sky: #042642;
           --color-yellow: #fbd000;
           --color-red: #e52521;
+          --color-opposite: #976d0c;
         }
 
         :root .icon-theme:before {
@@ -120,7 +121,7 @@
       @media (prefers-color-scheme: light) {
         :root {
           --color-primary: #ffffff;
-          --color-secondary: #0a0a0a;
+          --color-secondary: #c00;
           --color-white: #0a0a0a;
           --color-white-2: #fff;
           --color-grey-1: #6c7983;
@@ -129,6 +130,7 @@
           --color-sky: #b1d9f9;
           --color-yellow: #fbd000;
           --color-red: #e52521;
+          --color-opposite: #edad19;
         }
 
         :root .icon-theme:before {
@@ -141,46 +143,29 @@
         justify-content: center;
         flex-direction: column;
         position: fixed;
-        top: 50%;
-        left: -10px;
-        height: 60vh;
-        width: 20px;
-        border-radius: 20px;
-        background-color: var(--color-primary);
-        transform: translateY(-50%);
-        box-shadow: 0 3px 15px var(--color-white);
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 0;
+        z-index: 4;
       }
-      .sidebar-toggle {
+      .sidebar .sidebar-wrapper {
+        visibility: hidden;
+        opacity: 0;
+      }
+      .sidebar .sidebar-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--color-white);
+        background-color: var(--color-opposite);
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -10px;
+        top: 20px;
+        left: 25px;
         height: 60px;
-        border: 1px solid var(--color-primary);
-        border-radius: 0 20px 20px 0;
+        width: 60px;
+        border-radius: 50%;
+        border: none;
         padding: 0 19px;
-      }
-      .sidebar-toggle::before,
-      .sidebar-toggle::after {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 2px;
-        background: var(--color-primary);
-      }
-      .sidebar-toggle::before {
-        transform: translateY(-8px);
-      }
-      .sidebar-toggle::after {
-        transform: translateY(8px);
-        box-shadow: 0 -8px 0 var(--color-primary);
-      }
-      .sidebar .sidebar-wrapper .control {
-        display: none;
       }
       #cursor {
         position: fixed;
@@ -254,8 +239,8 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        top: 4vh;
-        left: 25px;
+        top: 100px;
+        left: 35px;
         height: 50px;
         aspect-ratio: 1/1;
         background-color: var(--color-primary);

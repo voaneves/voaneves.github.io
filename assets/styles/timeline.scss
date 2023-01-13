@@ -24,7 +24,7 @@ a:link {
 @media (prefers-color-scheme: dark) {
   :root {
     --color-primary: #0a0a0a;
-    --color-secondary: #fff;
+    --color-secondary: #f50000;
     --color-white: #ffffff;
     --color-white-2: #0a0a0a;
     --color-grey-1: #dbe1e8;
@@ -43,7 +43,7 @@ a:link {
 @media (prefers-color-scheme: light) {
   :root {
     --color-primary: #ffffff;
-    --color-secondary: #0a0a0a;
+    --color-secondary: #c00;
     --color-white: #0a0a0a;
     --color-white-2: #fff;
     --color-grey-1: #6c7983;
@@ -116,8 +116,8 @@ body {
   .settings-wrapper {
     @include flex-center;
     position: absolute;
-    top: 4vh;
-    left: 25px;
+    top: 100px;
+    left: 30px;
 
     .setting {
       @include flex-center;
