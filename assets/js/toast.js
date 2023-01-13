@@ -3,7 +3,7 @@ class MessageBox {
     this.options = options;
     this.area = document.querySelector("#msgbox-area");
 
-    if (this.area === null) {
+    if (!this.area) {
       this.area = document.createElement("DIV");
       this.area.setAttribute("id", "msgbox-area");
       this.area.classList.add("msgbox-area");
@@ -11,13 +11,8 @@ class MessageBox {
     }
   }
 
-  show(message, title, legend, link, callback, closeLabel) {
-    if (message === "" || message === undefined || message === null) {
-      throw "Message is empty or not defined.";
-    }
-    if (closeLabel === undefined || closeLabel === null) {
-      closeLabel = "Close";
-    }
+  show(message, title, legend, link, callback, closeLabel = "Close") {
+    if (!message) throw "Message is empty or not defined.";
 
     const box = document.createElement("DIV");
     const content = document.createElement("DIV");
@@ -55,9 +50,7 @@ class MessageBox {
     this.area.appendChild(box);
     close.onclick = (evt) => {
       evt.preventDefault();
-      if (box.classList.contains("msgbox-box-hide")) {
-        return;
-      }
+      if (box.classList.contains("msgbox-box-hide")) return;
       this.timeout = null;
       this.hide(box, callback);
     };
