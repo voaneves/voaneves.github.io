@@ -1,12 +1,8 @@
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
+  window.addEventListener("load", () => {
     navigator.serviceWorker.register("worker.min.js").then(
-      function (registration) {
-        console.log("❤️", registration.scope);
-      },
-      function (err) {
-        console.log("ServiceWorker registration failed: ", err);
-      }
+      (registration) => console.log("❤️", registration.scope),
+      (err) => console.log("ServiceWorker registration failed: ", err)
     );
   });
 }

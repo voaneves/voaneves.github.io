@@ -46,11 +46,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-  /*   .cursor-tooltip {
-    opacity: 1 !important;
-    visibility: visible;
-  } */
 }
 
 .big-cursor {
@@ -58,28 +53,3 @@
   background-color: white !important;
   mix-blend-mode: difference;
 }
-
-/* .cursor-tooltip {
-  position: relative;
-  opacity: 0;
-  visibility: hidden;
-  bottom: 35px;
-  right: 35px;
-  transition: opacity 0.15s cubic-bezier(0.57, 0.21, 0.69, 3.25),
-    visibility 0.15s cubic-bezier(0.57, 0.21, 0.69, 3.25);
-
-  &::after {
-    content: attr(data-tooltip);
-    content: "CLICK";
-    position: absolute;
-    color: black;
-    background-color: white;
-    padding: 10px;
-    font-size: 0.6rem;
-    top: -5px;
-    transform: translateX(17px);
-    border-radius: 20px;
-    letter-spacing: 0.2rem;
-    border: 1px solid black;
-  }
-} */
