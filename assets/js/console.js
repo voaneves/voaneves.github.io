@@ -1,5 +1,5 @@
 function printText() {
-  const style1 = [
+  const textStyle1 = [
     "color: #fff",
     "background: rgba(0, 4, 40, 1)",
     "font-size: 18px",
@@ -7,13 +7,13 @@ function printText() {
     "margin: 6px 0 6px 14px",
   ].join(";");
 
-  const style2 = [
+  const textStyle2 = [
     "font-size: 14px",
     "padding: 16px",
     "margin: 6px 0 6px 0",
   ].join(";");
 
-  const style3 = [
+  const linkStyle = [
     "font-size: 14px",
     "color: #fff",
     "width: 200px",
@@ -24,22 +24,22 @@ function printText() {
     "background: linear-gradient( 109.6deg, rgba(0, 4, 40, 1) 11.2%, rgba(0, 78, 146, 1) 91.1% )",
   ].join(";");
 
-  const url1 = "https://voaneves.com";
-  const url2 = "https://linkedin.com/in/voaneves";
-  const url3 = "https://github.com/voaneves";
-  const url4 = "https://github.com/voaneves/voaneves.github.io";
+  const portfolioUrl = "https://voaneves.com";
+  const linkedinUrl = "https://linkedin.com/in/voaneves";
+  const githubUrl = "https://github.com/voaneves";
+  const readmeUrl = "https://github.com/voaneves/voaneves.github.io";
 
-  console.log(`%cHey there! I'm Victor.`, style1);
-  console.log("%cIt's a pleasure to have you here!", style2);
-  console.log("%cHave a look at my work ▼", style2);
-  console.log("%cPortfolio%chttps://voaneves.com", style3, style2);
-  console.log("%cLinkedin %chttps://linkedin.com/in/voaneves", style3, style2);
-  console.log("%cGithub   %chttps://github.com/voaneves", style3, style2);
-  console.log(
-    "%cThe README   %chttps://github.com/voaneves/voaneves.github.io",
-    style3,
-    style2
-  );
-  console.log("%cHope to see you again 🙂", style2);
+  const greetings = "%cHey there! I'm Victor.";
+  const intro = "%cIt's a pleasure to have you here!";
+  const callToAction = "%cHave a look at my work ▼";
+
+  console.log(greetings, textStyle1);
+  console.log(intro, textStyle2);
+  console.log(callToAction, textStyle2);
+  console.log("%cPortfolio%c" + portfolioUrl, linkStyle, textStyle2);
+  console.log("%cLinkedin %c" + linkedinUrl, linkStyle, textStyle2);
+  console.log("%cGithub   %c" + githubUrl, linkStyle, textStyle2);
+  console.log("%cThe README   %c" + readmeUrl, linkStyle, textStyle2);
+  console.log("%cHope to see you again 🙂", textStyle2);
 }
 printText();

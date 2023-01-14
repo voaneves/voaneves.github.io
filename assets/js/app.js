@@ -30,13 +30,16 @@ function initMenuHandler() {
     }
   );
   sections.forEach((section) => controlObserver.observe(section));
-  const sidebar = document.querySelector(".sidebar");
   controls.forEach((control) => {
-    control.addEventListener("click", () => sidebar.classList.toggle("open"));
+    control.addEventListener("click", toggleSidebar);
   });
   document
     .querySelector(".sidebar-toggle")
-    .addEventListener("click", () => sidebar.classList.toggle("open"));
+    .addEventListener("click", toggleSidebar);
+
+  function toggleSidebar() {
+    document.querySelector(".sidebar").classList.toggle("open");
+  }
 }
 
 function initScrollHandler() {
