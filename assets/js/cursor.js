@@ -12,16 +12,21 @@
   }
 
   function updateCursor(e) {
+    const { clientX, clientY } = e;
+
     displayCursor();
-    cursorPos.x = e.clientX;
-    cursorPos.y = e.clientY;
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    cursorPos.x = clientX;
+    cursorPos.y = clientY;
+    cursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
   }
 
   function animateBorder() {
     const easting = 8;
-    cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
-    cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+    const { x: cx, y: cy } = cursorPos;
+    const { x: bx, y: by } = cursorBorderPos;
+
+    cursorBorderPos.x += (cx - bx) / easting;
+    cursorBorderPos.y += (cy - by) / easting;
     cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
     requestAnimationFrame(animateBorder);
   }
@@ -32,11 +37,13 @@
   }
 
   function setCursorSize() {
-    if (this.dataset.cursor === "pointer") {
+    const cursorType = this.dataset.cursor;
+
+    if (cursorType === "pointer") {
       cursor.style.opacity = 0;
       cursorBorder.classList.add("small-cursor");
       cursorBorder.style.setProperty("--size-cursor", "30px");
-    } else if (this.dataset.cursor === "pointer2") {
+    } else if (cursorType === "pointer2") {
       cursor.style.opacity = 0;
       cursorBorder.classList.add("big-cursor");
       cursorBorder.style.setProperty("--size-cursor", "100px");

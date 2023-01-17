@@ -141,15 +141,17 @@ const pipeHandler = (event) => {
 };
 
 // setup timeline
+const fragment = document.createDocumentFragment();
 timeline.forEach((event, index) => {
   const eventElement = document.createElement("li");
   eventElement.classList.add(event.title.includes("Peach") ? "peach" : "event");
   eventElement.dataset.index = index;
   eventElement.dataset.title = event.title;
   eventElement.dataset.month = event.month_name;
-  eventsContainer.appendChild(eventElement);
+  fragment.appendChild(eventElement);
   eventElement.addEventListener("click", pipeHandler);
 });
+eventsContainer.appendChild(fragment);
 
 // Audio handling
 let canAudio = "AudioContext" in window || "webkitAudioContext" in window;
@@ -173,24 +175,23 @@ const playSfx = (id, loop = false) => {
   source.loop = loop;
 };
 
-const loadAudio = (urls, ids) => {
+const loadAudio = async (urls, ids) => {
+  // Use array destructuring instead of type checking
   let audioUrls = typeof urls == "string" ? [urls] : urls;
   let audioIds = typeof ids == "string" ? [ids] : ids;
 
-  audioUrls.forEach((url, index) => {
-    window
-      .fetch(url)
-      .then((res) => res.arrayBuffer())
-      .then((arrayBuffer) =>
-        audioContext.decodeAudioData(
-          arrayBuffer,
-          (audioBuffer) => {
-            audioBuffers[audioIds[index]] = audioBuffer;
-          },
-          (error) => console.log(error)
-        )
-      );
-  });
+  for (let i = 0; i < audioUrls.length; i++) {
+    // Use async/await instead of chained .then()
+    let res = await window.fetch(audioUrls[i]);
+    let arrayBuffer = await res.arrayBuffer();
+    await audioContext.decodeAudioData(
+      arrayBuffer,
+      (audioBuffer) => {
+        audioBuffers[audioIds[i]] = audioBuffer;
+      },
+      (error) => console.log(error)
+    );
+  }
 };
 
 loadAudio(
