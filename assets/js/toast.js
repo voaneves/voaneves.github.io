@@ -1,41 +1,76 @@
-class MessageBox {
+class MsgBox {
   constructor(options) {
-    this.options = options;
-    this.area = document.querySelector("#msgbox-area");
-
-    if (!this.area) {
-      this.area = document.createElement("DIV");
-      this.area.setAttribute("id", "msgbox-area");
-      this.area.classList.add("msgbox-area");
-      document.body.appendChild(this.area);
+    if (typeof options !== "object") {
+      throw new Error("Options must be an object");
     }
+
+    this.options = options;
+    this.parentEl = document.querySelector("#msgbox-area");
+    this.el = null;
   }
 
-  show(message, title, legend, link, callback, closeLabel = "Close") {
-    if (!message) throw "Message is empty or not defined.";
+  createArea() {
+    this.el = document.createElement("DIV");
+    this.el.setAttribute("id", "msgbox-area");
+    this.el.classList.add("msgbox-area");
+    this.parentEl.appendChild(this.el);
+  }
+
+  show = (msg, title, legend, link, cb, closeLabel = "Close") => {
+    if (!msg) {
+      throw error("Message is empty or not defined.");
+    }
 
     const box = document.createElement("DIV");
-    const content = document.createElement("DIV");
-    const command = document.createElement("DIV");
-    const close = document.createElement("A");
-    const titleTag = document.createElement("h5");
-    const legendTag = document.createElement("h2");
+    box.classList.add("msgbox-box");
+    this.addTitle(title, box);
+    this.addLegend(legend, box);
+    this.addContent(msg, box);
+    this.addCloseBtn(closeLabel, box, link, cb);
+    this.el.appendChild(box);
 
-    titleTag.classList.add("msgbox-title");
-    titleTag.innerText = title;
-    legendTag.classList.add("msgbox-legend");
-    legendTag.innerText = legend;
-    content.classList.add("msgbox-content");
-    content.innerHTML = message;
-    command.classList.add("msgbox-command");
+    if (this.options.closeTime > 0) {
+      this.delayHide(box, cb);
+    }
+  };
+
+  addTitle = (title, el) => {
+    const titleEl = document.createElement("h5");
+    titleEl.classList.add("msgbox-title");
+    titleEl.innerText = title;
+    el.appendChild(titleEl);
+  };
+
+  addLegend = (legend, el) => {
+    const legendEl = document.createElement("h2");
+    legendEl.classList.add("msgbox-legend");
+    legendEl.innerText = legend;
+    el.appendChild(legendEl);
+  };
+
+  addContent = (msg, el) => {
+    const contentEl = document.createElement("DIV");
+    contentEl.classList.add("msgbox-content");
+    contentEl.innerHTML = msg;
+    el.appendChild(contentEl);
+  };
+
+  addCloseBtn = (label, el, link, cb) => {
+    const cmd = document.createElement("DIV");
+    cmd.classList.add("msgbox-command");
+    const close = document.createElement("A");
     close.classList.add("msgbox-close");
     close.setAttribute("href", "#");
-    close.innerText = closeLabel;
-    box.classList.add("msgbox-box");
-    box.appendChild(titleTag);
-    box.appendChild(legendTag);
-    box.appendChild(content);
-    command.appendChild(close);
+    close.innerText = label;
+    close.onclick = (evt) => {
+      evt.preventDefault();
+      if (el.classList.contains("msgbox-box-hide")) {
+        return;
+      }
+      this.timeout = null;
+      this.hide(el, cb);
+    };
+    cmd.appendChild(close);
 
     if (link) {
       const explore = document.createElement("A");
@@ -43,44 +78,41 @@ class MessageBox {
       explore.setAttribute("href", link);
       explore.setAttribute("target", "_blank");
       explore.innerText = "Explore";
-      command.appendChild(explore);
+      cmd.appendChild(explore);
+    }
+    el.appendChild(cmd);
+  };
+
+  async hide(el, cb) {
+    if (el) {
+      el.classList.add("msgbox-box-hide");
     }
 
-    box.appendChild(command);
-    this.area.appendChild(box);
-    close.onclick = (evt) => {
-      evt.preventDefault();
-      if (box.classList.contains("msgbox-box-hide")) return;
-      this.timeout = null;
-      this.hide(box, callback);
-    };
+    await this.hideMsgBox(el);
+    this.el.removeChild(el);
 
-    if (this.options.closeTime > 0) {
-      wait(this.options.closeTime).then(() => {
-        this.hide(box, callback);
-      });
+    if (typeof cb === "function") {
+      cb();
     }
   }
 
-  hideMessageBox(box) {
+  hideMsgBox = (el) => {
     return new Promise((resolve) => {
-      box.ontransitionend = () => resolve();
+      el.ontransitionend = () => resolve();
     });
-  }
+  };
 
-  async hide(box, callback) {
-    if (box) box.classList.add("msgbox-box-hide");
-    await this.hideMessageBox(box);
-    this.area.removeChild(box);
-    if (typeof callback === "function") {
-      callback();
-    }
-  }
+  delayHide = async (el, cb) => {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        this.hide(el, cb);
+        resolve();
+      }, this.options.closeTime);
+    });
+  };
 }
 
-const wait = (time) => new Promise((resolve) => setTimeout(resolve, time));
-
-const msgbox = new MessageBox({
+const msgbox = new MsgBox({
   closeTime: 10000,
 });
 
