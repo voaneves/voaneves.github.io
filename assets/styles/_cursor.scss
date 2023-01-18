@@ -2,8 +2,7 @@
 #cursor {
   display: none;
   position: fixed;
-  top: -7.5px;
-  left: -7.5px;
+  inset: -7.5px 0 0 -7.5px;
   width: 15px;
   height: 15px;
   background-color: var(--color-secondary);
@@ -18,15 +17,14 @@
   display: none;
   --size-cursor: 50px;
   position: fixed;
-  top: calc(var(--size-cursor) / -2);
-  left: calc(var(--size-cursor) / -2);
+  inset: calc(var(--size-cursor) / -2) 0 0 calc(var(--size-cursor) / -2);
   width: var(--size-cursor);
   height: var(--size-cursor);
   border-radius: 50%;
   box-shadow: 0 0 0 1px white;
   background-color: var(--color-secondary);
   pointer-events: none;
-  transition: top 0.15s ease-in-out, left 0.15s ease-in-out, width 0.15s linear,
+  transition: top 0.15s linear, left 0.15s linear, width 0.15s linear,
     height 0.15s linear, background-color 0.15s ease-in-out,
     opacity 0.15s linear, content 0.15s ease-in-out;
   opacity: 0.2;

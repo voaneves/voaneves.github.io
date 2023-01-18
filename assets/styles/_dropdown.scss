@@ -8,9 +8,11 @@ button:has(.dropdown) {
 
   &:hover {
     .dropdown {
-      transform: translate(0, 20px);
+      transform: translateY(20px);
       opacity: 1;
       visibility: visible;
+      transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      transition-delay: 0s;
     }
   }
 }
@@ -19,25 +21,24 @@ button:has(.dropdown) {
   position: absolute;
   top: 3vh;
   background: white;
-  border-radius: 4px;
+  border-radius: 10px;
   box-shadow: 1px 2px 15px var(--color-white);
   text-align: left;
-  opacity: 0;
+  opacity: 0.9;
   padding: 0 10px;
   visibility: hidden;
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 
   &:before {
     content: "";
     position: absolute;
     top: -6px;
-    left: 26px;
+    left: 30px;
     width: 0;
     height: 0;
-    border-top: 6px solid #fff;
-    border-right: 6px solid #fff;
-    border-bottom: 6px solid transparent;
-    border-left: 6px solid transparent;
+    border-top: 12px solid #fff;
+    border-right: 12px solid #fff;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent;
     transform: rotate(-45deg);
     mix-blend-mode: multiple;
   }
@@ -60,9 +61,9 @@ button:has(.dropdown) {
 
   a {
     display: block;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 16px 0;
     color: inherit;
-    font-size: 10px;
+    font-size: 14px;
   }
 }
