@@ -3,17 +3,19 @@
     content: attr(data-tooltip);
     text-align: right;
     position: absolute;
-    visibility: hidden;
     opacity: 0;
     padding: 10px;
     color: var(--color-white-2);
     padding-left: 120px;
     margin-left: -220px;
     border-radius: 10px;
-    width: fit-content;
+    width: auto;
     font-weight: 800;
     background: var(--color-opposite);
     font-size: 1em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    line-height: 1.5;
     white-space: nowrap;
     transition: margin-left 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
@@ -21,16 +23,7 @@
   &:hover {
     &:before {
       margin-left: 0;
-      visibility: visible;
       opacity: 1;
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  [data-tooltip] {
-    &:before {
-      display: none;
     }
   }
 }

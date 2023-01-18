@@ -20,11 +20,11 @@
       opacity: 1;
 
       &::before {
-        transform: translateY(0px) rotate(45deg);
+        transform: translateY(0) rotate(45deg);
       }
 
       &::after {
-        transform: translateY(0px) rotate(-45deg);
+        transform: translateY(0) rotate(-45deg);
         box-shadow: 0 0 0 var(--color-primary);
       }
 
@@ -107,29 +107,21 @@
         border-radius: 10px;
         background-color: transparent;
         padding: min(max(7px, 1vw), 10px);
-
-        span {
-          color: var(--color-white);
-          font-size: max(2rem, 3vmax);
-          font-weight: 800;
-          opacity: 0.1;
-          transition: opacity 0.4s ease-in-out;
-        }
+        color: var(--color-white);
+        font-size: max(2rem, 3vmax);
+        font-weight: 800;
+        opacity: 0.1;
+        transition: opacity 0.4s ease-in-out;
 
         &:hover {
-          span {
-            opacity: 1;
-          }
+          opacity: 1;
         }
       }
 
       .active-btn {
+        opacity: 1;
         background-color: var(--color-secondary) !important;
-
-        span {
-          color: white;
-          opacity: 1;
-        }
+        color: white;
       }
     }
   }

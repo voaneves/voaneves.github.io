@@ -1,13 +1,11 @@
 .msgbox-area {
-  font-size: inherit;
-  max-height: 100%;
+  max-height: calc(100% - 15px);
   position: fixed;
   bottom: 15px;
   right: 0px;
 }
 
 .msgbox-box {
-  font-size: inherit;
   background-color: var(--color-white);
   box-shadow: 1px 4px 15px var(--color-primary);
   margin: 0 1rem 1.5rem;
@@ -49,9 +47,7 @@
 
 .msgbox-close {
   color: var(--color-primary);
-  font-size: inherit;
   text-decoration: none;
-  margin: 0 1rem;
   flex-grow: 0;
   flex-shrink: 0;
   padding: 3px 10px;
