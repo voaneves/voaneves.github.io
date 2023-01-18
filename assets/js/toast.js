@@ -1,121 +1,3 @@
-class MsgBox {
-  constructor(options) {
-    if (typeof options !== "object") {
-      throw new Error("Options must be an object");
-    }
-
-    this.options = options;
-    this.parentEl = document.querySelector("#msgbox-area");
-    this.el = null;
-  }
-
-  createArea() {
-    this.el = document.createElement("DIV");
-    this.el.setAttribute("id", "msgbox-area");
-    this.el.classList.add("msgbox-area");
-    this.parentEl.appendChild(this.el);
-  }
-
-  show = (msg, title, legend, link, cb, closeLabel = "Close") => {
-    if (!msg) {
-      throw error("Message is empty or not defined.");
-    }
-
-    const box = document.createElement("DIV");
-    box.classList.add("msgbox-box");
-    this.addTitle(title, box);
-    this.addLegend(legend, box);
-    this.addContent(msg, box);
-    this.addCloseBtn(closeLabel, box, link, cb);
-    this.el.appendChild(box);
-
-    if (this.options.closeTime > 0) {
-      this.delayHide(box, cb);
-    }
-  };
-
-  addTitle = (title, el) => {
-    const titleEl = document.createElement("h5");
-    titleEl.classList.add("msgbox-title");
-    titleEl.innerText = title;
-    el.appendChild(titleEl);
-  };
-
-  addLegend = (legend, el) => {
-    const legendEl = document.createElement("h2");
-    legendEl.classList.add("msgbox-legend");
-    legendEl.innerText = legend;
-    el.appendChild(legendEl);
-  };
-
-  addContent = (msg, el) => {
-    const contentEl = document.createElement("DIV");
-    contentEl.classList.add("msgbox-content");
-    contentEl.innerHTML = msg;
-    el.appendChild(contentEl);
-  };
-
-  addCloseBtn = (label, el, link, cb) => {
-    const cmd = document.createElement("DIV");
-    cmd.classList.add("msgbox-command");
-    const close = document.createElement("A");
-    close.classList.add("msgbox-close");
-    close.setAttribute("href", "#");
-    close.innerText = label;
-    close.onclick = (evt) => {
-      evt.preventDefault();
-      if (el.classList.contains("msgbox-box-hide")) {
-        return;
-      }
-      this.timeout = null;
-      this.hide(el, cb);
-    };
-    cmd.appendChild(close);
-
-    if (link) {
-      const explore = document.createElement("A");
-      explore.classList.add("msgbox-close");
-      explore.setAttribute("href", link);
-      explore.setAttribute("target", "_blank");
-      explore.innerText = "Explore";
-      cmd.appendChild(explore);
-    }
-    el.appendChild(cmd);
-  };
-
-  async hide(el, cb) {
-    if (el) {
-      el.classList.add("msgbox-box-hide");
-    }
-
-    await this.hideMsgBox(el);
-    this.el.removeChild(el);
-
-    if (typeof cb === "function") {
-      cb();
-    }
-  }
-
-  hideMsgBox = (el) => {
-    return new Promise((resolve) => {
-      el.ontransitionend = () => resolve();
-    });
-  };
-
-  delayHide = async (el, cb) => {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        this.hide(el, cb);
-        resolve();
-      }, this.options.closeTime);
-    });
-  };
-}
-
-const msgbox = new MsgBox({
-  closeTime: 10000,
-});
-
 const msgs = [
   {
     id: "seb",
@@ -252,6 +134,124 @@ const msgs = [
     link: "https://github.com/voaneves",
   },
 ];
+
+class MsgBox {
+  constructor(options) {
+    if (typeof options !== "object") {
+      throw new Error("Options must be an object");
+    }
+
+    this.options = options;
+    this.parentEl = document.querySelector("#msgbox-area");
+    this.el = null;
+  }
+
+  createArea() {
+    this.el = document.createElement("DIV");
+    this.el.setAttribute("id", "msgbox-area");
+    this.el.classList.add("msgbox-area");
+    this.parentEl.appendChild(this.el);
+  }
+
+  show = (msg, title, legend, link, cb, closeLabel = "Close") => {
+    if (!msg) {
+      throw error("Message is empty or not defined.");
+    }
+
+    const box = document.createElement("DIV");
+    box.classList.add("msgbox-box");
+    this.addTitle(title, box);
+    this.addLegend(legend, box);
+    this.addContent(msg, box);
+    this.addCloseBtn(closeLabel, box, link, cb);
+    this.el.appendChild(box);
+
+    if (this.options.closeTime > 0) {
+      this.delayHide(box, cb);
+    }
+  };
+
+  addTitle = (title, el) => {
+    const titleEl = document.createElement("h5");
+    titleEl.classList.add("msgbox-title");
+    titleEl.innerText = title;
+    el.appendChild(titleEl);
+  };
+
+  addLegend = (legend, el) => {
+    const legendEl = document.createElement("h2");
+    legendEl.classList.add("msgbox-legend");
+    legendEl.innerText = legend;
+    el.appendChild(legendEl);
+  };
+
+  addContent = (msg, el) => {
+    const contentEl = document.createElement("DIV");
+    contentEl.classList.add("msgbox-content");
+    contentEl.innerHTML = msg;
+    el.appendChild(contentEl);
+  };
+
+  addCloseBtn = (label, el, link, cb) => {
+    const cmd = document.createElement("DIV");
+    cmd.classList.add("msgbox-command");
+    const close = document.createElement("A");
+    close.classList.add("msgbox-close");
+    close.setAttribute("href", "#");
+    close.innerText = label;
+    close.onclick = (evt) => {
+      evt.preventDefault();
+      if (el.classList.contains("msgbox-box-hide")) {
+        return;
+      }
+      this.timeout = null;
+      this.hide(el, cb);
+    };
+    cmd.appendChild(close);
+
+    if (link) {
+      const explore = document.createElement("A");
+      explore.classList.add("msgbox-close");
+      explore.setAttribute("href", link);
+      explore.setAttribute("target", "_blank");
+      explore.innerText = "Explore";
+      cmd.appendChild(explore);
+    }
+    el.appendChild(cmd);
+  };
+
+  async hide(el, cb) {
+    if (el) {
+      el.classList.add("msgbox-box-hide");
+    }
+
+    await this.hideMsgBox(el);
+    this.el.removeChild(el);
+
+    if (typeof cb === "function") {
+      cb();
+    }
+  }
+
+  hideMsgBox = (el) => {
+    return new Promise((resolve) => {
+      el.ontransitionend = () => resolve();
+    });
+  };
+
+  delayHide = async (el, cb) => {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        this.hide(el, cb);
+        resolve();
+      }, this.options.closeTime);
+    });
+  };
+}
+
+const msgbox = new MsgBox({
+  closeTime: 10000,
+});
 
 document.querySelectorAll("[data-toast]").forEach((button) => {
   button.addEventListener("click", function () {

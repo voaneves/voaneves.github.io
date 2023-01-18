@@ -82,12 +82,14 @@ function initScrollToTopHandler() {
 // Handle click event on theme button and set theme on user's preference
 function initThemeHandler() {
   const themeButton = document.getElementById("theme");
-  themeButton.addEventListener("click", toggleTheme);
-}
-
-function toggleTheme() {
   const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
-  document.body.classList.toggle(darkMode.matches ? "light-mode" : "dark-mode");
+  themeButton.addEventListener("click", toggleTheme);
+
+  function toggleTheme() {
+    document.body.classList.toggle(
+      darkMode.matches ? "light-mode" : "dark-mode"
+    );
+  }
 }
 
 // Get current screen width and height
