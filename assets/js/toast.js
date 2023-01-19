@@ -135,110 +135,151 @@ const msgs = [
   },
 ];
 
+// MsgBox class takes an options object and creates a msgbox
 class MsgBox {
+  // constructor takes the options object
   constructor(options) {
+    // if the parameter provided is not an object, throw an error
     if (typeof options !== "object") {
       throw new Error("Options must be an object");
     }
-
+    // Set this.options to the provided object
     this.options = options;
+    // Select the element with "msgbox-area" id
     this.parentEl = document.querySelector("#msgbox-area");
+    // Set this.el ot null
     this.el = null;
   }
 
+  // createArea function creates a div element with the "msgbox-area" class
   createArea() {
     this.el = document.createElement("DIV");
+    // Set the div element's id attribute to "msgbox-area"
     this.el.setAttribute("id", "msgbox-area");
+    // Add the "msgbox-area" class
     this.el.classList.add("msgbox-area");
+    // Append the element to the parent specified element
     this.parentEl.appendChild(this.el);
   }
 
+  // show function displays the message (msg) with the specified attributes
   show = (msg, title, legend, link, cb, closeLabel = "Close") => {
     if (!msg) {
       throw error("Message is empty or not defined.");
     }
 
     const box = document.createElement("DIV");
+    // Add the "msgbox-box" class
     box.classList.add("msgbox-box");
+    // Call the addTitle function with provided parameters
     this.addTitle(title, box);
+    // Call the addLegend function with provided parameters
     this.addLegend(legend, box);
+    // Call the addContent function with provided parameters
     this.addContent(msg, box);
+    // Call the addCloseBtn function with provided parameters
     this.addCloseBtn(closeLabel, box, link, cb);
+    // Append the box element to the specified element el
     this.el.appendChild(box);
 
+    // if the value of closeTime is greater than 0, call the delayHide function with specified parameters.
     if (this.options.closeTime > 0) {
       this.delayHide(box, cb);
     }
   };
 
+  // addTitle function adds a h5 element with specified text title
   addTitle = (title, el) => {
     const titleEl = document.createElement("h5");
+    // add the "msgbox-title" class
     titleEl.classList.add("msgbox-title");
     titleEl.innerText = title;
+    // Append the titleEl element to the specified element el
     el.appendChild(titleEl);
   };
 
+  // addLegend function adds a h2 element with specified text legend
   addLegend = (legend, el) => {
     const legendEl = document.createElement("h2");
+    // add the "msgbox-legend" class
     legendEl.classList.add("msgbox-legend");
     legendEl.innerText = legend;
+    // Append the legendEl element to the specified element el
     el.appendChild(legendEl);
   };
 
+  // addContent function adds a div element with the content
   addContent = (msg, el) => {
     const contentEl = document.createElement("DIV");
+    // add the "msgbox-content" class
     contentEl.classList.add("msgbox-content");
     contentEl.innerHTML = msg;
+    // Append the contentEl element to the specified element el
     el.appendChild(contentEl);
   };
 
+  // addCloseBtn function adds the functionality to close the msgbox
   addCloseBtn = (label, el, link, cb) => {
     const cmd = document.createElement("DIV");
+    // add the "msgbox-command" class
     cmd.classList.add("msgbox-command");
     const close = document.createElement("A");
+    // add the "msgbox-close" class
     close.classList.add("msgbox-close");
     close.setAttribute("href", "#");
     close.innerText = label;
     close.onclick = (evt) => {
       evt.preventDefault();
+      // Don't hide if the el contains the "msgbox-box-hide" class
       if (el.classList.contains("msgbox-box-hide")) {
         return;
       }
       this.timeout = null;
+      // call the hide function with specified element and callback
       this.hide(el, cb);
     };
+    // Append the close element to cmd element
     cmd.appendChild(close);
 
+    // If a link is provided, create an "Explore" button
     if (link) {
       const explore = document.createElement("A");
+      // Add the "msgbox-close" class
       explore.classList.add("msgbox-close");
       explore.setAttribute("href", link);
       explore.setAttribute("target", "_blank");
       explore.innerText = "Explore";
+      // Append the explore element to cmd element
       cmd.appendChild(explore);
     }
+    // Append cmd element to the specified element el
     el.appendChild(cmd);
   };
 
+  // Asynchronously hide MsgBox
   async hide(el, cb) {
     if (el) {
       el.classList.add("msgbox-box-hide");
     }
 
+    // Wait for element transition to finish before removing element from DOM
     await this.hideMsgBox(el);
     this.el.removeChild(el);
 
+    // Execute callback method if defined
     if (typeof cb === "function") {
       cb();
     }
   }
 
+  // Return a promise that resolves when element's transition ends
   hideMsgBox = (el) => {
     return new Promise((resolve) => {
       el.ontransitionend = () => resolve();
     });
   };
 
+  // Delay calling 'hide' method until specified timeout (this.options.closeTime)
   delayHide = async (el, cb) => {
     await new Promise((resolve) => {
       setTimeout(() => {
@@ -248,14 +289,15 @@ class MsgBox {
     });
   };
 }
+// Create a new instance of MsgBox, with 10 seconds as the default time.
+const msgbox = new MsgBox({ closeTime: 10000 });
 
-const msgbox = new MsgBox({
-  closeTime: 10000,
-});
-
+// Iterate through all elements with the data-toast attribute and attach a 'click' listener to display a message
 document.querySelectorAll("[data-toast]").forEach((button) => {
   button.addEventListener("click", function () {
+    // Retrieve toast message from 'msgs' array
     let s = msgs.filter((d) => d.id === this.dataset.toast)[0];
+    // Show toast message using msgbox.show() function
     msgbox.show(s.message, s.title, s.legend, s.link);
   });
 });
