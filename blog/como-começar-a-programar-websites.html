@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="https://www.w3.org/1999/xhtml" xml:lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1.0,
+      maximum-scale=10.0"
+      />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="Desenvolvimento web, HTML, CSS, JavaScript, Começar a programar"
+      />
+    <meta
+      name="description"
+      content="Quer aprender a programar? Comece com web e aplicativos! O HTML,
+      CSS, JavaScript são simples e intuitivos e darão um bom direcionamento
+      para você começar."
+      />
+    <meta name="subject" content="Blog" />
+    <meta name="copyright" content="voaneves" />
+    <meta name="language" content="pt-br" />
+    <meta
+      name="summary"
+      content="Quer aprender a programar? Comece com web e aplicativos! O HTML,
+      CSS, JavaScript são simples e intuitivos e darão um bom direcionamento
+      para você começar."
+      />
+    <meta name="Classification" content="Business" />
+    <meta name="author" content="Victor Neves, victorneves478@gmail.com" />
+    <meta name="designer" content="Victor Neves" />
+    <meta name="reply-to" content="victorneves478@gmail.com" />
+    <meta name="owner" content="Victor Neves" />
+    <meta name="url"
+      content="https://voaneves.com/blog/como-começar-a-programar" />
+    <meta name="rating" content="General" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      color="#0a0a0a"
+      />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      color="#ffffff"
+      />
+    <meta
+      property="og:url"
+      content="https://voaneves.com/blog/como-começar-a-programar"
+      />
+    <meta
+      property="og:image"
+      content="https://i.picsum.photos/id/7/1920/700.webp?hmac=O401zdyHJnO7raOLC153MyigigdzNETonq6y7t1wLmo"
+      />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Quer aprender a programar? Comece com web e aplicativos! O HTML,
+      CSS, JavaScript são simples e intuitivos e darão um bom direcionamento
+      para você começar."
+      />
+    <meta property="og:title" content="Somos bons ou maus? - voaneves.com" />
+    <meta
+      name="twitter:card"
+      content="Quer aprender a programar? Comece com web e aplicativos! O HTML,
+      CSS, JavaScript são simples e intuitivos e darão um bom direcionamento
+      para você começar."
+      />
+    <meta name="twitter:site" content="@voaneves" />
+    <meta name="twitter:title" content="Somos bons ou maus? - voaneves.com" />
+    <meta
+      name="twitter:description"
+      content="Quer aprender a programar? Comece com web e aplicativos! O HTML,
+      CSS, JavaScript são simples e intuitivos e darão um bom direcionamento
+      para você começar."
+      />
+    <meta
+      name="twitter:image"
+      content="https://i.picsum.photos/id/7/1920/700.webp?hmac=O401zdyHJnO7raOLC153MyigigdzNETonq6y7t1wLmo"
+      />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Content-Language" content="pt-br" />
+    <title>Somos bons ou maus? Um estudo em várias áreas do conhecimento</title>
+    <meta name="msapplication-TileColor" content="#191d2b" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        --font-regular: 300;
+        --text-small: clamp(1em, 5vw, 1.2em);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-primary: #0a0a0a;
+          --color-secondary: #f50000;
+          --color-white: #fff;
+          --color-opposite: #976d0c;
+        }
+
+        :root .icon-theme:before {
+          content: "\e901";
+        }
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --color-primary: #fff;
+          --color-secondary: #c00;
+          --color-white: #0a0a0a;
+          --color-opposite: #edad19;
+        }
+
+        :root .icon-theme:before {
+          content: "\e903";
+        }
+      }
+      body {
+        background-color: var(--color-primary);
+        font-family: sans-serif;
+        font-size: var(--text-small);
+        color: var(--color-white);
+      }
+      a,
+      a:link {
+        text-decoration: none;
+      }
+      section {
+        min-height: 100vh;
+        width: 100%;
+        content-visibility: auto;
+      }
+      @media screen and (prefers-reduced-motion: reduce) {
+        * {
+          -webkit-animation: none !important;
+          animation: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      .sidebar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 0;
+        z-index: 4;
+      }
+      .sidebar .sidebar-wrapper {
+        visibility: hidden;
+        opacity: 0;
+      }
+      .sidebar .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-opposite);
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        border: none;
+        padding: 0 19px;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      @font-face {
+        font-family: "icomoon";
+        src: url(../assets/fonts/header.woff2) format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+      }
+      [class^="icon-"] {
+        font-family: "icomoon" !important;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .icon-translate:before {
+        content: "\e902";
+      }
+      .arrow-up {
+        border-radius: 5px;
+        position: fixed;
+        bottom: 10px;
+        right: 15px;
+        padding: 10px 10px 5px 10px;
+        background-color: var(--color-grey-4);
+      }
+      .arrow-up .symbol {
+        content: "";
+        width: 0.5em;
+        height: 0.5em;
+        border-right: 3px solid var(--color-white);
+        border-bottom: 3px solid var(--color-white);
+        transform: rotate(225deg);
+      }
+      .dropdown {
+        position: absolute;
+        top: 3vh;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 1px 2px 15px var(--color-white);
+        text-align: left;
+        opacity: 0;
+        padding: 0 10px;
+        visibility: hidden;
+      }
+      .dropdown:before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        width: 0;
+        height: 0;
+        border-top: 6px solid #fff;
+        border-right: 6px solid #fff;
+        border-bottom: 6px solid rgba(0, 0, 0, 0);
+        border-left: 6px solid rgba(0, 0, 0, 0);
+        transform: rotate(-45deg);
+        mix-blend-mode: multiple;
+      }
+      .dropdown li {
+        position: relative;
+        background: #fff;
+        color: #666;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: 3rem;
+      }
+      .dropdown a {
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 16px 0;
+        color: inherit;
+        font-size: 10px;
+        text-decoration: none;
+      }
+    </style>
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/img/favicon-16x16.png"
+      sizes="16x16"
+      />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/img/favicon-32x32.png"
+      sizes="32x32"
+      />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/img/android-chrome-192x192.png"
+      sizes="192x192"
+      />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/img/android-chrome-512x512.png"
+      sizes="512x512"
+      />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/img/apple-touch-icon.png"
+      />
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" />
+    <link rel="canonical"
+      href="https://voaneves.com/blog/como-comecar-a-programar" />
+    <link
+      rel="preload"
+      href="../assets/styles/blog-post.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      />
+    <noscript>
+      <link rel="stylesheet" href="../assets/styles/blog-post.css" />
+    </noscript>
+    <link
+      rel="manifest"
+      href="../manifest.json"
+      crossorigin="use-credentials"
+      />
+    <script defer type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Victor Neves, Especialista em Transformação Digital",
+        "url": "https://voaneves.com",
+        "logo": "https://voaneves.com/assets/img/logo.webp",
+        "sameAs": [
+          "https://github.com/voaneves",
+          "https://youtube.com/c/voaneves",
+          "https://linkedin.com/in/voaneves"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "TO",
+          "postalCode": "77000-000",
+          "addressCountry": "BR"
+        }
+      }
+    </script>
+    <script defer src="../sw.min.js"></script>
+    <script defer src="../assets/js/app.min.js"></script>
+    <script defer src="../assets/js/cursor.min.js"></script>
+    <script defer src="../assets/js/console.min.js"></script>
+  </head>
+  <body class="main-content">
+    <main>
+      <section class="container blog-post active" id="blog">
+        <div class="blog-post-container">
+          <div class="settings-wrapper">
+            <button
+              class="setting"
+              id="theme"
+              title="Mudar o tema"
+              data-cursor="pointer">
+              <i class="icon-theme"></i>
+            </button>
+            <button
+              class="setting"
+              id="translate"
+              title="Translate"
+              data-cursor="pointer">
+              <i class="icon-translate"></i>
+              <ul class="dropdown">
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/como-começar-a-programar?_x_tr_sl=pt&_x_tr_tl=en&_x_tr_hl=pt-BR&_x_tr_pto=wapp">EN</a>
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/como-começar-a-programar?_x_tr_sl=pt&_x_tr_tl=es&_x_tr_hl=pt-BR&_x_tr_pto=wapp">ES</a>
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/como-começar-a-programar?_x_tr_sl=pt&_x_tr_tl=de&_x_tr_hl=pt-BR&_x_tr_pto=wapp">DE</a>
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/como-começar-a-programar?_x_tr_sl=pt&_x_tr_tl=fr&_x_tr_hl=pt-BR&_x_tr_pto=wapp">FR</a>
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/como-começar-a-programar?_x_tr_sl=pt&_x_tr_tl=kr&_x_tr_hl=pt-BR&_x_tr_pto=wapp">KR</a>
+                </li>
+                <li>
+                  <a
+                    href="https://voaneves-com.translate.goog/como-começar-a-programar?_x_tr_sl=pt&_x_tr_tl=ru&_x_tr_hl=pt-BR&_x_tr_pto=wapp">RU</a>
+                </li>
+              </ul>
+            </button>
+          </div>
+          <div class="header" data-cursor="pointer2">
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="
+                https://i.picsum.photos/id/7/600/600.webp?hmac=x3ZFwY5Ye8V9PN1bCv_wemNNy7BCWUsge_DiDTMUZD4
+                "
+                />
+              <img
+                src="https://i.picsum.photos/id/7/1920/700.webp?hmac=O401zdyHJnO7raOLC153MyigigdzNETonq6y7t1wLmo"
+                alt="Foto de um tigre, é da natureza dele ser mal?"
+                />
+            </picture>
+            <h2>Somos bons ou maus?</h2>
+          </div>
+          <div class="tags">
+            <p class="blog-date-post">23/10/2022</p>
+            <p class="blog-tag">Filosofia</p>
+          </div>
+          <div class="content">
+            <p>
+              <span class="bold first-letter">S</span>e você deseja começar a
+              programar, criar seu próprio site e aplicativos da Web são um
+              excelente lugar para começar. Pode parecer assustador no começo,
+              mas
+              com os recursos e determinação certos, <span class="bold marker">você
+                pode começar a construir
+                seus sites e aplicativos rapidamente</span>.
+
+              Aqui estão algumas dicas para te ajudar a começar.
+            </p>
+            <h3>Aprenda os fundamentos</h3>
+            <p>
+              Antes de começar a codificar, é importante ter uma <span
+                class="bold marker">compreensão
+                firme dos fundamentos</span> do desenvolvimento web.
+              Isso inclui HTML (Hypertext Markup Language), que permite
+              estruturar sua página da Web e dá significado ao seu conteúdo. As
+              tags HTML são <span class="bold marker">os blocos iniciais de
+                qualquer página da Web</span> e,
+              usando essas tags, você pode definir os diferentes elementos da
+              sua página, como cabeçalhos, links, imagens e muito mais. Depois
+              do HTML, vem o CSS (Cascading Style Sheets), que dá ao seu site
+              uma <span class="bold marker">aparência única</span>. Com CSS,
+              você pode alterar planos de fundo,
+              cores de fonte, tamanhos de fonte, layouts e muito mais. Por
+              último, mas não menos importante, está o JavaScript, uma poderosa
+              linguagem de script usada para tornar seu site interativo. Com
+              JavaScript, você pode adicionar diferentes tipos de animações,
+              funções e muito mais.
+            </p>
+            <div class="image">
+              <img
+                loading="lazy"
+                src="../assets/img/blog/good-or-evil-1.webp"
+                data-cursor="pointer2"
+                />
+              <br />
+              <span>Imagem 1: "Good or Evil" colocados de forma a mostrar dois
+                lados da mesma moeda.</span>
+            </div>
+            <h3>Configurando seu ambiente de desenvolvimento</h3>
+            <p>
+              Depois de aprender o básico, a próxima etapa é
+              configurar seu <span
+                class="bold marker">ambiente de desenvolvimento</span>. Isso
+              incluirá a
+              configuração de um editor de texto
+              como Atom, Sublime Text ou <span
+                class="bold marker">VSCode</span> e seu navegador de escolha
+              para teste.
+              Também é importante garantir que você tenha as versões corretas de
+              cada software. Mantenha-se atualizado com as versões mais
+              recentes, pois elas podem ajudar a garantir que <span
+                class="bold marker">tudo funcione</span> sem
+              problemas
+              e conforme o esperado.
+            </p>
+            <h3>Comece pequeno</h3>
+            <p>
+              Não acumule mais do que pode lidar. Comece criando um projeto
+              simples, como uma página da Web ou um simples aplicativo Web. Isto
+              permitirá que você compreenda o ponto de partida do
+              desenvolvimento web e que você consiga manipular melhor a
+              linguagem antes passar para algo mais complexo.
+            </p>
+            <div class="image">
+              <img
+                loading="lazy"
+                src="../assets/img/blog/good-or-evil-1.webp"
+                data-cursor="pointer2"
+                />
+              <br />
+              <span>Imagem 1: "Good or Evil" colocados de forma a mostrar dois
+                lados da mesma moeda.</span>
+            </div>
+            <h3>Não tenha medo de pedir ajuda</h3>
+            <p>
+              O desenvolvimento da Web pode ser
+              complicado, mas existe uma vasta rede de desenvolvedores que podem
+              ajudar. Se você está preso em alguma coisa, procure outras
+              pessoas.
+              Existem muitos fóruns úteis, quadros de mensagens e salas de
+              bate-papo que você pode usar para obter ajuda em tempo real. Um
+              destes é o StackOverflow, fórum de tirar dúvidas de programação
+              com uma comunidade enorme e ativa. Use também o ChatGPT para
+              respostas imediata, você pode ser surpreender com o poder desta
+              ferramenta. Não
+              tenha medo de fazer perguntas, pois todos os desenvolvedores
+              começaram como iniciantes em algum momento, e alguém sempre ficará
+              feliz em responder. Lembre-se de testar seu site ou aplicativo com
+              o Google Lighthouse e ferramentas de cross-browser testing.
+            </p>
+            <h3>Tenha paciência</h3>
+            <p>
+              Construir um site ou um aplicativo da web leva
+              tempo. Não desanime se demorar um pouco para começar. Com prática
+              e paciência, você estará criando suas próprias ferramentas e sites
+              rapidamente.
+
+              Boa sorte e bora programar!
+            </p>
+            <h3>Referências bibliográficas</h3>
+            <ul class="numbered-list">
+              <li>
+                <cite>SOUSA, Luiz Henrique da Cruz. A propriedade como direito
+                  natural na filosofia política de John Locke: Subjetividade
+                  como fundamento de uma teoria da apropriação.<a
+                    href="https://repositorio.unb.br/handle/10482/33237"
+                    data-cursor="pointer"
+                    target="_blank">LINK</a>
+                  Dissertação (Mestrado em Filosofia), Programa de Pós-Graduação
+                  em Filosofia, Universidade de Brasília, Brasília-DF, 2018.
+                </cite>
+              </li>
+              <li>
+                <cite>
+                  WRANGHAM, Richard. The Goodness Paradox: How Evolution Made Us
+                  Both More and Less Violent. Profile Books, 2019.
+                </cite>
+              </li>
+              <li>
+                <cite>ARANHA, Maria Lúcia de Arruda. Filosofando: introdução à
+                  filosofia. São Paulo: Moderna, 1993.
+                </cite>
+              </li>
+              <li>
+                <cite>WISCHKE, M. (2005). O tecido quebradiço das ilusões:
+                  Nietzsche sobre a origem da arte e da linguagem. Em Kriterion:
+                  Revista de Filosofia (Vol. 46, Issue 111, p. 29–43).
+                </cite>
+              </li>
+            </ul>
+            <h3>Dicas de leitura</h3>
+            <ul class="numbered-list">
+              <li>
+                Desperte o gigante interior - Anthony Robins (Fala sobre
+                neurolinguística e PNL, com uma abordagem de auto-ajuda).
+              </li>
+              <li>
+                O gene altruista - Atahualpa Fernandez (Dissertação sobre a
+                relação da moral com a seleção natural, com ênfase em Darwin,
+                Altruísmo e códigos de moral e ética).
+              </li>
+              <li>
+                Consiliência - A unidade do conhecimento - E. O. Wilson
+                (Discussão sobre a união das ciências em prol da obtenção de
+                respostas sobre a natureza humana).
+              </li>
+              <li>The Goodness Paradox - Richard Wrangham.</li>
+            </ul>
+          </div>
+          <script
+            src="https://utteranc.es/client.js"
+            repo="voaneves/voaneves.github.io"
+            issue-term="title"
+            label="[Comments]"
+            theme="preferred-color-scheme"
+            crossorigin="anonymous"
+            async></script>
+        </div>
+      </section>
+    </main>
+    <nav class="sidebar">
+      <button class="sidebar-toggle" aria-label="Abrir o menu"></button>
+      <div class="sidebar-wrapper">
+        <div class="sidebar-menu">
+          <a href="#" aria-label="Link para ir para a seção inicial">
+            <button
+              class="control active-btn"
+              data-id="home"
+              title="Home"
+              data-cursor="pointer">
+              <span>Home</span>
+            </button></a>
+          <a href="#who" aria-label="Link para ir para a seção 'Quem sou'">
+            <button
+              class="control"
+              data-id="about"
+              title="Sobre"
+              data-cursor="pointer">
+              <span>Who</span>
+            </button></a>
+          <a href="#timeline" aria-label="Link para ir para a seção 'Timeline'">
+            <button
+              class="control"
+              data-id="about"
+              title="Sobre"
+              data-cursor="pointer">
+              <span>Where</span>
+            </button></a>
+          <a
+            href="#contact-content"
+            aria-label="Link para ir para a seção final">
+            <button
+              class="control"
+              data-id="contact"
+              title="Contato"
+              data-cursor="pointer">
+              <span>How</span>
+            </button>
+          </a>
+          <a href="./blog" aria-label="Link para ir para o meu blog">
+            <button class="control" title="Blog" data-cursor="pointer">
+              <span>Blog</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <a
+      href="#"
+      data-cursor="pointer"
+      aria-label="Botão para ir ao topo da página.">
+      <div class="arrow-up" style="opacity: 0">
+        <div class="symbol"></div>
+      </div>
+    </a>
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
+  </body>
+</html>
