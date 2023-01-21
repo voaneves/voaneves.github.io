@@ -296,7 +296,7 @@ const msgbox = new MsgBox({ closeTime: 10000 });
 document.querySelectorAll("[data-toast]").forEach((button) => {
   button.addEventListener("click", function () {
     // Retrieve toast message from 'msgs' array
-    let s = msgs.filter((d) => d.id === this.dataset.toast)[0];
+    let s = msgs.find((d) => d.id === this.dataset.toast);
     // Show toast message using msgbox.show() function
     msgbox.show(s.message, s.title, s.legend, s.link);
   });
