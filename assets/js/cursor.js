@@ -4,11 +4,15 @@
   let cursorPos = { x: 0, y: 0 };
   let cursorBorderPos = { x: 0, y: 0 };
 
+  // store the reference toSelectorAll("[data-cursor]") to avoid
+  // making an expensive query every time the code runs.
+  const cursorItems = document.querySelectorAll("[data-cursor]");
+
   // This if statement is used to check touch capabilities
   if (!("ontouchstart" in document.documentElement)) {
     document.addEventListener("pointermove", updateCursor);
     document.addEventListener("pointerleave", hideCursor);
-    document.querySelectorAll("[data-cursor]").forEach(handleHover);
+    cursorItems.forEach(handleHover);
     animateBorder();
   }
 
@@ -52,22 +56,22 @@
   function setCursorSize() {
     const cursorType = this.dataset.cursor;
     if (cursorType === "pointer") {
-      cursor.style.opacity = 0;
-      cursorBorder.classList.add("small-cursor");
-      cursorBorder.style.setProperty("--size-cursor", "30px");
+      cursorBorder.style.opacity = 0;
+      cursor.classList.add("small-cursor");
+      cursor.style.setProperty("--size-cursor", "30px");
     } else if (cursorType === "pointer2") {
-      cursor.style.opacity = 0;
-      cursorBorder.classList.add("big-cursor");
-      cursorBorder.style.setProperty("--size-cursor", "100px");
+      cursorBorder.style.opacity = 0;
+      cursor.classList.add("big-cursor");
+      cursor.style.setProperty("--size-cursor", "100px");
     }
   }
 
   // This resets the cursor
   function resetCursorSize() {
-    cursor.style.opacity = 1;
-    cursorBorder.classList.remove("small-cursor");
-    cursorBorder.classList.remove("big-cursor");
-    cursorBorder.style.setProperty("--size-cursor", "50px");
+    cursorBorder.style.opacity = 0.2;
+    cursor.classList.remove("small-cursor");
+    cursor.classList.remove("big-cursor");
+    cursor.style.setProperty("--size-cursor", "15px");
   }
 
   // This hides the cursor

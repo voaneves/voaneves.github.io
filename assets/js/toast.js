@@ -135,169 +135,127 @@ const msgs = [
   },
 ];
 
-// MsgBox class takes an options object and creates a msgbox
-class MsgBox {
-  // constructor takes the options object
-  constructor(options) {
-    // if the parameter provided is not an object, throw an error
-    if (typeof options !== "object") {
-      throw new Error("Options must be an object");
+class MessageBox {
+  constructor(option) {
+    // Initialize the MessageBox, and specify the option passed
+    this.option = option;
+
+    // Create an area to contain the MessageBox
+    this.msgBoxArea = document.querySelector("#msgbox-area");
+
+    // If no element exists with the #msgbox-area ID, create it and append it
+    // to document.body
+    if (!this.msgBoxArea) {
+      this.msgBoxArea = document.createElement("DIV");
+      this.msgBoxArea.setAttribute("id", "msgbox-area");
+      this.msgBoxArea.classList.add("msgbox-area");
+      document.body.appendChild(this.msgBoxArea);
     }
-    // Set this.options to the provided object
-    this.options = options;
-    // Select the element with "msgbox-area" id
-    this.parentEl = document.querySelector("#msgbox-area");
-    // Set this.el ot null
-    this.el = null;
   }
 
-  // createArea function creates a div element with the "msgbox-area" class
-  createArea() {
-    this.el = document.createElement("DIV");
-    // Set the div element's id attribute to "msgbox-area"
-    this.el.setAttribute("id", "msgbox-area");
-    // Add the "msgbox-area" class
-    this.el.classList.add("msgbox-area");
-    // Append the element to the parent specified element
-    this.parentEl.appendChild(this.el);
-  }
+  // Show the MessageBox
+  show(msg, title, legend, link, callback, closeLabel = "Close") {
+    // Make sure that a message is specified
+    if (!msg) throw "Message is empty or not defined.";
 
-  // show function displays the message (msg) with the specified attributes
-  show = (msg, title, legend, link, cb, closeLabel = "Close") => {
-    if (!msg) {
-      throw error("Message is empty or not defined.");
-    }
+    // Store the option passed
+    const option = this.option;
 
-    const box = document.createElement("DIV");
-    // Add the "msgbox-box" class
-    box.classList.add("msgbox-box");
-    // Call the addTitle function with provided parameters
-    this.addTitle(title, box);
-    // Call the addLegend function with provided parameters
-    this.addLegend(legend, box);
-    // Call the addContent function with provided parameters
-    this.addContent(msg, box);
-    // Call the addCloseBtn function with provided parameters
-    this.addCloseBtn(closeLabel, box, link, cb);
-    // Append the box element to the specified element el
-    this.el.appendChild(box);
+    // Create the element which will contain the MessageBox
+    const msgboxBox = document.createElement("DIV");
 
-    // if the value of closeTime is greater than 0, call the delayHide function with specified parameters.
-    if (this.options.closeTime > 0) {
-      this.delayHide(box, cb);
-    }
-  };
+    // Create two additional container elements for the content and command of the MessageBox
+    const msgboxContent = document.createElement("DIV");
+    const msgboxCommand = document.createElement("DIV");
 
-  // addTitle function adds a h5 element with specified text title
-  addTitle = (title, el) => {
-    const titleEl = document.createElement("h5");
-    // add the "msgbox-title" class
-    titleEl.classList.add("msgbox-title");
-    titleEl.innerText = title;
-    // Append the titleEl element to the specified element el
-    el.appendChild(titleEl);
-  };
+    // Create a close element for the MessageBox
+    const msgboxClose = document.createElement("A");
 
-  // addLegend function adds a h2 element with specified text legend
-  addLegend = (legend, el) => {
-    const legendEl = document.createElement("h2");
-    // add the "msgbox-legend" class
-    legendEl.classList.add("msgbox-legend");
-    legendEl.innerText = legend;
-    // Append the legendEl element to the specified element el
-    el.appendChild(legendEl);
-  };
+    // Create two other elements for the title and legend of the MessageBox
+    const msgboxTitle = document.createElement("h5");
+    const msgboxLegend = document.createElement("h2");
 
-  // addContent function adds a div element with the content
-  addContent = (msg, el) => {
-    const contentEl = document.createElement("DIV");
-    // add the "msgbox-content" class
-    contentEl.classList.add("msgbox-content");
-    contentEl.innerHTML = msg;
-    // Append the contentEl element to the specified element el
-    el.appendChild(contentEl);
-  };
+    // Set the appropriate classes and content of the title and legend
+    msgboxTitle.classList.add("msgbox-title");
+    msgboxTitle.innerText = title;
+    msgboxLegend.classList.add("msgbox-legend");
+    msgboxLegend.innerText = legend;
 
-  // addCloseBtn function adds the functionality to close the msgbox
-  addCloseBtn = (label, el, link, cb) => {
-    const cmd = document.createElement("DIV");
-    // add the "msgbox-command" class
-    cmd.classList.add("msgbox-command");
-    const close = document.createElement("A");
-    // add the "msgbox-close" class
-    close.classList.add("msgbox-close");
-    close.setAttribute("href", "#");
-    close.innerText = label;
-    close.onclick = (evt) => {
-      evt.preventDefault();
-      // Don't hide if the el contains the "msgbox-box-hide" class
-      if (el.classList.contains("msgbox-box-hide")) {
-        return;
-      }
-      this.timeout = null;
-      // call the hide function with specified element and callback
-      this.hide(el, cb);
-    };
-    // Append the close element to cmd element
-    cmd.appendChild(close);
+    // Set the class name and inner HTML of the content element
+    msgboxContent.classList.add("msgbox-content");
+    msgboxContent.innerHTML = msg;
 
-    // If a link is provided, create an "Explore" button
+    // Set the class name and close label of the close command
+    msgboxCommand.classList.add("msgbox-command");
+    msgboxClose.classList.add("msgbox-close");
+    msgboxClose.setAttribute("href", "#");
+    msgboxClose.innerText = closeLabel;
+
+    // Create an optional 'Explore' command
     if (link) {
-      const explore = document.createElement("A");
-      // Add the "msgbox-close" class
-      explore.classList.add("msgbox-close");
-      explore.setAttribute("href", link);
-      explore.setAttribute("target", "_blank");
-      explore.innerText = "Explore";
-      // Append the explore element to cmd element
-      cmd.appendChild(explore);
-    }
-    // Append cmd element to the specified element el
-    el.appendChild(cmd);
-  };
-
-  // Asynchronously hide MsgBox
-  async hide(el, cb) {
-    if (el) {
-      el.classList.add("msgbox-box-hide");
+      const msgboxExplore = document.createElement("A");
+      msgboxExplore.classList.add("msgbox-close");
+      msgboxExplore.setAttribute("href", link);
+      msgboxExplore.setAttribute("target", "_blank");
+      msgboxExplore.innerText = "Explore";
+      msgboxCommand.appendChild(msgboxExplore);
     }
 
-    // Wait for element transition to finish before removing element from DOM
-    await this.hideMsgBox(el);
-    this.el.removeChild(el);
+    // Append all the necessary elements to the main container
+    msgboxBox.classList.add("msgbox-box");
+    msgboxBox.appendChild(msgboxTitle);
+    msgboxBox.appendChild(msgboxLegend);
+    msgboxBox.appendChild(msgboxContent);
+    msgboxCommand.appendChild(msgboxClose);
+    msgboxBox.appendChild(msgboxCommand);
+    this.msgBoxArea.appendChild(msgboxBox);
 
-    // Execute callback method if defined
-    if (typeof cb === "function") {
-      cb();
+    // Add an event listener to the close command
+    msgboxClose.onclick = (evt) => {
+      evt.preventDefault();
+      // Return early if the box is already hidden
+      if (msgboxBox.classList.contains("msgbox-box-hide")) return;
+      // Call the `hide` method and pass the callback
+      this.hide(msgboxBox, callback);
+    };
+
+    // Set a timeout for the message box to be hidden with the given time
+    if (option.closeTime > 0) {
+      setTimeout(() => {
+        this.hide(msgboxBox, callback);
+      }, option.closeTime);
     }
   }
 
-  // Return a promise that resolves when element's transition ends
-  hideMsgBox = (el) => {
+  // Function to hide message box and then remove it from the DOM
+  hideMessageBox(msgboxBox) {
     return new Promise((resolve) => {
-      el.ontransitionend = () => resolve();
-    });
-  };
-
-  // Delay calling 'hide' method until specified timeout (this.options.closeTime)
-  delayHide = async (el, cb) => {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        this.hide(el, cb);
+      // Call a function when the "hide" transition is finished
+      msgboxBox.ontransitionend = () => {
         resolve();
-      }, this.options.closeTime);
+      };
     });
-  };
-}
-// Create a new instance of MsgBox, with 10 seconds as the default time.
-const msgbox = new MsgBox({ closeTime: 10000 });
+  }
 
-// Iterate through all elements with the data-toast attribute and attach a 'click' listener to display a message
+  async hide(msgboxBox, callback) {
+    // Check if child is present to hide
+    if (msgboxBox !== null) msgboxBox.classList.add("msgbox-box-hide");
+    // Wait for hide transition to finish
+    await this.hideMessageBox(msgboxBox);
+    // Remove msgbox from the DOM
+    this.msgBoxArea.removeChild(msgboxBox);
+    // Call the passed in callback if it is a function
+    if (typeof callback === "function") callback();
+  }
+}
+
+const msgbox = new MessageBox({
+  closeTime: 10000,
+});
+
 document.querySelectorAll("[data-toast]").forEach((button) => {
   button.addEventListener("click", function () {
-    // Retrieve toast message from 'msgs' array
-    let s = msgs.find((d) => d.id === this.dataset.toast);
-    // Show toast message using msgbox.show() function
+    const s = msgs.find((d) => d.id === this.dataset.toast);
     msgbox.show(s.message, s.title, s.legend, s.link);
   });
 });
