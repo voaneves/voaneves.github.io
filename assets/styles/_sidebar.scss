@@ -56,7 +56,8 @@
     border-radius: 50%;
     border: none;
     padding: 0 19px;
-    transition: transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 3.25);
+    transition: transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 3.25),
+      opacity 0.3s ease-in-out;
     opacity: 0.5;
 
     &::before,
@@ -66,11 +67,9 @@
       width: 20px;
       height: 2px;
       background-color: white;
-      opacity: 0;
       transition: box-shadow 0.2s cubic-bezier(0.57, 0.21, 0.69, 3.25) 1.2s,
         transform 0.4s cubic-bezier(0.57, 0.21, 0.69, 3.25) 0.4s,
-        width 0.4s cubic-bezier(0.57, 0.21, 0.69, 3.25) 0.8s,
-        opacity 0.4s cubic-bezier(0.57, 0.21, 0.69, 3.25);
+        width 0.4s cubic-bezier(0.57, 0.21, 0.69, 3.25) 0.8s;
     }
 
     &:active {
@@ -133,17 +132,6 @@
       &:hover {
         transform: scale(1.2);
         opacity: 1;
-      }
-    }
-
-    &:not(.open) {
-      .sidebar-toggle {
-        &:hover {
-          &::before,
-          &::after {
-            opacity: 1;
-          }
-        }
       }
     }
   }
