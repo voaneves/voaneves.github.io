@@ -76,19 +76,20 @@ const timeline = [
   },
 ];
 
-const mario = document.getElementById("mario");
-const ground = document.getElementById("ground");
-const grass = document.getElementById("grass");
-const eventsContainer = document.getElementById("events");
-let playingTheme = false;
-let currentIndex = -1;
-let currentPipe;
-let int1;
+const mario = document.getElementById("mario"),
+  ground = document.getElementById("ground"),
+  grass = document.getElementById("grass"),
+  eventsContainer = document.getElementById("events"),
+  info = document.getElementById("info");
+let playingTheme = false,
+  currentIndex = -1,
+  currentPipe,
+  int1;
 
 // click handler
 const pipeHandler = (event) => {
   clearInterval(int1);
-  document.getElementById("info").style.display = "none";
+  info.style.display = "none";
 
   // clear old
   !currentPipe || currentPipe.classList.remove("active");
@@ -97,16 +98,16 @@ const pipeHandler = (event) => {
   const index = parseInt(event.currentTarget.dataset.index);
 
   // walk
-  const xpos = -100 - index * 150 - 25;
-  const curXpos = -100 - currentIndex * 150 - 25;
+  const xpos = `${-125 - index * 150}px`;
+  const curXpos = `${-125 - currentIndex * 150}px`;
   const distance = curXpos - xpos;
-  const duration = Math.abs(distance) * 3;
-  eventsContainer.style.transitionDuration = `${duration}ms`;
-  eventsContainer.style.transform = `translateX(${xpos}px)`;
-  ground.style.transitionDuration = `${duration}ms`;
-  ground.style.backgroundPosition = `${xpos}px 32px`;
-  grass.style.transitionDuration = `${duration}ms`;
-  grass.style.backgroundPosition = `${xpos}px 0`;
+  const duration = `${Math.abs(distance) * 3}ms`;
+  eventsContainer.style.transitionDuration = duration;
+  eventsContainer.style.transform = `translateX(${xpos})`;
+  ground.style.transitionDuration = duration;
+  ground.style.backgroundPosition = `${xpos} 32px`;
+  grass.style.transitionDuration = duration;
+  grass.style.backgroundPosition = `${xpos} 0`;
 
   // walk style
   const dir = distance < 0 ? "left" : "right";
@@ -119,18 +120,17 @@ const pipeHandler = (event) => {
   );
   mario.classList.add(`walk-${dir}`);
   int1 = setTimeout(
-    (dir, target) => {
+    (dir) => {
       mario.classList.remove(`walk-${dir}`);
       mario.classList.add(`search-${dir}`);
-      target.classList.add("active");
+      event.currentTarget.classList.add("active");
       playSfx("pipe");
     },
     duration,
-    dir,
-    event.currentTarget
+    dir
   );
 
-  if (playingTheme === false) {
+  if (!playingTheme) {
     playSfx("theme", true);
     playingTheme = true;
   }
@@ -176,25 +176,23 @@ const playSfx = (id, loop = false) => {
 };
 
 const loadAudio = async (urls, ids) => {
-  // Use array destructuring instead of type checking
-  let audioUrls = typeof urls == "string" ? [urls] : urls;
-  let audioIds = typeof ids == "string" ? [ids] : ids;
+  const [audioUrls, audioTitles] =
+    typeof urls === "string" ? [urls, ids] : [urls, ids];
 
-  for (let i = 0; i < audioUrls.length; i++) {
-    // Use async/await instead of chained .then()
-    let res = await window.fetch(audioUrls[i]);
-    let arrayBuffer = await res.arrayBuffer();
+  audioUrls.forEach(async (url, index) => {
+    const res = await window.fetch(url);
+    const arrayBuffer = await res.arrayBuffer();
     await audioContext.decodeAudioData(
       arrayBuffer,
       (audioBuffer) => {
-        audioBuffers[audioIds[i]] = audioBuffer;
+        audioBuffers[audioTitles[index]] = audioBuffer;
       },
       (error) => console.log(error)
     );
-  }
+  });
 };
 
-loadAudio(
+await loadAudio(
   ["assets/audio/pipe.mp3", "assets/audio/theme.mp3"],
   ["pipe", "theme"]
 );
