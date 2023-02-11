@@ -1534,48 +1534,29 @@ document.addEventListener("DOMContentLoaded", function () {
     pastorList: document.getElementById("pastores"),
   };
 
-  const createCard = (person, aluno = false) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-
-    const cardImage = document.createElement("div");
-    cardImage.classList.add("card__image");
-    const image = new Image();
-    image.src = `assets/img/${person.CODIGO}.webp`;
-    cardImage.appendChild(image);
-
-    const cardContent = document.createElement("div");
-    cardContent.classList.add("card__content");
-    const cardTitle = document.createElement("div");
-    cardTitle.classList.add("card__title");
-    cardTitle.innerHTML = person.NOME;
-    const cardText = document.createElement("p");
-    cardText.classList.add("card__text");
-    if (aluno)
-      cardText.innerHTML = `Turma ${person.TURMA}, nome da mãe é ${person.RESPONSAVEL} e o telefone é ${person.TELEFONE}. Restrições: ${person.RESTRICOES}. Alergia: ${person.ALERGIA}.`;
-    const cardLink = document.createElement("a");
-    cardLink.setAttribute("target", "_blank");
-    cardLink.setAttribute("href", `${person.CODIGO}.html`);
-    const cardButton = document.createElement("button");
-    cardButton.classList.add("btn");
-    cardButton.classList.add("btn--block");
-    cardButton.innerHTML = "Mais detalhes ➜";
-    cardLink.appendChild(cardButton);
-    cardContent.appendChild(cardTitle);
-    cardContent.appendChild(cardText);
-    cardContent.appendChild(cardLink);
-
-    card.appendChild(cardImage);
-    card.appendChild(cardContent);
+  const addCardsToList = (personList, person, aluno = false) => {
+    const card = `
+      <div class="card">
+        <div class="card__image">
+          <img src="assets/img/${person.CODIGO}.webp" />
+        </div>
+        <div class="card__content">
+          <div class="card__title">${person.NOME}</div>
+          <p class="card__text">
+            Turma ${person.TURMA}, nome da mãe é ${person.RESPONSAVEL} e o telefone é ${person.TELEFONE}. Restrições: ${person.RESTRICOES}. Alergia: ${person.ALERGIA}.
+          </p>
+          <a target="_blank" href="${person.CODIGO}.html">
+            <button class="btn btn--block">Mais detalhes ➜</button>
+          </a>
+        </div>
+      </div>
+    `;
 
     const li = document.createElement("li");
+    li.innerHTML = card;
     li.classList.add("cards__item");
-    li.appendChild(card);
-    return li;
-  };
 
-  const addCardsToList = (personList, person, aluno = false) => {
-    listElements[personList].appendChild(createCard(person, aluno));
+    listElements[personList].appendChild(li);
   };
 
   ALUNO.forEach((person) =>
