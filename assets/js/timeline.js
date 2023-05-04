@@ -114,7 +114,9 @@ const pipeHandler = (e) => {
     r,
     e.currentTarget
   );
-  initAudioContext(); // init audio
+
+  initAudioContext(); // Add this line
+
   playingTheme = playingTheme || false;
   if (!playingTheme) {
     playSfx("theme", true);
@@ -170,11 +172,10 @@ const loadAudio = async (urls, keys) => {
     window
       .fetch(url)
       .then((response) => response.arrayBuffer())
-      .then((arrayBuffer) =>
-        audioContext.decodeAudioData(arrayBuffer).then((buffer) => {
-          audioBuffers[keys[i]] = buffer;
-        })
-      )
+      .then((arrayBuffer) => audioContext.decodeAudioData(arrayBuffer))
+      .then((buffer) => {
+        audioBuffers[keys[i]] = buffer;
+      })
       .catch((error) => console.error(error))
   );
   await Promise.all(audioPromises);
