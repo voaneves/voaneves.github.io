@@ -115,7 +115,10 @@ const pipeHandler = (e) => {
     e.currentTarget
   );
 
-  initAudioContext(); // Add this line
+  // Initialize the AudioContext if it's not already initialized
+  if (!audioContext) {
+    initAudioContext();
+  }
 
   playingTheme = playingTheme || false;
   if (!playingTheme) {
@@ -149,6 +152,11 @@ const initAudioContext = () => {
   audioContext = new (window.AudioContext || window.webkitAudioContext)();
   gainNode = audioContext.createGain();
   gainNode.gain.value = 1;
+
+  loadAudio(
+    ["assets/audio/pipe.mp3", "assets/audio/theme.mp3"],
+    ["pipe", "theme"]
+  );
 };
 
 const playSfx = (id, loop = false) => {
@@ -180,10 +188,3 @@ const loadAudio = async (urls, keys) => {
   );
   await Promise.all(audioPromises);
 };
-
-if (canAudio) {
-  loadAudio(
-    ["assets/audio/pipe.mp3", "assets/audio/theme.mp3"],
-    ["pipe", "theme"]
-  );
-}
