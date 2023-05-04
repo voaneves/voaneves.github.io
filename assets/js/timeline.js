@@ -14,11 +14,7 @@ const timeline = [
     month_name: "Dezembro 2011",
     title: "Terminei o ensino médio",
   },
-  {
-    year: 2012,
-    month_name: "Janeiro 2012",
-    title: "Entrei na UNICAMP",
-  },
+  { year: 2012, month_name: "Janeiro 2012", title: "Entrei na UNICAMP" },
   {
     year: 2012,
     month_name: "Julho 2012",
@@ -64,11 +60,7 @@ const timeline = [
     month_name: "Janeiro de 2022",
     title: "Comecei a desenvolver sites e criar apps profissionalmente",
   },
-  {
-    year: 2022,
-    month_name: "Setembro 2022",
-    title: "Virei ALI do SEBRAE",
-  },
+  { year: 2022, month_name: "Setembro 2022", title: "Virei ALI do SEBRAE" },
   {
     year: 2022,
     month_name: "Setembro 2022",
@@ -76,41 +68,33 @@ const timeline = [
   },
 ];
 
-const mario = document.getElementById("mario"),
-  ground = document.getElementById("ground"),
-  grass = document.getElementById("grass"),
-  eventsContainer = document.getElementById("events"),
-  info = document.getElementById("info");
-let playingTheme = false,
-  currentIndex = -1,
-  currentPipe,
-  int1;
+const mario = document.getElementById("mario");
+const ground = document.getElementById("ground");
+const grass = document.getElementById("grass");
+const eventsContainer = document.getElementById("events");
+let currentPipe;
+let int1;
+let playingTheme = false;
+let currentIndex = -1;
 
-// click handler
-const pipeHandler = (event) => {
+const pipeHandler = (e) => {
   clearInterval(int1);
-  info.style.display = "none";
-
-  // clear old
-  !currentPipe || currentPipe.classList.remove("active");
-
-  // get index
-  const index = parseInt(event.currentTarget.dataset.index);
-
-  // walk
-  const xpos = `${-125 - index * 150}px`;
-  const curXpos = `${-125 - currentIndex * 150}px`;
-  const distance = curXpos - xpos;
-  const duration = `${Math.abs(distance) * 3}ms`;
-  eventsContainer.style.transitionDuration = duration;
-  eventsContainer.style.transform = `translateX(${xpos})`;
-  ground.style.transitionDuration = duration;
-  ground.style.backgroundPosition = `${xpos} 32px`;
-  grass.style.transitionDuration = duration;
-  grass.style.backgroundPosition = `${xpos} 0`;
-
-  // walk style
-  const dir = distance < 0 ? "left" : "right";
+  document.getElementById("info").style.display = "none";
+  if (currentPipe) {
+    currentPipe.classList.remove("active");
+  }
+  const t = parseInt(e.currentTarget.dataset.index);
+  const a = -100 - 150 * t - 25;
+  const n = -100 - 150 * currentIndex - 25;
+  const i = n - a;
+  const o = 3 * Math.abs(i);
+  eventsContainer.style.transitionDuration = `${o}ms`;
+  eventsContainer.style.transform = `translateX(${a}px)`;
+  ground.style.transitionDuration = `${o}ms`;
+  ground.style.backgroundPosition = `${a}px 32px`;
+  grass.style.transitionDuration = `${o}ms`;
+  grass.style.backgroundPosition = `${a}px 0`;
+  const r = i < 0 ? "left" : "right";
   mario.classList.remove(
     "idle",
     "walk-left",
@@ -118,55 +102,59 @@ const pipeHandler = (event) => {
     "search-left",
     "search-right"
   );
-  mario.classList.add(`walk-${dir}`);
+  mario.classList.add(`walk-${r}`);
   int1 = setTimeout(
-    (dir) => {
-      mario.classList.remove(`walk-${dir}`);
-      mario.classList.add(`search-${dir}`);
-      event.currentTarget.classList.add("active");
+    (e, t) => {
+      mario.classList.remove(`walk-${e}`);
+      mario.classList.add(`search-${e}`);
+      t.classList.add("active");
       playSfx("pipe");
     },
-    duration,
-    dir
+    o,
+    r,
+    e.currentTarget
   );
-
+  playingTheme = playingTheme || false;
   if (!playingTheme) {
     playSfx("theme", true);
     playingTheme = true;
   }
-
-  // store position
-  currentIndex = index;
-  currentPipe = event.currentTarget;
+  currentIndex = t;
+  currentPipe = e.currentTarget;
 };
 
-// setup timeline
 const fragment = document.createDocumentFragment();
-timeline.forEach((event, index) => {
-  const eventElement = document.createElement("li");
-  eventElement.classList.add(event.title.includes("Peach") ? "peach" : "event");
-  eventElement.dataset.index = index;
-  eventElement.dataset.title = event.title;
-  eventElement.dataset.month = event.month_name;
-  fragment.appendChild(eventElement);
-  eventElement.addEventListener("click", pipeHandler);
+timeline.forEach((e, t) => {
+  const a = document.createElement("li");
+  a.classList.add(e.title.includes("Peach") ? "peach" : "event");
+  a.dataset.index = t;
+  a.dataset.title = e.title;
+  a.dataset.month = e.month_name;
+  fragment.appendChild(a);
+  a.addEventListener("click", pipeHandler);
 });
 eventsContainer.appendChild(fragment);
 
-// Audio handling
-let canAudio = "AudioContext" in window || "webkitAudioContext" in window;
 let audioContext;
 let gainNode;
-let audioBuffers = {};
-
-if (canAudio) {
-  audioContext = new AudioContext();
-  gainNode = audioContext.createGain();
-  gainNode.gain.value = 1;
-}
+const canAudio = "AudioContext" in window || "webkitAudioContext" in window;
+const audioBuffers = {};
 
 const playSfx = (id, loop = false) => {
   if (!canAudio || !audioBuffers.hasOwnProperty(id)) return;
+
+  // Create a new AudioContext on the first call
+  if (!audioContext) {
+    audioContext = new AudioContext();
+    gainNode = audioContext.createGain();
+    gainNode.gain.value = 1;
+  }
+
+  // Resume the AudioContext if it's in a suspended state
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+
   const buffer = audioBuffers[id];
   const source = audioContext.createBufferSource();
   source.buffer = buffer;
@@ -175,24 +163,22 @@ const playSfx = (id, loop = false) => {
   source.loop = loop;
 };
 
-const loadAudio = async (urls, ids) => {
-  const [audioUrls, audioTitles] =
-    typeof urls === "string" ? [urls, ids] : [urls, ids];
-
-  audioUrls.forEach(async (url, index) => {
-    const res = await window.fetch(url);
-    const arrayBuffer = await res.arrayBuffer();
-    await audioContext.decodeAudioData(
-      arrayBuffer,
-      (audioBuffer) => {
-        audioBuffers[audioTitles[index]] = audioBuffer;
-      },
-      (error) => console.log(error)
-    );
-  });
+const loadAudio = async (urls, keys) => {
+  const audioPromises = urls.map((url, i) =>
+    window
+      .fetch(url)
+      .then((response) => response.arrayBuffer())
+      .then((arrayBuffer) =>
+        audioContext.decodeAudioData(arrayBuffer).then((buffer) => {
+          audioBuffers[keys[i]] = buffer;
+        })
+      )
+      .catch((error) => console.error(error))
+  );
+  await Promise.all(audioPromises);
 };
 
-await loadAudio(
+loadAudio(
   ["assets/audio/pipe.mp3", "assets/audio/theme.mp3"],
   ["pipe", "theme"]
 );

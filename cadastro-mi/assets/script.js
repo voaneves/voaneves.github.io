@@ -1625,56 +1625,75 @@ const data = [
   },
 ];
 
-const groupByKey = (list, key, { omitKey = false }) =>
-  list.reduce((hash, { [key]: value, ...rest }) => {
-    const item = omitKey ? rest : { [key]: value, ...rest };
+const groupByKey = (list, key, { omitKey = false } = {}) =>
+  list.reduce((hash, obj) => {
+    const value = obj[key];
+    const rest = omitKey ? (({ [key]: _, ...rest }) => rest)(obj) : obj;
     const group = hash[value] || [];
-    return { ...hash, [value]: [...group, item] };
+    return { ...hash, [value]: [...group, rest] };
   }, {});
 
 const result = groupByKey(data, "CLASSE", { omitKey: true });
-const ALUNO = result.ALUNO;
-const PROFESSOR = result.PROFESSOR;
-const MIDIA = result.MIDIA;
-const PASTOR = result.PASTOR;
+const { ALUNO, PROFESSOR, MIDIA, PASTOR } = result;
+
+const cardImage = (person) => `
+  <div class="card__image">
+    <img src="assets/img/${person.CODIGO}.webp" />
+  </div>
+`;
+
+const cardContent = (person) => `
+  <div class="card__content">
+    <div class="card__title">${person.NOME}</div>
+    <p class="card__text">
+      Turma ${person.TURMA}, nome da mãe é ${person.RESPONSAVEL} e o telefone é ${person.TELEFONE}. Restrições: ${person.RESTRICOES}. Alergia: ${person.ALERGIA}.
+    </p>
+    <a target="_blank" href="${person.CODIGO}.html">
+      <button class="btn btn--block">Mais detalhes ➜</button>
+    </a>
+  </div>
+`;
+
+const createCard = (person) => `
+  <div class="card">
+    ${cardImage(person)}
+    ${cardContent(person)}
+  </div>
+`;
+
+const createListItem = (card) => {
+  const li = document.createElement("li");
+  li.innerHTML = card;
+  li.classList.add("cards__item");
+  return li;
+};
+
+const addCardsToList = (personList, person) => {
+  const card = createCard(person);
+  const listItem = createListItem(card);
+  personList.appendChild(listItem);
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   const listElements = {
-    alunoList: document.getElementById("alunos"),
-    professorList: document.getElementById("professores"),
-    midiaList: document.getElementById("midia"),
-    pastorList: document.getElementById("pastores"),
+    aluno: document.getElementById("alunos"),
+    professor: document.getElementById("professores"),
+    midia: document.getElementById("midia"),
+    pastor: document.getElementById("pastores"),
   };
 
-  const addCardsToList = (personList, person, aluno = false) => {
-    const card = `
-      <div class="card">
-        <div class="card__image">
-          <img src="assets/img/${person.CODIGO}.webp" />
-        </div>
-        <div class="card__content">
-          <div class="card__title">${person.NOME}</div>
-          <p class="card__text">
-            Turma ${person.TURMA}, nome da mãe é ${person.RESPONSAVEL} e o telefone é ${person.TELEFONE}. Restrições: ${person.RESTRICOES}. Alergia: ${person.ALERGIA}.
-          </p>
-          <a target="_blank" href="${person.CODIGO}.html">
-            <button class="btn btn--block">Mais detalhes ➜</button>
-          </a>
-        </div>
-      </div>
-    `;
-
-    const li = document.createElement("li");
-    li.innerHTML = card;
-    li.classList.add("cards__item");
-
-    listElements[personList].appendChild(li);
+  const personTypes = {
+    ALUNO: "aluno",
+    PROFESSOR: "professor",
+    MIDIA: "midia",
+    PASTOR: "pastor",
   };
 
-  ALUNO.forEach((person) =>
-    addCardsToList("alunoList", person, (aluno = true))
-  );
-  PROFESSOR.forEach((person) => addCardsToList("professorList", person));
-  MIDIA.forEach((person) => addCardsToList("midiaList", person));
-  PASTOR.forEach((person) => addCardsToList("pastorList", person));
+  Object.entries(personTypes).forEach(([key, value]) => {
+    if (result[key]) {
+      result[key].forEach((person) =>
+        addCardsToList(listElements[value], person)
+      );
+    }
+  });
 });

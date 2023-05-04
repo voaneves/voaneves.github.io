@@ -137,121 +137,66 @@ const msgs = [
 
 class MessageBox {
   constructor(option) {
-    // Initialize the MessageBox, and specify the option passed
     this.option = option;
-
-    // Create an area to contain the MessageBox
-    this.msgBoxArea = document.querySelector("#msgbox-area");
-
-    // If no element exists with the #msgbox-area ID, create it and append it
-    // to document.body
-    if (!this.msgBoxArea) {
-      this.msgBoxArea = document.createElement("DIV");
-      this.msgBoxArea.setAttribute("id", "msgbox-area");
-      this.msgBoxArea.classList.add("msgbox-area");
-      document.body.appendChild(this.msgBoxArea);
-    }
+    this.msgBoxArea =
+      document.querySelector("#msgbox-area") || this.createMsgBoxArea();
   }
 
-  // Show the MessageBox
+  createMsgBoxArea() {
+    const msgBoxArea = document.createElement("div");
+    msgBoxArea.id = "msgbox-area";
+    msgBoxArea.classList.add("msgbox-area");
+    document.body.appendChild(msgBoxArea);
+    return msgBoxArea;
+  }
+
   show(msg, title, legend, link, callback, closeLabel = "Close") {
-    // Make sure that a message is specified
     if (!msg) throw "Message is empty or not defined.";
 
-    // Store the option passed
-    const option = this.option;
-
-    // Create the element which will contain the MessageBox
-    const msgboxBox = document.createElement("DIV");
-
-    // Create two additional container elements for the content and command of the MessageBox
-    const msgboxContent = document.createElement("DIV");
-    const msgboxCommand = document.createElement("DIV");
-
-    // Create a close element for the MessageBox
-    const msgboxClose = document.createElement("A");
-
-    // Create two other elements for the title and legend of the MessageBox
-    const msgboxTitle = document.createElement("h5");
-    const msgboxLegend = document.createElement("h2");
-
-    // Set the appropriate classes and content of the title and legend
-    msgboxTitle.classList.add("msgbox-title");
-    msgboxTitle.innerText = title;
-    msgboxLegend.classList.add("msgbox-legend");
-    msgboxLegend.innerText = legend;
-
-    // Set the class name and inner HTML of the content element
-    msgboxContent.classList.add("msgbox-content");
-    msgboxContent.innerHTML = msg;
-
-    // Set the class name and close label of the close command
-    msgboxCommand.classList.add("msgbox-command");
-    msgboxClose.classList.add("msgbox-close");
-    msgboxClose.setAttribute("href", "#");
-    msgboxClose.innerText = closeLabel;
-
-    // Create an optional 'Explore' command
-    if (link) {
-      const msgboxExplore = document.createElement("A");
-      msgboxExplore.classList.add("msgbox-close");
-      msgboxExplore.setAttribute("href", link);
-      msgboxExplore.setAttribute("target", "_blank");
-      msgboxExplore.innerText = "Explore";
-      msgboxCommand.appendChild(msgboxExplore);
-    }
-
-    // Append all the necessary elements to the main container
-    msgboxBox.classList.add("msgbox-box");
-    msgboxBox.appendChild(msgboxTitle);
-    msgboxBox.appendChild(msgboxLegend);
-    msgboxBox.appendChild(msgboxContent);
-    msgboxCommand.appendChild(msgboxClose);
-    msgboxBox.appendChild(msgboxCommand);
+    const msgboxBox = document.createElement("div");
+    msgboxBox.className = "msgbox-box";
+    msgboxBox.innerHTML = `
+      <h5 class="msgbox-title">${title}</h5>
+      <h2 class="msgbox-legend">${legend}</h2>
+      <div class="msgbox-content">${msg}</div>
+      <div class="msgbox-command">
+        ${
+          link
+            ? `<a class="msgbox-close" href="${link}" target="_blank">Explore</a>`
+            : ""
+        }
+        <a class="msgbox-close" href="#">${closeLabel}</a>
+      </div>
+    `;
     this.msgBoxArea.appendChild(msgboxBox);
 
-    // Add an event listener to the close command
-    msgboxClose.onclick = (evt) => {
+    const msgboxClose = msgboxBox.querySelector(".msgbox-close");
+    msgboxClose.addEventListener("click", (evt) => {
       evt.preventDefault();
-      // Return early if the box is already hidden
       if (msgboxBox.classList.contains("msgbox-box-hide")) return;
-      // Call the `hide` method and pass the callback
       this.hide(msgboxBox, callback);
-    };
+    });
 
-    // Set a timeout for the message box to be hidden with the given time
-    if (option.closeTime > 0) {
+    if (this.option.closeTime > 0) {
       setTimeout(() => {
         this.hide(msgboxBox, callback);
-      }, option.closeTime);
+      }, this.option.closeTime);
     }
-  }
-
-  // Function to hide message box and then remove it from the DOM
-  hideMessageBox(msgboxBox) {
-    return new Promise((resolve) => {
-      // Call a function when the "hide" transition is finished
-      msgboxBox.ontransitionend = () => {
-        resolve();
-      };
-    });
   }
 
   async hide(msgboxBox, callback) {
-    // Check if child is present to hide
-    if (msgboxBox !== null) msgboxBox.classList.add("msgbox-box-hide");
-    // Wait for hide transition to finish
-    await this.hideMessageBox(msgboxBox);
-    // Remove msgbox from the DOM
-    this.msgBoxArea.removeChild(msgboxBox);
-    // Call the passed in callback if it is a function
+    if (msgboxBox !== null) {
+      msgboxBox.classList.add("msgbox-box-hide");
+      await new Promise((resolve) => {
+        msgboxBox.addEventListener("transitionend", resolve, { once: true });
+      });
+      this.msgBoxArea.removeChild(msgboxBox);
+    }
     if (typeof callback === "function") callback();
   }
 }
 
-const msgbox = new MessageBox({
-  closeTime: 10000,
-});
+const msgbox = new MessageBox({ closeTime: 10000 });
 
 document.querySelectorAll("[data-toast]").forEach((button) => {
   button.addEventListener("click", function () {

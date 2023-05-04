@@ -1628,99 +1628,68 @@ data = [
 ]
 
 
-def main():
-    html_header_1 = """<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">"""
+def generate_html_content(item):
+    codigo = item["CODIGO"]
 
-    html_header_2 = """        <meta name="viewport"
-                content="width=device-width, user-scalable=no, initial-scale=1.0,
-                maximum-scale=1.0, minimum-scale=1.0">
-            <link rel="stylesheet" href="assets/perfil.css">
-        </head>
-        <body>
-            <div class="wrapper">
-                <div class="profile-card js-profile-card">
-                    <div class="profile-card__img">"""
-
-    html_body_1 = """                </div>
-                    <div class="profile-card__cnt js-profile-cnt">"""
-
-    html_body_2 = """                    <div class="profile-card-inf">
-                            <div class="profile-card-inf__item">"""
-
-    html_end = """                    </div>
+    return f"""<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{item['NOME']} - Cadastro MI</title>
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0,
+            maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="assets/perfil.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="profile-card js-profile-card">
+                <div class="profile-card__img">
+                    <img src="assets/img/{codigo}.webp" alt="profile card">
+                </div>
+                <div class="profile-card__cnt js-profile-cnt">
+                    <div class="profile-card__name">{item['NOME']}</div>
+                    <div class="profile-card__txt">{item['TURMA']}</div>
+                    <div class="profile-card-loc"><span class="profile-card-loc__txt">{item['IDADE']}</span></div>
+                    <div class="profile-card-inf">
+                        <div class="profile-card-inf__item">
+                            <div class="profile-card-inf__title">{item['TIPO SANGUINEO']}</div>
+                            <div class="profile-card-inf__txt">Tipo Sanguineo</div>
+                        </div>
+                        <div class="profile-card-inf__item">
+                            <div class="profile-card-inf__title">{item['ALERGIA']}</div>
+                            <div class="profile-card-inf__txt">Alergias</div>
+                        </div>
+                        <div class="profile-card-inf__item">
+                            <div class="profile-card-inf__title">{item['RESTRICOES']}</div>
+                            <div class="profile-card-inf__txt">Restricoes</div>
+                        </div>
+                        <div class="profile-card-inf__item">
+                            <div class="profile-card-inf__title">{item['TELEFONE']}</div>
+                            <div class="profile-card-inf__txt">{item['RESPONSAVEL']}</div>
+                        </div>
+                        <div class="profile-card-inf__item">
+                            <div class="profile-card-inf__title">{item['ENDERECO']}</div>
+                            <div class="profile-card-inf__txt">Endereco</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </body>
-    </html>
-    """
+        </div>
+    </body>
+</html>
+"""
 
-    # iterate through the data array
+
+def main():
     for item in data:
-
-        # get the CODIGO from the dictionary
         codigo = item["CODIGO"]
-
-        # form the file name using the codigo
         file_name = f"{codigo}.html"
 
-        # open the output stream to the file
         with open(file_name, "w") as file_object:
+            html_content = generate_html_content(item)
+            file_object.write(html_content)
 
-            # start writing the contents
-            file_object.write(html_header_1)
-            file_object.write(f"<title>{item['NOME']} - Cadastro MI</title>")
-            file_object.write(html_header_2)
-            file_object.write(
-                f"<img src='assets/img/{codigo}.webp' alt='profile card'>"
-            )
-            file_object.write(html_body_1)
-            file_object.write(f"<div class='profile-card__name'>{item['NOME']}</div>")
-            file_object.write(f"<div class='profile-card__txt'>{item['TURMA']}</div>")
-            file_object.write(
-                f"<div class='profile-card-loc'><span class='profile-card-loc__txt'>{item['IDADE']}</span></div>"
-            )
-            file_object.write(
-                "<div class='profile-card-inf'><div class='profile-card-inf__item'>"
-            )
-            file_object.write(
-                f"<div class='profile-card-inf__title'>{item['TIPO SANGUINEO']}</div>"
-            )
-            file_object.write(
-                "<div class='profile-card-inf__txt'>Tipo Sanguineo</div></div>"
-            )
-            file_object.write("<div class='profile-card-inf__item'>")
-            file_object.write(
-                f"<div class='profile-card-inf__title'>{item['ALERGIA']}</div>"
-            )
-            file_object.write("<div class='profile-card-inf__txt'>Alergias</div></div>")
-            file_object.write("<div class='profile-card-inf__item'>")
-            file_object.write(
-                f"<div class='profile-card-inf__title'>{item['RESTRICOES']}</div>"
-            )
-            file_object.write(
-                "<div class='profile-card-inf__txt'>Restricoes</div></div>"
-            )
-            file_object.write("<div class='profile-card-inf__item'>")
-            file_object.write(
-                f"<div class='profile-card-inf__title'>{item['TELEFONE']}</div>"
-            )
-            file_object.write(
-                f"<div class='profile-card-inf__txt'>{item['RESPONSAVEL']}</div></div>"
-            )
-            file_object.write("<div class='profile-card-inf__item'>")
-            file_object.write(
-                f"<div class='profile-card-inf__title'>{item['ENDERECO']}</div>"
-            )
-            file_object.write("<div class='profile-card-inf__txt'>Endereco</div></div>")
-
-            # write the back matter
-            file_object.write(html_end)
-
-    # show success message
     print("Finished creating HTML files.")
 
 
