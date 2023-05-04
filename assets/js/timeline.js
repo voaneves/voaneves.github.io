@@ -114,6 +114,7 @@ const pipeHandler = (e) => {
     r,
     e.currentTarget
   );
+  initAudioContext(); // init audio
   playingTheme = playingTheme || false;
   if (!playingTheme) {
     playSfx("theme", true);
@@ -140,18 +141,19 @@ let gainNode;
 const canAudio = "AudioContext" in window || "webkitAudioContext" in window;
 const audioBuffers = {};
 
+const initAudioContext = () => {
+  if (audioContext || !canAudio) return;
+
+  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  gainNode = audioContext.createGain();
+  gainNode.gain.value = 1;
+};
+
 const playSfx = (id, loop = false) => {
   if (!canAudio || !audioBuffers.hasOwnProperty(id)) return;
 
-  // Create a new AudioContext on the first call
-  if (!audioContext) {
-    audioContext = new AudioContext();
-    gainNode = audioContext.createGain();
-    gainNode.gain.value = 1;
-  }
-
   // Resume the AudioContext if it's in a suspended state
-  if (audioContext.state === "suspended") {
+  if (audioContext && audioContext.state === "suspended") {
     audioContext.resume();
   }
 
@@ -178,7 +180,9 @@ const loadAudio = async (urls, keys) => {
   await Promise.all(audioPromises);
 };
 
-loadAudio(
-  ["assets/audio/pipe.mp3", "assets/audio/theme.mp3"],
-  ["pipe", "theme"]
-);
+if (canAudio) {
+  loadAudio(
+    ["assets/audio/pipe.mp3", "assets/audio/theme.mp3"],
+    ["pipe", "theme"]
+  );
+}
