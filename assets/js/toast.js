@@ -171,10 +171,10 @@ class MessageBox {
     this.msgBoxArea.appendChild(msgboxBox);
 
     const msgboxClose = msgboxBox.querySelector(".msgbox-close");
-    msgboxClose.addEventListener("click", (evt) => {
+    msgboxClose.addEventListener("click", async (evt) => {
       evt.preventDefault();
       if (msgboxBox.classList.contains("msgbox-box-hide")) return;
-      this.hide(msgboxBox, callback);
+      await this.hide(msgboxBox, callback);
     });
 
     if (this.option.closeTime > 0) {
@@ -190,7 +190,7 @@ class MessageBox {
       await new Promise((resolve) => {
         msgboxBox.addEventListener("transitionend", resolve, { once: true });
       });
-      this.msgBoxArea.removeChild(msgboxBox);
+      msgboxBox.remove();
     }
     if (typeof callback === "function") callback();
   }
@@ -198,9 +198,11 @@ class MessageBox {
 
 const msgbox = new MessageBox({ closeTime: 10000 });
 
-document.querySelectorAll("[data-toast]").forEach((button) => {
-  button.addEventListener("click", function () {
-    const s = msgs.find((d) => d.id === this.dataset.toast);
-    msgbox.show(s.message, s.title, s.legend, s.link);
-  });
-});
+const buttonClickHandler = function () {
+  const s = msgs.find((d) => d.id === this.dataset.toast);
+  msgbox.show(s.message, s.title, s.legend, s.link);
+};
+
+document
+  .querySelectorAll("[data-toast]")
+  .forEach((button) => button.addEventListener("click", buttonClickHandler));

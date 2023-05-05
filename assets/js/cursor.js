@@ -1,4 +1,4 @@
-(function () {
+function initCustomCursor() {
   const cursor = document.querySelector("#cursor");
   const cursorBorder = document.querySelector("#cursor-border");
   let cursorPos = { x: 0, y: 0 };
@@ -7,10 +7,10 @@
   const cursorItems = document.querySelectorAll("[data-cursor]");
 
   if (!("ontouchstart" in document.documentElement)) {
-    document.addEventListener("pointermove", updateCursor);
+    document.addEventListener("pointermove", updateCursor, { passive: true });
     document.addEventListener("pointerleave", hideCursor);
     cursorItems.forEach(handleHover);
-    animateBorder();
+    animateBorderWithSetTimeout();
   }
 
   function updateCursor({ clientX, clientY }) {
@@ -20,14 +20,18 @@
   }
 
   function animateBorder() {
-    const easting = 8;
+    const easing = 8;
     const { x: cx, y: cy } = cursorPos;
     const { x: bx, y: by } = cursorBorderPos;
 
-    cursorBorderPos.x += (cx - bx) / easting;
-    cursorBorderPos.y += (cy - by) / easting;
+    cursorBorderPos.x += (cx - bx) / easing;
+    cursorBorderPos.y += (cy - by) / easing;
     cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
-    requestAnimationFrame(animateBorder);
+  }
+
+  function animateBorderWithSetTimeout() {
+    animateBorder();
+    setTimeout(animateBorderWithSetTimeout, 1000 / 60);
   }
 
   function handleHover(item) {
@@ -61,4 +65,10 @@
     cursor.style.display = "block";
     cursorBorder.style.display = "block";
   }
-})();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initCustomCursor);
+} else {
+  initCustomCursor();
+}
