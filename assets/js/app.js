@@ -69,6 +69,11 @@ function toggleTheme() {
   document.body.classList.toggle(darkMode.matches ? "light-mode" : "dark-mode");
 }
 
+function toggleSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.classList.toggle("open");
+}
+
 const width =
   window.screen.width ||
   document.documentElement.clientWidth ||
