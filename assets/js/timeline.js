@@ -120,7 +120,6 @@ const pipeHandler = (e) => {
     initAudioContext();
   }
 
-  playingTheme = playingTheme || false;
   if (!playingTheme) {
     playSfx("theme", true);
     playingTheme = true;
