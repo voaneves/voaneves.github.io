@@ -80,9 +80,12 @@ let currentIndex = -1;
 const pipeHandler = (e) => {
   clearInterval(int1);
   document.getElementById("info").style.display = "none";
-  if (currentPipe) {
-    currentPipe.classList.remove("active");
-  }
+
+  if (currentPipe) currentPipe.classList.remove("active");
+
+  // Initialize the AudioContext if it's not already initialized
+  if (!audioContext) initAudioContext();
+
   const t = parseInt(e.currentTarget.dataset.index);
   const a = -100 - 150 * t - 25;
   const n = -100 - 150 * currentIndex - 25;
@@ -115,15 +118,11 @@ const pipeHandler = (e) => {
     e.currentTarget
   );
 
-  // Initialize the AudioContext if it's not already initialized
-  if (!audioContext) {
-    initAudioContext();
-  }
-
   if (!playingTheme) {
     playSfx("theme", true);
     playingTheme = true;
   }
+
   currentIndex = t;
   currentPipe = e.currentTarget;
 };
@@ -162,16 +161,14 @@ const playSfx = (id, loop = false) => {
   if (!canAudio || !audioBuffers.hasOwnProperty(id)) return;
 
   // Resume the AudioContext if it's in a suspended state
-  if (audioContext && audioContext.state === "suspended") {
-    audioContext.resume();
-  }
+  if (audioContext && audioContext.state === "suspended") audioContext.resume();
 
   const buffer = audioBuffers[id];
   const source = audioContext.createBufferSource();
   source.buffer = buffer;
+  source.loop = loop;
   source.connect(audioContext.destination);
   source.start();
-  source.loop = loop;
 };
 
 const loadAudio = async (urls, keys) => {
