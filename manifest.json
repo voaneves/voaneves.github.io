@@ -1,36 +1,36 @@
 {
-    "short_name": "Victor Neves",
-    "name": "Victor Neves, especialista em Transformação Digital",
-    "icons": [
-      {
-        "src": "assets/img/maskable_icon.png",
-        "type": "image/png",
-        "sizes": "512x512",
-        "purpose": "maskable"
-      },
-      {
-        "src": "assets/img/android-chrome-192x192.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "assets/img/favicon-32x32.png",
-        "type": "image/png",
-        "sizes": "32x32"
-      }
-    ],
-    "start_url": "/",
-    "background_color": "#191d2b",
-    "display": "standalone",
-    "scope": "/",
-    "theme_color": "#191d2b",
-    "shortcuts": [],
-    "description": "Portfolio do Victor Neves, com informações de contato e carreira",
-    "screenshots": [
-      {
-        "src": "assets/img/main_2.webp",
-        "type": "image/webp",
-        "sizes": "900x1200"
-      }
-    ]
-  }
+  "short_name": "Victor Neves",
+  "name": "Victor Neves, especialista em Transformação Digital",
+  "icons": [
+    {
+      "src": "assets/img/maskable_icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/img/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/img/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#191d2b",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#191d2b",
+  "shortcuts": [],
+  "description": "Portfolio do Victor Neves, com informações de contato e carreira",
+  "screenshots": [
+    {
+      "src": "assets/img/main_2.webp",
+      "type": "image/webp",
+      "sizes": "900x1200"
+    }
+  ]
+}
