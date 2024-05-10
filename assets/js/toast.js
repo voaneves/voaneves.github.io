@@ -1,5 +1,13 @@
 const msgs = [
   {
+    id: "seb-2",
+    title: "SEBRAE",
+    legend: "ANALISTA TÉCNICO",
+    message:
+      "Integrei a equipe na área de Políticas Públicas e Educação Empreendedora, empregando inovação e inteligência artificial para transformar e impulsionar o ecossistema empreendedor. Minha atuação focou em otimizar a gestão empresarial, melhorar produtos e processos, e descobrir novos nichos de mercado, sempre buscando soluções que geram impacto direto e significativo nas micro e pequenas empresas.",
+    link: null,
+  },
+  {
     id: "seb",
     title: "SEBRAE",
     legend: "AGENTE LOCAL DE INOVAÇÃO",
