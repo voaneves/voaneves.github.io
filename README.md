@@ -1,73 +1,95 @@
-[voaneves.com](https://voaneves.com)
-=================
+<a id="top"></a>
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/voaneves/voaneves.github.io/graphs/commit-activity) [![made-with-python](https://img.shields.io/badge/Made%20with-HTML-Blue)](https://voaneves.com/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/voaneves/ama)
+<div align="center">
 
-<p align="center">
-    <img src = "img/website.gif"/>
+<img alt="voaneves.com logo" src="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/img/logo.webp" width="112" height="112" />
+
+<h1>voaneves.com</h1>
+
+<p>
+  <strong>Portfolio website of Victor Neves, installable as a PWA, with dark and light themes.</strong><br />
+  <sub>HTML, CSS, JavaScript and SASS, in English and Portuguese</sub>
 </p>
 
-Portfolio website for Victor Neves. It was based on [this tutorial](https://www.youtube.com/watch?v=xV7S8BhIeBo&t=11521s), but heavily optimized for SEO, lighthouse score ([100/100](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fvoaneves.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext)) and accessibility (it's also a PWA). It's an online portfolio to showcase my web presence, CV, timeline for showing skills, profficiency and also to be hired. [Have a look! SITE URL: voaneves.com](https://voaneves.com)
-
-Table of Contents
-=================
-
-* [1. Getting Started](#getting_started)
-    * [1.1. Technology used](#tech)
-    * [1.2. Progressive Web App](#pwa)
-    * [1.3. Site optmization](#opt)
-    * [1.4. Dark and White themes](#themes)
-    * [1.5. English version](#en)             
-* [2. Contributing](#contributing)
-* [3. License](#license)
-* [4. Acknowledgments](#acknowledgments)
-
-## 1. Getting Started<a name="getting-started"></a>
-
-This repository contains the assets required to build [voaneves.com](https://voaneves.com) website and documentation. I'm glad that you are here! Want to contribute? Send me a pull request or an issue.
-
-### 1.1. Technology Used<a name="tech"></a>
-
-This website is built using:
-
-HTML | CSS | JavaScript | SASS
-
-### 1.2. Progressive Web App<a name="pwa"></a>
-
-It's alson a PWA, fully functional to be installable to be used offline. Progressive Web Apps (PWA) are built and enhanced with modern APIs to deliver enhanced capabilities, reliability, and installability while reaching anyone, anywhere, on any device with a single codebase.
-
-### 1.3. Site optmization<a name="opt"></a>
-
-This website was fully optimized with SEO in mind, also for the accessibility. Have a look in the lighthouse score ([100/100](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fvoaneves.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext)). You can also look to others site auditors and send a PR.
-
-Google Analytics was purposefully removed due to the performance hit.
-
-### 1.4. Dark and white themes<a name="themes"></a>
-
-This website features Dark and a White Theme, on PC, tablet or mobile.
-
-<p align="center">
-    <img src = "img/themes.gif"/>
+<p>
+  <a href="https://voaneves.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/buttons/live-dark.svg" /><img alt="Open the site" src="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/buttons/live-light.svg" height="40" /></picture></a>
+  <a href="#technology"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/buttons/how-dark.svg" /><img alt="How it works" src="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/buttons/how-light.svg" height="40" /></picture></a>
 </p>
 
-### 1.5. English version<a name="en"></a>
+<p><sub>Need something like this? <a href="https://voaneves.com/en/#contact"><strong>Let's talk →</strong></a></sub></p>
 
-This website also features a fully translated English version.
-
-<p align="center">
-    <img src = "img/lang.gif"/>
+<p>
+  <a href="https://github.com/voaneves/voaneves.github.io/blob/main/LICENSE"><img src="https://img.shields.io/github/license/voaneves/voaneves.github.io?style=flat-square&color=0A0A0A" alt="MIT License" /></a>
+  <img src="https://img.shields.io/badge/HTML%20%C2%B7%20CSS%20%C2%B7%20JS-PWA-b80000?style=flat-square" alt="HTML, CSS and JavaScript, installable as a PWA" />
 </p>
 
-## 2. Contributing <a name="contributing"></a>
+<p>
+  <a href="https://voaneves.github.io/">Site</a> ·
+  <a href="#technology">Technology</a> ·
+  <a href="#progressive-web-app">PWA</a> ·
+  <a href="#themes-and-languages">Themes</a> ·
+  <a href="#contact">Contact</a>
+</p>
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on this repo's code of conduct, and the process for submitting pull requests.
+</div>
 
-## 3. License <a name="license"></a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/brand/rule-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/brand/rule-light.svg" />
+  <img alt="" src="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/brand/rule-light.svg" width="100%" />
+</picture>
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## About the project
 
-## 4. Acknowledgments <a name="acknowledgments"></a>
+The source of Victor Neves's portfolio website: his web presence, CV and a timeline of skills, built to showcase the work and to get him hired.
 
-* @Maclinz - for his [JS_CSS_PortfolioProject](https://github.com/Maclinz/JS_CSS_PortfolioProject). thanks for the tutorial :D
+**Site:** <https://voaneves.github.io/>
 
-* [web.dev](https://web.dev) - for the awesome tutorials and guidance when needed.
+It started from [this tutorial](https://www.youtube.com/watch?v=xV7S8BhIeBo&t=11521s) and was heavily optimized for SEO, Lighthouse score (100/100) and accessibility.
+
+## Technology
+
+HTML, CSS, JavaScript and SASS. The repository holds the assets needed to build the site and its documentation.
+
+## Progressive Web App
+
+The site is a PWA: installable and fully usable offline. Progressive Web Apps use modern browser APIs for reliability and installability from a single codebase.
+
+## Site optimization
+
+The site was optimized for SEO and accessibility. Google Analytics was removed on purpose because of the performance cost. You can run other site auditors against it and send a PR.
+
+## Themes and languages
+
+- Dark and light themes on desktop, tablet and mobile.
+- A fully translated English version.
+
+## Contributing
+
+Want to contribute? Send a pull request or open an issue. See the [contributing guide](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for the code of conduct and the pull request process.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/voaneves/voaneves.github.io/blob/main/LICENSE) file for details.
+
+## Acknowledgments
+
+- @Maclinz, for the [JS_CSS_PortfolioProject](https://github.com/Maclinz/JS_CSS_PortfolioProject) tutorial.
+- [web.dev](https://web.dev), for the tutorials and guidance.
+
+## Contact
+
+<p>
+  <a href="https://voaneves.com/en/#contact"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/buttons/hire-dark.svg" /><img alt="Let's talk" src="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/buttons/hire-light.svg" height="40" /></picture></a>
+  <a href="https://voaneves.com/en/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/buttons/site-dark.svg" /><img alt="voaneves.com" src="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/buttons/site-light.svg" height="40" /></picture></a>
+</p>
+
+<a href="https://linkedin.com/in/voaneves">LinkedIn</a> · <a href="mailto:victorneves478@gmail.com">E-mail</a>
+
+<p align="center">
+  <img alt="VOANEVES mark" src="https://raw.githubusercontent.com/voaneves/voaneves.github.io/main/assets/brand/mark-duo.svg" width="32" height="32" />
+</p>
+
+<p align="center"><sub>Released under the <a href="https://github.com/voaneves/voaneves.github.io/blob/main/LICENSE">MIT License</a>.</sub></p>
+
+<p align="center"><sub><a href="#top">↑ Back to top</a></sub></p>

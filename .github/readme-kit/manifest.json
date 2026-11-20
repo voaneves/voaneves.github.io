@@ -1,0 +1,46 @@
+{
+  "repo": "voaneves.github.io",
+  "branch": "main",
+  "lang": "en",
+  "license": "MIT",
+  "name": "voaneves.com",
+  "tagline": "Portfolio website of Victor Neves, installable as a PWA, with dark and light themes.",
+  "description": "Bilingual portfolio website with dark and light themes, PWA support, and an SEO and accessibility focus. MIT licensed.",
+  "logo": {
+    "existing": "assets/img/logo.webp"
+  },
+  "buttons": [
+    {
+      "id": "live",
+      "text": "Open the site",
+      "kind": "primary",
+      "font": "sans",
+      "href": "https://voaneves.github.io/"
+    },
+    {
+      "id": "how",
+      "text": "How it works",
+      "kind": "secondary",
+      "font": "sans",
+      "href": "https://github.com/voaneves/voaneves.github.io#technology"
+    },
+    {
+      "id": "hire",
+      "text": "Let's talk",
+      "kind": "primary",
+      "font": "sans",
+      "href": "https://voaneves.com/en/#contact",
+      "landing": false
+    },
+    {
+      "id": "site",
+      "text": "voaneves.com",
+      "kind": "secondary",
+      "font": "sans",
+      "href": "https://voaneves.com/en/",
+      "landing": false
+    }
+  ],
+  "landing": false,
+  "live_url": "https://voaneves.github.io/voaneves.github.io/"
+}
